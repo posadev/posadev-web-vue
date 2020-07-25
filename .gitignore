@@ -172,9 +172,6 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Added as it can be conflictive
-package-lock.json
-
 # TypeScript v1 declaration files
 typings/
 
