@@ -1,20 +1,8 @@
 <template>
   <div id="app">
     <div>
-      <button
-        v-for="entry in languages"
-        :key="entry.id"
-        :id="entry.id"
-        @click="changeLocale(entry.locale)"
-      >
-        {{ entry.title }}
-      </button>
+      <router-view />
     </div>
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
   </div>
 </template>
 
