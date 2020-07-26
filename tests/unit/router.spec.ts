@@ -9,7 +9,19 @@ localVue.use(VueRouter);
 
 describe('Router About', () => {
   it('renders a child component via routing', () => {
-    const wrapper = mount(App, { localVue, router });
+    const wrapper = mount(App, {
+      mocks: {
+        $t: () => {
+          return {
+            home: {
+              welcome: 'Welcome to Your Vue.js App'
+            }
+          };
+        }
+      },
+      localVue,
+      router
+    });
 
     return router.push('/about').then(() => {
       expect(wrapper.findComponent(About).exists()).toBe(true);
