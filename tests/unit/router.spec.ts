@@ -2,7 +2,7 @@ import { createLocalVue, mount } from '@vue/test-utils';
 import VueRouter from 'vue-router';
 import App from '@/App.vue';
 import router from '@/router/index.ts';
-import Home from '@/views/Home.vue'
+import Home from '@/views/Home.vue';
 
 const localVue = createLocalVue();
 localVue.use(VueRouter);
@@ -22,6 +22,6 @@ describe('Router render test cases', () => {
       localVue,
       router
     });
-     expect(wrapper.findComponent(Home).exists()).toBe(true);
+    expect(wrapper.findComponent(Home).exists()).toBe(true);
   });
 });
