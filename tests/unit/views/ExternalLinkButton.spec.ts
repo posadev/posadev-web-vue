@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils';
-import externalLink from '@/components/External_Link.vue';
+import externalLink from '@/components/ExternalLinkButton.vue';
 
 describe('External_Link.vue', () => {
   beforeEach(() => {

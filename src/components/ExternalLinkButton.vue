@@ -11,7 +11,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import ExternalLink from '@/components/external_link.model';
 
 @Component
-export default class Link extends Vue {
+export default class ExternalLinkButton extends Vue {
   @Prop() private external!: ExternalLink;
   @Prop() private description!: string;
 
