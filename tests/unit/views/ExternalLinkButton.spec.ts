@@ -9,7 +9,7 @@ describe('External_Link.vue', () => {
     const wrapper = shallowMount(externalLink, {
       propsData: { external: { url: '', description: '' } }
     });
-    wrapper.find('#externalLink').trigger('click');
+    wrapper.find('button').trigger('click');
     expect(window.open).toHaveBeenCalled();
   });
 });

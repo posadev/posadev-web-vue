@@ -1,19 +1,18 @@
 <template>
   <div>
-    <button id="externalLink" @click="goToLink()">
-      {{ this.description }}
+    <button @click="goToLink()">
+      {{ this.external.description }}
     </button>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import ExternalLink from '@/components/external_link.model';
+import ExternalLink from '@/components/ExternalLinkButton.model';
 
 @Component
 export default class ExternalLinkButton extends Vue {
   @Prop() private external!: ExternalLink;
-  @Prop() private description!: string;
 
   private goToLink(): void {
     window.open(this.external.url);
