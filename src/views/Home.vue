@@ -5,31 +5,37 @@
       alt="coming soon"
       src="../assets/proximamente.png"
     />
-    <ExternalLink
-      class="btn"
-      :external="{
-        url:
-          'https://docs.google.com/document/d/1zWYvQ3RUKzu1ohTfcbYYdzQZd-0_YhgStFIWUEGFrRY/edit?usp=sharing',
-        description: 'Sponsors'
-      }"
-      description="Sponsors"
-    />
-    <ExternalLink
-      class="btn"
-      :external="{
-        url: 'https://convoca.dev/jconf-mexico-2020/cfp',
-        description: 'Speakers'
-      }"
-      description="Speakers"
-    />
+    <ExternalLink class="btn" :external="urlSponsor" />
+    <ExternalLink class="btn" :external="urlSpeaker" />
   </div>
 </template>
 
 <script>
 import ExternalLink from '../components/External_Link';
+import external from '@/components/external_link.model';
 export default {
   name: 'Home',
-  components: { ExternalLink }
+  components: { ExternalLink },
+
+  computed: {
+    urlSponsor: function() {
+      return this.createURL(
+        'https://docs.google.com/document/d/1zWYvQ3RUKzu1ohTfcbYYdzQZd-0_YhgStFIWUEGFrRY/edit?usp=sharing',
+        'Sponsors'
+      );
+    },
+    urlSpeaker: function() {
+      return this.createURL(
+        'https://convoca.dev/jconf-mexico-2020/cfp',
+        'Speakers'
+      );
+    }
+  },
+  methods: {
+    createURL: (url, description) => {
+      return new external(url, description);
+    }
+  }
 };
 </script>
 
