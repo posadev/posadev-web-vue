@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import ExternalLink from '@/components/ExternalLinkButton.model';
+import ExternalLink from '@/components/ExternalLink.model';
 
 @Component
 export default class ExternalLinkButton extends Vue {
