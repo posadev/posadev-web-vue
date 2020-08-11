@@ -238,7 +238,7 @@ dist
 .vscode-test
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -297,5 +297,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Ignore reports of tests
+tests/e2e/reports
 
 # End of https://www.toptal.com/developers/gitignore/api/node,intellij+all,web,vue,vuejs,visualstudiocode,macos,windows,firebase
