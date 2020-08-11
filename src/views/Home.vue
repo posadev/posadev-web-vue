@@ -5,17 +5,17 @@
       alt="coming soon"
       src="../assets/proximamente.png"
     />
-    <ExternalLink class="btn" :external="urlSponsor" />
-    <ExternalLink class="btn" :external="urlSpeaker" />
+    <ExternalLinkButton class="btn" :external="urlSponsor" />
+    <ExternalLinkButton class="btn" :external="urlSpeaker" />
   </div>
 </template>
 
 <script>
-import ExternalLink from '../components/External_Link';
-import external from '@/components/external_link.model';
+import ExternalLinkButton from '../components/ExternalLinkButton';
+import external from '@/components/ExternalLink.model';
 export default {
   name: 'Home',
-  components: { ExternalLink },
+  components: { ExternalLinkButton },
 
   computed: {
     urlSponsor: function() {
