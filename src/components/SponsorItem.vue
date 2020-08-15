@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="goToLink()">
     <p>{{ this.item.name }}</p>
     <img :src="this.item.pic" />
   </div>
@@ -12,5 +12,9 @@ import Sponsor from '@/components/Sponsor.model';
 @Component
 export default class SponsorItem extends Vue {
   @Prop() private item!: Sponsor;
+
+  private goToLink(): void {
+    window.open(this.item.url);
+  }
 }
 </script>
