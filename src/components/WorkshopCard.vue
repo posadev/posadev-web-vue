@@ -1,8 +1,8 @@
 <template>
   <div class="content-box">
     <img class="photo-md" :src="this.info.photoURL" alt="Foto del instructor" />
-    <p class="content-title">Titulo</p>
-    <p class="content-sub">Nombre</p>
+    <p class="content-title">{{ this.info.name }}</p>
+    <p class="content-sub">{{ this.info.speakerName }}</p>
     <img
       class="content-arrow"
       src="../assets/right-arrow-vector.png"
