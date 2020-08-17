@@ -13,28 +13,13 @@
 </template>
 
 <script lang="ts">
-import AuthButton from '@/components/AuthButton.vue';
-import Auth from '@/components/Auth.model';
-import firebase from 'firebase';
 import ExternalLinkButton from '../components/ExternalLinkButton';
 import external from '@/components/ExternalLink.model';
 
 export default {
   name: 'Home',
-  components: { ExternalLinkButton, AuthButton },
+  components: { ExternalLinkButton },
   computed: {
-    googleProvider: function() {
-      return new Auth(new firebase.auth.GoogleAuthProvider(), 'Google');
-    },
-    microsoftProvider: function() {
-      return new Auth(
-        new firebase.auth.OAuthProvider('microsoft'),
-        'Microsoft'
-      );
-    },
-    facebookProvider: function() {
-      return new Auth(new firebase.auth.FacebookAuthProvider(), 'Facebook');
-    },
     urlSponsor: function() {
       return this.createURL(
         'https://docs.google.com/document/d/1zWYvQ3RUKzu1ohTfcbYYdzQZd-0_YhgStFIWUEGFrRY/edit?usp=sharing',
@@ -54,9 +39,7 @@ export default {
     }
   },
   data() {
-    return {
-      nameUser: ''
-    };
+    return {};
   }
 };
 </script>
