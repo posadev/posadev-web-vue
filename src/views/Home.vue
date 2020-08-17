@@ -5,8 +5,10 @@
       alt="coming soon"
       src="../assets/proximamente.png"
     />
-    <ExternalLinkButton class="btn" :external="urlSponsor" />
-    <ExternalLinkButton class="btn" :external="urlSpeaker" />
+    <div class="external-buttons">
+      <ExternalLinkButton class="btn" :external="urlSponsor" />
+      <ExternalLinkButton class="btn" :external="urlSpeaker" />
+    </div>
   </div>
 </template>
 
@@ -43,12 +45,10 @@ export default {
 .home > img {
   width: 50%;
 }
-.btn > button {
-  background-color: #9b51e0;
-  color: white;
-  font-size: 24px;
-  padding: 10px;
-  border-color: #eb5757;
-  cursor: pointer;
+
+.external-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 </style>
