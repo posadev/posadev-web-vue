@@ -1,4 +1,4 @@
-import { createLocalVue, mount, shallowMount } from '@vue/test-utils';
+import { createLocalVue, mount } from '@vue/test-utils';
 import VueRouter from 'vue-router';
 import App from '@/App.vue';
 import router from '@/router/index.ts';
@@ -23,10 +23,5 @@ describe('Router render test cases', () => {
       router
     });
     expect(wrapper.findComponent(Home).exists()).toBe(true);
-  });
-  it('button exists', () => {
-    const wrapper = shallowMount(App);
-    const div = wrapper.find('#app');
-    expect(div.exists()).toBe(true);
   });
 });
