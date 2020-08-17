@@ -32,12 +32,12 @@ export default class ExternalLinkButton extends Vue {
       family: Roboto, Helvetica, Arial, sans-serif;
       style: normal;
       weight: bold;
-      size: 20px;
+      size: 16px;
     }
-    background-color: #4c92bd;
+    background-color: #f59f00;
     border: 1px solid transparent;
     border-radius: 6px;
-    color: #ffffff;
+    color: rgba(0, 0, 0, 0.8);
   }
 }
 </style>
