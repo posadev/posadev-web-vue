@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import ExternalLinkButton from '../components/ExternalLinkButton';
+import ExternalLinkButton from '@/components/ExternalLinkButton';
 import external from '@/components/ExternalLink.model';
 
 export default {
