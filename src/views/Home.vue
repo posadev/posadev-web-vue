@@ -1,23 +1,5 @@
 <template>
   <div class="home">
-    <AuthButton
-      :model="googleProvider"
-      class="google"
-      v-on:value="nameUser = $event"
-    />
-    <AuthButton
-      :model="microsoftProvider"
-      class="microsoft"
-      v-on:value="nameUser = $event"
-    />
-    <AuthButton
-      :model="facebookProvider"
-      class="microsoft"
-      v-on:value="nameUser = $event"
-    />
-    <h1
-      v-text="nameUser ? 'Hola ' + this.nameUser : 'Aún no te has logeado :('"
-    ></h1>
     <img
       id="commingSoonImage"
       alt="coming soon"
