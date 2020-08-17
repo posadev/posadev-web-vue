@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="soon-container">
     <button @click="goToLink()">
       {{ this.external.description }}
     </button>
@@ -19,3 +19,25 @@ export default class ExternalLinkButton extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+.soon-container {
+  width: 416px;
+  height: 58px;
+
+  button {
+    width: 100%;
+    height: 100%;
+    font: {
+      family: Roboto, Helvetica, Arial, sans-serif;
+      style: normal;
+      weight: bold;
+      size: 16px;
+    }
+    background-color: #f59f00;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+</style>
