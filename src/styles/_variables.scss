@@ -3,9 +3,11 @@
  * Feel free to add your own if they apply to more than 1 element in different places.
  */
 
-/* Related to content showed, like talks and workshops. */
-$content-background: #ffffff;
-$content-font: 'Roboto';
+ /* Main colors */
+ $accent-color: #f59f00;
+ $primary-color: #4c92bd;
+ $primary-dark-color: #1d3461;
+ $inactive-color: #e7ecef;
 
-/* Global colors */
-$dark-blue: #1d3461;
+ /* Whole project font */
+ $project-font: Roboto, Helvetica, Arial, sans-serif;
