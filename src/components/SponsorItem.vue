@@ -1,7 +1,7 @@
 <template>
-  <div @click="goToLink()">
-    <p>{{ this.item.name }}</p>
-    <img :src="this.item.pic" />
+  <div class="sponsor" @click="goToLink()">
+    <p>{{ this.sponsor.name }}</p>
+    <img :src="this.sponsor.pic" />
   </div>
 </template>
 
@@ -11,10 +11,23 @@ import Sponsor from '@/components/Sponsor.model';
 
 @Component
 export default class SponsorItem extends Vue {
-  @Prop() private item!: Sponsor;
+  @Prop() private sponsor!: Sponsor;
 
   private goToLink(): void {
-    window.open(this.item.url);
+    window.open(this.sponsor.url);
   }
 }
 </script>
+<style lang="scss">
+.sponsor {
+  width: 100px;
+  img {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .sponsor {
+    width: 135px;
+  }
+}
+</style>
