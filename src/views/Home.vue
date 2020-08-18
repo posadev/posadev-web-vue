@@ -12,13 +12,13 @@
   </div>
 </template>
 
-<script>
-import ExternalLinkButton from '../components/ExternalLinkButton';
+<script lang="ts">
+import ExternalLinkButton from '@/components/ExternalLinkButton';
 import external from '@/components/ExternalLink.model';
+
 export default {
   name: 'Home',
   components: { ExternalLinkButton },
-
   computed: {
     urlSponsor: function() {
       return this.createURL(
@@ -37,6 +37,9 @@ export default {
     createURL: (url, description) => {
       return new external(url, description);
     }
+  },
+  data() {
+    return {};
   }
 };
 </script>
