@@ -7,16 +7,21 @@
     />
     <ExternalLinkButton class="btn" :external="urlSponsor" />
     <ExternalLinkButton class="btn" :external="urlSpeaker" />
+    <SponsorList />
   </div>
 </template>
 
 <script>
 import ExternalLinkButton from '../components/ExternalLinkButton';
+import SponsorList from '../components/SponsorList';
 import external from '@/components/ExternalLink.model';
+
 export default {
   name: 'Home',
-  components: { ExternalLinkButton },
-
+  components: {
+    ExternalLinkButton,
+    SponsorList
+  },
   computed: {
     urlSponsor: function() {
       return this.createURL(
