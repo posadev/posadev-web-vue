@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div v-for="item in items" v-bind:key="item.name">
-      <SponsorItem :item="item" />
+  <div class="containerSponsor">
+    <div v-for="sponsor in sponsors" v-bind:key="sponsor.name">
+      <SponsorItem :sponsor="sponsor" />
     </div>
   </div>
 </template>
@@ -17,13 +17,19 @@ export default {
   },
   data() {
     return {
-      items: MockList
+      sponsors: MockList
     };
   }
 };
 </script>
 <style>
-.home > img {
-  width: 50%;
+.containerSponsor {
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 </style>
