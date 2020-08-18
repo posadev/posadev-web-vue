@@ -7,15 +7,17 @@
     />
     <ExternalLinkButton class="btn" :external="urlSponsor" />
     <ExternalLinkButton class="btn" :external="urlSpeaker" />
+    <TicketScreen />
   </div>
 </template>
 
 <script>
 import ExternalLinkButton from '../components/ExternalLinkButton';
 import external from '@/components/ExternalLink.model';
+import TicketScreen from './TicketScreen';
 export default {
   name: 'Home',
-  components: { ExternalLinkButton },
+  components: { ExternalLinkButton, TicketScreen },
 
   computed: {
     urlSponsor: function() {

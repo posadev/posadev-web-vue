@@ -6,9 +6,6 @@
       <span>{{ this.item.start }}</span>
       <span>{{ this.item.end }}</span>
     </div>
-    <div>
-      <!-- <ExternalLinkButton {{ this.item.url }} /> -->
-    </div>
   </div>
 </template>
 
