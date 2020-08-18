@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "firebase": "^7.17.1",
     "spectre.css": "^0.5.9",
+    "firebase": "^7.17.2",
+    "firebase-auth": "^0.1.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-i18n": "^8.19.0",
