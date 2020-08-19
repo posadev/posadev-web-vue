@@ -1,20 +1,20 @@
 <template>
   <div>
     <div>
-      <span>{{ this.item.name }}</span>
-      <span>{{ this.item.price }}</span>
-      <span>{{ this.item.start }}</span>
-      <span>{{ this.item.end }}</span>
+      <span>{{ this.ticket.name }}</span>
+      <span>{{ this.ticket.price }}</span>
+      <span>{{ this.ticket.start }}</span>
+      <span>{{ this.ticket.end }}</span>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import ticketCard from '@/components/ticketCard.model';
+import Ticket from '@/data/Ticket.model';
 
 @Component
-export default class TicketCardItem extends Vue {
-  @Prop() private item!: ticketCard;
+export default class TicketCard extends Vue {
+  @Prop() private ticket!: Ticket;
 }
 </script>

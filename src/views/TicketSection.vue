@@ -1,30 +1,25 @@
 <template>
   <div>
     <div v-for="item in orderedItems" v-bind:key="item.name">
-      <TicketItem :item="item" />
+      <TicketCard :ticket="item" />
     </div>
   </div>
 </template>
 <script lang="ts">
-import TicketItem from '@/components/TicketItem';
-import mockTicket from '@/mocks/mockTicket.js';
+import TicketCard from '@/components/TicketCard.vue';
+import mockTicket from '@/mocks/tickets.mock.js';
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'TicketScreen',
-  components: { TicketItem },
+@Component({
+  components: { TicketCard }
+})
+export default class TicketSection extends Vue {
+  private items = mockTicket;
 
-  data() {
-    return {
-      items: mockTicket
-    };
-  },
-  computed: {
-    orderedItems() {
-      const orderTicket = this.items.slice().sort((a, b) => {
-        return a.price - b.price;
-      });
-      return orderTicket;
-    }
+  get orderedItems() {
+    return this.items.slice().sort((a, b) => {
+      return a.price - b.price;
+    });
   }
-};
+}
 </script>
