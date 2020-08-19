@@ -4,6 +4,7 @@
       <span>{{ this.ticket.name }}</span>
       <span>{{ this.ticket.price }}</span>
       <span>{{ this.ticket.start }}</span>
+      <br />
       <span>{{ this.ticket.end }}</span>
     </div>
   </div>
