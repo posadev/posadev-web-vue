@@ -1,19 +1,18 @@
 <template>
   <div>
     <div v-for="item in orderedItems" v-bind:key="item.name">
-      <TicketCardItem :item="item" />
+      <TicketItem :item="item" />
     </div>
   </div>
 </template>
-<script>
-import TicketCardItem from '@/components/TicketCard';
-import mockTicket from '../components/mockTicket';
+<script lang="ts">
+import TicketItem from '@/components/TicketItem';
+import mockTicket from '@/mocks/mockTicket.js';
 
 export default {
   name: 'TicketScreen',
-  components: {
-    TicketCardItem,
-  },
+  components: { TicketItem },
+
   data() {
     return {
       items: mockTicket
@@ -26,6 +25,6 @@ export default {
       });
       return orderTicket;
     }
-  },
+  }
 };
 </script>
