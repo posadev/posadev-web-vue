@@ -10,7 +10,15 @@ jobs:
     name: Setup, lint and test developer changes
     runs-on: ubuntu-latest
     env:
-      CI: true
+      NODE_ENV: development
+      VUE_APP_FIREBASE_API: ${{ secrets.STAGING_FIREBASE_API }}
+      VUE_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.STAGING_FIREBASE_AUTH_DOMAIN }}
+      VUE_APP_FIREBASE_DB_URL: ${{ secrets.STAGING_FIREBASE_DB_URL }}
+      VUE_APP_FIREBASE_PROJECT: ${{ secrets.STAGING_FIREBASE_PROJECT }}
+      VUE_APP_FIREBASE_STORAGE: ${{ secrets.STAGING_FIREBASE_STORAGE }}
+      VUE_APP_FIREBASE_MSG_SENDER: ${{ secrets.STAGING_FIREBASE_MSG_SENDER }}
+      VUE_APP_FIREBASE_APP: ${{ secrets.STAGING_FIREBASE_APP }}
+      VUE_APP_FIREBASE_MEASUREMENT: ${{ secrets.STAGING_FIREBASE_MEASUREMENT }}
     steps:
     - name: Check out repo
       uses: actions/checkout@v2
@@ -21,7 +29,7 @@ jobs:
         cache-name: cache-node-modules
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
           ${{ runner.os }}-
