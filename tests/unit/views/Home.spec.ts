@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils';
+import { mount, shallowMount } from '@vue/test-utils';
 import Home from '@/views/Home.vue';
 
 describe('HelloWorld.vue', () => {
@@ -13,14 +13,15 @@ describe('HelloWorld.vue', () => {
   });
 
   it('open new window on sponsors button', () => {
-    const wrapper = shallowMount(Home);
-    wrapper.find('#btn-cfs').trigger('click');
+    const wrapper = mount(Home);
+    const button = wrapper.find('#btn-cfs');
+    button.trigger('click');
 
     expect(window.open).toHaveBeenCalled();
   });
 
   it('open new window on speakers button', () => {
-    const wrapper = shallowMount(Home);
+    const wrapper = mount(Home);
     wrapper.find('#btn-cfp').trigger('click');
 
     expect(window.open).toHaveBeenCalled();
