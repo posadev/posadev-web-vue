@@ -1,4 +1,4 @@
-export default class TicketCard {
+export default class Ticket {
   constructor(
     readonly name: string,
     readonly price: number,
