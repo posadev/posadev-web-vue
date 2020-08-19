@@ -1,6 +1,6 @@
 <template>
   <div class="btn" :class="{ small: this.info.isSmall }" @click="action">
-    <p>{{ this.info.text }}</p>
+    <button>{{ this.info.text }}</button>
   </div>
 </template>
 
@@ -20,24 +20,27 @@ export default class ActionButton extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables';
+
 .btn {
-  position: relative;
   width: 416px;
   height: 58px;
-  background: #f59f00;
-  border-radius: 6px;
   display: flex;
   justify-content: center;
 
-  p {
-    position: relative;
+  button {
+    width: 100%;
+    height: 100%;
     text-align: center;
     font: {
+      family: $project-font;
       style: normal;
       weight: bold;
       size: 16px;
     }
-    color: rgba(0, 0, 0, 0.8);
+    background: $accent-color;
+    border: 1px solid transparent;
+    border-radius: 6px;
   }
 
   &.small {
