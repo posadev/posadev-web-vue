@@ -9,7 +9,7 @@ describe('SponsorItem.vue', () => {
     const wrapper = shallowMount(sponsorItem, {
       propsData: { sponsor: { url: '', description: '' } }
     });
-    wrapper.find('img').trigger('click');
+    wrapper.trigger('click');
     expect(window.open).toHaveBeenCalled();
   });
 });
