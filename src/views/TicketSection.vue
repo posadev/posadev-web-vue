@@ -1,12 +1,15 @@
 <template>
+<div>
+  <div>
+    <h1>Tickets</h1>
+    <h2>Get yours while they are still available</h2>
+  </div>
   <div class="columns">
-    <div>
-      <h1>Tickets</h1>
-    </div>
     <div v-for="item in orderedItems" v-bind:key="item.name">
       <TicketCard :ticket="item" />
     </div>
   </div>
+</div>
 </template>
 <script lang="ts">
 import TicketCard from '@/components/TicketCard.vue';
