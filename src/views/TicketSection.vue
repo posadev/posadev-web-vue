@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div class="columns">
+    <div>
+      <h1>Tickets</h1>
+    </div>
     <div v-for="item in orderedItems" v-bind:key="item.name">
       <TicketCard :ticket="item" />
     </div>
@@ -23,3 +26,9 @@ export default class TicketSection extends Vue {
   }
 }
 </script>
+
+<style lang="scss">
+@import '../../node_modules/spectre.css/src/variables';
+@import '../../node_modules/spectre.css/src/layout';
+</style>
+*
