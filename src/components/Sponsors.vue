@@ -13,6 +13,7 @@
 import SponsorItem from '@/components/SponsorItem.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import Sponsor from '../data/Sponsor.model';
+import sponsors from '@/mocks/Sponsors.mock';
 
 @Component({
   components: { SponsorItem }
@@ -20,28 +21,7 @@ import Sponsor from '../data/Sponsor.model';
 export default class SponsorList extends Vue {
   get sponsors(): Sponsor[] {
     //FIXME: this is obtained from firebase
-    return [
-      new Sponsor(
-        'desc',
-        '',
-        'IBM',
-        new URL('https://via.placeholder.com/196x84'),
-        new URL('https://www.ibm.com'),
-        {
-          twitter: new URL('https://twitter.com')
-        }
-      ),
-      new Sponsor(
-        'desc',
-        '',
-        'IBM',
-        new URL('https://via.placeholder.com/196x84'),
-        new URL('https://www.ibm.com'),
-        {
-          twitter: new URL('https://twitter.com')
-        }
-      )
-    ];
+    return sponsors;
   }
 }
 </script>
