@@ -4,12 +4,12 @@ export enum Locales {
 }
 
 export type Locale = {
-  value: Locales
-  caption: string
-}
+  value: Locales;
+  caption: string;
+};
 
 export type Language = {
-  id: string,
-  title: string,
-  locale: Locales
-}
+  id: string;
+  title: string;
+  locale: Locales;
+};
