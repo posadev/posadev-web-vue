@@ -12,6 +12,7 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.{js,vue,ts}',
     '!src/**/*.model.{js,vue,ts}',
+    '!src/**/*.mocks.{js,vue,ts}',
     '!src/main.ts' // No need to cover bootstrap file
   ]
 };
