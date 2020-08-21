@@ -7,7 +7,7 @@ describe('SponsorItem.vue', () => {
   });
   it('it should check if the img is clickable', () => {
     const wrapper = shallowMount(SponsorItem, {
-      propsData: {sponsor: {url: '', description: ''}}
+      propsData: { sponsor: { url: '', description: '' } }
     });
     wrapper.trigger('click');
     expect(window.open).toHaveBeenCalled();
