@@ -23,15 +23,33 @@ module.exports = {
     app: {
       selector: '#app',
 
-      elements: {
-        logo: 'img'
-      },
+      // elements: {
+      //   image: 'img'
+      // },
 
       // - a page object section can also have sub-sections
       // - elements or sub-sections located here are retrieved using the "app" section as the base
       sections: {
-        headline: {
-          selector: 'h1'
+        // headline: {
+        //   selector: 'h1'
+        // },
+        navBar: {
+          selector: 'nav.navBar',
+          elements: {
+            logo: 'img',
+            navBarItem: {
+              selector: '.navBarItem'
+            }
+          }
+        },
+        commingSoon: {
+          selector: 'div.home',
+          elements: {
+            image: {
+              selector: '#commingSoonImage'
+            },
+            actionButton: 'button'
+          }
         },
 
         welcome: {
