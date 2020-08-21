@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <div>
-      <span>{{ this.ticket.name }}</span>
-      <span>{{ this.ticket.price }}</span>
-      <span>{{ this.ticket.start }}</span>
-      <span>{{ this.ticket.end }}</span>
+  <div class="container_card">
+    <div class="card-center">
+      <h2>{{ this.ticket.name }}</h2>
+      <h1>{{ this.ticket.price }}</h1>
+      <p class="text-">{{ this.ticket.start }} - {{ this.ticket.end }}</p>
     </div>
-    <ActionButton :info="ticketInfo" v-on:button-action="goTicketLink" />
+    <div class="button-event">
+      <ActionButton :info="ticketInfo" v-on:button-action="goTicketLink" />
+    </div>
   </div>
 </template>
 
@@ -28,3 +29,14 @@ export default class TicketCard extends Vue {
   }
 }
 </script>
+<style lang="scss">
+@import '../../node_modules/spectre.css/src/variables';
+@import '../../node_modules/spectre.css/src/layout';
+.card {
+  width: 500px;
+  border-radius: 10px;
+  border-color: black;
+  margin: auto;
+}
+</style>
+
