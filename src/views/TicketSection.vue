@@ -10,13 +10,14 @@
 import TicketCard from '@/components/TicketCard.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
+import mockArray from '@/mocks/tickets.mock';
 
 @Component({
   components: { TicketCard }
 })
 export default class TicketSection extends Vue {
   get orderedItems(): Ticket[] {
-    return [];
+    return mockArray;
   }
 }
 </script>
