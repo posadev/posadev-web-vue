@@ -6,10 +6,7 @@
       <span>{{ this.ticket.start }}</span>
       <span>{{ this.ticket.end }}</span>
     </div>
-    <ActionButton 
-    :info="ticketInfo"
-    v-on:button-action="goTicketLink"
-    />
+    <ActionButton :info="ticketInfo" v-on:button-action="goTicketLink" />
   </div>
 </template>
 
@@ -27,9 +24,7 @@ export default class TicketCard extends Vue {
   private ticketInfo = new ButtonInfo('Comprar ahora');
 
   private goTicketLink() {
-    window.open(
-     this.ticket.url
-    );
+    window.open(this.ticket.url);
   }
 }
 </script>
