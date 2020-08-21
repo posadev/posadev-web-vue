@@ -1,13 +1,21 @@
 <template>
-  <div class="content-box">
-    <img class="photo-md" :src="this.info.photoURL" alt="Foto del instructor" />
-    <p class="content-title">{{ this.info.name }}</p>
-    <p class="content-sub">{{ this.info.speakerName }}</p>
-    <img
-      class="content-arrow"
-      src="../assets/right-arrow-vector.png"
-      alt="Mas información"
-    />
+  <div>
+    <div class="workshop">
+      <img
+        class="photo-md"
+        :src="this.info.photoURL"
+        alt="Foto del instructor"
+      />
+      <div class="workshop-info">
+        <p class="workshop-title">{{ this.info.name }}</p>
+        <p class="workshop-sub">{{ this.info.speakerName }}</p>
+      </div>
+      <img
+        class="workshop-arrow"
+        src="../assets/right-arrow-vector.png"
+        alt="Mas información"
+      />
+    </div>
   </div>
 </template>
 
@@ -17,70 +25,22 @@ import WorkshopInfo from '@/data/WorkshopInfo.model';
 
 @Component
 export default class WorkshopCard extends Vue {
-  @Prop() private info!: WorkshopInfo;
+  @Prop({ required: true }) private info!: WorkshopInfo;
 }
 </script>
 
-<style lang="scss" scoped>
-@import '../styles/_variables.scss';
-
-%content-text {
-  position: absolute;
-  left: 37.98%;
-  right: 10.58%;
-  font: {
-    family: $content-font;
-    style: normal;
-    size: 16px;
-  }
-  display: flex;
-  align-items: center;
-}
-
-.content-box {
-  position: absolute;
+<style lang="scss">
+.workshop {
   width: 416px;
   height: 158px;
-  left: 0;
-  top: 0;
-  background: $content-background;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
 }
 
 .photo-md {
-  position: absolute;
-  height: 126px;
   width: 126px;
-  left: 16px;
-  top: 16px;
-}
-
-.content-title {
-  @extend %content-text;
-  top: 12.03%;
-  bottom: 46.84%;
-  font: {
-    weight: bold;
-  }
-  line-height: 24px;
-  color: $dark-blue;
-}
-
-.content-sub {
-  @extend %content-text;
-  top: 63.29%;
-  bottom: 22.78%;
-  font: {
-    weight: normal;
-  }
-  line-height: 36px;
-  color: rgba(0, 0, 0, 0.56);
-}
-
-.content-arrow {
-  position: absolute;
-  left: 91.95%;
-  right: 4.16%;
-  top: 40.51%;
-  bottom: 40.51%;
+  height: 126px;
 }
 </style>

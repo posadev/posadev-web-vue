@@ -1,7 +1,7 @@
 export default class WorkshopInfo {
   constructor(
     readonly name: string,
-    readonly photoURL: URL,
-    readonly speakerName: string
+    readonly speakerName: string,
+    readonly photoURL: URL
   ) {}
 }
