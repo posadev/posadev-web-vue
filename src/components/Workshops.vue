@@ -27,10 +27,8 @@ export default class Workshops extends Vue {
 </script>
 
 <style lang="scss">
-@import '../../node_modules/spectre.css/src/variables';
-
 @import '../styles/variables';
-@import '../../node_modules/spectre.css/src/layout';
+@import '~spectre.css/src/layout';
 
 .section-workshops {
   display: flex;
