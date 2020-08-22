@@ -1,9 +1,9 @@
 <template>
   <div class="container_card-center">
     <div class="card-center">
-      <h2 >{{ this.ticket.name }}</h2>
+      <h2>{{ this.ticket.name }}</h2>
       <h1>{{ this.ticket.price }}</h1>
-      <p >{{ this.ticket.start }} - {{ this.ticket.end }}</p>
+      <p>{{ this.ticket.start }} - {{ this.ticket.end }}</p>
     </div>
     <div>
       <ActionButton :info="ticketInfo" v-on:button-action="goTicketLink" />
@@ -32,5 +32,4 @@ export default class TicketCard extends Vue {
 <style lang="scss">
 @import '../../node_modules/spectre.css/src/variables';
 @import '../../node_modules/spectre.css/src/layout';
- 
 </style>
