@@ -8,7 +8,6 @@ module.exports = {
       .waitForElementVisible('#app')
       .assert.elementPresent('#commingSoonImage')
       .assert.elementPresent('.navBarLogo')
-      // .assert.containsText('h1', 'Welcome to Your Vue.js + TypeScript App')
       .assert.elementCount('img', 2)
       .end();
   },
