@@ -1,15 +1,15 @@
 <template>
-<div>
-  <div>
-    <h1>Tickets</h1>
-    <h2>Get yours while they are still available</h2>
-  </div>
-  <div class="columns">
-    <div v-for="item in orderedItems" v-bind:key="item.name">
-      <TicketCard :ticket="item" />
+  <div class="container-ticket">
+    <div class="titles">
+      <h1>Tickets</h1>
+      <h2>Get yours while they are still available</h2>
+    </div>
+    <div class="columns">
+      <div v-for="item in orderedItems" v-bind:key="item.name">
+        <TicketCard :ticket="item" />
+      </div>
     </div>
   </div>
-</div>
 </template>
 <script lang="ts">
 import TicketCard from '@/components/TicketCard.vue';
@@ -34,4 +34,3 @@ export default class TicketSection extends Vue {
 @import '../../node_modules/spectre.css/src/variables';
 @import '../../node_modules/spectre.css/src/layout';
 </style>
-*
