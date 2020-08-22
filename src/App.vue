@@ -11,34 +11,34 @@
 import NavigationBar from '@/components/NavigationBar.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import localeHandler from '@/localeHandler';
-import { Locales } from './locale';
+import { Language, Locales } from './locale';
 
 @Component({
   components: { NavigationBar }
 })
 export default class App extends Vue {
-  data() {
-    return {
-      languages: [
-        { id: 'en', title: 'English', locale: Locales.EN },
-        { id: 'es', title: 'Español', locale: Locales.ES }
-      ]
-    };
+  get languages(): Language[] {
+    return [
+      { id: 'en', title: 'English', locale: Locales.EN },
+      { id: 'es', title: 'Español', locale: Locales.ES }
+    ];
   }
 
-  changeLocale(locale: Locales): void {
+  private changeLocale(locale: Locales): void {
     localeHandler.changeLocale(locale);
   }
 }
 </script>
 
 <style lang="scss">
+@import 'styles/variables';
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: $project-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $primary-dark-color;
 }
 
 #nav {
@@ -46,7 +46,7 @@ export default class App extends Vue {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $primary-dark-color;
 
     &.router-link-exact-active {
       color: #42b983;
