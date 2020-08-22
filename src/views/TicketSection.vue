@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div v-for="item in orderedItems" v-bind:key="item.name">
-      <TicketCard :ticket="item" />
-    </div>
+    <TicketCard
+      v-for="item in orderedItems"
+      v-bind:key="item.name"
+      :ticket="item"
+    />
   </div>
 </template>
 
