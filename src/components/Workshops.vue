@@ -1,10 +1,11 @@
 <template>
   <div class="columns workshop-items">
     <WorkshopCard
-      class="column col-lg-4 col-md-8 col-sm-10 col-xs-12 workshop-item"
+      class="column col-2 col-xl-4 col-lg-6 col-md-8 col-sm-10 col-xs-12 workshop-item"
       v-for="workshop in workshops"
-      v-bind:info="workshop"
+      v-bind:workshop="workshop"
       v-bind:key="workshop.name"
+      v-on:workshop-click="onWorkshopClick"
     />
   </div>
 </template>
@@ -20,6 +21,10 @@ import workshopMocks from '@/mocks/Workshops.mock';
   components: { ActionButton, WorkshopCard }
 })
 export default class Workshops extends Vue {
+  public onWorkshopClick(workshop: WorkshopInfo) {
+    console.log(workshop);
+  }
+
   get workshops(): WorkshopInfo[] {
     return workshopMocks;
   }
@@ -41,10 +46,7 @@ export default class Workshops extends Vue {
 }
 
 .workshop-item {
-  margin: {
-    top: 1%;
-    bottom: 1%;
-  }
+  margin: 1%;
 }
 
 .btn-see-all {
