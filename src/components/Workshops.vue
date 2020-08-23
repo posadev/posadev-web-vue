@@ -21,12 +21,12 @@ import workshopMocks from '@/mocks/Workshops.mock';
   components: { ActionButton, WorkshopCard }
 })
 export default class Workshops extends Vue {
-  public onWorkshopClick(workshop: WorkshopInfo) {
-    console.log(workshop);
+  private get workshops(): WorkshopInfo[] {
+    return workshopMocks;
   }
 
-  get workshops(): WorkshopInfo[] {
-    return workshopMocks;
+  private onWorkshopClick(workshop: WorkshopInfo): WorkshopInfo {
+    return workshop;
   }
 }
 </script>

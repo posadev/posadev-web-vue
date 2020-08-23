@@ -26,7 +26,7 @@ export default class WorkshopCard extends Vue {
   @Prop({ required: true }) private workshop!: WorkshopInfo;
 
   @Emit('workshop-click')
-  public onClick() {
+  private onClick() {
     return this.workshop;
   }
 }
