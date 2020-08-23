@@ -3,7 +3,13 @@ export enum Locales {
   ES = 'es'
 }
 
-export const LOCALES = [
-  { value: Locales.EN, caption: 'English' },
-  { value: Locales.ES, caption: 'Español' }
-];
+export type Locale = {
+  value: Locales;
+  caption: string;
+};
+
+export type Language = {
+  id: string;
+  title: string;
+  locale: Locales;
+};
