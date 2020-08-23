@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <div>
+      <NavigationBar />
       <router-view />
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import NavigationBar from '@/components/NavigationBar.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import localeHandler from '@/localeHandler';
 import { Language, Locales } from './locale';
 
-@Component
+@Component({
+  components: { NavigationBar }
+})
 export default class App extends Vue {
   get languages(): Language[] {
     return [
