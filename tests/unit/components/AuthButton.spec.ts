@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import { AuthProvider } from '@firebase/auth-types';
 import AuthButton from '@/components/AuthButton.vue';
 import { shallowMount, Wrapper } from '@vue/test-utils';
-import AuthModel from '@/components/Auth.model';
+import AuthModel from '@/data/Auth.model';
 import UserCredential = firebase.auth.UserCredential;
 import Auth = firebase.auth.Auth;
 
