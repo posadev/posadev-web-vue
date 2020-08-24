@@ -29,4 +29,18 @@ export default class SponsorList extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
+
+@mixin query-only-screen-max-width($value-max-width: 768px) {
+  @media only screen and (max-width: $value-max-width) {
+    @content;
+  }
+}
+
+.containerSponsor {
+  @include query-only-screen-max-width {
+    width: 98vw;
+  }
+  width: 85vw;
+  margin: 0 auto;
+}
 </style>
