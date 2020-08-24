@@ -1,5 +1,5 @@
 <template>
-  <div class="columns containerSponsor">
+  <div class=" columns containerSponsor">
     <SponsorItem
       class="column"
       v-for="sponsor in sponsors"
@@ -26,14 +26,9 @@ export default class SponsorList extends Vue {
 }
 </script>
 
-<style>
-.containerSponsor {
-  width: 90%;
-  max-width: 768px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
+<style lang="scss">
+@import '../styles/variables';
+@import '../../node_modules/spectre.css/src/_layout';
+
+
 </style>
