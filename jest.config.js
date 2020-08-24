@@ -14,5 +14,10 @@ module.exports = {
     '!src/**/*.model.{js,vue,ts}',
     '!src/**/*.mock.{js,vue,ts}',
     '!src/main.ts' // No need to cover bootstrap file
-  ]
+  ],
+  transform: {
+    '.*\\.(vue)$': 'vue-jest',
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.ts?$': 'ts-jest'
+  }
 };
