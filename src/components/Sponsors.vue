@@ -20,7 +20,7 @@ import sponsors from '@/mocks/Sponsors.mock';
 })
 export default class SponsorList extends Vue {
   get sponsors(): Sponsor[] {
-    //FIXME: this is obtained from firebase
+    // FIXME: this is obtained from firebase
     return sponsors;
   }
 }
