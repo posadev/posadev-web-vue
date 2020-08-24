@@ -9,6 +9,11 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/communities',
+    name: 'communities',
+    component: () => import('../views/Community.vue')
   }
 ];
 

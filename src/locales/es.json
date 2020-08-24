@@ -1,5 +1,9 @@
 {
     "home" : {
         "welcome" : "Bienvenido a tu aplicación Vue.js"
+    },
+    "communnity" : {
+        "title": "Acerca de",
+        "subtitle": "Creamos eventos maravillosos"
     }
 }
