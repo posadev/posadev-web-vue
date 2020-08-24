@@ -23,27 +23,25 @@ module.exports = {
     app: {
       selector: '#app',
 
-      elements: {
-        logo: 'img'
-      },
-
       // - a page object section can also have sub-sections
       // - elements or sub-sections located here are retrieved using the "app" section as the base
       sections: {
-        headline: {
-          selector: 'h1'
-        },
-
-        welcome: {
-          // the equivalent css selector for the "welcome" sub-section would be:
-          //  '#app div.hello'
-          selector: 'div.hello',
-
+        navBar: {
+          selector: 'nav.navBar',
           elements: {
-            cliPluginLinks: {
-              selector: 'ul',
-              index: 0
+            logo: 'img',
+            navBarItem: {
+              selector: '.navBarItem'
             }
+          }
+        },
+        commingSoon: {
+          selector: 'div.home',
+          elements: {
+            image: {
+              selector: '#commingSoonImage'
+            },
+            actionButton: 'button'
           }
         }
       }

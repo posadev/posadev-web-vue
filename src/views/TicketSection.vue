@@ -1,31 +1,25 @@
 <template>
-  <div class="container-ticket">
-    <div class="titles">
-      <h1>Tickets</h1>
-      <h2>Get yours while they are still available</h2>
-    </div>
-    <div class="columns">
-      <div v-for="item in orderedItems" v-bind:key="item.name">
-        <TicketCard :ticket="item" />
-      </div>
-    </div>
+  <div>
+    <TicketCard
+      v-for="item in orderedItems"
+      v-bind:key="item.name"
+      :ticket="item"
+    />
   </div>
 </template>
+
 <script lang="ts">
 import TicketCard from '@/components/TicketCard.vue';
-import mockTicket from '@/mocks/tickets.mock.js';
 import { Component, Vue } from 'vue-property-decorator';
+import Ticket from '@/data/Ticket.model';
+import mockArray from '@/mocks/tickets.mock';
 
 @Component({
   components: { TicketCard }
 })
 export default class TicketSection extends Vue {
-  private items = mockTicket;
-
-  get orderedItems() {
-    return this.items.slice().sort((a, b) => {
-      return a.price - b.price;
-    });
+  get orderedItems(): Ticket[] {
+    return mockArray;
   }
 }
 </script>
