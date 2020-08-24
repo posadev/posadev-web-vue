@@ -7,7 +7,7 @@
 <script lang="ts">
 import * as firebase from 'firebase/app';
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import AuthModel from '@/components/Auth.model';
+import AuthModel from '@/data/Auth.model';
 
 @Component
 export default class AuthButton extends Vue {

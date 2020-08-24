@@ -6,12 +6,12 @@
       src="../assets/proximamente.png"
     />
     <div class="external-buttons">
-      <ActionButton
+      <AccentActionButton
         id="btn-cfs"
         :info="sponsorInfo"
         v-on:button-action="onSponsorClick"
       />
-      <ActionButton
+      <AccentActionButton
         id="btn-cfp"
         :info="speakerInfo"
         v-on:button-action="onSpeakerClick"
@@ -24,9 +24,10 @@
 import { Component, Vue } from 'vue-property-decorator';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import ActionButton from '@/components/ActionButton.vue';
+import AccentActionButton from '@/components/AccentActionButton.vue';
 
 @Component({
-  components: { ActionButton }
+  components: { AccentActionButton, ActionButton }
 })
 export default class Home extends Vue {
   private sponsorInfo = new ButtonInfo('Patrocina este evento');
@@ -46,6 +47,8 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss">
+@import '../styles/variables';
+
 .home {
   > img {
     width: 50%;
