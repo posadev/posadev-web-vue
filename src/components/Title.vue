@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1 class="title">{{ this.texts.title }}</h1>
-    <p v-if="this.texts.subtitle">{{ this.texts.subtitle }}</p>
+    <p v-if="this.texts.subtitle" class="subtitle">
+      {{ this.texts.subtitle }}
+    </p>
   </div>
 </template>
 
