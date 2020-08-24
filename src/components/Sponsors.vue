@@ -29,6 +29,4 @@ export default class SponsorList extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '../../node_modules/spectre.css/src/_layout';
-
-
 </style>
