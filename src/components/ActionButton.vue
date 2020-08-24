@@ -1,6 +1,6 @@
 <template>
   <div class="btn" :class="{ small: this.info.isSmall }" @click="action">
-    <button>{{ this.info.text }}</button>
+    <button :class="customClass">{{ this.info.text }}</button>
   </div>
 </template>
 
@@ -10,7 +10,10 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 
 @Component
 export default class ActionButton extends Vue {
-  @Prop({ required: true, type: ButtonInfo }) private info!: ButtonInfo;
+  @Prop({ required: true, type: ButtonInfo })
+  protected info!: ButtonInfo;
+
+  protected customClass = 'action-default';
 
   @Emit('button-action')
   private action() {
@@ -19,7 +22,7 @@ export default class ActionButton extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../styles/variables';
 
 .btn {
@@ -38,7 +41,6 @@ export default class ActionButton extends Vue {
       weight: bold;
       size: 16px;
     }
-    background: $accent-color;
     border: 1px solid transparent;
     border-radius: 6px;
   }
