@@ -12,10 +12,10 @@
         v-bind:key="barItem.path"
         :path="barItem.path"
       >
-        {{ barItem.text }}
+        {{ $t(barItem.textRef) }}
       </NavigationBarItem>
       <NavigationBarItem class="navBarItem navBarTicket" :path="'/tickets'">
-        Boletos
+        {{ $t('header.tickets') }}
       </NavigationBarItem>
     </div>
   </nav>
