@@ -11,9 +11,7 @@ export default class AccentActionButton extends ActionButton {
 <style lang="scss">
 @import '../styles/variables';
 
-.btn {
-  .accent {
-    background: $accent-color;
-  }
+.accent {
+  background: $accent-color;
 }
 </style>

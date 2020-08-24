@@ -1,6 +1,6 @@
 <template>
   <div class="btn" :class="{ small: this.info.isSmall }" @click="action">
-    <button :class="customClass">{{ this.info.text }}</button>
+    <button :class="[customClass, 'action-btn']">{{ this.info.text }}</button>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default class ActionButton extends Vue {
   @Prop({ required: true, type: ButtonInfo })
   protected info!: ButtonInfo;
 
-  protected customClass = 'action-default';
+  protected customClass = 'act-btn';
 
   @Emit('button-action')
   private action() {
@@ -31,7 +31,7 @@ export default class ActionButton extends Vue {
   display: flex;
   justify-content: center;
 
-  button {
+  .action-btn {
     width: 100%;
     height: 100%;
     text-align: center;
