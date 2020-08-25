@@ -1,6 +1,10 @@
 <template>
   <div class="sponsor" @click="goToLink">
-    <img class="photosponsor" :src="this.sponsor.pic" :alt="this.sponsor.name" />
+    <img
+      class="photosponsor"
+      :src="this.sponsor.pic"
+      :alt="this.sponsor.name"
+    />
   </div>
 </template>
 
@@ -18,13 +22,12 @@ export default class SponsorItem extends Vue {
 }
 </script>
 <style lang="scss">
-
 @mixin query-only-screen-max-width($value-max-width: 1024px) {
   @media only screen and (max-width: $value-max-width) {
     @content;
   }
 }
-.sponsor{
+.sponsor {
   @include query-only-screen-max-width {
     width: 138px;
     height: 51px;
@@ -33,9 +36,9 @@ export default class SponsorItem extends Vue {
     justify-content: center;
     background: black;
   }
-  width:196px;
+  width: 196px;
   height: 84px;
-  .photosponsor{
+  .photosponsor {
     @include query-only-screen-max-width {
       width: 136.71px;
       height: 50.15px;
