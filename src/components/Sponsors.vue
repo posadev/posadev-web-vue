@@ -1,13 +1,12 @@
 <template>
-  <div class="container">
     <div class="columns">
       <SponsorItem
+        class="column col-2 col-md-3 col-xs-5"
         v-for="sponsor in sponsors"
         v-bind:key="sponsor.name"
         :sponsor="sponsor"
       />
     </div>
-  </div>
 </template>
 
 <script lang="ts">
@@ -29,4 +28,10 @@ export default class SponsorList extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
+.columns {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
 </style>
