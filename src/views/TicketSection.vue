@@ -35,4 +35,13 @@ export default class TicketSection extends Vue {
 <style lang="scss">
 @import '../../node_modules/spectre.css/src/variables';
 @import '../../node_modules/spectre.css/src/layout';
+
+.ticket-items {
+  display: flex;
+  width: 90vw;
+  margin: auto;
+  justify-content: space-around;
+  
+}
+
 </style>
