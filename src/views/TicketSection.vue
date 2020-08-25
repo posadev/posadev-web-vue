@@ -3,6 +3,7 @@
     <Title :texts="titleInfo" />
   <div class="columns ticket-items">
     <TicketCard
+      class="column col-lg-4 col-md-8 col-sm-10 col-xs-12 ticket-item"
       v-for="item in orderedItems"
       v-bind:key="item.name"
       :ticket="item"
@@ -38,10 +39,17 @@ export default class TicketSection extends Vue {
 
 .ticket-items {
   display: flex;
-  width: 90vw;
+  width: 80vw;
   margin: auto;
   justify-content: space-around;
-  
+  align-items: center;
+}
+
+.ticket-item {
+  margin: {
+    top: 10px;
+    bottom: auto;
+  }
 }
 
 </style>
