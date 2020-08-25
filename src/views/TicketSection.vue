@@ -1,11 +1,13 @@
 <template>
   <div>
     <Title :texts="titleInfo" />
+  <div class="columns ticket-items">
     <TicketCard
       v-for="item in orderedItems"
       v-bind:key="item.name"
       :ticket="item"
     />
+  </div>
   </div>
 </template>
 
@@ -21,8 +23,10 @@ import mockArray from '@/mocks/tickets.mock';
   components: { TicketCard, Title }
 })
 export default class TicketSection extends Vue {
-   private titleInfo = new TitleTexts('Tickets' , "Get yours while they are still available");
- get orderedItems(): Ticket[] {
+  private titleInfo = new TitleTexts(
+    'Tickets' ,
+    "Get yours while they are still available");
+  get orderedItems(): Ticket[] {
     return mockArray;
   }
 }
