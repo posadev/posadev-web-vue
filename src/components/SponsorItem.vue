@@ -1,10 +1,6 @@
 <template>
-  <div class="sponsor" @click="goToLink">
-    <img
-      class="photosponsor"
-      :src="this.sponsor.pic"
-      :alt="this.sponsor.name"
-    />
+  <div class="column col-2 col-md-3 col-xs-5" @click="goToLink">
+    <img class="logo" :src="this.sponsor.pic" :alt="this.sponsor.name" />
   </div>
 </template>
 
@@ -22,29 +18,9 @@ export default class SponsorItem extends Vue {
 }
 </script>
 <style lang="scss">
-@mixin query-only-screen-max-width($value-max-width: 1024px) {
-  @media only screen and (max-width: $value-max-width) {
-    @content;
-  }
-}
-.sponsor {
-  @include query-only-screen-max-width {
-    width: 138px;
-    height: 51px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: black;
-  }
-  width: 196px;
-  height: 84px;
-  .photosponsor {
-    @include query-only-screen-max-width {
-      width: 136.71px;
-      height: 50.15px;
-    }
-    width: 196px;
-    height: 84px;
-  }
+@import '../styles/variables';
+@import '~spectre.css/src/_layout';
+.logo {
+  width: 100%;
 }
 </style>
