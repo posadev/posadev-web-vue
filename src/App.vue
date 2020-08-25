@@ -34,7 +34,6 @@ export default class App extends Vue {
 @import 'styles/jconf';
 
 #app {
-  font-family: $project-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
