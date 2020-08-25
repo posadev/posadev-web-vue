@@ -24,7 +24,7 @@ export default class TicketButton extends Vue {
 
 .btn {
   width: 306px;
-  height: 85.57px;
+  height: 80px;
   button {
     width: 100%;
     height: 100%;
