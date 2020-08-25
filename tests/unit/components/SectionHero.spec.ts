@@ -1,7 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import SectionHero from '@/components/SectionHero.vue';
 import TitleTexts from '@/data/TitleTexts.model';
-import ActionButton from '@/components/ActionButton.vue';
 
 describe('SectionHero component', () => {
   const title = new TitleTexts('Foo', 'Bar');
@@ -40,7 +39,8 @@ describe('SectionHero component', () => {
     const wrapper = shallowMount(SectionHero, {
       propsData: { title },
       slots: {
-        'hero-footer': '<div><div><span>bar</span><p>foo</p></div><div>Baz</div></div>'
+        'hero-footer':
+          '<div><div><span>bar</span><p>foo</p></div><div>Baz</div></div>'
       }
     });
 
