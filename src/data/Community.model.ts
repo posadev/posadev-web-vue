@@ -1,6 +1,7 @@
 export default class Community {
   constructor(
-    public readonly name: string,
+    public readonly titleName: string,
+    public readonly subtitleName: string,
     public readonly contact: string,
     public readonly landing_image_url: URL,
     public readonly logo_url: URL,

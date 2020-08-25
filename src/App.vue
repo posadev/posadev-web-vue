@@ -32,7 +32,10 @@ export default class App extends Vue {
 
 <style lang="scss">
 @import 'styles/variables';
-
+* {
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: $project-font;
   -webkit-font-smoothing: antialiased;

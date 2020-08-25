@@ -1,10 +1,10 @@
 <template>
-  <div class="communityCard_box">
+  <div v-bind:class="{ reverse: isOdd }" class="communityCard_box">
     <div class="communityCard_image">
       <img :src="this.communityInfo.landing_image_url" />
     </div>
     <CommnityDetail
-      class="communityCard_info"
+      class="communityCard_detail"
       :communityInfo="this.communityInfo"
     />
   </div>
@@ -22,6 +22,7 @@ import CommnityDetail from '@/components/CommunityDetail.vue';
 })
 export default class CommunityCard extends Vue {
   @Prop() private readonly communityInfo!: Community;
+  @Prop() private readonly isOdd!: boolean;
 }
 </script>
 
@@ -29,24 +30,35 @@ export default class CommunityCard extends Vue {
 .communityCard_box {
   display: flex;
   width: 100%;
+  margin: {
+    top: 40px;
+  }
+  flex-direction: row;
   &.reverse {
     flex-direction: row-reverse;
   }
 }
 .communityCard_image {
-  width: 40%;
+  flex: 1;
   img {
-    margin: {
-      top: 15px;
-      bottom: 15px;
-      left: 15px;
-      right: 15px;
-    }
-    width: 100%;
-    height: 100%;
+    width: 420px;
+    height: 400px;
+  }
+  padding: {
+    left: 10px;
+    right: 10px;
   }
 }
-.communityCard_info {
-  width: 60%;
+.communityCard_detail {
+  flex: 3;
+}
+
+@media only screen and (max-width: 768px) {
+  .communityCard_box {
+    flex-direction: column;
+    &.reverse {
+      flex-direction: column;
+    }
+  }
 }
 </style>

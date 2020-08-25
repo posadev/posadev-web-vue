@@ -1,20 +1,21 @@
 <template>
-  <div>
-    <div>
-      <div>
-        <div class="community_logo">
-          <img :src="this.communityInfo.logo_url" />
-        </div>
-        <div class="community_name">
-          <p>{{ this.communityInfo.name }}</p>
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="colum col-xl-3 col-xs-1 community_logo">
+        <img :src="this.communityInfo.logo_url" />
       </div>
+      <Title
+        class="col-xl-9 col-xs-1 community_title"
+        :texts="this.titleData"
+      />
     </div>
-    <div class="community_description">
+    <div class="community_detail">
       <p>{{ this.communityInfo.description }}</p>
-    </div>
-    <div>
-      <ActionButton :info="this.buttonInfo" />
+      <AccentActionButton
+        id="btn-community"
+        :info="buttonInfo"
+        v-on:button-action="onCommmunityClick"
+      />
     </div>
   </div>
 </template>
@@ -23,67 +24,78 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Community from './Community.model';
 import ButtonInfo from '@/data/ButtonInfo.model';
-import ActionButton from '@/components/ActionButton.vue';
-
+import AccentActionButton from '@/components/AccentActionButton.vue';
+import Title from '@/components/Title.vue';
+import TitleTexts from '@/data/TitleTexts.model';
 @Component({
   components: {
-    ActionButton
+    AccentActionButton,
+    Title
   }
 })
 export default class CommunityDetail extends Vue {
   @Prop() private readonly communityInfo!: Community;
 
-  private readonly buttonInfo = new ButtonInfo('Quiero saber mas');
+  get titleData(): TitleTexts {
+    return new TitleTexts(
+      this.communityInfo.titleName,
+      this.communityInfo.subtitleName
+    );
+  }
+  get buttonInfo(): ButtonInfo {
+    return new ButtonInfo('Quiero saber mas');
+  }
+  private onCommmunityClick() {
+    window.open(this.communityInfo.social_page_url.toString());
+  }
 }
 </script>
 
 <style lang="scss">
+@import '../styles/variables';
+@import '../../node_modules/spectre.css/src/_layout';
+
 .community_logo {
-  position: relative;
-  left: calc(50% - 160px / 2);
-  top: calc(50% - 160px / 2 - 491.5px);
+  margin: {
+    right: 10px;
+    left: 10px;
+  }
   img {
-    width: 160px;
-    height: 160px;
+    width: 146px;
+    height: 146px;
   }
 }
 
-.community_name {
-  position: relative;
-  left: 58.47%;
-  right: 5%;
-  top: 23.58%;
-  bottom: 74.54%;
-  font: {
-    style: normal;
-    weight: bold;
-    size: 55px;
+.community_detail {
+  margin: {
+    left: 10px;
   }
   p {
-    line-height: 30px;
-
-    display: flex;
-    align-items: center;
-
-    color: #333333;
+    text-align: left;
+    min-height: 75px;
+    max-height: 200;
+    margin: {
+      top: 25px;
+      bottom: 25px;
+    }
   }
 }
 
-.community_description {
-  position: relative;
-  left: 43.19%;
-  right: 5.07%;
-  top: 32.89%;
-  bottom: 58.16%;
-  font: {
-    style: normal;
-    weight: normal;
-    size: 16px;
+.community_title {
+  margin: {
+    left: 10px;
   }
-  p {
-    line-height: 36px;
+  h1 {
+    margin: {
+      top: 25px;
+      bottom: 15px;
+    }
+  }
+}
 
-    color: #333333;
+@media only screen and (max-width: 767px) {
+  .columns {
+    flex-direction: column;
   }
 }
 </style>
