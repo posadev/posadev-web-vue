@@ -1,12 +1,12 @@
 <template>
-    <div class="columns">
-      <SponsorItem
-        class="column col-2 col-md-3 col-xs-5"
-        v-for="sponsor in sponsors"
-        v-bind:key="sponsor.name"
-        :sponsor="sponsor"
-      />
-    </div>
+  <div class="columns">
+    <SponsorItem
+      class="column col-2 col-md-3 col-xs-5"
+      v-for="sponsor in sponsors"
+      v-bind:key="sponsor.name"
+      :sponsor="sponsor"
+    />
+  </div>
 </template>
 
 <script lang="ts">
