@@ -1,5 +1,5 @@
 <template>
-  <div class="column col-2 col-md-3 col-xs-5" @click="goToLink">
+  <div @click="goToLink">
     <img class="logo" :src="this.sponsor.pic" :alt="this.sponsor.name" />
   </div>
 </template>
