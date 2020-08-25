@@ -17,16 +17,4 @@ export default class SponsorItem extends Vue {
   }
 }
 </script>
-<style lang="scss">
-.sponsor {
-  width: 100px;
-
-  img {
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    width: 135px;
-  }
-}
-</style>
+<style lang="scss"></style>
