@@ -1,11 +1,12 @@
 <template>
-  <div class="columns containerSponsor">
-    <SponsorItem
-      class="column"
-      v-for="sponsor in sponsors"
-      v-bind:key="sponsor.name"
-      :sponsor="sponsor"
-    />
+  <div class="container">
+    <div class="columns">
+      <SponsorItem
+        v-for="sponsor in sponsors"
+        v-bind:key="sponsor.name"
+        :sponsor="sponsor"
+      />
+    </div>
   </div>
 </template>
 
@@ -25,22 +26,7 @@ export default class SponsorList extends Vue {
   }
 }
 </script>
-
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
-
-@mixin query-only-screen-max-width($value-max-width: 768px) {
-  @media only screen and (max-width: $value-max-width) {
-    @content;
-  }
-}
-
-.containerSponsor {
-  @include query-only-screen-max-width {
-    width: 98vw;
-  }
-  width: 85vw;
-  margin: 0 auto;
-}
 </style>
