@@ -3,7 +3,7 @@
     <div class="ticket">
       <h2>{{ this.ticket.name }}</h2>
       <h1>{{ this.ticket.price }}</h1>
-      <p class="fecha">{{ dateStart }} - {{  }}</p>
+      <p class="date">{{ dateStart }} - {{  }}</p>
       <TicketButton :info="ticketInfo" 
       v-on:button-action="goTicketLink" />
     </div>
