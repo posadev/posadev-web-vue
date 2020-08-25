@@ -1,5 +1,18 @@
 {
+    "header":{
+        "speakers":"Presentadores",
+        "schedule": "Agenda",
+        "venue": "Sede",
+        "sponsors": "Patrocinadores",
+        "login": "Login",
+        "language": "Idioma",
+        "tickets": "Boletos"
+    },
     "home" : {
         "welcome" : "Bienvenido a tu aplicación Vue.js"
+    },
+    "workshop": {
+        "photo": "Foto del instructor",
+        "more": "Mas información"
     }
 }
