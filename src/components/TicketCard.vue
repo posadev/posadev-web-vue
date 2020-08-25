@@ -3,9 +3,8 @@
     <div class="ticket">
       <h2>{{ this.ticket.name }}</h2>
       <h1>{{ this.ticket.price }}</h1>
-      <p class="fecha">{{ dateStart}} - {{  }}</p>
-      <TicketButton 
-      :info="ticketInfo" 
+      <p class="fecha">{{ dateStart }} - {{  }}</p>
+      <TicketButton :info="ticketInfo" 
       v-on:button-action="goTicketLink" />
     </div>
   </div>
@@ -27,9 +26,9 @@ export default class TicketCard extends Vue {
   private goTicketLink() {
     window.open(this.ticket.url);
   }
-  get dateStart () {
+  get dateStart() {
     return this.ticket.start.toString().substring(4, 12);
-}
+  }
 }
 </script>
 <style lang="scss">
