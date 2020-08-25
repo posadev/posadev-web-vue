@@ -11,20 +11,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Emit, Vue } from 'vue-property-decorator';
 import WorkshopInfo from '@/data/WorkshopInfo.model';
-import ActionButton from '@/components/ActionButton.vue';
 import WorkshopCard from '@/components/WorkshopCard.vue';
 import workshopMocks from '@/mocks/Workshops.mock';
 
 @Component({
-  components: { ActionButton, WorkshopCard }
+  components: { WorkshopCard }
 })
 export default class Workshops extends Vue {
   private get workshops(): WorkshopInfo[] {
     return workshopMocks;
   }
 
+  @Emit('workshop')
   private onWorkshopClick(workshop: WorkshopInfo): WorkshopInfo {
     return workshop;
   }
