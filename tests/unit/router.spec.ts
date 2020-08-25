@@ -26,7 +26,7 @@ describe('Router render test cases', () => {
     expect(wrapper.findComponent(Home).exists()).toBe(true);
   });
 
-  it('should go communities properly', () =>{
+  it('should go communities properly', () => {
     const wrapper = mount(App, {
       mocks: {
         $t: () => {

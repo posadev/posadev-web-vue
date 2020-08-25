@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Community from '@/data/Community.model'
+import Community from '@/data/Community.model';
 import CommunityCard from '@/components/CommunityCard.vue';
 import CommunityService from '@/services/CommunityService';
 

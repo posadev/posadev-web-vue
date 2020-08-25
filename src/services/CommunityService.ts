@@ -4,7 +4,7 @@ import Community from '@/data/Community.model';
 export default class CommunityService {
   private readonly collectionName = 'communities';
 
-  public findAll():Community[] {
+  public findAll(): Community[] {
     const communities: Community[] = [];
     db.collection(this.collectionName)
       .withConverter(this.getConverter())
@@ -34,7 +34,7 @@ export default class CommunityService {
         snapshot: firebase.firestore.QueryDocumentSnapshot,
         options: firebase.firestore.SnapshotOptions
       ): Community {
-        const data = snapshot.data(options)!;
+        const data = snapshot.data(options);
         return new Community(
           data.titleName,
           data.subtitleName,
