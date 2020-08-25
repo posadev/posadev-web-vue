@@ -23,12 +23,11 @@ export default class TicketButton extends Vue {
 @import '../styles/variables';
 
 .btn {
-  width: 416px;
-  height: 58px;
-  display: flex;
-  justify-content: center;
+  width: 306px;
+  height: 85.57px;
+  
 
-  button {
+button {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -36,11 +35,9 @@ export default class TicketButton extends Vue {
       family: $project-font;
       style: normal;
       weight: bold;
-      size: 16px;
+      size: 24px;
     }
-    background: red;
-    border: 1px solid transparent;
-    border-radius: 6px;
+    background: $inactive-color;
   }
 }
 </style>
