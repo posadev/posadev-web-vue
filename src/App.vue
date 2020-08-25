@@ -31,10 +31,9 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import 'styles/variables';
+@import 'styles/jconf';
 
 #app {
-  font-family: $project-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -47,10 +46,6 @@ export default class App extends Vue {
   a {
     font-weight: bold;
     color: $primary-dark-color;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
   }
 }
 </style>

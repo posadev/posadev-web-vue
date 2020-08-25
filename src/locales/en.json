@@ -9,5 +9,9 @@
     },
     "home" : {
         "welcome" : "Welcome to Your Vue.js App"
+    },
+    "workshop": {
+      "photo": "Presenter picture",
+      "more": "More information"
     }
 }
