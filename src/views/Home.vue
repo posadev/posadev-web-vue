@@ -17,6 +17,7 @@
         v-on:button-action="onSpeakerClick"
       />
     </div>
+    <AboutEvent />
   </div>
 </template>
 
@@ -25,9 +26,10 @@ import { Component, Vue } from 'vue-property-decorator';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import ActionButton from '@/components/ActionButton.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
+import AboutEvent from '@/components/AboutEvent.vue';
 
 @Component({
-  components: { AccentActionButton, ActionButton }
+  components: { AccentActionButton, ActionButton, AboutEvent }
 })
 export default class Home extends Vue {
   private sponsorInfo = new ButtonInfo('Patrocina este evento');
