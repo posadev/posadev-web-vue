@@ -1,3 +1,3 @@
 export default class ButtonTicket {
-    constructor(readonly text: string) {}
+  constructor(readonly text: string) {}
 }
