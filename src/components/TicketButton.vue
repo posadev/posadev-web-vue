@@ -1,6 +1,6 @@
 <template>
-  <div class="btn">
-    <button>{{ this.info.text }}</button>
+  <div>
+    <button class="btn">{{ this.info.text }}</button>
   </div>
 </template>
 
@@ -23,17 +23,21 @@ export default class TicketButton extends Vue {
 @import '../styles/variables';
 
 .btn {
-  width: 306px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: 80px;
   button {
     width: 100%;
     height: 100%;
     text-align: center;
+    border: none;
     font: {
       family: $project-font;
       style: normal;
       weight: bold;
       size: 24px;
+      font-color: #333333;
     }
     background: $inactive-color;
   }
