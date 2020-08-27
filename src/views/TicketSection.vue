@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section">
     <Title :texts="titleInfo" />
     <div class="columns">
       <TicketCard
@@ -36,13 +36,24 @@ export default class TicketSection extends Vue {
 </script>
 
 <style lang="scss">
-@import '../../node_modules/spectre.css/src/variables';
-@import '../../node_modules/spectre.css/src/layout';
+@import '~spectre.css/src/_variables';
+@import '~spectre.css/src/_layout';
+@import '../styles/_variables.scss';
 
+.section{
+  background-color: $background-section;
+  height: 200%;
+}
 .columns {
   padding: 0;
   margin: 0;
   align-items: center;
   justify-content: center;
+  justify-content: space-around;
+}
+
+.column {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 </style>
