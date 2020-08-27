@@ -1,25 +1,13 @@
 <template>
   <div>
-    <div >
+    <div>
       <Banner />
     </div>
     <div class="home">
-      <img
-        id="commingSoonImage"
-        alt="coming soon"
-        src="../assets/proximamente.png"
-      />
+      <img id="commingSoonImage" alt="coming soon" src="../assets/proximamente.png" />
       <div class="external-buttons">
-        <AccentActionButton
-          id="btn-cfs"
-          :info="sponsorInfo"
-          v-on:button-action="onSponsorClick"
-        />
-        <AccentActionButton
-          id="btn-cfp"
-          :info="speakerInfo"
-          v-on:button-action="onSpeakerClick"
-        />
+        <AccentActionButton id="btn-cfs" :info="sponsorInfo" v-on:button-action="onSponsorClick" />
+        <AccentActionButton id="btn-cfp" :info="speakerInfo" v-on:button-action="onSpeakerClick" />
       </div>
     </div>
   </div>
