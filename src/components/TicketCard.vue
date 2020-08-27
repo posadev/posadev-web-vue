@@ -61,16 +61,19 @@ export default class TicketCard extends Vue {
 .card {
   width: 306px;
   height: 316px;
+  :hover {
+    color: $primary-color;
+  }
 }
-
 .card-footer {
   :hover {
-    background-color: $primary-dark-color;
+    background-color: $primary-color;
+    color: $background-ticket;
     border: none;
   }
 }
 .card-header {
-  background-color: #FFFFFF;
+  background-color: $background-ticket;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -82,7 +85,10 @@ export default class TicketCard extends Vue {
     weight: bold;
     size: 24px;
   }
-  margin-top: 20px;
+  padding: {
+    top: 1.5rem;
+    bottom: 1rem;
+  }
   color: $inactive-text;
 }
 
@@ -93,12 +99,15 @@ export default class TicketCard extends Vue {
     weight: bold;
     size: 55px;
   }
+  padding: {
+    top: 1rem;
+    bottom: 2rem;
+  }
   margin: {
     top: 0;
   }
   color: black;
 }
-
 .date {
   font: {
     family: $project-font;
