@@ -1,6 +1,8 @@
 <template>
   <div class="section">
-    <Title :texts="titleInfo" />
+    <Title 
+    class="title"
+    :texts="titleInfo" />
     <div class="columns">
       <TicketCard
         class="column col-lg-4 col-md-8 col-sm-10 col-xs-12"
@@ -51,7 +53,11 @@ export default class TicketSection extends Vue {
   align-items: center;
 }
 .column {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.title {
+  padding-bottom: 3rem;
 }
 </style>
