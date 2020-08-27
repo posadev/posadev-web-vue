@@ -32,12 +32,11 @@ export default class TicketButton extends Vue {
   text-align: center;
   border: none;
   font: {
-      family: $project-font;
-      style: normal;
-      weight: bold;
-      size: 24px;
-      font-color: #333333;
-    }
+    family: $project-font;
+    style: normal;
+    weight: bold;
+    size: 21px;
+  }
   button {
     width: 100%;
     height: 100%;
