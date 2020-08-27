@@ -1,6 +1,6 @@
 <template>
-  <div class="card text-center">
-    <div class="card-header ">
+  <div class="card center">
+    <div class="card-header center">
       <p class="name">{{ this.ticket.name }}</p>
       <p class="price">{{ this.ticket.price }}</p>
       <p class="date">
@@ -53,40 +53,56 @@ export default class TicketCard extends Vue {
 }
 </script>
 <style lang="scss">
-@import '../../node_modules/spectre.css/src/variables';
-@import '../../node_modules/spectre.css/src/layout';
-@import '../../node_modules/spectre.css/src/hero';
+@import '~spectre.css/src/_variables';
+@import '~spectre.css/src/_layout';
+@import '~spectre.css/src/_hero';
 @import '../styles/_variables.scss';
 
 .card {
   width: 306px;
   height: 316px;
 }
+
 .card-footer {
-  margin: 0;
-  padding: 0;
+  :hover {
+    background-color: $primary-dark-color;
+    border: none;
+  }
+}
+.card-header {
+  margin-bottom: 20px;
 }
 
 .name {
-  font-family: $project-font;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  margin-top: 6px;
+  font: {
+    family: $project-font;
+    style: normal;
+    weight: bold;
+    size: 24px;
+  }
+  margin-top: 20px;
 }
+
 .price {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 55px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: $inactive-color;
+  font: {
+    family: $project-font;
+    style: normal;
+    weight: bold;
+    size: 55px;
+  }
+  margin: {
+    top: 0;
+  }
+  color: black;
 }
+
 .date {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
+  font: {
+    family: $project-font;
+    style: normal;
+    weight: normal;
+    size: 16px;
+  }
+  margin: 0;
 }
 </style>
