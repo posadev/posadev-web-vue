@@ -1,4 +1,4 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import Speakers from '@/components/Speakers.vue';
 import SpeakerCard from '@/components/SpeakerCard.vue';
 
