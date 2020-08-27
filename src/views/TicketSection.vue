@@ -40,7 +40,7 @@ export default class TicketSection extends Vue {
 @import '~spectre.css/src/_layout';
 @import '../styles/_variables.scss';
 
-.section{
+.section {
   background-color: $background-section;
   height: 200%;
 }
