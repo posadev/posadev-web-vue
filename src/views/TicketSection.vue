@@ -1,8 +1,6 @@
 <template>
   <div class="section">
-    <Title 
-    class="title"
-    :texts="titleInfo" />
+    <Title class="title" :texts="titleInfo" />
     <div class="columns">
       <TicketCard
         class="column col-lg-4 col-md-8 col-sm-10 col-xs-12"
