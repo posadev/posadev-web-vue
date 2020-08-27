@@ -29,7 +29,7 @@ export default class TicketCard extends Vue {
   @Prop() private ticket!: Ticket;
   private ticketInfo = new ButtonTicket('Comprar ahora');
 
-  private goTicketLink() {
+  private goTicketLink(): void {
     window.open(this.ticket.url.toString());
   }
   private formatDate(date: Date) {
@@ -70,7 +70,9 @@ export default class TicketCard extends Vue {
   }
 }
 .card-header {
-  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .name {
@@ -81,6 +83,7 @@ export default class TicketCard extends Vue {
     size: 24px;
   }
   margin-top: 20px;
+  color: $inactive-text;
 }
 
 .price {
@@ -104,5 +107,6 @@ export default class TicketCard extends Vue {
     size: 16px;
   }
   margin: 0;
+  color: rgba(0, 0, 0, 0.56);
 }
 </style>
