@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <img :src="this.speaker.photoURL" :alt="this.speaker.company" />
-      <p>{{ this.speaker.company }}</p>
+      <img class="photo-speaker" :src="this.speaker.photoURL" :alt="this.speaker.company" />
+      <p class="company"{{ this.speaker.company }}</p>
     </div>
     <div>
-      <p>{{ this.speaker.speakerName }}</p>
-      <p>{{ this.speaker.bio }}</p>
+      <p class="name">{{ this.speaker.speakerName }}</p>
+      <p class="bio">{{ this.speaker.bio }}</p>
     </div>
   </div>
 </template>
