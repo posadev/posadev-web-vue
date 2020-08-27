@@ -49,9 +49,7 @@ export default class TicketSection extends Vue {
   padding: 0;
   margin: 0;
   align-items: center;
-  
 }
-
 .column {
   padding-left: 30px;
   padding-right: 30px;

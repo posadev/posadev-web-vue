@@ -10,6 +10,6 @@ describe('TicketCard component', () => {
         ticket: mock
       }
     });
-    expect(wrapper.findAll('span').length).toBe(4);
+    expect(wrapper.findAll('p').length).toBe(3);
   });
 });
