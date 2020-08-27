@@ -42,14 +42,14 @@ export default class TicketSection extends Vue {
 
 .section {
   background-color: $background-section;
-  height: 200%;
+  height: 600px;
+  padding-top: 5rem;
 }
 .columns {
   padding: 0;
   margin: 0;
   align-items: center;
-  justify-content: center;
-  justify-content: space-around;
+  
 }
 
 .column {
