@@ -1,6 +1,6 @@
 <template>
-  <div class="socialLink">
-    <span @click="goToSocialLink()" :class="socialLink.social">text</span>
+  <div @click="goToSocialLink()" class="socialLink">
+    <span :class="socialLink.social">text</span>
   </div>
 </template>
 
@@ -36,14 +36,12 @@ export default class SocialButton extends Vue {
 }
 
 .github {
-  background-color: black;
-  // background-image: url('../assets/github.png');
+  background-image: url('../assets/github.png');
   @extend %social-style;
 }
 
 .linkedin {
-  background-color: cadetblue;
-  // background-image: url('../assets/linkedin.png');
+  background-image: url('../assets/linkedin.png');
   @extend %social-style;
 }
 
