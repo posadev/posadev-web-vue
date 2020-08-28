@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <Banner />
     <img
       id="commingSoonImage"
       alt="coming soon"
@@ -26,10 +25,9 @@ import { Component, Vue } from 'vue-property-decorator';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import ActionButton from '@/components/ActionButton.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
-import Banner from '@/components/Banner.vue';
 
 @Component({
-  components: { AccentActionButton, ActionButton, Banner }
+  components: { AccentActionButton, ActionButton }
 })
 export default class Home extends Vue {
   private sponsorInfo = new ButtonInfo('Patrocina este evento');
