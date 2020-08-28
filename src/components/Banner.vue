@@ -34,6 +34,7 @@ export default class Banner extends Vue {}
 .text-format {
   color: $white-color;
   text-align: -webkit-left;
+  text-align: left;
 }
 .content-banner-image {
   position: relative;
@@ -158,10 +159,6 @@ export default class Banner extends Vue {}
   .content {
     position: relative;
     display: block;
-  }
-
-  .bg {
-    min-width: 100%;
   }
   .textcontent {
     position: absolute;
