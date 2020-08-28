@@ -1,6 +1,6 @@
 <template>
-  <div class="sponsor" @click="goToLink">
-    <img :src="this.sponsor.pic" :alt="this.sponsor.name" />
+  <div @click="goToLink">
+    <img class="logo" :src="this.sponsor.pic" :alt="this.sponsor.name" />
   </div>
 </template>
 
@@ -17,4 +17,10 @@ export default class SponsorItem extends Vue {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/variables';
+@import '~spectre.css/src/_layout';
+.logo {
+  width: 100%;
+}
+</style>
