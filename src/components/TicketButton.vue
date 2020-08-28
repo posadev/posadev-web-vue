@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button   @click="goTicketLink()" class="btn">{{ this.info.text }} </button>
+    <button  @click="goTicketLink()" class="btn">{{ this.info.text }} </button>
   </div>
 </template>
 
