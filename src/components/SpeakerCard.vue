@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="containerImg">
       <img
         class="photo-speaker"
         :src="this.speaker.photoURL"
@@ -8,7 +8,7 @@
       />
       <p class="company">{{ this.speaker.company }}</p>
     </div>
-    <div>
+    <div class="texts">
       <p class="name">{{ this.speaker.speakerName }}</p>
       <p class="bio">{{ this.speaker.bio }}</p>
     </div>
@@ -23,4 +23,46 @@ export default class SpeakerCard extends Vue {
   @Prop({ required: true }) private speaker!: Speaker;
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/variables';
+.containerImg {
+  position: relative;
+  height: 235px;
+  padding-top: 1rem;
+  .company {
+    color: $inactive-color;
+    font-family: $project-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 75px;
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.texts {
+  background-color: $inactive-color;
+  font-family: $project-font;
+  font-style: normal;
+  height: 80px;
+  width: 306px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .name {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .bio {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.56);
+  }
+}
+</style>
