@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
-import { fetchImage } from '@/service/fetchImage';
+import { fetchImageURL } from '@/service/fetchImageURL';
 
 @Component
 export default class AboutEvent extends Vue {
@@ -19,7 +19,7 @@ export default class AboutEvent extends Vue {
 
   @Watch('image', { immediate: true })
   private async getImage() {
-    this.image = await fetchImage('about-event.jpg');
+    this.image = await fetchImageURL('about-event.jpg');
   }
 }
 </script>

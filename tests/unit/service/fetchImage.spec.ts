@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
 import Storage = firebase.storage.Storage;
-import { fetchImage } from '@/service/fetchImage';
+import { fetchImageURL } from '@/service/fetchImageURL';
 jest.mock('@/service/fetchImage');
 
 describe('get image to firebase storage', () => {
@@ -15,7 +15,7 @@ describe('get image to firebase storage', () => {
   });
   it('fetchImage has to return a URL', async () => {
     const imageRef = 'about-event.jpg';
-    const url = await fetchImage(imageRef);
+    const url = await fetchImageURL(imageRef);
     expect(url).toBe('gs://jconfmex-web-staging.appspot.com/about-event.jpg');
   });
 });
