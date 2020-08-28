@@ -1,4 +1,4 @@
-export type SocialNetwork = keyof SocialMedia
+export type SocialNetwork = keyof SocialMedia;
 
 export type SocialMedia = {
   readonly twitter?: URL;
@@ -9,6 +9,6 @@ export type SocialMedia = {
 };
 
 export type SocialLink = {
-  readonly url: URL,
-  readonly social: SocialNetwork
-}
+  readonly url: URL;
+  readonly social: SocialNetwork;
+};
