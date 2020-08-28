@@ -13,5 +13,8 @@
     "workshop": {
       "photo": "Presenter picture",
       "more": "More information"
-    }
+    },
+    "banner":{
+      "subtitle": "The most important JAVA event in Mexico"
+  }
 }

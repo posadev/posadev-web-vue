@@ -14,5 +14,8 @@
     "workshop": {
         "photo": "Foto del instructor",
         "more": "Mas información"
+    },
+    "banner":{
+        "subtitle": "El evento de JAVA más importante de México"
     }
 }

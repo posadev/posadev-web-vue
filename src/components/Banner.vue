@@ -1,12 +1,20 @@
 <template>
   <div class="col-xl-12 content">
-    <img
-      src="https://firebasestorage.googleapis.com/v0/b/jconfmex-web-staging.appspot.com/o/banner.png?alt=media&token=592557de-1352-4d6f-8adf-ee149dbe3953"
-      class="img-responsive bg"
-    />
+    <div class="content-banner-image">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/jconfmex-web-staging.appspot.com/o/banner.png?alt=media&token=592557de-1352-4d6f-8adf-ee149dbe3953"
+        class="img-responsive bg"
+      />
+
+      <img
+        class="img-responsive Banner-logo"
+        src="../assets/logoTransparente.png"
+        alt="logo"
+      />
+    </div>
     <section class="textcontent text-format">
       <h1 class="title">J Conf GDL 2020</h1>
-      <p class="text">El evento de Java más importante de México</p>
+      <p class="text">{{ $t('banner.subtitle') }}</p>
     </section>
   </div>
 </template>
@@ -27,6 +35,9 @@ export default class Banner extends Vue {}
   color: $inactive-color;
   text-align: -webkit-left;
 }
+.content-banner-image {
+  position: relative;
+}
 @mixin position($top, $left, $right, $bottom) {
   top: $top;
   left: $left;
@@ -34,8 +45,17 @@ export default class Banner extends Vue {}
   bottom: $bottom;
   position: absolute;
 }
+.content {
+  background: $primary-dark-color;
+}
 //Ipads and phones
 @media only screen and (max-width: 928px) {
+  .Banner-logo {
+    position: absolute;
+    right: 3%;
+    bottom: 10%;
+    max-width: 50%;
+  }
   section {
     background: $primary-dark-color;
     height: 13rem;
@@ -45,7 +65,8 @@ export default class Banner extends Vue {}
       @include position(10%, 4.44%, 50%, 0%);
     }
     p {
-      @include position(40.49%, 4.44%, 30.0%, 91.38%);
+      @include position(50.49%, 4.44%, 30%, 91.38%);
+      font-size: 20px;
     }
   }
   .title {
@@ -53,8 +74,35 @@ export default class Banner extends Vue {}
     line-height: 39px;
   }
 }
+@media only screen and (max-height: 568px) {
+  .bg {
+    height: 19rem;
+  }
+}
+@media only screen and (max-height: 640px) and (min-height: 569px){
+  .bg {
+    height: 23.5rem;
+  }
+}
+@media only screen and (max-height: 731px) and (min-height: 641px) {
+  .bg {
+    height: 28.5rem;
+  }
+}
+//pixel 2xl
+@media only screen and (max-height: 823px) and (min-height: 732px) {
+  .bg {
+    height: 33.8rem;
+  }
+}
 //Laptops and computers
 @media only screen and (min-width: 929px) {
+  .Banner-logo {
+    position: absolute;
+    right: 3%;
+    bottom: 10%;
+    max-width: 20%;
+  }
   .text {
     font-size: 24px;
     line-height: 43px;
@@ -67,6 +115,7 @@ export default class Banner extends Vue {}
     position: relative;
     display: block;
   }
+
   .bg {
     min-width: 100%;
   }
