@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <span>{{ legend }}</span>
-    <SocialButton
-      v-for="(url, key) in socialMedia"
-      v-bind:key="key"
-      :social-link="mapSocial(key, url)"
-    />
+  <div class="social">
+    <div>
+      <span>{{ info }}</span>
+    </div>
+    <div class="social-content">
+      <SocialButton
+        v-for="(url, key) in socialMedia"
+        v-bind:key="key"
+        :social-link="mapSocial(key, url)"
+      />
+    </div>
   </div>
 </template>
 
@@ -23,7 +27,7 @@ import SocialButton from '@/components/SocialButton.vue';
 })
 export default class SocialLinks extends Vue {
   @Prop({ required: true })
-  private legend!: string;
+  private info!: string;
 
   @Prop({ required: true })
   private socialMedia!: SocialMedia;
@@ -34,4 +38,18 @@ export default class SocialLinks extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.social {
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+  // justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.social-content {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+</style>

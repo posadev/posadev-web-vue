@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button :class="socialLink.socialNetwork">Hola</button>
+  <div class="socialLink">
+    <span @click="goToSocialLink()" :class="socialLink.social">text</span>
   </div>
 </template>
 
@@ -12,27 +12,43 @@ import { SocialLink } from '@/data/SocialMedia.type';
 export default class SocialButton extends Vue {
   @Prop({ required: true })
   private socialLink!: SocialLink;
+
+  private goToSocialLink(): void {
+    window.open(this.socialLink.url.toString());
+  }
 }
 </script>
 
 <style lang="scss">
+%social-style {
+  background-repeat: no-repeat;
+  padding: 8px;
+  color: transparent;
+}
 .twitter {
-  background: #4c92bd;
+  background-image: url('../assets/twitter.png');
+  @extend %social-style;
 }
 
 .facebook {
-  background: #1d3461;
+  background-image: url('../assets/facebook.png');
+  @extend %social-style;
 }
 
 .github {
-  background: black;
+  background-color: black;
+  // background-image: url('../assets/github.png');
+  @extend %social-style;
 }
 
 .linkedin {
-  background: #42b983;
+  background-color: cadetblue;
+  // background-image: url('../assets/linkedin.png');
+  @extend %social-style;
 }
 
 .instagram {
-  background: hotpink;
+  background-image: url('../assets/instagram.png');
+  @extend %social-style;
 }
 </style>
