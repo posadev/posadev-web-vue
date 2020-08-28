@@ -1,5 +1,5 @@
 <template>
-  <div @click="goToSocialLink()" class="socialLink">
+  <div @click="goToSocialLink" class="socialLink">
     <span :class="socialLink.social">text</span>
   </div>
 </template>
