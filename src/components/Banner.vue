@@ -3,7 +3,7 @@
     <div class="content-banner-image">
       <img
         src="https://firebasestorage.googleapis.com/v0/b/jconfmex-web-staging.appspot.com/o/banner.png?alt=media&token=592557de-1352-4d6f-8adf-ee149dbe3953"
-        class="img-responsive bg"
+        class="img-responsive img-banner"
       />
 
       <img
@@ -32,7 +32,7 @@ export default class Banner extends Vue {}
 @import '~spectre.css/src/_media.scss';
 
 .text-format {
-  color: $inactive-color;
+  color: $white-color;
   text-align: -webkit-left;
 }
 .content-banner-image {
@@ -48,6 +48,9 @@ export default class Banner extends Vue {}
 .content {
   background: $primary-dark-color;
 }
+.img-banner {
+  width: 100%;
+}
 //Ipads and phones
 @media only screen and (max-width: 928px) {
   .Banner-logo {
@@ -56,9 +59,12 @@ export default class Banner extends Vue {}
     bottom: 10%;
     max-width: 50%;
   }
+  .img-banner {
+    height: 60vh;
+  }
   section {
     background: $primary-dark-color;
-    height: 13rem;
+    height: 30vh;
     position: relative;
 
     h1 {
@@ -73,26 +79,64 @@ export default class Banner extends Vue {}
     font-size: 32px;
     line-height: 39px;
   }
-}
-@media only screen and (max-height: 568px) {
-  .bg {
-    height: 19rem;
+  //iphone 5/SE
+  @media only screen and (max-height: 568px) {
+    .text {
+      padding-top: 0.6rem;
+    }
+    .title {
+      line-height: 2rem;
+    }
   }
-}
-@media only screen and (max-height: 640px) and (min-height: 569px){
-  .bg {
-    height: 23.5rem;
+  // iphone 6,7,8 plus
+  @media only screen and (max-height: 736px) and (min-height: 641px) {
+    .title {
+      font-size: 2.3rem;
+    }
+    .text {
+      font-size: 1.4rem;
+    }
   }
-}
-@media only screen and (max-height: 731px) and (min-height: 641px) {
-  .bg {
-    height: 28.5rem;
+  //pixel 2xl
+  @media only screen and (max-height: 823px) and (min-height: 737px) {
+    .text {
+      font-size: 1.5rem;
+    }
   }
-}
-//pixel 2xl
-@media only screen and (max-height: 823px) and (min-height: 732px) {
-  .bg {
-    height: 33.8rem;
+  //ipad
+  @media only screen and (max-height: 1024px) and (min-height: 824px) {
+    .title {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+    .text {
+      font-size: 2.5rem;
+    }
+    .Banner-logo {
+      max-width: 35%;
+    }
+    section {
+      height: 40vh;
+    }
+  }
+  //Galaxy fold
+  @media only screen and (max-width: 280px) {
+    .title {
+      font-size: 2rem;
+      line-height: 2rem;
+      right: 30%;
+    }
+    .text {
+      font-size: 1.3rem;
+      right: 15%;
+      top: 40%;
+    }
+    .img-banner {
+      height: 50vh;
+    }
+    section {
+      height: 40vh;
+    }
   }
 }
 //Laptops and computers
