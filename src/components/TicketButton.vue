@@ -1,20 +1,22 @@
 <template>
   <div>
-    <button class="btn">{{ this.info.text }}</button>
+    <button   @click="goTicketLink()" class="btn">{{ this.info.text }} </button>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import ButtonTicket from '@/data/ButtonTicket.model';
+import Ticket from '@/data/Ticket.model';
 
 @Component
 export default class TicketButton extends Vue {
   @Prop({ required: true, type: ButtonTicket }) private info!: ButtonTicket;
+  @Prop({ required: true })
+  private ticketUrl!: Ticket;
 
-  @Emit('button-action')
-  private action() {
-    //Reserved for later usage of analytics or other action
+  private goTicketLink(): void {
+    window.open(this.ticketUrl.url.toString());
   }
 }
 </script>
