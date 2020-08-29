@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="columns">
     <SpeakerCard
+      class="column"
       v-for="speaker in speakers"
       v-bind:key="speaker.name"
       :speaker="speaker"
@@ -24,4 +25,13 @@ export default class Speakers extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/variables';
+@import '~spectre.css/src/_layout';
+.columns {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+</style>
