@@ -9,7 +9,7 @@
       <p class="company">{{ this.speaker.company }}</p>
     </div>
     <div class="texts">
-      <p class="name">{{ this.speaker.name }}</p>
+      <p class="name">{{ this.speaker.speakerName }}</p>
       <p class="bio">{{ this.speaker.bio }}</p>
     </div>
   </div>

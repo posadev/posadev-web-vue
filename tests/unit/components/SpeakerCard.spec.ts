@@ -22,7 +22,7 @@ describe('SpeakerCard component', () => {
     expect(photo.exists()).toBe(true);
     expect(photo.attributes()['src']).toBe(fake.photoURL.toString());
     expect(company.text()).toBe(fake.company);
-    expect(name.text()).toBe(fake.name);
+    expect(name.text()).toBe(fake.speakerName);
     expect(ocupation.text()).toBe(fake.bio);
   });
 });
