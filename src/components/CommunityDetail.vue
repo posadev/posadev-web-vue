@@ -14,7 +14,7 @@
       <AccentActionButton
         id="btn-community"
         :info="buttonInfo"
-        v-on:button-action="onCommmunityClick"
+        v-on:button-action="onCommunityClick"
       />
     </div>
   </div>
@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Community from './Community.model';
+import Community from '@/data/Community.model';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import Title from '@/components/Title.vue';
@@ -45,7 +45,7 @@ export default class CommunityDetail extends Vue {
   get buttonInfo(): ButtonInfo {
     return new ButtonInfo('Quiero saber mas');
   }
-  private onCommmunityClick() {
+  private onCommunityClick() {
     window.open(this.communityInfo.social_page_url.toString());
   }
 }

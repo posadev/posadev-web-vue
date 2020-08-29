@@ -1,10 +1,10 @@
 <template>
-  <div v-bind:class="{ reverse: isOdd }" class="communityCard_box">
-    <div class="communityCard_image">
+  <div v-bind:class="{ reverse: isOdd }" class="community-card-box">
+    <div class="community-card-image">
       <img :src="this.communityInfo.landing_image_url" />
     </div>
-    <CommnityDetail
-      class="communityCard_detail"
+    <CommunityDetail
+      class="community-card-detail"
       :communityInfo="this.communityInfo"
     />
   </div>
@@ -12,12 +12,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Community from './Community.model';
-import CommnityDetail from '@/components/CommunityDetail.vue';
+import Community from '@/data/Community.model';
+import CommunityDetail from '@/components/CommunityDetail.vue';
 
 @Component({
   components: {
-    CommnityDetail
+    CommunityDetail
   }
 })
 export default class CommunityCard extends Vue {
@@ -27,7 +27,7 @@ export default class CommunityCard extends Vue {
 </script>
 
 <style lang="scss">
-.communityCard_box {
+.community-card-box {
   display: flex;
   width: 100%;
   margin: {
@@ -38,7 +38,7 @@ export default class CommunityCard extends Vue {
     flex-direction: row-reverse;
   }
 }
-.communityCard_image {
+.community-card-image {
   flex: 1;
   img {
     width: 420px;
@@ -49,12 +49,12 @@ export default class CommunityCard extends Vue {
     right: 10px;
   }
 }
-.communityCard_detail {
+.community-card-detail {
   flex: 3;
 }
 
 @media only screen and (max-width: 768px) {
-  .communityCard_box {
+  .community-card-box {
     flex-direction: column;
     &.reverse {
       flex-direction: column;
