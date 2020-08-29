@@ -2,7 +2,7 @@
   <div class="container">
     <div class="columns">
       <div class="colum col-xl-3 col-xs-1 community-logo">
-        <img :src="this.communityInfo.logo_url" />
+        <img :src="this.communityInfo.logoUrl" />
       </div>
       <Title
         class="col-xl-9 col-xs-1 community-title"
@@ -46,7 +46,7 @@ export default class CommunityDetail extends Vue {
     return new ButtonInfo('Quiero saber mas');
   }
   private onCommunityClick() {
-    window.open(this.communityInfo.social_page_url.toString());
+    window.open(this.communityInfo.socialPageUrl.toString());
   }
 }
 </script>

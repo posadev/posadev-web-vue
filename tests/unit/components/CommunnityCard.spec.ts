@@ -10,12 +10,12 @@ describe('CommunityCard.vue', () => {
         communityInfo: mock
       }
     });
-    const landingImage = wrapper.find('div.communityCard_image').find('img');
+    const landingImage = wrapper.find('div.community-card-image').find('img');
     const detail = wrapper.findComponent(CommunityDetail);
 
     expect(landingImage.exists()).toBe(true);
     expect(landingImage.attributes()['src']).toBe(
-      mock.landing_image_url.toString()
+      mock.landingImageUrl.toString()
     );
     expect(detail.exists()).toBe(true);
   });

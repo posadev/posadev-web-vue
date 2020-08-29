@@ -1,7 +1,7 @@
 <template>
   <div v-bind:class="['community-card-box', { reverse: isOdd }]">
     <div class="community-card-image">
-      <img :src="this.communityInfo.landing_image_url" />
+      <img :src="this.communityInfo.landingImageUrl" />
     </div>
     <CommunityDetail
       class="community-card-detail"

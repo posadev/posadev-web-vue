@@ -24,9 +24,9 @@ export default class CommunityService {
           community.titleName,
           community.subtitleName,
           community.contact,
-          community.landing_image_url,
-          community.logo_url,
-          community.social_page_url,
+          community.landingImageUrl,
+          community.logoUrl,
+          community.socialPageUrl,
           community.description
         );
       },
@@ -39,9 +39,9 @@ export default class CommunityService {
           data.titleName,
           data.subtitleName,
           data.contact,
-          new URL(data.landing_image_url),
-          new URL(data.logo_url),
-          new URL(data.social_page_url),
+          new URL(data.landingImageUrl),
+          new URL(data.logoUrl),
+          new URL(data.socialPageUrl),
           data.description
         );
       }

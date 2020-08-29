@@ -3,9 +3,9 @@ export default class Community {
     public readonly titleName: string,
     public readonly subtitleName: string,
     public readonly contact: string,
-    public readonly landing_image_url: URL,
-    public readonly logo_url: URL,
-    public readonly social_page_url: URL,
+    public readonly landingImageUrl: URL,
+    public readonly logoUrl: URL,
+    public readonly socialPageUrl: URL,
     public readonly description: string
   ) {}
 }
