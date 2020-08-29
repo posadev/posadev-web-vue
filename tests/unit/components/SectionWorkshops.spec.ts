@@ -26,7 +26,8 @@ describe('SectionSpeakers component', () => {
           home: {
             workshops: {
               title: 'Workshops',
-              subtitle: 'Cada taller tendrá un costo adicional a su entrada a las conferencias',
+              subtitle:
+                'Cada taller tendrá un costo adicional a su entrada a las conferencias',
               bottomButton: 'Ver todos los workshops'
             }
           }
