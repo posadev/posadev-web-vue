@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="colum col-xl-3 col-xs-1 community_logo">
+      <div class="colum col-xl-3 col-xs-1 community-logo">
         <img :src="this.communityInfo.logo_url" />
       </div>
       <Title
-        class="col-xl-9 col-xs-1 community_title"
+        class="col-xl-9 col-xs-1 community-title"
         :texts="this.titleData"
       />
     </div>
-    <div class="community_detail">
+    <div class="community-detail">
       <p>{{ this.communityInfo.description }}</p>
       <AccentActionButton
         id="btn-community"
@@ -55,7 +55,7 @@ export default class CommunityDetail extends Vue {
 @import '../styles/variables';
 @import '../../node_modules/spectre.css/src/_layout';
 
-.community_logo {
+.community-logo {
   margin: {
     right: 10px;
     left: 10px;
@@ -66,7 +66,7 @@ export default class CommunityDetail extends Vue {
   }
 }
 
-.community_detail {
+.community-detail {
   margin: {
     left: 10px;
   }
@@ -81,7 +81,7 @@ export default class CommunityDetail extends Vue {
   }
 }
 
-.community_title {
+.community-title {
   margin: {
     left: 10px;
   }
