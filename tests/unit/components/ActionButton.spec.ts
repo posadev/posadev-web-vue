@@ -26,4 +26,34 @@ describe('ActionButton when mounted', () => {
 
     expect(listener).toHaveBeenCalled();
   });
+
+  it('should have the small class when buttonInfo has a true value', () => {
+    const wrapper = shallowMount(ActionButton, {
+      propsData: {
+        info: new ButtonInfo('expected', true)
+      }
+    });
+
+    expect(wrapper.find('.small').exists()).toBe(true);
+  });
+
+  it('should NOT have the small class when buttonInfo has a false value', () => {
+    const wrapper = shallowMount(ActionButton, {
+      propsData: {
+        info: new ButtonInfo('expected', false)
+      }
+    });
+
+    expect(wrapper.find('.small').exists()).toBe(false);
+  });
+
+  it('should NOT have the small class when buttonInfo has no second value', () => {
+    const wrapper = shallowMount(ActionButton, {
+      propsData: {
+        info: new ButtonInfo('expected')
+      }
+    });
+
+    expect(wrapper.find('.small').exists()).toBe(false);
+  });
 });
