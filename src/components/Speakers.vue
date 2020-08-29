@@ -33,6 +33,5 @@ export default class Speakers extends Vue {
   margin: 0;
   align-items: center;
   justify-content: center;
-  background: $primary-dark-color;
 }
 </style>
