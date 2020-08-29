@@ -11,7 +11,7 @@
     <TicketButton
       class="card-footer center"
       :info="ticketInfo"
-      v-on:button-action="goTicketLink"
+      :ticketUrl="ticket"
     />
   </div>
 </template>
@@ -29,9 +29,6 @@ export default class TicketCard extends Vue {
   @Prop() private ticket!: Ticket;
   private ticketInfo = new ButtonTicket('Comprar ahora');
 
-  private goTicketLink(): void {
-    window.open(this.ticket.url.toString());
-  }
   private formatDate(date: Date) {
     const months = [
       'Ene',
