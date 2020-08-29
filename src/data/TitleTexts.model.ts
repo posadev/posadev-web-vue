@@ -1,6 +1,8 @@
+import { LocaleMessages } from 'vue-i18n';
+
 export default class TitleTexts {
   constructor(
-    readonly title: string,
-    readonly subtitle: string | null = null
+    readonly title: string | LocaleMessages,
+    readonly subtitle: string | LocaleMessages | null = null
   ) {}
 }
