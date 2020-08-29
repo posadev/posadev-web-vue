@@ -17,7 +17,7 @@ import mockArray from '@/mocks/tickets.mock';
 @Component({
   components: { TicketCard }
 })
-export default class TicketSection extends Vue {
+export default class Tickets extends Vue {
   get orderedItems(): Ticket[] {
     return mockArray;
   }
