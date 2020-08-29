@@ -10,31 +10,10 @@
     "communities": "Comunidades"
   },
   "home": {
-    "welcome": "Bienvenido a tu aplicación Vue.js",
-    "speakers": {
-      "title": "Speakers",
-      "subtitle": "Conoce a los profesionales de la industria que nos acompañan",
-      "topButton": "Participa como speaker aquí",
-      "bottomButton": "Ver todos los speakers"
-    },
-    "workshops": {
-      "title": "Workshops",
-      "subtitle": "Cada taller tendrá un costo adicional a su entrada a las conferencias",
-      "bottomButton": "Ver todos los workshops"
-    },
-    "tickets": {
-      "title": "Tickets",
-      "subtitle": "Consigue tu entrada mientras estan disponibles"
-    },
-    "sponsors": {
-      "title": "Sponsors",
-      "subtitle": "Conoce a los profesionales de la industria que nos acompañan",
-      "topButton": "Patrocina este evento"
-    },
-    "contact": {
-      "title": "¿Tienes alguna pregunta?",
-      "subtitle": "Escribenos o puedes contactarnos por nuestras redes sociales.",
-      "topButton": "Enviar e-mail"
-    }
+    "welcome": "Bienvenido a tu aplicación Vue.js"
+  },
+  "workshop": {
+    "photo": "Foto del instructor",
+    "more": "Mas información"
   }
 }
