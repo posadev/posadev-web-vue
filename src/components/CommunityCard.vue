@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="{ reverse: isOdd }" class="community-card-box">
+  <div v-bind:class="['community-card-box', { reverse: isOdd }]">
     <div class="community-card-image">
       <img :src="this.communityInfo.landing_image_url" />
     </div>
