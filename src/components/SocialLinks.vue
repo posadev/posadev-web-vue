@@ -43,7 +43,6 @@ export default class SocialLinks extends Vue {
   display: flex;
   flex-direction: row;
   height: 32px;
-  // justify-content: center;
   align-items: center;
   font-weight: bold;
 }
