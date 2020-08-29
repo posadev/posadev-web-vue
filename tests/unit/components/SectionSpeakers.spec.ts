@@ -16,7 +16,7 @@ describe('SectionSpeakers component', () => {
     });
 
     expect(wrapper.findAllComponents(AccentActionButton).length).toBe(2);
-    expect(wrapper.find(Speakers).exists()).toBe(true);
+    expect(wrapper.findComponent(Speakers).exists()).toBe(true);
   });
 
   it('should call a method when a click happens', () => {
