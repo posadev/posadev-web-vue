@@ -13,13 +13,20 @@ describe('testing Banner Component', () => {
       }
     }
   });
+
   it('Image Banner has src correct', () => {
     const src = `https://firebasestorage.googleapis.com/v0/b/jconfmex-web-staging.appspot.com/o/banner.png?alt=media&token=592557de-1352-4d6f-8adf-ee149dbe3953`;
     const imageBanner = wrapper.find(`img[src]`);
     expect(imageBanner.attributes('src')).toBe(src);
   });
+
   it('paragraph text has the text correct', () => {
     const paragraph = wrapper.find('p[class="text"]');
-    expect(paragraph.text().length > 0).toBe(true);
+    expect(paragraph.exists()).toBe(true);
+  });
+
+  it('should have at least two images, one for logo and one for background', () => {
+    const images = wrapper.findAll('img');
+    expect(images.length).toBeGreaterThan(1);
   });
 });
