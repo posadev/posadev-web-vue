@@ -35,12 +35,6 @@ export default class Workshops extends Vue {
 @import '../styles/variables';
 @import '~spectre.css/src/layout';
 
-.section-workshops {
-  display: flex;
-  flex-direction: column;
-  background: $primary-color;
-}
-
 .workshop-items {
   justify-content: center;
 }
