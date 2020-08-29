@@ -15,13 +15,13 @@ describe('CommunityDetail.vue', () => {
         communityInfo: mock
       }
     });
-    const logo = wrapper.find('div.community_logo').find('img');
+    const logo = wrapper.find('div.community-logo').find('img');
     const tittle = wrapper.findComponent(Title);
-    const description = wrapper.find('.community_detail').find('p');
+    const description = wrapper.find('.community-detail').find('p');
     const button = wrapper.findComponent(AccentActionButton);
 
     expect(logo.exists()).toBe(true);
-    expect(logo.attributes()['src']).toBe(mock.logo_url.toString());
+    expect(logo.attributes()['src']).toBe(mock.logoUrl.toString());
     expect(tittle.exists()).toBe(true);
     expect(description.exists()).toBe(true);
     expect(description.text()).toBe(mock.description);
