@@ -7,13 +7,13 @@
       />
 
       <img
-        class="img-responsive Banner-logo"
+        class="img-responsive banner-logo"
         src="../assets/logoTransparente.png"
         alt="logo"
       />
     </div>
     <section class="textcontent text-format">
-      <h1 class="title">J Conf GDL 2020</h1>
+      <h1 class="title">JConf GDL 2020</h1>
       <p class="text">{{ $t('banner.subtitle') }}</p>
     </section>
   </div>
@@ -54,7 +54,7 @@ export default class Banner extends Vue {}
 }
 //Ipads and phones
 @media only screen and (max-width: 928px) {
-  .Banner-logo {
+  .banner-logo {
     position: absolute;
     right: 3%;
     bottom: 10%;
@@ -113,7 +113,7 @@ export default class Banner extends Vue {}
     .text {
       font-size: 2.5rem;
     }
-    .Banner-logo {
+    .banner-logo {
       max-width: 35%;
     }
     section {
@@ -142,7 +142,7 @@ export default class Banner extends Vue {}
 }
 //Laptops and computers
 @media only screen and (min-width: 929px) {
-  .Banner-logo {
+  .banner-logo {
     position: absolute;
     right: 3%;
     bottom: 10%;
