@@ -1,6 +1,5 @@
 <template>
   <div class="section">
-    <Title class="title" :texts="titleInfo" />
     <div class="columns">
       <TicketCard
         class="column col-lg-4 col-md-8 col-sm-10 col-xs-12"
@@ -17,18 +16,12 @@ import { Component, Vue } from 'vue-property-decorator';
 import TicketCard from '@/components/TicketCard.vue';
 import Title from '@/components/Title.vue';
 import Ticket from '@/data/Ticket.model';
-import TitleTexts from '@/data/TitleTexts.model';
 import mockArray from '@/mocks/tickets.mock';
 
 @Component({
   components: { TicketCard, Title }
 })
 export default class TicketSection extends Vue {
-  private titleInfo = new TitleTexts(
-    'Tickets',
-    'Get yours while they are still available'
-  );
-
   get orderedItems(): Ticket[] {
     return mockArray;
   }
@@ -41,7 +34,6 @@ export default class TicketSection extends Vue {
 @import '../styles/_variables.scss';
 
 .section {
-  background-color: $background-section;
   height: 600px;
   padding-top: 5rem;
 }

@@ -1,29 +1,40 @@
 import { shallowMount } from '@vue/test-utils';
 import TicketButton from '@/components/TicketButton.vue';
-import ButtonTicket from '@/data/ButtonTicket.model';
+import ButtonInfo from '@/data/ButtonInfo.model';
+import Ticket from '@/data/Ticket.model';
 
 describe('TicketButton when mounted', () => {
-  it('should contain text', () => {
-    const expected = 'Foo Bar Baz';
+  beforeEach(() => {
+    window.open = jest.fn();
+  });
+
+    it('should contain text', () => {
+      const expected = 'Foo Bar Baz';
     const wrapper = shallowMount(TicketButton, {
       propsData: {
-        ticketInfo: new ButtonTicket(expected)
+       info: new ButtonInfo(expected)
       }
     });
+    //const text = wrapper.find('button.btn');
     expect(wrapper.text()).toBe(expected);
   });
 
   it('should call the action passed along', () => {
-    const listener = jest.fn();
+    
     const wrapper = shallowMount(TicketButton, {
       propsData: {
-        ticketInfo: new ButtonTicket('expected')
+        ticketUrl: {
+            name: 'string',
+            price: 'number',
+            start: Date,
+            end: Date,
+            url: URL
+        }
       }
     });
 
-    wrapper.vm.$on('button-action', listener);
-    wrapper.trigger('click');
+    wrapper.find("button").trigger('click');
 
-    expect(listener).toHaveBeenCalled();
+    expect(window.open).toHaveBeenCalled();
   });
 });

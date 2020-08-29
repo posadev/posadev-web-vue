@@ -20,14 +20,14 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
 import TicketButton from '@/components/TicketButton.vue';
-import ButtonTicket from '@/data/ButtonTicket.model';
+import ButtonInfo from '@/data/ButtonInfo.model';
 
 @Component({
   components: { TicketButton }
 })
 export default class TicketCard extends Vue {
   @Prop() private ticket!: Ticket;
-  private ticketInfo = new ButtonTicket('Comprar ahora');
+  private ticketInfo = new ButtonInfo('Comprar ahora');
 
   private formatDate(date: Date) {
     const months = [
@@ -58,12 +58,12 @@ export default class TicketCard extends Vue {
 .card {
   width: 306px;
   height: 316px;
-  :hover {
+  &:hover {
     color: $primary-color;
   }
 }
 .card-footer {
-  :hover {
+  &:hover {
     background-color: $primary-color;
     color: $background-ticket;
     border: none;
@@ -77,8 +77,6 @@ export default class TicketCard extends Vue {
 
 .name {
   font: {
-    family: $project-font;
-    style: normal;
     weight: bold;
     size: 24px;
   }
@@ -91,8 +89,6 @@ export default class TicketCard extends Vue {
 
 .price {
   font: {
-    family: $project-font;
-    style: normal;
     weight: bold;
     size: 55px;
   }
@@ -107,8 +103,6 @@ export default class TicketCard extends Vue {
 }
 .date {
   font: {
-    family: $project-font;
-    style: normal;
     weight: normal;
     size: 16px;
   }
