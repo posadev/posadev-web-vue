@@ -15,7 +15,7 @@
       <AccentActionButton
         id="btn-speakers-all"
         class="section-button"
-        :info="seeAllSpeakers"
+        :info="allSpeakersButton"
         v-on:button-action="onShowSpeakers"
       />
     </template>
@@ -38,23 +38,27 @@ import AccentActionButton from '@/components/AccentActionButton.vue';
   }
 })
 export default class SectionSpeakers extends Vue {
-  private speakersTexts = new TitleTexts(
-    this.$t('home.speakers.title'),
-    this.$t('home.speakers.subtitle')
-  );
+  private get speakersTexts(): TitleTexts {
+    return new TitleTexts(
+      this.$t('home.speakers.title'),
+      this.$t('home.speakers.subtitle')
+    );
+  }
 
-  private speakerInfo = new ButtonInfo(this.$t('home.speakers.topButton'));
+  private get speakerInfo(): ButtonInfo {
+    return new ButtonInfo(this.$t('home.speakers.topButton'));
+  }
 
-  private seeAllSpeakers = new ButtonInfo(
-    this.$t('home.speakers.bottomButton')
-  );
+  private get allSpeakersButton(): ButtonInfo {
+    return new ButtonInfo(this.$t('home.speakers.bottomButton'));
+  }
 
   private onCFPClick() {
     window.open('https://convoca.dev/jconf-mexico-2020/cfp');
   }
 
   private onShowSpeakers() {
-    console.log('Pendiente');
+    //
   }
 }
 </script>
