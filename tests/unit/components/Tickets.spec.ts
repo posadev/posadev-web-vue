@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
-import TicketSection from '@/views/TicketSection.vue';
+import Tickets from '@/components/Tickets.vue';
 import TicketCard from '@/components/TicketCard.vue';
 
-describe('TicketSection', () => {
+describe('Tickets', () => {
   it('should contain TicketCard components', () => {
-    const wrapper = shallowMount(TicketSection);
+    const wrapper = shallowMount(Tickets);
 
     expect(wrapper.findAllComponents(TicketCard).length).toBeGreaterThan(1);
   });
