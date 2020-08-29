@@ -1,17 +1,19 @@
-{   "header":{
-        "speakers":"Speakers",
-        "schedule": "Schedule",
-        "venue": "Venue",
-        "sponsors": "Sponsors",
-        "login": "Login",
-        "language": "Language",
-        "tickets": "Tickets"
-    },
-    "home" : {
-        "welcome" : "Welcome to Your Vue.js App"
-    },
-    "workshop": {
-      "photo": "Presenter picture",
-      "more": "More information"
-    }
+{
+  "header": {
+    "speakers": "Speakers",
+    "schedule": "Schedule",
+    "venue": "Venue",
+    "sponsors": "Sponsors",
+    "login": "Login",
+    "language": "Language",
+    "tickets": "Tickets",
+    "communities": "Communities"
+  },
+  "home": {
+    "welcome": "Welcome to Your Vue.js App"
+  },
+  "workshop": {
+    "photo": "Presenter picture",
+    "more": "More information"
+  }
 }
