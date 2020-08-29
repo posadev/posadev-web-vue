@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <!--    TODO: Banner component-->
+    <!-- TODO: Banner component-->
     <!-- TODO: AboutEvent component -->
-    <!--  TODO: Image Component  -->
+    <!-- TODO: Image Component  -->
     <SectionSpeakers class="section-home section-dark" />
     <SectionWorkshops class="section-home section-regular" />
     <SectionTickets class="section-home section-white" />
@@ -25,8 +25,7 @@ import SectionTickets from '@/components/SectionTickets.vue';
     SectionContact
   }
 })
-export default class Home extends Vue {
-}
+export default class Home extends Vue {}
 </script>
 
 <style lang="scss">
