@@ -20,14 +20,12 @@ describe('TicketButton when mounted', () => {
   });
 
   it('should handle the click events opening a new window', () => {
-
     const wrapper = shallowMount(TicketButton, {
       propsData: {
         info: new ButtonInfo(''),
-        ticketUrl: new URL ('https://localhost')
+        ticketUrl: new URL('https://localhost')
       }
     });
-  
     wrapper.find('button').trigger('click');
     expect(window.open).toHaveBeenCalled();
   });
