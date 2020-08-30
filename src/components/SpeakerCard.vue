@@ -29,7 +29,7 @@ export default class SpeakerCard extends Vue {
   position: relative;
   height: 235px;
   padding-top: 1rem;
-  .photo-speaker{
+  .photo-speaker {
     width: 306px;
     height: 236px;
     filter: grayscale(100%);
