@@ -1,21 +1,21 @@
 <template>
-    <div>
-      <p class="name">{{ this.ticket.name }}</p>
-      <p class="price">{{ this.ticket.price }}</p>
-      <p class="date">
-        {{ formatDate(this.ticket.start) }}
-        - {{ formatDate(this.ticket.end) }}
-      </p>
-    </div>
+  <div>
+    <p class="name">{{ this.ticket.name }}</p>
+    <p class="price">{{ this.ticket.price }}</p>
+    <p class="date">
+      {{ formatDate(this.ticket.start) }}
+      - {{ formatDate(this.ticket.end) }}
+    </p>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
 
-@Component 
+@Component
 export default class TicketHeader extends Vue {
-  @Prop({ required: true}) private ticket!: Ticket;
+  @Prop({ required: true }) private ticket!: Ticket;
 
   private formatDate(date: Date) {
     const months = [
