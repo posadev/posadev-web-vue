@@ -6,17 +6,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import ButtonTicket from '@/data/ButtonTicket.model';
+import ButtonInfo from '@/data/ButtonInfo.model';
 import Ticket from '@/data/Ticket.model';
 
 @Component
 export default class TicketButton extends Vue {
-  @Prop({ required: true, type: ButtonTicket }) private info!: ButtonTicket;
+  @Prop({ required: true, type: ButtonInfo }) private info!: ButtonInfo;
   @Prop({ required: true })
-  private ticketUrl!: Ticket;
+  private ticketUrl!: URL;
 
   private goTicketLink(): void {
-    window.open(this.ticketUrl.url.toString());
+    window.open(this.ticketUrl.toString());
   }
 }
 </script>
