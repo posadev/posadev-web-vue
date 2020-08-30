@@ -1,11 +1,7 @@
 <template>
   <div class="card">
     <TicketHeader class="card-header" :ticket="ticket" />
-    <TicketButton
-      class="card-footer"
-      :info="buttonInfo"
-      :ticketUrl="ticket"
-    />
+    <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket"/>
   </div>
 </template>
 
@@ -17,10 +13,10 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 import TicketHeader from '@/components/TicketHeader.vue';
 
 @Component({
-  components: { TicketButton }
+  components: { TicketButton, TicketHeader }
 })
 export default class TicketCard extends Vue {
-  @Prop({required: true}) private ticket!: Ticket;
+  @Prop({ required: true }) private ticket!: Ticket;
   private buttonInfo = new ButtonInfo('Comprar ahora');
 }
 </script>
