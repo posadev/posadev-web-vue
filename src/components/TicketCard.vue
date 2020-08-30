@@ -14,6 +14,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
 import TicketButton from '@/components/TicketButton.vue';
 import ButtonInfo from '@/data/ButtonInfo.model';
+import TicketHeader from '@/components/TicketHeader.vue';
 
 @Component({
   components: { TicketButton }
@@ -21,7 +22,6 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 export default class TicketCard extends Vue {
   @Prop({required: true}) private ticket!: Ticket;
   private buttonInfo = new ButtonInfo('Comprar ahora');
-
 }
 </script>
 <style lang="scss">
