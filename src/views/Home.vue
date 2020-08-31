@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <!-- TODO: Banner component-->
     <!-- TODO: AboutEvent component -->
     <!-- TODO: Image Component  -->
@@ -31,12 +31,6 @@ export default class Home extends Vue {}
 <style lang="scss">
 @import '../styles/variables';
 @import '../styles/mixins';
-
-.home {
-  > img {
-    width: 50%;
-  }
-}
 
 %section-title {
   margin: {
