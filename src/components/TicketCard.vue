@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <TicketHeader class="card-header" :ticket="ticket" />
-    <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket"/>
+    <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default class TicketCard extends Vue {
 .card-footer {
   &:hover {
     background-color: $primary-color;
-    color: $background-ticket;
+    color: $dark-color;
     border: none;
   }
 }

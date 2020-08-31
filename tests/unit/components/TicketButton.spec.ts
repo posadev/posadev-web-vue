@@ -7,12 +7,12 @@ describe('TicketButton when mounted', () => {
     window.open = jest.fn();
   });
 
-    it('should contain text', () => {
+  it('should contain text', () => {
     const expected = 'Foo Bar Baz';
     const wrapper = shallowMount(TicketButton, {
       propsData: {
         info: new ButtonInfo(expected),
-        ticketUrl: new URL ('https://localhost')
+        ticketUrl: new URL('https://localhost')
       }
     });
     const button = wrapper.find('button');

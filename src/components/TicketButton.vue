@@ -7,7 +7,6 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import ButtonInfo from '@/data/ButtonInfo.model';
-import Ticket from '@/data/Ticket.model';
 
 @Component
 export default class TicketButton extends Vue {
