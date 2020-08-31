@@ -29,6 +29,15 @@ export default class SpeakerCard extends Vue {
   position: relative;
   height: 235px;
   padding-top: 1rem;
+  .photo-speaker {
+    width: 306px;
+    height: 236px;
+    filter: grayscale(100%);
+    &:hover {
+      transition: all 0.7s ease;
+      filter: none;
+    }
+  }
   .company {
     color: $inactive-color;
     font-weight: bold;
@@ -40,7 +49,7 @@ export default class SpeakerCard extends Vue {
   }
 }
 .texts {
-  background-color: $inactive-color;
+  background-color: $white-color;
   height: 80px;
   width: 306px;
   margin: 0 auto;
