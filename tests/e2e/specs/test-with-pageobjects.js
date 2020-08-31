@@ -7,9 +7,9 @@
 ////////////////////////////////////////////////////////////////
 
 module.exports = {
-  beforeEach: browser => browser.init(),
+  beforeEach: (browser) => browser.init(),
 
-  'e2e tests using page objects': browser => {
+  'e2e tests using page objects': (browser) => {
     const homepage = browser.page.homepage();
     homepage.waitForElementVisible('@appContainer');
 
@@ -20,7 +20,7 @@ module.exports = {
     browser.end();
   },
 
-  'verify if elements in navBar exists': browser => {
+  'verify if elements in navBar exists': (browser) => {
     const homepage = browser.page.homepage();
     const navBarSection = homepage.section.app.section.navBar;
 
@@ -29,7 +29,7 @@ module.exports = {
     browser.end();
   },
 
-  'verify if elements in home exists': browser => {
+  'verify if elements in home exists': (browser) => {
     const homepage = browser.page.homepage();
     const commingSoonsection = homepage.section.app.section.commingSoon;
 
