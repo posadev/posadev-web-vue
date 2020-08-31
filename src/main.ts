@@ -25,5 +25,5 @@ const i18n = localeHandler.getI18n();
 new Vue({
   router,
   i18n,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app');

@@ -28,7 +28,7 @@ describe('Test AuthButton', () => {
     );
     const signInWithPopup = jest
       .fn()
-      .mockReturnValue(new Promise(resolve => resolve(userCredentials)));
+      .mockReturnValue(new Promise((resolve) => resolve(userCredentials)));
     const authSpy = jest
       .spyOn(firebase.initializeApp({}), 'auth')
       .mockReturnValue(({ signInWithPopup } as unknown) as Auth);

@@ -1,22 +1,47 @@
 <template>
-  <div>
-    <div>
-      <span>{{ this.ticket.name }}</span>
-      <span>{{ this.ticket.price }}</span>
-      <span>{{ this.ticket.start }}</span>
-      <span>{{ this.ticket.end }}</span>
-    </div>
+  <div class="card">
+    <TicketHeader class="card-header" :ticket="ticket" />
+    <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
+import TicketButton from '@/components/TicketButton.vue';
+import ButtonInfo from '@/data/ButtonInfo.model';
+import TicketHeader from '@/components/TicketHeader.vue';
 
-@Component
+@Component({
+  components: { TicketButton, TicketHeader }
+})
 export default class TicketCard extends Vue {
-  @Prop() private ticket!: Ticket;
+  @Prop({ required: true }) private ticket!: Ticket;
+  private buttonInfo = new ButtonInfo('Comprar ahora');
 }
 </script>
+<style lang="scss">
+@import '../styles/_variables.scss';
 
-<style lang="scss"></style>
+.card {
+  width: 306px;
+  height: 316px;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.card-header {
+  background-color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.card-footer {
+  &:hover {
+    background-color: $primary-color;
+    color: $dark-color;
+    border: none;
+  }
+}
+</style>

@@ -1,18 +1,45 @@
-{   "header":{
-        "speakers":"Speakers",
-        "schedule": "Schedule",
-        "venue": "Venue",
-        "sponsors": "Sponsors",
-        "login": "Login",
-        "language": "Language",
-        "tickets": "Tickets"
+{
+  "header": {
+    "speakers": "Speakers",
+    "schedule": "Schedule",
+    "venue": "Venue",
+    "sponsors": "Sponsors",
+    "login": "Login",
+    "language": "Language",
+    "tickets": "Tickets",
+    "communities": "Communities"
+  },
+  "home": {
+    "welcome": "Welcome to Your Vue.js App",
+    "speakers": {
+      "title": "Speakers",
+      "subtitle": "Meet the industry professionals who are accompanying us",
+      "topButton": "Participate as speaker",
+      "bottomButton": "See all speakers"
     },
-    "home" : {
-        "welcome" : "Welcome to Your Vue.js App"
+    "workshops": {
+      "title": "Workshops",
+      "subtitle": "Each workshop has an additional cost apart from the conference",
+      "bottomButton": "See all workshops"
     },
-    "aboutevent":{
+    "tickets": {
+      "title": "Tickets",
+      "subtitle": "Get yours while they are still available"
+    },
+    "sponsors": {
+      "title": "Sponsors",
+      "subtitle": "Meet the industry professionals who are accompanying us",
+      "topButton": "Support this event"
+    },
+    "contact": {
+      "title": "Have any questions?",
+      "subtitle": "Contact us via email or you can reach via social networks",
+      "topButton": "Send email"
+    }
+  },
+  "aboutevent":{
         "title": "About the event",
         "subtitle": "The most important JAVA event in Mexico",
         "description": "It is the conference for software development around the Java world in Spanish. In past years, JavaUP and JEspañol efforts have resulted in important and content-rich conferences from major exhibitors. 2017 at UNAM with JavaCloudDay, in 2018 at UPIICSA with JavaDay JavaUP. "
-    }
+  }
 }
