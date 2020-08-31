@@ -1,5 +1,5 @@
 <template>
-  <SectionHero class="section-home section-light" :title="contactTexts">
+  <SectionHero :title="contactTexts">
     <template v-slot:hero-header>
       <AccentActionButton
         id="btn-contact"
