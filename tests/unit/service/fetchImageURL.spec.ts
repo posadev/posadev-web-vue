@@ -6,7 +6,7 @@ describe('get image to firebase storage', () => {
   it('fetchImage has to return a string', async () => {
     const mockUrl = 'https://image.com/image.jpg';
     const getDownloadURL = jest.fn().mockReturnValue(
-      new Promise(resolve => {
+      new Promise((resolve) => {
         resolve(mockUrl);
       })
     );
