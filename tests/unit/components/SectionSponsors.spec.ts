@@ -3,7 +3,7 @@ import { mount, shallowMount } from '@vue/test-utils';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import Sponsors from '@/components/Sponsors.vue';
 
-describe('SectionSpeakers component', () => {
+describe('SectionSponsors component', () => {
   beforeEach(() => {
     window.open = jest.fn();
   });
@@ -16,7 +16,7 @@ describe('SectionSpeakers component', () => {
     });
 
     expect(wrapper.findAllComponents(AccentActionButton).length).toBe(1);
-    expect(wrapper.find(Sponsors).exists()).toBe(true);
+    expect(wrapper.findComponent(Sponsors).exists()).toBe(true);
   });
 
   it('should call a method when a click happens', () => {
