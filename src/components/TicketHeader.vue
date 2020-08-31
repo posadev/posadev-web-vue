@@ -67,7 +67,6 @@ export default class TicketHeader extends Vue {
   }
   color: $dark-color;
 }
-
 .date {
   font: {
     weight: normal;

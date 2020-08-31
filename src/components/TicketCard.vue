@@ -23,9 +23,25 @@ export default class TicketCard extends Vue {
 <style lang="scss">
 @import '../styles/_variables.scss';
 
+.card {
+  width: 306px;
+  height: 316px;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 .card-header {
-  background-color: $white-color;
+  background-color: white;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.card-footer {
+  &:hover {
+    background-color: $primary-color;
+    color: $dark-color;
+    border: none;
+  }
 }
 </style>
