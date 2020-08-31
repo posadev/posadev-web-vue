@@ -32,8 +32,9 @@ export default class TicketHeader extends Vue {
       'Nov',
       'Dic'
     ];
-    return `${date.getDate()}/${months[date.getMonth()]}/${date.getFullYear() -
-      2000}`;
+    return `${date.getDate()}/${months[date.getMonth()]}/${
+              date.getFullYear() - 2000
+            }`;
   }
 }
 </script>
