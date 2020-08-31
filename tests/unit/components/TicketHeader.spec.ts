@@ -5,7 +5,7 @@ import Ticket from '@/data/Ticket.model';
 describe('TicketHeader component', () => {
   it('should render the ticket passed', () => {
     const mock: Ticket = new Ticket(
-     'Early',
+      'Early',
       2000,
       new Date(2020, 10, 12),
       new Date(2020, 11, 10),

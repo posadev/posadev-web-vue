@@ -33,7 +33,7 @@ export default class TicketHeader extends Vue {
       'Dic'
     ];
     return `${date.getDate()}/${months[date.getMonth()]}/${
-    date.getFullYear() - 2000
+      date.getFullYear() - 2000
     }`;
   }
 }
