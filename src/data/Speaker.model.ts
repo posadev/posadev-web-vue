@@ -1,8 +1,13 @@
-export default class SpeakerInfo {
+import { SocialMedia } from '@/data/SocialMedia.type';
+
+export default class Speaker {
   constructor(
     readonly bio: string,
-    readonly name: string,
+    readonly company: string,
+    readonly firstName: string,
+    readonly lastName: string,
+    readonly ocupation: string,
     readonly photoURL: URL,
-    readonly company: string
+    readonly socialMedia: SocialMedia
   ) {}
 }
