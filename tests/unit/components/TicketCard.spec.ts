@@ -4,13 +4,13 @@ import TicketButton from '@/components/TicketButton.vue';
 import Ticket from '@/data/Ticket.model';
 
 describe('TicketCard component', () => {
-  const mock: Ticket = new Ticket( 
-    'Early', 
-    2000, 
+  const mock: Ticket = new Ticket(
+    'Early',
+    2000,
     new Date(2020, 10,12),
-    new Date(2020, 11, 10), 
+    new Date(2020, 11, 10),
     new URL('https://www.google.com')
-    ); 
+  ); 
 
   it('should render the ticket passed', () => {
     const wrapper = shallowMount(TicketCard, {

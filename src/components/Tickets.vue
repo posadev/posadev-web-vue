@@ -27,10 +27,5 @@ export default class Tickets extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
-.column {
-  &:hover{
-    color: red;
-  }
-}
 
 </style>
