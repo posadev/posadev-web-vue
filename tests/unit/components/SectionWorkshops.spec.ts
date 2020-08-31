@@ -3,7 +3,7 @@ import AccentActionButton from '@/components/AccentActionButton.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import Workshops from '@/components/Workshops.vue';
 
-describe('SectionSpeakers component', () => {
+describe('SectionWorkshops component', () => {
   beforeEach(() => {
     console.log = jest.fn();
   });
@@ -16,7 +16,7 @@ describe('SectionSpeakers component', () => {
     });
 
     expect(wrapper.findAllComponents(AccentActionButton).length).toBe(1);
-    expect(wrapper.find(Workshops).exists()).toBe(true);
+    expect(wrapper.findComponent(Workshops).exists()).toBe(true);
   });
 
   it('should call a method when a click happens', () => {
