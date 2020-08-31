@@ -15,7 +15,7 @@ export default class SpeakersService extends FirebaseService<Speaker> {
       data['company'],
       data['first_name'],
       data['last_name'],
-      data['ocupation'],
+      data['role'],
       new URL(data['photo_url']),
       data['social-media']
     );

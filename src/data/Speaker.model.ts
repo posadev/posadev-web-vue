@@ -6,7 +6,7 @@ export default class Speaker {
     readonly company: string,
     readonly firstName: string,
     readonly lastName: string,
-    readonly ocupation: string,
+    readonly role: string,
     readonly photoURL: URL,
     readonly socialMedia: SocialMedia
   ) {}

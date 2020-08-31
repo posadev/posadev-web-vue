@@ -9,8 +9,8 @@
       <p class="company">{{ this.speaker.company }}</p>
     </div>
     <div class="texts">
-      <p class="name">{{ this.speaker.name }}</p>
-      <p class="bio">{{ this.speaker.bio }}</p>
+      <p class="name">{{ this.fullName }}</p>
+      <p class="role">{{ this.speaker.role }}</p>
     </div>
   </div>
 </template>
@@ -21,14 +21,20 @@ import Speaker from '../data/Speaker.model';
 @Component
 export default class SpeakerCard extends Vue {
   @Prop({ required: true }) private speaker!: Speaker;
+
+  private get fullName(): string {
+    return `${this.speaker.firstName} ${this.speaker.lastName}`;
+  }
 }
 </script>
 <style lang="scss">
 @import '../styles/variables';
+
 .containerImg {
   position: relative;
   height: 235px;
   padding-top: 1rem;
+
   .company {
     color: $inactive-color;
     font-weight: bold;
@@ -39,6 +45,7 @@ export default class SpeakerCard extends Vue {
     transform: translate(-50%, -50%);
   }
 }
+
 .texts {
   background-color: $inactive-color;
   height: 80px;
@@ -48,12 +55,14 @@ export default class SpeakerCard extends Vue {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   .name {
     font-weight: bold;
     font-size: 24px;
     line-height: 30px;
   }
-  .bio {
+
+  .role {
     line-height: 36px;
     color: rgba(0, 0, 0, 0.56);
   }
