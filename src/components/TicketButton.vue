@@ -33,9 +33,9 @@ export default class TicketButton extends Vue {
   text-align: center;
   border: none;
     &:hover {
-      color: white;
+      color: $white-color;
       background-color: $primary-color;
-  }
+    }
   font: {
     family: $project-font;
     style: normal;
