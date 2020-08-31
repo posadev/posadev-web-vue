@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div>
     <TicketHeader class="card-header" :ticket="ticket" />
     <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket" />
   </div>
@@ -23,25 +23,9 @@ export default class TicketCard extends Vue {
 <style lang="scss">
 @import '../styles/_variables.scss';
 
-.card {
-  width: 306px;
-  height: 316px;
-  &:hover {
-    color: $primary-color;
-  }
-}
-
 .card-header {
-  background-color: white;
+  background-color: $white-color;
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.card-footer {
-  &:hover {
-    background-color: $primary-color;
-    color: $dark-color;
-    border: none;
-  }
 }
 </style>
