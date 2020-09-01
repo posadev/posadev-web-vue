@@ -1,7 +1,11 @@
 <template>
   <div>
     <TicketHeader class="card-header" :ticket="ticket" />
-    <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket" />
+    <TicketButton
+      class="card-footer"
+      :info="buttonInfo"
+      :ticketUrl="ticket.url"
+    />
   </div>
 </template>
 

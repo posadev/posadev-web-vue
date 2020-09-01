@@ -10,7 +10,9 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 
 @Component
 export default class TicketButton extends Vue {
-  @Prop({ required: true, type: ButtonInfo }) private info!: ButtonInfo;
+  @Prop({ required: true, type: ButtonInfo })
+  private info!: ButtonInfo;
+
   @Prop({ required: true })
   private ticketUrl!: URL;
 
@@ -41,6 +43,7 @@ export default class TicketButton extends Vue {
     weight: bold;
     size: 21px;
   }
+
   button {
     width: 100%;
     height: 100%;
