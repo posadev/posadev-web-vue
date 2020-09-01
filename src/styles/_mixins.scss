@@ -1,0 +1,14 @@
+/**
+  Set styles for a "section". Setting the background and the
+ */
+@mixin section-color($section-color, $texts-color) {
+  background: $section-color;
+
+  .title {
+    color: $texts-color;
+  }
+
+  .subtitle {
+    color: $texts-color;
+  }
+}

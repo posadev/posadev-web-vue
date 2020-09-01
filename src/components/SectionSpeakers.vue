@@ -1,5 +1,5 @@
 <template>
-  <SectionHero class="section-home section-dark" :title="speakersTexts">
+  <SectionHero :title="speakersTexts">
     <template v-slot:hero-header>
       <AccentActionButton
         id="btn-cfp"

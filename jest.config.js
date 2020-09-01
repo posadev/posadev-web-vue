@@ -13,7 +13,8 @@ module.exports = {
     'src/**/*.{js,vue,ts}',
     '!src/**/*.model.{js,vue,ts}',
     '!src/**/*.mock.{js,vue,ts}',
-    '!src/main.ts' // No need to cover bootstrap file
+    '!src/main.ts', // No need to cover bootstrap file
+    '!src/firebase.ts'
   ],
   transform: {
     '.*\\.(vue)$': 'vue-jest',
