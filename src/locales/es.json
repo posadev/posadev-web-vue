@@ -1,22 +1,49 @@
 {
-    "header":{
-        "speakers":"Presentadores",
-        "schedule": "Agenda",
-        "venue": "Sede",
-        "sponsors": "Patrocinadores",
-        "login": "Login",
-        "language": "Idioma",
-        "tickets": "Boletos"
+  "header": {
+    "speakers": "Presentadores",
+    "schedule": "Agenda",
+    "venue": "Sede",
+    "sponsors": "Patrocinadores",
+    "login": "Login",
+    "language": "Idioma",
+    "tickets": "Boletos",
+    "communities": "Comunidades"
+  },
+  "home": {
+    "welcome": "Bienvenido a tu aplicación Vue.js",
+    "speakers": {
+      "title": "Speakers",
+      "subtitle": "Conoce a los profesionales de la industria que nos acompañan",
+      "topButton": "Participa como speaker aquí",
+      "bottomButton": "Ver todos los speakers"
     },
-    "home" : {
-        "welcome" : "Bienvenido a tu aplicación Vue.js"
+    "workshops": {
+      "title": "Workshops",
+      "subtitle": "Cada taller tendrá un costo adicional a su entrada a las conferencias",
+      "bottomButton": "Ver todos los workshops"
     },
     "communnity" : {
         "title": "Acerca de",
         "subtitle": "Creamos eventos maravillosos"
     },
-    "workshop": {
-        "photo": "Foto del instructor",
-        "more": "Mas información"
+    "aboutevent":{
+        "title": "Sobre el evento",
+        "subtitle": "El evento de JAVA más importante de México",
+        "description": "Es la conferencia para desarrollo de software alrededor del mundo Java en Español. En años pasados esfuerzos de JavaUP y de JEspañol han conseguido conferencias importantes y llenas de grandes contenidos a través de grandes expositores. 2017 en UNAM con la JavaCloudDay, en 2018 en UPIICSA con JavaDay JavaUP. "
+    },
+    "tickets": {
+      "title": "Tickets",
+      "subtitle": "Consigue tu entrada mientras estan disponibles"
+    },
+    "sponsors": {
+      "title": "Sponsors",
+      "subtitle": "Conoce a los profesionales de la industria que nos acompañan",
+      "topButton": "Patrocina este evento"
+    },
+    "contact": {
+      "title": "¿Tienes alguna pregunta?",
+      "subtitle": "Escribenos o puedes contactarnos por nuestras redes sociales.",
+      "topButton": "Enviar e-mail"
     }
+  }
 }
