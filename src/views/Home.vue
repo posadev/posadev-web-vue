@@ -40,15 +40,15 @@ export default class Home extends Vue {}
 }
 
 .section-dark {
-  @include section-color($primary-dark-color, $inactive-color);
+  @include section-color($primary-dark-color, $light-color);
 }
 
 .section-regular {
-  @include section-color($primary-color, $inactive-color);
+  @include section-color($primary-color, $light-color);
 }
 
 .section-light {
-  @include section-color($inactive-color, $dark-color);
+  @include section-color($light-color, $dark-color);
 }
 
 .section-white {
