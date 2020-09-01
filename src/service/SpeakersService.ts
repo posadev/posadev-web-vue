@@ -1,12 +1,14 @@
 import Speaker from '@/data/Speaker.model';
-import db from '@/firebase';
 import firebase from 'firebase';
-import { DocumentMapper, FirebaseCollectionService } from '@/services/FirebaseCollectionService';
-import QueryDocumentSnapshot = firebase.firestore.QueryDocumentSnapshot;
-import QuerySnapshot = firebase.firestore.QuerySnapshot;
+import {
+  DocumentMapper,
+  FirebaseCollectionService
+} from '@/service/FirebaseCollectionService';
 import DocumentData = firebase.firestore.DocumentData;
 
-export default class SpeakersService extends FirebaseCollectionService<Speaker> {
+export default class SpeakersService extends FirebaseCollectionService<
+  Speaker
+> {
   readonly collectionName = 'speakers';
 
   mapper: DocumentMapper<Speaker> = (data: DocumentData) => {

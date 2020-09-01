@@ -13,7 +13,7 @@
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import SpeakerCard from '@/components/SpeakerCard.vue';
 import Speaker from '@/data/Speaker.model';
-import { FirebaseCollectionService } from '@/services/FirebaseCollectionService';
+import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
 
 @Component({
   components: { SpeakerCard }

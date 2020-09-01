@@ -1,8 +1,8 @@
 import { Component, Provide, Vue } from 'vue-property-decorator';
-import SpeakersService from '@/services/SpeakersService';
+import SpeakersService from '@/service/SpeakersService';
 
 @Component
-export default class ServiceContainer extends Vue {
+export default class SpeakerContainer extends Vue {
   @Provide('speakers')
   speakersService = new SpeakersService();
 }
