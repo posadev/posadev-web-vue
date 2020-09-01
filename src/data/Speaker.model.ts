@@ -1,4 +1,4 @@
-import { SocialMedia } from '@/data/SocialMedia.type';
+import type { SocialMedia } from '@/data/SocialMedia.type';
 
 export default class Speaker {
   constructor(

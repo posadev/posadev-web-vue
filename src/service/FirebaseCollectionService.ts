@@ -14,7 +14,7 @@ export abstract class FirebaseCollectionService<T> {
 
   converter: FirestoreDataConverter<T> = {
     toFirestore: (modelObject: T) => modelObject,
-    fromFirestore: (snapshot: QueryDocumentSnapshot) => {
+    fromFirestore: (snapshot: QueryDocumentSnapshot<T>) => {
       return this.mapper(snapshot.data());
     }
   };
