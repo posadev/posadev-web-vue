@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- TODO: Banner component-->
     <!-- TODO: AboutEvent component -->
     <!-- TODO: Image Component  -->
     <SectionSpeakers class="section-home section-dark" />

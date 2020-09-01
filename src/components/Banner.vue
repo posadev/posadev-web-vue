@@ -1,11 +1,7 @@
 <template>
   <div class="col-xl-12 content">
     <div class="content-banner-image">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/jconfmex-web-staging.appspot.com/o/banner.png?alt=media&token=592557de-1352-4d6f-8adf-ee149dbe3953"
-        class="img-responsive img-banner"
-        alt="JConf 2020"
-      />
+      <img :src="image" class="img-responsive img-banner" alt="JConf 2020" />
       <img
         class="img-responsive banner-logo"
         src="../assets/logoTransparente.png"
@@ -14,16 +10,24 @@
     </div>
     <section class="text-content text-format">
       <h1 class="title">JConf GDL 2020</h1>
-      <p class="text">{{ $t('banner.subtitle') }}</p>
+      <p class="text">{{ $t('home.banner.subtitle') }}</p>
     </section>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Watch } from 'vue-property-decorator';
+import { fetchImageURL } from '@/service/fetchImageURL';
 
 @Component
-export default class Banner extends Vue {}
+export default class Banner extends Vue {
+  private image = '';
+
+  @Watch('image', { immediate: true })
+  private async getImage() {
+    this.image = await fetchImageURL('banner.png');
+  }
+}
 </script>
 
 <style lang="scss">
@@ -116,6 +120,7 @@ export default class Banner extends Vue {}
   line-height: 43px;
 
   @media only screen and (max-width: 928px) {
+    line-height: 1.6rem;
     //iphone 5/SE
     @media only screen and (max-height: 568px) {
       padding-top: 0.6rem;
@@ -135,9 +140,11 @@ export default class Banner extends Vue {}
 .text-content {
   display: block;
   position: absolute;
-  left: 6.67%;
-  right: 56.67%;
-  top: 33.42%;
+  @media only screen and (min-width: 929px) {
+    left: 6.67%;
+    right: 56.67%;
+    top: 33.42%;
+  }
 
   //Ipads and phones
   @media only screen and (max-width: 928px) {
