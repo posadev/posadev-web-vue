@@ -36,6 +36,6 @@ describe('Speakers component', () => {
     await flushPromises();
 
     expect(wrapper.findAllComponents(SpeakerCard).length).toBe(0);
-    expect(wrapper.find('.columns').exists()).toBe(true)
+    expect(wrapper.find('.columns').exists()).toBe(true);
   });
 });
