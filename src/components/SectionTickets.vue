@@ -1,5 +1,5 @@
 <template>
-  <SectionHero class="section-home section-light" :title="ticketsTexts">
+  <SectionHero :title="ticketsTexts">
     <template v-slot:hero-body>
       <Tickets />
     </template>

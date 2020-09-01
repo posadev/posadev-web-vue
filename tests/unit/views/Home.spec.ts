@@ -1,29 +1,28 @@
-import { mount, shallowMount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import Home from '@/views/Home.vue';
+import SectionSpeakers from '@/components/SectionSpeakers.vue';
+import SectionTickets from '@/components/SectionTickets.vue';
+import SectionContact from '@/components/SectionContact.vue';
+import SectionWorkshops from '@/components/SectionWorkshops.vue';
 
-describe('HelloWorld.vue', () => {
-  beforeEach(() => {
-    window.open = jest.fn();
-  });
-
-  it('renders props.msg when passed', () => {
+describe('Home view', () => {
+  it('should have a Section with Speakers info', () => {
     const wrapper = shallowMount(Home);
-    const image = wrapper.find('#commingSoonImage');
-    expect(image.exists()).toBe(true);
+    expect(wrapper.findComponent(SectionSpeakers).exists()).toBe(true);
   });
 
-  it('open new window on sponsors button', () => {
-    const wrapper = mount(Home);
-    const button = wrapper.find('#btn-cfs');
-    button.trigger('click');
-
-    expect(window.open).toHaveBeenCalled();
+  it('should have a Section with Workshops info', () => {
+    const wrapper = shallowMount(Home);
+    expect(wrapper.findComponent(SectionWorkshops).exists()).toBe(true);
   });
 
-  it('open new window on speakers button', () => {
-    const wrapper = mount(Home);
-    wrapper.find('#btn-cfp').trigger('click');
+  it('should have a Section with Tickets info', () => {
+    const wrapper = shallowMount(Home);
+    expect(wrapper.findComponent(SectionTickets).exists()).toBe(true);
+  });
 
-    expect(window.open).toHaveBeenCalled();
+  it('should have a Section with Contact info', () => {
+    const wrapper = shallowMount(Home);
+    expect(wrapper.findComponent(SectionContact).exists()).toBe(true);
   });
 });

@@ -2,7 +2,7 @@ import SectionContact from '@/components/SectionContact.vue';
 import { mount, shallowMount } from '@vue/test-utils';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 
-describe('SectionSpeakers component', () => {
+describe('SectionContact component', () => {
   beforeEach(() => {
     window.open = jest.fn();
   });

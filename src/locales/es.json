@@ -26,6 +26,11 @@
         "title": "Acerca de",
         "subtitle": "Creamos eventos maravillosos"
     },
+    "aboutevent":{
+        "title": "Sobre el evento",
+        "subtitle": "El evento de JAVA más importante de México",
+        "description": "Es la conferencia para desarrollo de software alrededor del mundo Java en Español. En años pasados esfuerzos de JavaUP y de JEspañol han conseguido conferencias importantes y llenas de grandes contenidos a través de grandes expositores. 2017 en UNAM con la JavaCloudDay, en 2018 en UPIICSA con JavaDay JavaUP. "
+    },
     "tickets": {
       "title": "Tickets",
       "subtitle": "Consigue tu entrada mientras estan disponibles"
