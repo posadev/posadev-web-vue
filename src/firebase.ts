@@ -9,7 +9,7 @@ const firebaseApp = firebase.initializeApp({
   databaseURL: process.env.VUE_APP_FIREBASE_DB_URL,
   projectId: process.env.VUE_APP_FIREBASE_PROJECT,
   storageBucket: process.env.VUE_APP_FIREBASE_STORAGE,
-  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MSG_SENDER,
   measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT
 });
 
