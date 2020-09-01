@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 const firebaseApp = firebase.initializeApp({
   apiKey: process.env.VUE_APP_FIREBASE_API,
@@ -8,7 +9,7 @@ const firebaseApp = firebase.initializeApp({
   databaseURL: process.env.VUE_APP_FIREBASE_DB_URL,
   projectId: process.env.VUE_APP_FIREBASE_PROJECT,
   storageBucket: process.env.VUE_APP_FIREBASE_STORAGE,
-  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MSG_SENDER,
   measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT
 });
 
