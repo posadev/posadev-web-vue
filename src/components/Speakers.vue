@@ -13,14 +13,14 @@
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import SpeakerCard from '@/components/SpeakerCard.vue';
 import Speaker from '@/data/Speaker.model';
-import { FirebaseService } from '@/services/FirebaseService';
+import { FirebaseCollectionService } from '@/services/FirebaseCollectionService';
 
 @Component({
   components: { SpeakerCard }
 })
 export default class Speakers extends Vue {
   @Inject('speakers')
-  private service!: FirebaseService<Speaker>;
+  private service!: FirebaseCollectionService<Speaker>;
 
   private speakers: Speaker[] = [];
 
