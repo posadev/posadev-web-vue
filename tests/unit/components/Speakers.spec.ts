@@ -21,4 +21,21 @@ describe('Speakers component', () => {
 
     expect(wrapper.findAllComponents(SpeakerCard).length).toBeGreaterThan(0);
   });
+
+  it('should render properly with no elements', async () => {
+    const wrapper = shallowMount(Speakers, {
+      provide: {
+        speakers: {
+          async findAll(): Promise<Speaker[]> {
+            return new Promise((resolve) => resolve([]));
+          }
+        }
+      }
+    });
+
+    await flushPromises();
+
+    expect(wrapper.findAllComponents(SpeakerCard).length).toBe(0);
+    expect(wrapper.find('.columns').exists()).toBe(true)
+  });
 });
