@@ -6,8 +6,9 @@
 
 <script lang="ts">
 import * as firebase from 'firebase/app';
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import AuthModel from '@/data/Auth.model';
+import { auth } from '@/firebase';
 import UserCredential = firebase.auth.UserCredential;
 
 @Component
@@ -15,8 +16,7 @@ export default class AuthButton extends Vue {
   @Prop() private model!: AuthModel;
 
   private authSocialMedia(): void {
-    firebase
-      .auth()
+    auth
       .signInWithPopup(this.model.provider)
       .then((userCredential: UserCredential) => {
         this.$emit('value', userCredential?.user?.displayName);

@@ -3,8 +3,10 @@ import { AuthProvider } from '@firebase/auth-types';
 import AuthButton from '@/components/AuthButton.vue';
 import { shallowMount, Wrapper } from '@vue/test-utils';
 import AuthModel from '@/data/Auth.model';
+import { auth } from '@/firebase';
 import UserCredential = firebase.auth.UserCredential;
-import Auth = firebase.auth.Auth;
+
+jest.mock('@/firebase');
 
 describe('Test AuthButton', () => {
   let authButton: Wrapper<AuthButton>;
@@ -26,12 +28,9 @@ describe('Test AuthButton', () => {
     const userCredentials: UserCredential = jest.genMockFromModule(
       'firebase/auth'
     );
-    const signInWithPopup = jest
-      .fn()
-      .mockReturnValue(new Promise((resolve) => resolve(userCredentials)));
     const authSpy = jest
-      .spyOn(firebase.initializeApp({}), 'auth')
-      .mockReturnValue(({ signInWithPopup } as unknown) as Auth);
+      .spyOn(auth, 'signInWithPopup')
+      .mockResolvedValue(userCredentials);
 
     authButton.trigger('click');
     expect(authSpy).toHaveBeenCalled();
