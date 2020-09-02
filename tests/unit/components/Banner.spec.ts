@@ -1,11 +1,13 @@
-import * as firebase from 'firebase';
 import { mount } from '@vue/test-utils';
 import Banner from '@/components/Banner.vue';
 
+jest.mock('@/firebase');
+
 describe('testing Banner Component', () => {
   beforeEach(() => {
-  jest.mock('@/service/fetchImageURL' );
-});
+    jest.mock('@/service/fetchImageURL');
+  });
+
   it('paragraph text has the text correct', () => {
     const wrapper = mount(Banner, {
       mocks: {
@@ -15,9 +17,10 @@ describe('testing Banner Component', () => {
               subtitle: 'El evento de JAVA más importante de México'
             }
           };
-        },
+        }
       }
     });
+
     const paragraph = wrapper.find('p[class="text"]');
     expect(paragraph.exists()).toBe(true);
   });
@@ -31,7 +34,7 @@ describe('testing Banner Component', () => {
               subtitle: 'El evento de JAVA más importante de México'
             }
           };
-        },
+        }
       }
     });
     const images = wrapper.findAll('img');
