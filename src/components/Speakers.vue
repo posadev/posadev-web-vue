@@ -10,17 +10,24 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Inject, Vue } from 'vue-property-decorator';
 import SpeakerCard from '@/components/SpeakerCard.vue';
-import SpeakersMock from '@/mocks/Speakers.mock';
 import Speaker from '@/data/Speaker.model';
+import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
 
 @Component({
   components: { SpeakerCard }
 })
 export default class Speakers extends Vue {
-  private get speakers(): Speaker[] {
-    return SpeakersMock;
+  @Inject('speakers')
+  private service!: FirebaseCollectionService<Speaker>;
+
+  private speakers: Speaker[] = [];
+
+  private created() {
+    this.service.findAll().then((response: Speaker[]) => {
+      this.speakers.push(...response);
+    });
   }
 }
 </script>
@@ -28,6 +35,7 @@ export default class Speakers extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
+
 .columns {
   padding: 0;
   margin: 0;
