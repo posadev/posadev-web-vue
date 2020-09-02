@@ -26,7 +26,7 @@ export default class ActionButton extends Vue {
 @import '../styles/variables';
 
 .btn {
-  width: 416px;
+  width: 100%;
   height: 58px;
   display: flex;
   justify-content: center;
