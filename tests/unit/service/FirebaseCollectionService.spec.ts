@@ -16,28 +16,27 @@ describe('Abstract FirebaseService', () => {
   }
 
   it('should call the passed mapper when findAll is called', async () => {
-    const docSnapshot = ({ data: jest.fn() } as unknown) as QueryDocumentSnapshot;
+    const docSnapshot = ({
+      data: jest.fn()
+    } as unknown) as QueryDocumentSnapshot;
     const withConverter = jest
       .fn()
-      .mockImplementation(
-        (converter: FirestoreDataConverter<string>) => {
-          return {
-            get: jest.fn().mockResolvedValue({
-              docs: [
-                {
-                  data: jest
-                    .fn()
-                    .mockReturnValue(
-                      converter.fromFirestore(docSnapshot, {})
-                    )
-                }
-              ]
-            })
-          }
-        }
-      );
+      .mockImplementation((converter: FirestoreDataConverter<string>) => {
+        return {
+          get: jest.fn().mockResolvedValue({
+            docs: [
+              {
+                data: jest
+                  .fn()
+                  .mockReturnValue(converter.fromFirestore(docSnapshot, {}))
+              }
+            ]
+          })
+        };
+      });
 
-    const collectionSpy = jest.spyOn(db, 'collection')
+    const collectionSpy = jest
+      .spyOn(db, 'collection')
       .mockReturnValue(({ withConverter } as unknown) as CollectionReference);
 
     const service = new MockService();

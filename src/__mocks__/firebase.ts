@@ -21,13 +21,12 @@ const db = {
 
 const storage = {
   ref() {
-
   }
 };
 
 const auth = {
   async signInWithPopup(authProvider: AuthProvider): Promise<UserCredential> {
-    return jest.createMockFromModule('firebase/auth')
+    return jest.createMockFromModule('firebase/auth');
   }
 };
 

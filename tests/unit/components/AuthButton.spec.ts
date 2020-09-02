@@ -28,12 +28,9 @@ describe('Test AuthButton', () => {
     const userCredentials: UserCredential = jest.genMockFromModule(
       'firebase/auth'
     );
-    // const signInWithPopup = jest
-    //   .fn()
-    //   .mockReturnValue(new Promise((resolve) => resolve(userCredentials)));
-    const authSpy = jest.spyOn(auth, 'signInWithPopup')
-      .mockResolvedValue(userCredentials)
-    // .mockReturnValue(({ signInWithPopup } as unknown) as Auth);
+    const authSpy = jest
+      .spyOn(auth, 'signInWithPopup')
+      .mockResolvedValue(userCredentials);
 
     authButton.trigger('click');
     expect(authSpy).toHaveBeenCalled();

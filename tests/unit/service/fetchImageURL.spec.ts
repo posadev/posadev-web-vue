@@ -9,11 +9,14 @@ describe('get image to firebase storage', () => {
     const mockUrl = 'https://image.com/image.jpg';
     const getDownloadURL = jest.fn().mockResolvedValue(mockUrl);
 
-    jest.spyOn(storage, 'ref').mockReturnValue(({ getDownloadURL } as unknown) as Reference)
+    const refSpy = jest
+      .spyOn(storage, 'ref')
+      .mockReturnValue(({ getDownloadURL } as unknown) as Reference);
 
     const imageRef = 'photo.jpg';
     const url = await fetchImageURL(imageRef);
 
+    expect(refSpy).toHaveBeenCalled();
     expect(getDownloadURL).toHaveBeenCalled();
     expect(url).toBe(mockUrl);
   });
