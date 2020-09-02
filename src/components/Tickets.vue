@@ -27,4 +27,18 @@ export default class Tickets extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
+
+.columns {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  width: 306px;
+  height: 316px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
 </style>
