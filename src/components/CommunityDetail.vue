@@ -27,6 +27,7 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import Title from '@/components/Title.vue';
 import TitleTexts from '@/data/TitleTexts.model';
+
 @Component({
   components: {
     AccentActionButton,
