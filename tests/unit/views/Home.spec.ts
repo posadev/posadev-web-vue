@@ -5,6 +5,8 @@ import SectionTickets from '@/components/SectionTickets.vue';
 import SectionContact from '@/components/SectionContact.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
 
+jest.mock('@/firebase');
+
 describe('Home view', () => {
   it('should have a Section with Speakers info', () => {
     const wrapper = shallowMount(Home);
