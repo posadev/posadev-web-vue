@@ -6,6 +6,8 @@ import Speaker from '@/data/Speaker.model';
 import speakers from '@/mocks/Speakers.mock';
 import flushPromises from 'flush-promises';
 
+jest.mock('@/firebase');
+
 describe('SectionSpeakers component', () => {
   beforeEach(() => {
     window.open = jest.fn();
