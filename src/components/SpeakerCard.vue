@@ -47,7 +47,7 @@ export default class SpeakerCard extends Vue {
   }
 
   .company {
-    color: $inactive-color;
+    color: $light-color;
     font-weight: bold;
     line-height: 75px;
     position: absolute;
@@ -58,7 +58,7 @@ export default class SpeakerCard extends Vue {
 }
 
 .texts {
-  background-color: $white-color;
+  background-color: $light-color;
   height: 80px;
   width: 306px;
   margin: 0 auto;
