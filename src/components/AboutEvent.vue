@@ -1,5 +1,5 @@
 <template>
-  <div class="column section-light section-home">
+  <div class="section-light section-home">
     <div class="hero hero-lg content">
       <div class="container-image">
         <img
