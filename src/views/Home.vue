@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Banner />
     <!-- TODO: AboutEvent component -->
     <!-- TODO: Image Component  -->
     <SectionSpeakers class="section-home section-dark" />
@@ -15,9 +16,11 @@ import SectionContact from '@/components/SectionContact.vue';
 import SectionSpeakers from '@/components/SectionSpeakers.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
+import Banner from '@/components/Banner.vue';
 
 @Component({
   components: {
+    Banner,
     SectionSpeakers,
     SectionWorkshops,
     SectionTickets,

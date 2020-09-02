@@ -21,6 +21,9 @@ const db = {
 
 const storage = {
   ref() {
+    return {
+      getDownloadURL: jest.fn().mockResolvedValue('')
+    }
   }
 };
 

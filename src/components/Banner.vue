@@ -16,16 +16,17 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { fetchImageURL } from '@/service/fetchImageURL';
 
 @Component
 export default class Banner extends Vue {
   private image = '';
 
-  @Watch('image', { immediate: true })
-  private async getImage() {
-    this.image = await fetchImageURL('banner.png');
+  private created(): void {
+    fetchImageURL('banner.png').then((url: string) => {
+      this.image = url;
+    });
   }
 }
 </script>
@@ -57,7 +58,7 @@ export default class Banner extends Vue {
 }
 
 .text-format {
-  color: $white-color;
+  color: $light-color;
   text-align: left;
 }
 
