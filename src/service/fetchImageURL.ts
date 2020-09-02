@@ -1,4 +1,5 @@
 import { storage } from '@/firebase';
+
 /**
  * Small helper function to get the URL present at firebase storage based on the name.
  * This kind of URL is supposed to be static but it's better to use the firebase
@@ -11,6 +12,6 @@ import { storage } from '@/firebase';
  * @todo Error handling
  */
 export function fetchImageURL(imageName: string): Promise<string> {
-  const storageRef: firebase.storage.Reference = storage.ref(imageName);
+  const storageRef = storage.ref(imageName);
   return storageRef.getDownloadURL();
 }
