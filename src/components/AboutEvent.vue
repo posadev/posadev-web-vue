@@ -1,19 +1,17 @@
 <template>
-  <div class="section-light section-home">
-    <div class="hero hero-lg content">
-      <div class="container-image">
-        <img
-          class="img-fit-cover image-about-event"
-          :src="image"
-          alt="about event"
-        />
-      </div>
-      <section class="text-content">
-        <h1 class="title">{{ $t('home.aboutevent.title') }}</h1>
-        <h4 class="subtitle">{{ $t('home.aboutevent.subtitle') }}</h4>
-        <p class="text">{{ $t('home.aboutevent.description') }}</p>
-      </section>
+  <div class="hero hero-lg content-about">
+    <div class="container-image">
+      <img
+        class="img-fit-cover image-about-event"
+        :src="image"
+        alt="about event"
+      />
     </div>
+    <section class="text-content-about">
+      <h1 class="title">{{ $t('home.aboutevent.title') }}</h1>
+      <h4 class="subtitle">{{ $t('home.aboutevent.subtitle') }}</h4>
+      <p class="text">{{ $t('home.aboutevent.description') }}</p>
+    </section>
   </div>
 </template>
 
@@ -48,12 +46,12 @@ export default class AboutEvent extends Vue {
   height: 416px;
   width: 416px;
 }
-.content {
+.content-about {
   flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
 }
-.text-content {
+.text-content-about {
   text-align: left;
   .title,
   .subtitle {
