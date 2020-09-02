@@ -1,14 +1,6 @@
 <template>
   <div class="smallBanner"></div>
 </template>
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({})
-export default class SmallBanner extends Vue {}
-</script>
-
 <style lang="scss">
 @import '../styles/variables';
 .smallBanner {
