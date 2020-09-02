@@ -22,10 +22,6 @@
       "subtitle": "Each workshop has an additional cost apart from the conference",
       "bottomButton": "See all workshops"
     },
-    "communnity" : {
-        "title": "About",
-        "subtitle": "we love create amazing events!"
-    },
     "aboutevent":{
         "title": "About the event",
         "subtitle": "The most important JAVA event in Mexico",
@@ -45,5 +41,11 @@
       "subtitle": "Contact us via email or you can reach via social networks",
       "topButton": "Send email"
     }
+  },
+  "community" : {
+    "title": "Organizers",
+    "subtitle": "we love create amazing events!",
+    "titleSection": "JConf is an event organized by the J4Guanatos and Java User Group gdl communities.",
+    "buttonText": "I Want to know more"
   }
 }

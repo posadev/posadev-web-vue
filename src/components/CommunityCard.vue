@@ -44,10 +44,6 @@ export default class CommunityCard extends Vue {
     width: 420px;
     height: 400px;
   }
-  padding: {
-    left: 10px;
-    right: 10px;
-  }
 }
 .community-card-detail {
   flex: 3;

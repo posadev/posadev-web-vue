@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="community-section">
+    <SectionHero :title="organizersTexts" style="background-color:blue" />
+    <p class="title-section">{{ $t('community.titleSection') }}</p>
     <CommunityCard
       v-for="(community, index) in this.communities"
       v-bind:communityInfo="community"
@@ -10,24 +12,67 @@
 </template>
 
 <script lang="ts">
+import SectionHero from '@/components/SectionHero.vue';
+import TitleTexts from '@/data/TitleTexts.model';
 import { Component, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
 import CommunityCard from '@/components/CommunityCard.vue';
-import CommunityService from '@/services/CommunityService';
+import communities from '@/mocks/communities.mock';
 
 @Component({
   components: {
+    SectionHero,
     CommunityCard
   }
 })
 export default class CommunitySection extends Vue {
-  private communities: Community[] = [];
-  private communityService!: CommunityService;
-  mounted() {
-    this.communityService = new CommunityService();
-    this.communities = this.communityService.findAll();
+  private get organizersTexts(): TitleTexts {
+    return new TitleTexts(
+      this.$t('community.title'),
+      this.$t('community.subtitle')
+    );
   }
+  get communities(): Community[] {
+    //FIXME: this is obtained from firebase
+    return communities;
+  }
+  // @Inject('communities')
+  // private service!: CommunityService;
+  // private communities: Community[] = [];
+
+  // created() {
+  //   this.service.findAll().then((res: Community[]) => {
+  //     this.communities.push(...res);
+  //   });
+  // }
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/variables';
+.community-section {
+  margin: {
+    right: 45px;
+    bottom: 60px;
+    left: 45px;
+  }
+}
+.title-section {
+  font-size: 24px;
+  text-align: center;
+  color: $dark-color;
+  display: block;
+  padding: 45px;
+}
+@media only screen and (max-width: 400px) {
+  .community-section {
+    margin {
+      top: 45px;
+      bottom: 45px;
+    }
+  }
+  .title-section {
+    display: none;
+  }
+}
+</style>

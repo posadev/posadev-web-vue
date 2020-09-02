@@ -22,10 +22,6 @@
       "subtitle": "Cada taller tendrá un costo adicional a su entrada a las conferencias",
       "bottomButton": "Ver todos los workshops"
     },
-    "communnity" : {
-        "title": "Acerca de",
-        "subtitle": "Creamos eventos maravillosos"
-    },
     "aboutevent":{
         "title": "Sobre el evento",
         "subtitle": "El evento de JAVA más importante de México",
@@ -45,5 +41,11 @@
       "subtitle": "Escribenos o puedes contactarnos por nuestras redes sociales.",
       "topButton": "Enviar e-mail"
     }
+  },
+  "community" : {
+    "title": "Organizadores",
+    "subtitle": "Creamos eventos maravillosos",
+    "titleSection": "JConf es un evento organizado por las comunidades J4Guanatos y Java User Group gdl.",
+    "buttonText": "Quiero saber más"
   }
 }

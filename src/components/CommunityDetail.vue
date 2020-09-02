@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="colum col-xl-3 col-xs-1 community-logo">
+      <div class="column col-2 community-logo">
         <img :src="this.communityInfo.logoUrl" />
       </div>
       <Title
-        class="col-xl-9 col-xs-1 community-title"
+        class="column col-4 col-mr-auto community-title"
         :texts="this.titleData"
       />
     </div>
@@ -43,7 +43,7 @@ export default class CommunityDetail extends Vue {
     );
   }
   get buttonInfo(): ButtonInfo {
-    return new ButtonInfo('Quiero saber mas');
+    return new ButtonInfo(this.$t('community.buttonText'), true);
   }
   private onCommunityClick() {
     window.open(this.communityInfo.socialPageUrl.toString());
@@ -55,14 +55,31 @@ export default class CommunityDetail extends Vue {
 @import '../styles/variables';
 @import '../../node_modules/spectre.css/src/_layout';
 
+.container {
+  color: $dark-color;
+}
+// .columns {
+//   // display: flex;
+//   left: calc(50% - 196px / 2);
+// }
 .community-logo {
   margin: {
     right: 10px;
     left: 10px;
   }
   img {
-    width: 146px;
-    height: 146px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.community-title {
+  text-align: left;
+  h1 {
+    margin: {
+      top: 25px;
+      bottom: 15px;
+    }
   }
 }
 
@@ -81,21 +98,19 @@ export default class CommunityDetail extends Vue {
   }
 }
 
-.community-title {
-  margin: {
-    left: 10px;
-  }
-  h1 {
-    margin: {
-      top: 25px;
-      bottom: 15px;
-    }
-  }
-}
-
 @media only screen and (max-width: 767px) {
   .columns {
     flex-direction: column;
+  }
+  .community-logo {
+    margin: {
+      right: 10px;
+      left: 10px;
+    }
+    img {
+      width: 200%;
+      height: 200%;
+    }
   }
 }
 </style>
