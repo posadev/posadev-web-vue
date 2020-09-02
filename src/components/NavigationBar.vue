@@ -104,7 +104,7 @@ label {
   margin: 0 40px 0 0;
   font-size: 26px;
   line-height: 70px;
-  color: $inactive-color;
+  color: $light-color;
 
   @include query-only-screen-max-width {
     display: block;
