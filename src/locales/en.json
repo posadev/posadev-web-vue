@@ -40,6 +40,9 @@
       "title": "Have any questions?",
       "subtitle": "Contact us via email or you can reach via social networks",
       "topButton": "Send email"
-    }
+    },
+    "banner":{
+      "subtitle": "The most important JAVA event in Mexico"
+  }
   }
 }
