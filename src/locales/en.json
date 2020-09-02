@@ -40,6 +40,9 @@
       "title": "Have any questions?",
       "subtitle": "Contact us via email or you can reach via social networks",
       "topButton": "Send email"
+    },
+    "banner":{
+      "subtitle": "The most important JAVA event in Mexico"
     }
   },
   "community" : {
@@ -47,5 +50,5 @@
     "subtitle": "we love create amazing events!",
     "titleSection": "JConf is an event organized by the J4Guanatos and Java User Group gdl communities.",
     "buttonText": "I Want to know more"
+    }
   }
-}
