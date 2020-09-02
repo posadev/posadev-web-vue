@@ -5,6 +5,8 @@ import router from '@/router/index.ts';
 import Home from '@/views/Home.vue';
 import CommunitySection from '@/views/CommunitySection.vue';
 
+jest.mock('@/firebase');
+
 const localVue = createLocalVue();
 localVue.use(VueRouter);
 
