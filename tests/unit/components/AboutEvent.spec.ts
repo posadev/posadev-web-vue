@@ -20,14 +20,14 @@ describe('About Event Test', () => {
     expect(image.attributes('alt')).toBe('about event');
   });
   it('section text-content exist', async () => {
-    const section = wrapper.find('section[class="text-content"]');
+    const section = wrapper.find('section[class="text-content-about"]');
 
     await flushPromises();
 
     expect(section.exists()).toBe(true);
   });
   it('section text-content has title, subtitle and text', async () => {
-    const section = wrapper.find('section[class="text-content"]');
+    const section = wrapper.find('section[class="text-content-about"]');
     const title = section.find('.title');
     const subtitle = section.find('.subtitle');
     const text = section.find('.text');
