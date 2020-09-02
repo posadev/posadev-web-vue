@@ -68,14 +68,16 @@ export default class SpeakerCard extends Vue {
   flex-direction: column;
 
   .name {
+    color: $primary-dark-color;
     font-weight: bold;
     font-size: 24px;
-    line-height: 30px;
+    padding-bottom: 0;
   }
 
   .role {
     line-height: 36px;
-    color: rgba(0, 0, 0, 0.56);
+    color: $dark-color;
+    padding-bottom: 5px;
   }
 }
 </style>
