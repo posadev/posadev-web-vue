@@ -58,18 +58,15 @@ export default class CommunityDetail extends Vue {
 .container {
   color: $dark-color;
 }
-// .columns {
-//   // display: flex;
-//   left: calc(50% - 196px / 2);
-// }
 .community-logo {
+  flex: 1;
   margin: {
-    right: 10px;
+    right: 30px;
     left: 10px;
   }
   img {
-    width: 100%;
-    height: 100%;
+    width: 160px;
+    height: 160px;
   }
 }
 
@@ -81,10 +78,15 @@ export default class CommunityDetail extends Vue {
       bottom: 15px;
     }
   }
+  p {
+    line-height: 45px;
+    width: 500px;
+  }
 }
 
 .community-detail {
   margin: {
+    top: -100px;
     left: 10px;
   }
   p {
@@ -98,18 +100,41 @@ export default class CommunityDetail extends Vue {
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .columns {
-    flex-direction: column;
+@media only screen and (max-width: 400px) {
+  .container {
+    margin: {
+      left: -15px;
+    }
   }
   .community-logo {
-    margin: {
-      right: 10px;
-      left: 10px;
-    }
     img {
-      width: 200%;
-      height: 200%;
+      width: 67px;
+      height: 67px;
+    }
+    margin: {
+      top: 25px;
+    }
+  }
+  .community-title {
+    text-align: left;
+    h1 {
+      font-size: 30px;
+      margin: {
+        top: 25px;
+      }
+    }
+    p {
+      width: 200px;
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+  .community-detail {
+    margin: {
+      top: -200px;
+    }
+    p {
+      text-align: left;
     }
   }
 }

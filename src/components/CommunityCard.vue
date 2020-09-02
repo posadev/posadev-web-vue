@@ -56,5 +56,15 @@ export default class CommunityCard extends Vue {
       flex-direction: column;
     }
   }
+  .community-card-image {
+    flex: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      margin: {
+        bottom: 10px;
+      }
+    }
+  }
 }
 </style>

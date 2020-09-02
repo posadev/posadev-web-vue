@@ -1,6 +1,5 @@
 <template>
   <div class="community-section">
-    <SectionHero :title="organizersTexts" style="background-color:blue" />
     <p class="title-section">{{ $t('community.titleSection') }}</p>
     <CommunityCard
       v-for="(community, index) in this.communities"
@@ -12,7 +11,6 @@
 </template>
 
 <script lang="ts">
-import SectionHero from '@/components/SectionHero.vue';
 import TitleTexts from '@/data/TitleTexts.model';
 import { Component, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
@@ -21,7 +19,6 @@ import communities from '@/mocks/communities.mock';
 
 @Component({
   components: {
-    SectionHero,
     CommunityCard
   }
 })
