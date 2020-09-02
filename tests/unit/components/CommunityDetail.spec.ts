@@ -1,19 +1,67 @@
-import { shallowMount } from '@vue/test-utils';
+import { shallowMount, mount } from '@vue/test-utils';
 import CommunityDetail from '@/components/CommunityDetail.vue';
-import CommunityMock from '@/mocks/communities.mock';
 import Title from '@/components/Title.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
+import Community from '@/data/Community.model';
 
 describe('CommunityDetail.vue', () => {
+  const mock = new Community(
+    'titulo',
+    'subtitulo',
+    'contacto',
+    new URL('https://www.google.com'),
+    new URL('https://www.facebook.com'),
+    new URL('https://www.cosa.com'),
+    'description'
+  );
   beforeEach(() => {
     window.open = jest.fn();
   });
-  it('it should render properly', () => {
-    const mock = CommunityMock[0];
+  it('should be exist the accent button', () => {
     const wrapper = shallowMount(CommunityDetail, {
-      propsData: {
-        communityInfo: mock
-      }
+      mocks: {
+        $t: () => {
+          return {
+            community: {
+              buttonText: 'cosa 1'
+            }
+          };
+        }
+      },
+      propsData: { communityInfo: mock }
+    });
+    expect(wrapper.findComponent(AccentActionButton).exists()).toBe(true);
+  });
+
+  it('the button is clickleable', () => {
+    const wrapper = mount(CommunityDetail, {
+      mocks: {
+        $t: () => {
+          return {
+            community: {
+              buttonText: 'cosa 1'
+            }
+          };
+        }
+      },
+      propsData: { communityInfo: mock }
+    });
+    wrapper.findComponent(AccentActionButton).trigger('click');
+    expect(window.open).toHaveBeenCalled();
+  });
+
+  it('it should render properly', () => {
+    const wrapper = shallowMount(CommunityDetail, {
+      mocks: {
+        $t: () => {
+          return {
+            community: {
+              buttonText: 'cosa 1'
+            }
+          };
+        }
+      },
+      propsData: { communityInfo: mock }
     });
     const logo = wrapper.find('div.community-logo').find('img');
     const tittle = wrapper.findComponent(Title);
@@ -26,22 +74,5 @@ describe('CommunityDetail.vue', () => {
     expect(description.exists()).toBe(true);
     expect(description.text()).toBe(mock.description);
     expect(button.exists()).toBe(true);
-  });
-
-  it('should trigger click', async () => {
-    const mock = CommunityMock[0];
-    const spyEvent = jest.fn();
-    const wrapper = shallowMount(CommunityDetail, {
-      listeners: {
-        'button-action': spyEvent
-      },
-      propsData: {
-        communityInfo: mock
-      }
-    });
-    const actionButtonComponent = wrapper.findComponent(AccentActionButton);
-    expect(actionButtonComponent.exists()).toBe(true);
-    actionButtonComponent.vm.$emit('button-action');
-    expect(window.open).toHaveBeenCalled();
   });
 });
