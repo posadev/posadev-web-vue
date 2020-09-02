@@ -40,6 +40,9 @@
       "title": "¿Tienes alguna pregunta?",
       "subtitle": "Escribenos o puedes contactarnos por nuestras redes sociales.",
       "topButton": "Enviar e-mail"
-    }
+    },
+    "banner":{
+      "subtitle": "El evento de JAVA más importante de México"
+  }
   }
 }
