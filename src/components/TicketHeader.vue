@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header">
     <p class="name">{{ this.ticket.name }}</p>
     <p class="price">{{ this.ticket.price }}</p>
     <p class="date">

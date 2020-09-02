@@ -1,7 +1,11 @@
 <template>
-  <div class="card">
+  <div>
     <TicketHeader class="card-header" :ticket="ticket" />
-    <TicketButton class="card-footer" :info="buttonInfo" :ticketUrl="ticket" />
+    <TicketButton
+      class="card-footer"
+      :info="buttonInfo"
+      :ticketUrl="ticket.url"
+    />
   </div>
 </template>
 
@@ -32,7 +36,7 @@ export default class TicketCard extends Vue {
 }
 
 .card-header {
-  background-color: white;
+  background-color: $light-colors;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
