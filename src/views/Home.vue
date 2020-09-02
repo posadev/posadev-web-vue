@@ -1,7 +1,7 @@
 <template>
   <div>
     <Banner />
-    <!-- TODO: AboutEvent component -->
+    <AboutEvent class="section-light section-home" />
     <!-- TODO: Image Component  -->
     <SectionSpeakers class="section-home section-dark" />
     <SectionWorkshops class="section-home section-regular" />
@@ -17,9 +17,11 @@ import SectionSpeakers from '@/components/SectionSpeakers.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
+import AboutEvent from '@/components/AboutEvent.vue';
 
 @Component({
   components: {
+    AboutEvent,
     Banner,
     SectionSpeakers,
     SectionWorkshops,
