@@ -9,8 +9,8 @@
       <p class="company">{{ this.speaker.company }}</p>
     </div>
     <div class="texts">
-      <p class="name">{{ this.speaker.name }}</p>
-      <p class="bio">{{ this.speaker.bio }}</p>
+      <p class="name">{{ this.fullName }}</p>
+      <p class="role">{{ this.speaker.role }}</p>
     </div>
   </div>
 </template>
@@ -21,6 +21,10 @@ import Speaker from '../data/Speaker.model';
 @Component
 export default class SpeakerCard extends Vue {
   @Prop({ required: true }) private speaker!: Speaker;
+
+  private get fullName(): string {
+    return `${this.speaker.firstName} ${this.speaker.lastName}`;
+  }
 }
 </script>
 <style lang="scss">
@@ -70,7 +74,7 @@ export default class SpeakerCard extends Vue {
     padding-bottom: 0;
   }
 
-  .bio {
+  .role {
     line-height: 36px;
     color: $dark-color;
     padding-bottom: 5px;
