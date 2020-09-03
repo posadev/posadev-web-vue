@@ -38,6 +38,7 @@ export default class CommunityCard extends Vue {
     flex-direction: row-reverse;
   }
 }
+
 .community-card-image {
   flex: 1;
   img {
@@ -45,6 +46,7 @@ export default class CommunityCard extends Vue {
     height: 400px;
   }
 }
+
 .community-card-detail {
   flex: 3;
 }
@@ -56,6 +58,7 @@ export default class CommunityCard extends Vue {
       flex-direction: column;
     }
   }
+
   .community-card-image {
     flex: 1;
     img {

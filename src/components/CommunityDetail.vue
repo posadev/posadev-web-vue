@@ -54,11 +54,12 @@ export default class CommunityDetail extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
-@import '../../node_modules/spectre.css/src/_layout';
+@import '~spectre.css/src/_layout';
 
 .container {
   color: $dark-color;
 }
+
 .community-logo {
   flex: 1;
   margin: {
@@ -107,6 +108,7 @@ export default class CommunityDetail extends Vue {
       left: -15px;
     }
   }
+
   .community-logo {
     img {
       width: 67px;
@@ -116,6 +118,7 @@ export default class CommunityDetail extends Vue {
       top: 25px;
     }
   }
+
   .community-title {
     text-align: left;
     h1 {
@@ -130,6 +133,7 @@ export default class CommunityDetail extends Vue {
       line-height: 30px;
     }
   }
+
   .community-detail {
     margin: {
       top: -200px;

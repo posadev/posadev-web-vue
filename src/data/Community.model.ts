@@ -1,11 +1,11 @@
 export default class Community {
   constructor(
-    public readonly titleName: string,
-    public readonly subtitleName: string,
-    public readonly contact: string,
-    public readonly landingImageUrl: URL,
-    public readonly logoUrl: URL,
-    public readonly socialPageUrl: URL,
-    public readonly description: string
+    readonly titleName: string,
+    readonly subtitleName: string,
+    readonly contact: string,
+    readonly landingImageUrl: URL,
+    readonly logoUrl: URL,
+    readonly socialPageUrl: URL,
+    readonly description: string
   ) {}
 }

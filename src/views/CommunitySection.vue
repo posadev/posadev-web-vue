@@ -54,6 +54,7 @@ export default class CommunitySection extends Vue {
     left: 45px;
   }
 }
+
 .title-section {
   font-size: 24px;
   text-align: center;
@@ -61,6 +62,7 @@ export default class CommunitySection extends Vue {
   display: block;
   padding: 45px;
 }
+
 @media only screen and (max-width: 400px) {
   .community-section {
     margin {
@@ -68,6 +70,7 @@ export default class CommunitySection extends Vue {
       bottom: 45px;
     }
   }
+
   .title-section {
     display: none;
   }
