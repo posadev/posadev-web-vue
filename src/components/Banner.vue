@@ -119,12 +119,9 @@ img.banner-logo {
   line-height: 43px;
 
   @media only screen and (max-width: 928px) {
-    line-height: 1.6rem;
+    line-height: initial;
     padding-bottom: 20%;
-    //iphone 5/SE
-    @media only screen and (max-width: 568px) {
-      padding-bottom: 40%;
-    }
+
     @include iphones-font-size(1.4rem);
     //pixel 2xl
     @media only screen and (max-height: 823px) and (min-height: 737px) {
