@@ -1,7 +1,7 @@
 <template>
-  <div class="columns">
+  <div class="columns content-tickets">
     <TicketCard
-      class="column"
+      class="column card-ticket"
       v-for="item in tickets"
       v-bind:key="item.name"
       :ticket="item"
@@ -35,17 +35,15 @@ export default class Tickets extends Vue {
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
 
-.columns {
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
+.card-ticket {
+  @media only screen and (max-width: 959px) {
+    margin-bottom: 3%;
+    min-width: 50%;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
 }
-
-.column {
-  width: 306px;
-  height: 316px;
-  padding-left: 50px;
-  padding-right: 50px;
+.content-tickets {
+  max-width: 100%;
 }
 </style>
