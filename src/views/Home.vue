@@ -2,22 +2,22 @@
   <div>
     <Banner />
     <AboutEvent class="section-light section-home" />
-    <!-- TODO: Image Component  -->
     <SectionSpeakers class="section-home section-dark" />
-    <SectionWorkshops class="section-home section-regular" />
     <SectionTickets class="section-home section-white" />
     <SectionContact class="section-home section-light" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import SectionContact from '@/components/SectionContact.vue';
 import SectionSpeakers from '@/components/SectionSpeakers.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
+import SpeakerContainer from '@/di/SpeakerContainer';
+import TicketContainer from '@/di/TicketContainer';
 
 @Component({
   components: {
@@ -29,7 +29,7 @@ import AboutEvent from '@/components/AboutEvent.vue';
     SectionContact
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Mixins(SpeakerContainer, TicketContainer) {}
 </script>
 
 <style lang="scss">
