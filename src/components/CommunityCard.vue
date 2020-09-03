@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="['community-card-box', { reverse: isOdd }]">
+  <div v-bind:class="['community-card-box', { reverse: alignLeft }]">
     <div class="community-card-image">
       <img :src="this.community.landingImageUrl" />
     </div>
@@ -22,7 +22,7 @@ import CommunityDetail from '@/components/CommunityDetail.vue';
 })
 export default class CommunityCard extends Vue {
   @Prop() private readonly community!: Community;
-  @Prop() private readonly isOdd!: boolean;
+  @Prop() private readonly alignLeft!: boolean;
 }
 </script>
 
