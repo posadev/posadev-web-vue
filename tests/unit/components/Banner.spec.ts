@@ -5,10 +5,6 @@ import flushPromises from 'flush-promises';
 jest.mock('@/firebase');
 
 describe('testing Banner Component', () => {
-  // beforeEach(() => {
-  //   jest.mock('@/service/fetchImageURL');
-  // });
-
   it('paragraph text has the text correct', async () => {
     const wrapper = mount(Banner, {
       mocks: {
