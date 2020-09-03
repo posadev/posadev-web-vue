@@ -20,7 +20,7 @@ describe('testing Banner Component', () => {
 
     await flushPromises();
 
-    const paragraph = wrapper.find('p[class="text"]');
+    const paragraph = wrapper.find('p[class="subtitle"]');
     expect(paragraph.exists()).toBe(true);
   });
 
