@@ -71,7 +71,7 @@ section.text-content-about {
 .text {
   line-height: 2rem;
   @media only screen and (max-device-width: 1200px) {
-    line-height: 170%;
+    line-height: 160%;
   }
 }
 </style>
