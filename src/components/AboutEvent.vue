@@ -16,16 +16,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { fetchImageURL } from '@/service/fetchImageURL';
 
 @Component
 export default class AboutEvent extends Vue {
   private image = '';
 
-  @Watch('image', { immediate: true })
-  private async getImage() {
-    this.image = await fetchImageURL('about-event.jpg');
+  private getImage(): void {
+    fetchImageURL('banner.png').then((url: string) => {
+      this.image = url;
+    });
   }
 }
 </script>
@@ -38,27 +39,33 @@ export default class AboutEvent extends Vue {
 .container-image {
   display: block;
   margin-right: 3%;
+
   @media only screen and (max-device-width: 1200px) {
     display: none;
   }
 }
+
 .image-about-event {
   height: 416px;
   width: 416px;
 }
+
 .content-about {
   flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
 }
+
 .text-content-about {
   text-align: left;
+
   .title,
   .subtitle {
     line-height: initial;
     padding-bottom: 0;
   }
 }
+
 .text {
   line-height: 2rem;
 }
