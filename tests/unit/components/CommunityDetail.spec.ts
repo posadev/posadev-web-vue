@@ -28,7 +28,7 @@ describe('CommunityDetail.vue', () => {
           };
         }
       },
-      propsData: { communityInfo: mock }
+      propsData: { community: mock }
     });
     expect(wrapper.findComponent(AccentActionButton).exists()).toBe(true);
   });
@@ -44,7 +44,7 @@ describe('CommunityDetail.vue', () => {
           };
         }
       },
-      propsData: { communityInfo: mock }
+      propsData: { community: mock }
     });
     wrapper.findComponent(AccentActionButton).trigger('click');
     expect(window.open).toHaveBeenCalled();
@@ -61,7 +61,7 @@ describe('CommunityDetail.vue', () => {
           };
         }
       },
-      propsData: { communityInfo: mock }
+      propsData: { community: mock }
     });
     const logo = wrapper.find('div.community-logo').find('img');
     const tittle = wrapper.findComponent(Title);

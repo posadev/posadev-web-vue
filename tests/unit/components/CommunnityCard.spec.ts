@@ -8,7 +8,7 @@ describe('CommunityCard.vue', () => {
     const mock = CommunityMock[0];
     const wrapper = shallowMount(CommunityCard, {
       propsData: {
-        communityInfo: mock
+        community: mock
       }
     });
     const landingImage = wrapper.find('div.community-card-image').find('img');

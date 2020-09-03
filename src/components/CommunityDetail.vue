@@ -2,7 +2,7 @@
   <div class="container">
     <div class="columns">
       <div class="column col-2 community-logo">
-        <img :src="this.communityInfo.logoUrl" />
+        <img :src="this.community.logoUrl" />
       </div>
       <Title
         class="column col-4 col-mr-auto community-title"
@@ -10,7 +10,7 @@
       />
     </div>
     <div class="community-detail">
-      <p>{{ this.communityInfo.description }}</p>
+      <p>{{ this.community.description }}</p>
       <AccentActionButton
         id="btn-community"
         :info="buttonInfo"
@@ -35,19 +35,19 @@ import TitleTexts from '@/data/TitleTexts.model';
   }
 })
 export default class CommunityDetail extends Vue {
-  @Prop() private readonly communityInfo!: Community;
+  @Prop() private readonly community!: Community;
 
   get titleData(): TitleTexts {
     return new TitleTexts(
-      this.communityInfo.titleName,
-      this.communityInfo.subtitleName
+      this.community.titleName,
+      this.community.subtitleName
     );
   }
   get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('community.buttonText'), true);
   }
   private onCommunityClick() {
-    window.open(this.communityInfo.socialPageUrl.toString());
+    window.open(this.community.socialPageUrl.toString());
   }
 }
 </script>

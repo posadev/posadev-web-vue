@@ -3,7 +3,7 @@
     <p class="title-section">{{ $t('community.titleSection') }}</p>
     <CommunityCard
       v-for="(community, index) in this.communities"
-      v-bind:communityInfo="community"
+      v-bind:community="community"
       v-bind:key="community.name"
       :isOdd="index % 2 !== 0"
     />
