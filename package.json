@@ -10,7 +10,6 @@
     "lint": "vue-cli-service lint --no-fix --max-warnings=0"
   },
   "dependencies": {
-    "@firebase/firestore": "^1.16.4",
     "core-js": "^3.6.5",
     "firebase": "^7.19.1",
     "firebase-auth": "^0.1.2",
