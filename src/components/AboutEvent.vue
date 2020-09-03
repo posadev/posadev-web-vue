@@ -56,13 +56,15 @@ export default class AboutEvent extends Vue {
   padding-right: 5%;
 }
 
-.text-content-about {
+section.text-content-about {
   text-align: left;
 
   .title,
   .subtitle {
     line-height: initial;
     padding-bottom: 0;
+    margin-top: 1%;
+    margin-bottom: 3%;
   }
 }
 
