@@ -14,8 +14,14 @@ describe('TicketHeader component', () => {
     const wrapper = shallowMount(TicketHeader, {
       propsData: {
         ticket: mock
+      },
+      mocks: {
+        $d: () => {
+          return '';
+        }
       }
     });
+
     const ticketName = wrapper.find('p.name');
     expect(ticketName.text()).toBe(mock.name);
   });
