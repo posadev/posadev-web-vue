@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <TicketHeader class="card-header" :ticket="ticket" />
     <TicketButton
       class="card-footer"
@@ -30,9 +30,6 @@ export default class TicketCard extends Vue {
 .card {
   width: 306px;
   height: 316px;
-  &:hover {
-    color: $primary-color;
-  }
 }
 
 .card-header {
@@ -42,10 +39,17 @@ export default class TicketCard extends Vue {
 }
 
 .card-footer {
-  &:hover {
+  button {
     background-color: $primary-color;
-    color: $dark-color;
-    border: none;
+    color: $light-color;
+
+    transition: 0.25s;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0.5em 0.5em -0.4em darken($light-color, 50%);
+      transform: translateY(-0.25em);
+    }
   }
 }
 </style>
