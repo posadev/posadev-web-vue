@@ -3,8 +3,7 @@
     <p class="name">{{ this.ticket.name }}</p>
     <p class="price">{{ this.ticket.price }}</p>
     <p class="date">
-      {{ formatDate(this.ticket.start) }}
-      - {{ formatDate(this.ticket.end) }}
+      {{ $d(this.ticket.start, 'short') }} - {{ $d(this.ticket.end, 'short') }}
     </p>
   </div>
 </template>
@@ -16,26 +15,6 @@ import Ticket from '@/data/Ticket.model';
 @Component
 export default class TicketHeader extends Vue {
   @Prop({ required: true }) private ticket!: Ticket;
-
-  private formatDate(date: Date) {
-    const months = [
-      'Ene',
-      'Feb',
-      'Mar',
-      'Abr',
-      'May',
-      'Jun',
-      'Jul',
-      'Ago',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dic'
-    ];
-    return `${date.getDate()}/${months[date.getMonth()]}/${
-      date.getFullYear() - 2000
-    }`;
-  }
 }
 </script>
 <style lang="scss">
@@ -67,11 +46,13 @@ export default class TicketHeader extends Vue {
   }
   color: $dark-color;
 }
+
 .date {
   font: {
     weight: normal;
     size: 16px;
   }
+  text-transform: capitalize;
   margin: 0;
   color: $dark-color;
 }
