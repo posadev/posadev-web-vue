@@ -10,7 +10,7 @@
     </div>
     <section class="text-content text-format">
       <h1 class="title">JConf GDL 2020</h1>
-      <p class="text">{{ $t('home.banner.subtitle') }}</p>
+      <p class="subtitle">{{ $t('home.banner.subtitle') }}</p>
     </section>
   </div>
 </template>
@@ -37,11 +37,10 @@ export default class Banner extends Vue {
 @import '~spectre.css/src/_media.scss';
 
 @mixin position($top, $left, $right, $bottom) {
-  top: $top;
-  left: $left;
-  right: $right;
-  bottom: $bottom;
-  position: absolute;
+  margin-top: $top;
+  margin-left: $left;
+  margin-right: $right;
+  margin-bottom: $bottom;
 }
 
 @mixin ipad-height {
@@ -72,7 +71,7 @@ export default class Banner extends Vue {
   background: $primary-dark-color;
 }
 
-.img-banner {
+img.img-banner {
   width: 100%;
   //Ipads and phones
   @media only screen and (max-width: 928px) {
@@ -80,14 +79,18 @@ export default class Banner extends Vue {
   }
 }
 
-.banner-logo {
+img.banner-logo {
   position: absolute;
   right: 3%;
   bottom: 10%;
   max-width: 20%;
 
-  @media only screen and (max-width: 928px) {
+  @media only screen and (max-width: 440px) {
     max-width: 50%;
+  }
+
+  @media only screen and (max-width: 780px) and (min-width: 441px) {
+    max-width: 40%;
 
     @include ipad-height {
       max-width: 35%;
@@ -99,32 +102,28 @@ export default class Banner extends Vue {
   font-size: 78px;
   line-height: 80px;
 
-  @media only screen and (max-width: 928px) {
-    font-size: 32px;
-    line-height: 39px;
+  @media only screen and (max-width: 455px) {
+    font-size: 55px;
+  }
 
-    @media only screen and (max-height: 568px) {
-      line-height: 2rem;
-    }
+  @media only screen and (max-width: 928px) and (min-width: 456px) {
+    font-size: 78px;
+    line-height: 80px;
 
     @include iphones-font-size(2.3rem);
-    //ipad
-    @include ipad-height {
-      font-size: 4rem;
-      line-height: 4rem;
-    }
   }
 }
 
-.text {
+.subtitle {
   font-size: 24px;
   line-height: 43px;
 
   @media only screen and (max-width: 928px) {
     line-height: 1.6rem;
+    padding-bottom: 20%;
     //iphone 5/SE
-    @media only screen and (max-height: 568px) {
-      padding-top: 0.6rem;
+    @media only screen and (max-width: 568px) {
+      padding-bottom: 40%;
     }
     @include iphones-font-size(1.4rem);
     //pixel 2xl
@@ -141,30 +140,17 @@ export default class Banner extends Vue {
 .text-content {
   display: block;
   position: absolute;
-  @media only screen and (min-width: 929px) {
-    left: 6.67%;
-    right: 56.67%;
-    top: 33.42%;
-  }
 
-  //Ipads and phones
-  @media only screen and (max-width: 928px) {
-    height: 30vh;
-    position: relative;
+  @media only screen and (max-width: 943px) {
+    position: initial;
     background: $primary-dark-color;
 
     h1 {
-      @include position(10%, 4.44%, 50%, 0%);
+      @include position(10%, 4.44%, 2%, 2%);
     }
 
     p {
-      @include position(50.49%, 4.44%, 30%, 91.38%);
-      font-size: 20px;
-    }
-
-    //ipad
-    @include ipad-height {
-      height: 40vh;
+      @include position(0, 4.44%, 20%, 0);
     }
   }
 }
