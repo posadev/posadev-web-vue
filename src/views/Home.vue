@@ -2,7 +2,7 @@
   <div>
     <Banner />
     <AboutEvent class="section-light section-home" />
-    <!-- TODO: Image Component  -->
+    <img :src="imageDivider" alt="JConf 2020" />
     <SectionSpeakers class="section-home section-dark" />
     <SectionWorkshops class="section-home section-regular" />
     <SectionTickets class="section-home section-white" />
@@ -18,6 +18,7 @@ import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
+import { fetchImageURL } from '@/service/fetchImageURL';
 
 @Component({
   components: {
@@ -29,7 +30,15 @@ import AboutEvent from '@/components/AboutEvent.vue';
     SectionContact
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  private imageDivider = '';
+
+  private created() {
+    fetchImageURL('Rectangle.png').then((dividerUrl: string) => {
+      this.imageDivider = dividerUrl;
+    });
+  }
+}
 </script>
 
 <style lang="scss">
