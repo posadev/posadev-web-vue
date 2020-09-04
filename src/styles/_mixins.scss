@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 /**
   Set styles for a "section". Setting the background and the
  */
@@ -13,5 +15,12 @@
   }
   .text {
     color: $texts-color;
+  }
+}
+
+
+@mixin media-screen-max-width($value-max-width: 768px) {
+  @media only screen and (max-width: $value-max-width) {
+    @content;
   }
 }
