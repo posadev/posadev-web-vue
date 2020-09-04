@@ -40,14 +40,15 @@ export default class CommunityCard extends Vue {
     top: 40px;
   }
   flex-direction: row;
-  &.reverse {
-    flex-direction: row-reverse;
-  }
   @include query-only-screen-max-width {
     flex-direction: column;
-    &.reverse {
-      flex-direction: column;
-    }
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  @include query-only-screen-max-width {
+    flex-direction: column;
   }
 }
 
