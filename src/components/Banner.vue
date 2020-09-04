@@ -137,11 +137,19 @@ img.banner-logo {
     background: $primary-dark-color;
 
     h1 {
-      @include with-margins($top: 10%, $left: 4.44%, $right: 2%, $bottom: 2%);
+      margin: {
+        top: 10%;
+        left: 4.44%;
+        right: 2%;
+        bottom: 2%;
+      }
     }
 
     p {
-      @include with-margins($left: 4.44%, $right: 20%);
+      margin: {
+        left: 4.44%;
+        right: 20%;
+      }
     }
   }
 }

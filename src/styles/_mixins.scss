@@ -17,9 +17,3 @@
     color: $texts-color;
   }
 }
-
-@mixin with-margins($positions...) {
-  @each $position, $value in meta.keywords($positions) {
-    margin-#{$position}: $value;
-  }
-}
