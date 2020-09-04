@@ -4,8 +4,8 @@
     <CommunityCard
       v-for="(community, index) in this.communities"
       v-bind:community="community"
-      v-bind:key="community.name"
-      :isOdd="index % 2 !== 0"
+      v-bind:key="community.titleName"
+      :alignLeft="index % 2 !== 0"
     />
   </div>
 </template>
@@ -47,6 +47,7 @@ export default class CommunitySection extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+
 .community-section {
   margin: {
     right: 45px;
@@ -63,7 +64,7 @@ export default class CommunitySection extends Vue {
   padding: 45px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 411px) {
   .community-section {
     margin {
       top: 45px;

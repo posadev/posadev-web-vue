@@ -102,7 +102,7 @@ export default class CommunityDetail extends Vue {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 411px) {
   .container {
     margin: {
       left: -15px;
@@ -124,13 +124,16 @@ export default class CommunityDetail extends Vue {
     h1 {
       font-size: 30px;
       margin: {
-        top: 25px;
+        top: 0px;
       }
     }
     p {
       width: 200px;
       font-size: 22px;
       line-height: 30px;
+      margin: {
+        top: -20px;
+      }
     }
   }
 
