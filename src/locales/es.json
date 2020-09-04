@@ -10,7 +10,6 @@
     "communities": "Comunidades"
   },
   "home": {
-    "welcome": "Bienvenido a tu aplicación Vue.js",
     "speakers": {
       "title": "Speakers",
       "subtitle": "Conoce a los profesionales de la industria que nos acompañan",

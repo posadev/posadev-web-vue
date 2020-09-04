@@ -35,7 +35,8 @@ import TitleTexts from '@/data/TitleTexts.model';
   }
 })
 export default class CommunityDetail extends Vue {
-  @Prop() private readonly community!: Community;
+  @Prop({ required: true })
+  private readonly community!: Community;
 
   get titleData(): TitleTexts {
     return new TitleTexts(
@@ -43,9 +44,11 @@ export default class CommunityDetail extends Vue {
       this.community.subtitleName
     );
   }
+
   get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('community.buttonText'), true);
   }
+
   private onCommunityClick() {
     window.open(this.community.socialPageUrl.toString());
   }
@@ -54,17 +57,12 @@ export default class CommunityDetail extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 @import '~spectre.css/src/_layout';
-
-@mixin query-only-screen-max-width($value-max-width: 411px) {
-  @media only screen and (max-width: $value-max-width) {
-    @content;
-  }
-}
 
 .container {
   color: $dark-color;
-  @include query-only-screen-max-width {
+  @include media-screen-max-width(411px) {
     margin: {
       left: -15px;
     }
@@ -77,11 +75,13 @@ export default class CommunityDetail extends Vue {
     right: 30px;
     left: 10px;
   }
+
   img {
     width: 160px;
     height: 160px;
   }
-  @include query-only-screen-max-width {
+
+  @include media-screen-max-width(411px) {
     img {
       width: 67px;
       height: 67px;
@@ -94,22 +94,24 @@ export default class CommunityDetail extends Vue {
 
 .community-title {
   text-align: left;
+
   h1 {
     margin: {
       top: 25px;
       bottom: 15px;
     }
   }
+
   p {
     line-height: 45px;
     width: 500px;
   }
-  @include query-only-screen-max-width {
-    text-align: left;
+
+  @include media-screen-max-width(411px) {
     h1 {
       font-size: 30px;
       margin: {
-        top: 0px;
+        top: 0;
       }
     }
     p {
@@ -128,6 +130,7 @@ export default class CommunityDetail extends Vue {
     top: -100px;
     left: 10px;
   }
+
   p {
     text-align: left;
     min-height: 75px;
@@ -137,7 +140,8 @@ export default class CommunityDetail extends Vue {
       bottom: 25px;
     }
   }
-  @include query-only-screen-max-width {
+
+  @include media-screen-max-width(411px) {
     margin: {
       top: -200px;
     }

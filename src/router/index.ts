@@ -13,7 +13,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/communities',
     name: 'communities',
-    component: () => import('../views/CommunitySection.vue')
+    component: () => import('../views/Communities.vue')
   }
 ];
 

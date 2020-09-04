@@ -1,7 +1,7 @@
 <template>
   <div class="community-section">
     <p class="title-section">{{ $t('community.titleSection') }}</p>
-    <CommunityCard
+    <CommunityInfo
       v-for="(community, index) in this.communities"
       v-bind:community="community"
       v-bind:key="community.titleName"
@@ -14,15 +14,15 @@
 import TitleTexts from '@/data/TitleTexts.model';
 import { Component, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
-import CommunityCard from '@/components/CommunityCard.vue';
+import CommunityInfo from '@/components/CommunityInfo.vue';
 import communities from '@/mocks/communities.mock';
 
 @Component({
   components: {
-    CommunityCard
+    CommunityInfo
   }
 })
-export default class CommunitySection extends Vue {
+export default class Communities extends Vue {
   private get organizersTexts(): TitleTexts {
     return new TitleTexts(
       this.$t('community.title'),
@@ -47,12 +47,7 @@ export default class CommunitySection extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
-
-@mixin query-only-screen-max-width($value-max-width: 411px) {
-  @media only screen and (max-width: $value-max-width) {
-    @content;
-  }
-}
+@import '../styles/mixins';
 
 .community-section {
   margin: {
@@ -60,7 +55,7 @@ export default class CommunitySection extends Vue {
     bottom: 60px;
     left: 45px;
   }
-  @include query-only-screen-max-width {
+  @include media-screen-max-width(411px) {
     margin: {
       top: 45px;
       bottom: 45px;
@@ -74,7 +69,7 @@ export default class CommunitySection extends Vue {
   color: $dark-color;
   display: block;
   padding: 45px;
-  @include query-only-screen-max-width {
+  @include media-screen-max-width(411px) {
     display: none;
   }
 }
