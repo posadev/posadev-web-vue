@@ -1,7 +1,12 @@
 <template>
   <div class="col-xl-12 content">
     <div class="content-banner-image">
-      <img :src="image" class="img-responsive img-banner" alt="JConf 2020" />
+      <img
+        :src="image"
+        class="img-responsive img-fit-cover img-banner"
+        alt="JConf 2020"
+      />
+      <div class="background-banner" />
       <img
         class="img-responsive banner-logo"
         src="../assets/logoTransparente.png"
@@ -33,9 +38,15 @@ export default class Banner extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
-@import '../styles/mixins';
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media.scss';
+
+@mixin position($top, $left, $right, $bottom) {
+  margin-top: $top;
+  margin-left: $left;
+  margin-right: $right;
+  margin-bottom: $bottom;
+}
 
 @mixin ipad-height {
   @media only screen and (max-height: 1024px) and (min-height: 824px) {
@@ -63,6 +74,14 @@ export default class Banner extends Vue {
   display: block;
   position: relative;
   background: $primary-dark-color;
+}
+
+.background-banner {
+  position: absolute;
+  background: rgba(29, 52, 97, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0%;
 }
 
 img.img-banner {
@@ -142,19 +161,11 @@ img.banner-logo {
     background: $primary-dark-color;
 
     h1 {
-      margin: {
-        top: 10%;
-        left: 4.44%;
-        right: 2%;
-        bottom: 2%;
-      }
+      @include position(10%, 4.44%, 2%, 2%);
     }
 
     p {
-      margin: {
-        left: 4.44%;
-        right: 20%;
-      }
+      @include position(0, 4.44%, 20%, 0);
     }
   }
 }
