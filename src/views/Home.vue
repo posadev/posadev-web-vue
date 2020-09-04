@@ -1,10 +1,10 @@
 <template>
   <div>
     <Banner />
-    <AboutEvent class="section-light section-home" />
-    <SectionSpeakers class="section-home section-dark" />
-    <SectionTickets class="section-home section-white" />
-    <SectionContact class="section-home section-light" />
+    <AboutEvent id="about-event" class="section-light section-home" />
+    <SectionSpeakers id="speakers" class="section-home section-dark" />
+    <SectionTickets id="tickets" class="section-home section-white" />
+    <SectionContact id="contact" class="section-home section-light" />
   </div>
 </template>
 
