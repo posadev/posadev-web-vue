@@ -37,10 +37,8 @@ export default class Tickets extends Vue {
 
 .card-ticket {
   @media only screen and (max-width: 959px) {
-    margin-bottom: 3%;
     min-width: 50%;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-bottom: 3%;
   }
 }
 .content-tickets {
