@@ -51,10 +51,16 @@ export default class CommunityInfo extends Vue {
 
 .right-aligned {
   flex-direction: row;
+  @include media-screen-max-width {
+    flex-direction: column;
+  }
 }
 
 .left-aligned {
   flex-direction: row-reverse;
+  @include media-screen-max-width {
+    flex-direction: column;
+  }
 }
 
 .community-card-image {
