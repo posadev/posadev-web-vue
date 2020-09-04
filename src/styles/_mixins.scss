@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 /**
   Set styles for a "section". Setting the background and the
  */
@@ -13,5 +15,11 @@
   }
   .text {
     color: $texts-color;
+  }
+}
+
+@mixin with-margins($positions...) {
+  @each $position, $value in meta.keywords($positions) {
+    margin-#{$position}: $value;
   }
 }
