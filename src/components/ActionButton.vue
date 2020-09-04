@@ -50,6 +50,10 @@ export default class ActionButton extends Vue {
   &.small {
     width: 196px;
     height: 58px;
+    @media only screen and (max-width: 411px) {
+      width: 100%;
+      height: 44px;
+    }
   }
 }
 </style>

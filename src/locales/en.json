@@ -10,7 +10,6 @@
     "communities": "Communities"
   },
   "home": {
-    "welcome": "Welcome to Your Vue.js App",
     "speakers": {
       "title": "Speakers",
       "subtitle": "Meet the industry professionals who are accompanying us",
@@ -45,5 +44,10 @@
       "subtitle": "The most important JAVA event in Mexico"
     }
   },
-  "months": []
-}
+  "community" : {
+    "title": "Organizers",
+    "subtitle": "we love create amazing events!",
+    "titleSection": "JConf is an event organized by the J4Guanatos and Java User Group gdl communities.",
+    "buttonText": "I Want to know more"
+    }
+  }
