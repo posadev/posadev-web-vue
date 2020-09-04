@@ -132,6 +132,11 @@ img.banner-logo {
   display: block;
   position: absolute;
 
+  @media only screen and (min-width: 929px) {
+    left: 6.67%;
+    right: 56.67%;
+    top: 33.42%;
+  }
   @media only screen and (max-width: 943px) {
     position: initial;
     background: $primary-dark-color;
