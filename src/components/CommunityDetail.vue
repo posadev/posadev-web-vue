@@ -56,8 +56,19 @@ export default class CommunityDetail extends Vue {
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
 
+@mixin query-only-screen-max-width($value-max-width: 411px) {
+  @media only screen and (max-width: $value-max-width) {
+    @content;
+  }
+}
+
 .container {
   color: $dark-color;
+  @include query-only-screen-max-width {
+    margin: {
+      left: -15px;
+    }
+  }
 }
 
 .community-logo {
@@ -69,6 +80,15 @@ export default class CommunityDetail extends Vue {
   img {
     width: 160px;
     height: 160px;
+  }
+  @include query-only-screen-max-width {
+    img {
+      width: 67px;
+      height: 67px;
+    }
+    margin: {
+      top: 25px;
+    }
   }
 }
 
@@ -83,6 +103,23 @@ export default class CommunityDetail extends Vue {
   p {
     line-height: 45px;
     width: 500px;
+  }
+  @include query-only-screen-max-width {
+    text-align: left;
+    h1 {
+      font-size: 30px;
+      margin: {
+        top: 0px;
+      }
+    }
+    p {
+      width: 200px;
+      font-size: 22px;
+      line-height: 30px;
+      margin: {
+        top: -20px;
+      }
+    }
   }
 }
 
@@ -100,44 +137,7 @@ export default class CommunityDetail extends Vue {
       bottom: 25px;
     }
   }
-}
-
-@media only screen and (max-width: 411px) {
-  .container {
-    margin: {
-      left: -15px;
-    }
-  }
-
-  .community-logo {
-    img {
-      width: 67px;
-      height: 67px;
-    }
-    margin: {
-      top: 25px;
-    }
-  }
-
-  .community-title {
-    text-align: left;
-    h1 {
-      font-size: 30px;
-      margin: {
-        top: 0px;
-      }
-    }
-    p {
-      width: 200px;
-      font-size: 22px;
-      line-height: 30px;
-      margin: {
-        top: -20px;
-      }
-    }
-  }
-
-  .community-detail {
+  @include query-only-screen-max-width {
     margin: {
       top: -200px;
     }

@@ -27,6 +27,12 @@ export default class CommunityCard extends Vue {
 </script>
 
 <style lang="scss">
+@mixin query-only-screen-max-width($value-max-width: 768px) {
+  @media only screen and (max-width: $value-max-width) {
+    @content;
+  }
+}
+
 .community-card-box {
   display: flex;
   width: 100%;
@@ -37,6 +43,12 @@ export default class CommunityCard extends Vue {
   &.reverse {
     flex-direction: row-reverse;
   }
+  @include query-only-screen-max-width {
+    flex-direction: column;
+    &.reverse {
+      flex-direction: column;
+    }
+  }
 }
 
 .community-card-image {
@@ -45,21 +57,7 @@ export default class CommunityCard extends Vue {
     width: 420px;
     height: 400px;
   }
-}
-
-.community-card-detail {
-  flex: 3;
-}
-
-@media only screen and (max-width: 768px) {
-  .community-card-box {
-    flex-direction: column;
-    &.reverse {
-      flex-direction: column;
-    }
-  }
-
-  .community-card-image {
+  @include query-only-screen-max-width {
     flex: 1;
     img {
       width: 100%;
@@ -69,5 +67,9 @@ export default class CommunityCard extends Vue {
       }
     }
   }
+}
+
+.community-card-detail {
+  flex: 3;
 }
 </style>

@@ -48,11 +48,23 @@ export default class CommunitySection extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 
+@mixin query-only-screen-max-width($value-max-width: 411px) {
+  @media only screen and (max-width: $value-max-width) {
+    @content;
+  }
+}
+
 .community-section {
   margin: {
     right: 45px;
     bottom: 60px;
     left: 45px;
+  }
+  @include query-only-screen-max-width {
+    margin {
+      top: 45px;
+      bottom: 45px;
+    }
   }
 }
 
@@ -62,17 +74,7 @@ export default class CommunitySection extends Vue {
   color: $dark-color;
   display: block;
   padding: 45px;
-}
-
-@media only screen and (max-width: 411px) {
-  .community-section {
-    margin {
-      top: 45px;
-      bottom: 45px;
-    }
-  }
-
-  .title-section {
+  @include query-only-screen-max-width {
     display: none;
   }
 }
