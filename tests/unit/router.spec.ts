@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import App from '@/App.vue';
 import router from '@/router/index.ts';
 import Home from '@/views/Home.vue';
-import CommunitySection from '@/views/CommunitySection.vue';
+import Communities from '@/views/Communities.vue';
 
 jest.mock('@/firebase');
 
@@ -15,16 +15,13 @@ describe('Router render test cases', () => {
     const wrapper = mount(App, {
       mocks: {
         $t: () => {
-          return {
-            home: {
-              welcome: 'Welcome to Your Vue.js App'
-            }
-          };
+          return {};
         }
       },
       localVue,
       router
     });
+
     expect(wrapper.findComponent(Home).exists()).toBe(true);
   });
 
@@ -32,18 +29,15 @@ describe('Router render test cases', () => {
     const wrapper = mount(App, {
       mocks: {
         $t: () => {
-          return {
-            home: {
-              welcome: 'Welcome to Your Vue.js App'
-            }
-          };
+          return {};
         }
       },
       localVue,
       router
     });
+
     return router.push('communities').then(() => {
-      expect(wrapper.findComponent(CommunitySection).exists()).toBe(true);
+      expect(wrapper.findComponent(Communities).exists()).toBe(true);
     });
   });
 });

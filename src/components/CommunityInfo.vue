@@ -1,5 +1,10 @@
 <template>
-  <div v-bind:class="['community-card-box', { reverse: alignLeft }]">
+  <div
+    v-bind:class="[
+      'community-card-box',
+      { 'left-aligned': alignLeft, 'right-aligned': !alignLeft }
+    ]"
+  >
     <div class="community-card-image">
       <img :src="this.community.landingImageUrl" />
     </div>
@@ -20,18 +25,17 @@ import CommunityDetail from '@/components/CommunityDetail.vue';
     CommunityDetail
   }
 })
-export default class CommunityCard extends Vue {
-  @Prop() private readonly community!: Community;
-  @Prop() private readonly alignLeft!: boolean;
+export default class CommunityInfo extends Vue {
+  @Prop({ required: true })
+  private community!: Community;
+
+  @Prop()
+  private alignLeft!: boolean;
 }
 </script>
 
 <style lang="scss">
-@mixin query-only-screen-max-width($value-max-width: 768px) {
-  @media only screen and (max-width: $value-max-width) {
-    @content;
-  }
-}
+@import '../styles/mixins';
 
 .community-card-box {
   display: flex;
@@ -39,26 +43,29 @@ export default class CommunityCard extends Vue {
   margin: {
     top: 40px;
   }
-  flex-direction: row;
-  @include query-only-screen-max-width {
+
+  @include media-screen-max-width {
     flex-direction: column;
   }
 }
 
-.reverse {
+.right-aligned {
+  flex-direction: row;
+}
+
+.left-aligned {
   flex-direction: row-reverse;
-  @include query-only-screen-max-width {
-    flex-direction: column;
-  }
 }
 
 .community-card-image {
   flex: 1;
+
   img {
     width: 420px;
     height: 400px;
   }
-  @include query-only-screen-max-width {
+
+  @include media-screen-max-width {
     flex: 1;
     img {
       width: 100%;

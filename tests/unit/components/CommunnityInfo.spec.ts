@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils';
 import CommunityMock from '@/mocks/communities.mock';
-import CommunityCard from '@/components/CommunityCard.vue';
+import CommunityInfo from '@/components/CommunityInfo.vue';
 import CommunityDetail from '@/components/CommunityDetail.vue';
 
-describe('CommunityCard.vue', () => {
+describe('CommunityInfo.vue', () => {
   it('it should render properly', () => {
     const mock = CommunityMock[0];
-    const wrapper = shallowMount(CommunityCard, {
+    const wrapper = shallowMount(CommunityInfo, {
       propsData: {
         community: mock
       }
