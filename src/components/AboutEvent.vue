@@ -23,8 +23,8 @@ import { fetchImageURL } from '@/service/fetchImageURL';
 export default class AboutEvent extends Vue {
   private image = '';
 
-  private getImage(): void {
-    fetchImageURL('banner.png').then((url: string) => {
+  private created(): void {
+    fetchImageURL('about-event.jpg').then((url: string) => {
       this.image = url;
     });
   }
@@ -63,10 +63,15 @@ export default class AboutEvent extends Vue {
   .subtitle {
     line-height: initial;
     padding-bottom: 0;
+    margin-top: 1%;
+    margin-bottom: 3%;
   }
 }
 
 .text {
   line-height: 2rem;
+  @media only screen and (max-device-width: 1200px) {
+    line-height: 160%;
+  }
 }
 </style>

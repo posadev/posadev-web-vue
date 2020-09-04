@@ -33,15 +33,9 @@ export default class Banner extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media.scss';
-
-@mixin position($top, $left, $right, $bottom) {
-  margin-top: $top;
-  margin-left: $left;
-  margin-right: $right;
-  margin-bottom: $bottom;
-}
 
 @mixin ipad-height {
   @media only screen and (max-height: 1024px) and (min-height: 824px) {
@@ -138,16 +132,29 @@ img.banner-logo {
   display: block;
   position: absolute;
 
+  @media only screen and (min-width: 929px) {
+    left: 6.67%;
+    right: 56.67%;
+    top: 33.42%;
+  }
   @media only screen and (max-width: 943px) {
     position: initial;
     background: $primary-dark-color;
 
     h1 {
-      @include position(10%, 4.44%, 2%, 2%);
+      margin: {
+        top: 10%;
+        left: 4.44%;
+        right: 2%;
+        bottom: 2%;
+      }
     }
 
     p {
-      @include position(0, 4.44%, 20%, 0);
+      margin: {
+        left: 4.44%;
+        right: 20%;
+      }
     }
   }
 }
