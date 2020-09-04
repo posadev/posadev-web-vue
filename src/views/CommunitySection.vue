@@ -61,7 +61,7 @@ export default class CommunitySection extends Vue {
     left: 45px;
   }
   @include query-only-screen-max-width {
-    margin {
+    margin: {
       top: 45px;
       bottom: 45px;
     }

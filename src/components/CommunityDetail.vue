@@ -131,7 +131,7 @@ export default class CommunityDetail extends Vue {
   p {
     text-align: left;
     min-height: 75px;
-    max-height: 200;
+    max-height: 200px;
     margin: {
       top: 25px;
       bottom: 25px;
