@@ -52,9 +52,9 @@ jobs:
           NODE_ENV: production
         run: npm run build
 
-      - name: Build Docker Image
-        run:
-          docker build -t jconf-prod:v0.1.0 .
+      #- name: Build Docker Image
+      #  run:
+      #    docker build -t jconf-prod:v0.1.0 .
 
       # Setup gcloud CLI
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
