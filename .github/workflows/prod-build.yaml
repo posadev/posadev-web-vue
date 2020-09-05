@@ -93,5 +93,6 @@ jobs:
       # Deploy the Docker image to the GKE cluster
       - name: Deploy to staging
         run: |-
-          kubectl create deployment jconfmex-staging --image="us.gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+          kubectl create deployment jconfmex-staging --image="us.gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" --dry-run -o yaml > deployment.yaml
+          kubectl apply -f deployment.yaml
 
