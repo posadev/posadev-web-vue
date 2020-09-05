@@ -15,7 +15,7 @@ jobs:
       GKE_CLUSTER: jconfmex-staging
       GKE_ZONE: us-west2-a
       DEPLOYMENT_NAME: jconfmex-staging-service
-      IMAGE: jconf-prod
+      IMAGE: jconfmex-web-staging
       VUE_APP_FIREBASE_API: ${{ secrets.PROD_FIREBASE_API }}
       VUE_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.PROD_FIREBASE_AUTH_DOMAIN }}
       VUE_APP_FIREBASE_DB_URL: ${{ secrets.PROD_FIREBASE_DB_URL }}
