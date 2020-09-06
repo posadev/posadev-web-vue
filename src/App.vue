@@ -3,18 +3,20 @@
     <div>
       <NavigationBar />
       <router-view />
+      <Footer />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import NavigationBar from '@/components/NavigationBar.vue';
+import Footer from '@/components/Footer.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import localeHandler from '@/localeHandler';
 import { Language, Locales } from './locale';
 
 @Component({
-  components: { NavigationBar }
+  components: { NavigationBar, Footer }
 })
 export default class App extends Vue {
   get languages(): Language[] {
