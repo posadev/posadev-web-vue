@@ -49,5 +49,9 @@
     "subtitle": "Creamos eventos maravillosos",
     "titleSection": "JConf es un evento organizado por las comunidades J4Guanatos y Java User Group gdl.",
     "buttonText": "Quiero saber más"
+  },
+  "sponsor" : {
+    "titleSection": "Conoce a nuestros profesionales",
+    "buttonText": "Website"
   }
 }
