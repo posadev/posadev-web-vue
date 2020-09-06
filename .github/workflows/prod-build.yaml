@@ -71,9 +71,6 @@ jobs:
       - run: |-
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
       # Build the Docker image
-      - name: Daaaamn
-        run: echo us.gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:$GITHUB_SHA
-
       - name: Build
         run: |-
           docker build \
