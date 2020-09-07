@@ -7,10 +7,7 @@
           {{ $t('footer-text.subtitle') }}
         </p>
       </div>
-      <SocialLinks
-        :info="$t('footer-text.social')"
-        :socialMedia="social"
-      />
+      <SocialLinks :info="$t('footer-text.social')" :socialMedia="social" />
     </div>
     <hr class="line" />
     <div class="footer-down">
