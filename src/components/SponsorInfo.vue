@@ -1,10 +1,5 @@
 <template>
-  <div
-    v-bind:class="[
-      'sponsor-card-box',
-      { 'left-aligned': alignLeft, 'right-aligned': !alignLeft }
-    ]"
-  >
+  <div class="sponsor-card-box">
     <div class="sponsor-card-image">
       <img class="img-fit-cover" :src="this.sponsor.landingImageUrl" />
     </div>
@@ -25,9 +20,6 @@ import Sponsor from '@/data/Sponsor.model';
 export default class SponsorInfo extends Vue {
   @Prop({ required: true })
   private sponsor!: Sponsor;
-
-  @Prop()
-  private alignLeft!: boolean;
 }
 </script>
 <style lang="scss">
