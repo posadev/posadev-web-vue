@@ -39,7 +39,7 @@ export default class Banner extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
-@import '~spectre.css/src/_media.scss';
+@import '~spectre.css/src/_media';
 
 @mixin position($top, $left, $right, $bottom) {
   margin-top: $top;
