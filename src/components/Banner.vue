@@ -78,7 +78,7 @@ export default class Banner extends Vue {
 
 .background-banner {
   position: absolute;
-  background: rgba(29, 52, 97, 0.6);
+  background: $backgorund-banner-color;
   width: 100%;
   height: 100%;
   top: 0%;
