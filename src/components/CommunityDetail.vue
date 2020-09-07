@@ -86,9 +86,6 @@ export default class CommunityDetail extends Vue {
       width: 67px;
       height: 67px;
     }
-    // margin: {
-    //   top: 25px;
-    // }
   }
 }
 
