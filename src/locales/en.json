@@ -67,7 +67,8 @@
     "buttonText": "I Want to know more"
     },
   "sponsor" : {
-    "titleSection": "Meet our professionals",
+    "titleSection": "Sponsors",
+    "subtitleSection": "Meet our professionals",
     "buttonText": "Website"
   }
 }
