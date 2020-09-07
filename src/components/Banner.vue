@@ -41,7 +41,7 @@ export default class Banner extends Vue {
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media';
 
-@mixin position($top, $left, $right, $bottom) {
+@mixin margins($top, $left, $right, $bottom) {
   margin-top: $top;
   margin-left: $left;
   margin-right: $right;
@@ -161,11 +161,11 @@ img.banner-logo {
     background: $primary-dark-color;
 
     h1 {
-      @include position(10%, 4.44%, 2%, 2%);
+      @include margins(10%, 4.44%, 2%, 2%);
     }
 
     p {
-      @include position(0, 4.44%, 20%, 0);
+      @include margins(0, 4.44%, 20%, 0);
     }
   }
 }
