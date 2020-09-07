@@ -4,6 +4,7 @@ import App from '@/App.vue';
 import router from '@/router/index.ts';
 import Home from '@/views/Home.vue';
 import Communities from '@/views/Communities.vue';
+import Sponsors from '@/views/Sponsors.vue';
 
 jest.mock('@/firebase');
 
@@ -38,6 +39,22 @@ describe('Router render test cases', () => {
 
     return router.push('communities').then(() => {
       expect(wrapper.findComponent(Communities).exists()).toBe(true);
+    });
+  });
+
+  it('should go sponsors properly', () => {
+    const wrapper = mount(App, {
+      mocks: {
+        $t: () => {
+          return {};
+        }
+      },
+      localVue,
+      router
+    });
+
+    return router.push('sponsors').then(() => {
+      expect(wrapper.findComponent(Sponsors).exists()).toBe(true);
     });
   });
 });
