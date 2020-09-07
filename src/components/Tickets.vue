@@ -1,8 +1,8 @@
 <template>
-  <div class="columns">
+  <div class="columns content-tickets">
     <TicketCard
-      class="column col-2 col-xl-4 col-lg-6 col-md-8 col-sm-10 col-xs-12"
-      v-for="item in orderedItems"
+      class="column card-ticket"
+      v-for="item in tickets"
       v-bind:key="item.name"
       :ticket="item"
     />
@@ -11,16 +11,23 @@
 
 <script lang="ts">
 import TicketCard from '@/components/TicketCard.vue';
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Inject, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
-import mockArray from '@/mocks/tickets.mock';
+import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
 
 @Component({
   components: { TicketCard }
 })
 export default class Tickets extends Vue {
-  get orderedItems(): Ticket[] {
-    return mockArray;
+  @Inject('tickets')
+  private service!: FirebaseCollectionService<Ticket>;
+
+  private tickets: Ticket[] = [];
+
+  created(): void {
+    this.service.findAll().then((response: Ticket[]) => {
+      this.tickets.push(...response);
+    });
   }
 }
 </script>
@@ -28,17 +35,13 @@ export default class Tickets extends Vue {
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
 
-.columns {
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
+.card-ticket {
+  @media only screen and (max-width: 959px) {
+    min-width: 50%;
+    margin-bottom: 3%;
+  }
 }
-
-.column {
-  width: 306px;
-  height: 316px;
-  padding-left: 50px;
-  padding-right: 50px;
+.content-tickets {
+  max-width: 100%;
 }
 </style>

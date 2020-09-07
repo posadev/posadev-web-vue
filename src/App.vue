@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <div>
-      <NavigationBar />
-      <router-view />
-    </div>
+    <NavigationBar />
+    <router-view class="content-info" />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import NavigationBar from '@/components/NavigationBar.vue';
+import Footer from '@/components/Footer.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import localeHandler from '@/localeHandler';
 import { Language, Locales } from './locale';
 
 @Component({
-  components: { NavigationBar }
+  components: { NavigationBar, Footer }
 })
 export default class App extends Vue {
   get languages(): Language[] {
@@ -34,10 +34,12 @@ export default class App extends Vue {
 @import 'styles/jconf';
 
 #app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  height: auto !important;
   text-align: center;
   color: $primary-dark-color;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 #nav {
@@ -47,5 +49,9 @@ export default class App extends Vue {
     font-weight: bold;
     color: $primary-dark-color;
   }
+}
+
+.content-info {
+  min-height: calc(100vh - 305px);
 }
 </style>

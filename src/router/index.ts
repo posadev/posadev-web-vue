@@ -9,6 +9,16 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/communities',
+    name: 'communities',
+    component: () => import('../views/Communities.vue')
+  },
+  {
+    path: '/sponsors',
+    name: 'sponsors',
+    component: () => import('../views/Sponsors.vue')
   }
 ];
 

@@ -1,6 +1,6 @@
 <template>
   <div class="social">
-    <div>
+    <div class="social-text">
       <span>{{ info }}</span>
     </div>
     <div class="social-content">
@@ -41,14 +41,17 @@ export default class SocialLinks extends Vue {
 <style lang="scss">
 .social {
   display: flex;
-  flex-direction: row;
   height: 32px;
   align-items: center;
   font-weight: bold;
 }
+
+.social-text {
+  margin-right: 50px;
+}
+
 .social-content {
   display: flex;
-  flex-direction: row;
-  margin-left: 50px;
+  justify-content: space-around;
 }
 </style>

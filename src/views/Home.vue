@@ -1,17 +1,16 @@
 <template>
   <div>
     <Banner />
-    <AboutEvent class="section-light section-home" />
+    <AboutEvent id="about-event" class="section-light section-home" />
     <img :src="imageDivider" alt="JConf 2020" />
-    <SectionSpeakers class="section-home section-dark" />
-    <SectionWorkshops class="section-home section-regular" />
-    <SectionTickets class="section-home section-white" />
-    <SectionContact class="section-home section-light" />
+    <SectionSpeakers id="speakers" class="section-home section-dark" />
+    <SectionTickets id="tickets" class="section-home section-white" />
+    <SectionContact id="contact" class="section-home section-light" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import SectionContact from '@/components/SectionContact.vue';
 import SectionSpeakers from '@/components/SectionSpeakers.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
@@ -19,6 +18,8 @@ import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
 import { fetchImageURL } from '@/service/fetchImageURL';
+import SpeakerContainer from '@/di/SpeakerContainer';
+import TicketContainer from '@/di/TicketContainer';
 
 @Component({
   components: {
@@ -30,7 +31,7 @@ import { fetchImageURL } from '@/service/fetchImageURL';
     SectionContact
   }
 })
-export default class Home extends Vue {
+export default class Home extends Mixins(SpeakerContainer, TicketContainer) {
   private imageDivider = '';
 
   private created() {

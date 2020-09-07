@@ -42,7 +42,7 @@ export default class SectionWorkshops extends Vue {
   }
 
   private onShowWorkshops() {
-    console.log('TODO');
+    // console.log('TODO');
   }
 }
 </script>

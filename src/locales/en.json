@@ -10,7 +10,6 @@
     "communities": "Communities"
   },
   "home": {
-    "welcome": "Welcome to Your Vue.js App",
     "speakers": {
       "title": "Speakers",
       "subtitle": "Meet the industry professionals who are accompanying us",
@@ -22,10 +21,10 @@
       "subtitle": "Each workshop has an additional cost apart from the conference",
       "bottomButton": "See all workshops"
     },
-    "aboutevent":{
-        "title": "About the event",
-        "subtitle": "The most important JAVA event in Mexico",
-        "description": "It is the conference for software development around the Java world in Spanish. In past years, JavaUP and JEspañol efforts have resulted in important and content-rich conferences from major exhibitors. 2017 at UNAM with JavaCloudDay, in 2018 at UPIICSA with JavaDay JavaUP. "
+    "aboutevent": {
+      "title": "About the event",
+      "subtitle": "The most important JAVA event in Mexico",
+      "description": "It is the conference for software development around the Java world in Spanish. In past years, JavaUP and JEspañol efforts have resulted in important and content-rich conferences from major exhibitors. 2017 at UNAM with JavaCloudDay, in 2018 at UPIICSA with JavaDay JavaUP. "
     },
     "tickets": {
       "title": "Tickets",
@@ -41,8 +40,34 @@
       "subtitle": "Contact us via email or you can reach via social networks",
       "topButton": "Send email"
     },
-    "banner":{
+    "banner": {
       "subtitle": "The most important JAVA event in Mexico"
-  }
+    }
+  },
+  "footer-text": {
+    "title": "Join our Newsletter!",
+    "subtitle": "No spam, Only latest news, price and activity updates",
+    "designed": "Designed by:",
+    "developed": "Developed by:",
+    "social": "Our social networks"
+  },
+  "footer": {
+    "organizers": "Organizers",
+    "contact": "Contact us",
+    "faq": "FA&Q",
+    "code": "Code of conduct",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy and Legacy",
+    "about": "About us"
+  },
+  "community" : {
+    "title": "Organizers",
+    "subtitle": "we love create amazing events!",
+    "titleSection": "JConf is an event organized by the J4Guanatos and Java User Group gdl communities.",
+    "buttonText": "I Want to know more"
+    },
+  "sponsor" : {
+    "titleSection": "Meet our professionals",
+    "buttonText": "Website"
   }
 }
