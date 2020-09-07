@@ -1,6 +1,6 @@
 <template>
-  <div @click="goToSocialLink" class="socialLink">
-    <span :class="socialLink.social">text</span>
+  <div @click="goToSocialLink" class="social-link">
+    <button :class="socialLink.social"></button>
   </div>
 </template>
 
@@ -21,10 +21,20 @@ export default class SocialButton extends Vue {
 
 <style lang="scss">
 %social-style {
-  background-repeat: no-repeat;
-  padding: 8px;
-  color: transparent;
+  margin: {
+    left: 8px;
+    right: 8px;
+  }
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: {
+    repeat: no-repeat;
+    color: transparent;
+  }
+  cursor: pointer;
 }
+
 .twitter {
   background-image: url('../assets/twitter.png');
   @extend %social-style;

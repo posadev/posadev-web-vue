@@ -1,12 +1,15 @@
 <template>
-  <div class="community-section">
-    <p class="title-section">{{ $t('community.titleSection') }}</p>
-    <CommunityInfo
-      v-for="(community, index) in this.communities"
-      v-bind:community="community"
-      v-bind:key="community.titleName"
-      :alignLeft="index % 2 !== 0"
-    />
+  <div>
+    <ViewHeader :header-texts="organizersTexts" />
+    <div class="community-section">
+      <p class="title-section">{{ $t('community.titleSection') }}</p>
+      <CommunityInfo
+        v-for="(community, index) in this.communities"
+        v-bind:community="community"
+        v-bind:key="community.titleName"
+        :alignLeft="index % 2 !== 0"
+      />
+    </div>
   </div>
 </template>
 
@@ -16,9 +19,11 @@ import { Component, Inject, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
 import CommunityInfo from '@/components/CommunityInfo.vue';
 import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import ViewHeader from '@/components/ViewHeader.vue';
 
 @Component({
   components: {
+    ViewHeader,
     CommunityInfo
   }
 })
