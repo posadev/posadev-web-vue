@@ -6,7 +6,7 @@
     ]"
   >
     <div class="community-card-image">
-      <img :src="this.community.landingImageUrl" />
+      <img class="img-fit-cover" :src="this.community.landingImageUrl" />
     </div>
     <CommunityDetail
       class="community-card-detail"
@@ -74,8 +74,8 @@ export default class CommunityInfo extends Vue {
   @include media-screen-max-width {
     flex: 1;
     img {
-      width: 100%;
-      height: 100%;
+      width: 280px;
+      height: 280px;
       margin: {
         bottom: 10px;
       }
