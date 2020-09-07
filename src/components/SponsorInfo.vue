@@ -6,11 +6,9 @@
     ]"
   >
     <div class="sponsor-card-image">
-      <img class="img-sponsor" :src="this.sponsor.landingImageUrl" />
+      <img class="img-fit-cover" :src="this.sponsor.landingImageUrl" />
     </div>
-    <div>
-      <SponsorDetail class="sponsor-card-detail" :sponsor="this.sponsor" />
-    </div>
+    <SponsorDetail class="sponsor-card-detail" :sponsor="this.sponsor" />
   </div>
 </template>
 
@@ -32,4 +30,56 @@ export default class SponsorInfo extends Vue {
   private alignLeft!: boolean;
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/variables';
+@import '../styles/mixins';
+@import '~spectre.css/src/_media.scss';
+
+.sponsor-card-box {
+  display: flex;
+  width: 100%;
+  margin: {
+    top: 40px;
+  }
+
+  @include media-screen-max-width {
+    flex-direction: column;
+  }
+}
+
+.right-aligned {
+  flex-direction: row;
+  @include media-screen-max-width {
+    flex-direction: column;
+  }
+}
+
+.left-aligned {
+  flex-direction: row-reverse;
+  @include media-screen-max-width {
+    flex-direction: column;
+  }
+}
+
+.sponsor-card-image {
+  flex: 1;
+  img {
+    width: 420px;
+    height: 400px;
+  }
+
+  @include media-screen-max-width {
+    img {
+      width: 100%;
+      height: 100%;
+      margin: {
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+.sponsor-card-detail {
+  flex: 3;
+}
+</style>
