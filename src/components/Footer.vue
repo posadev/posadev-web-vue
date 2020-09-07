@@ -8,7 +8,6 @@
         </p>
       </div>
       <SocialLinks
-        class="social"
         :info="$t('footer-text.social')"
         :socialMedia="social"
       />
@@ -66,7 +65,7 @@ export default class Footer extends Vue {
 @import '../styles/mixins';
 @import '~spectre.css/src/_layout';
 
-@mixin display {
+@mixin display-flex {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -178,7 +177,7 @@ export default class Footer extends Vue {
         }
         line-height: 70px;
 
-        @include display;
+        @include display-flex;
       }
 
       @include media-screen-max-width(1024px) {
@@ -204,7 +203,7 @@ export default class Footer extends Vue {
         top: 0;
       }
 
-      @include display;
+      @include display-flex;
     }
 
     @include media-screen-max-width(1024px) {
