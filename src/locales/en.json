@@ -44,6 +44,22 @@
       "subtitle": "The most important JAVA event in Mexico"
     }
   },
+  "footer-text": {
+    "title": "Join our Newsletter!",
+    "subtitle": "No spam, Only latest news, price and activity updates",
+    "designed": "Designed by:",
+    "developed": "Developed by:",
+    "social": "Our social networks"
+  },
+  "footer": {
+    "organizers": "Organizers",
+    "contact": "Contact us",
+    "faq": "FA&Q",
+    "code": "Code of conduct",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy and Legacy",
+    "about": "About us"
+  },
   "community" : {
     "title": "Organizers",
     "subtitle": "we love create amazing events!",

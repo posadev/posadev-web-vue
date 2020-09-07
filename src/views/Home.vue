@@ -2,6 +2,7 @@
   <div>
     <Banner />
     <AboutEvent id="about-event" class="section-light section-home" />
+    <img :src="imageDivider" alt="JConf 2020" />
     <SectionSpeakers id="speakers" class="section-home section-dark" />
     <SectionTickets id="tickets" class="section-home section-white" />
     <SectionContact id="contact" class="section-home section-light" />
@@ -16,6 +17,7 @@ import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
+import { fetchImageURL } from '@/service/fetchImageURL';
 import SpeakerContainer from '@/di/SpeakerContainer';
 import TicketContainer from '@/di/TicketContainer';
 
@@ -29,7 +31,15 @@ import TicketContainer from '@/di/TicketContainer';
     SectionContact
   }
 })
-export default class Home extends Mixins(SpeakerContainer, TicketContainer) {}
+export default class Home extends Mixins(SpeakerContainer, TicketContainer) {
+  private imageDivider = '';
+
+  private created() {
+    fetchImageURL('Rectangle.png').then((dividerUrl: string) => {
+      this.imageDivider = dividerUrl;
+    });
+  }
+}
 </script>
 
 <style lang="scss">
