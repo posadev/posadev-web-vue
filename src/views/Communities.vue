@@ -12,10 +12,10 @@
 
 <script lang="ts">
 import TitleTexts from '@/data/TitleTexts.model';
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Inject, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
 import CommunityInfo from '@/components/CommunityInfo.vue';
-import communities from '@/mocks/communities.mock';
+import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
 
 @Component({
   components: {
@@ -29,19 +29,17 @@ export default class Communities extends Vue {
       this.$t('community.subtitle')
     );
   }
-  get communities(): Community[] {
-    //FIXME: this is obtained from firebase
-    return communities;
-  }
-  // @Inject('communities')
-  // private service!: CommunityService;
-  // private communities: Community[] = [];
 
-  // created() {
-  //   this.service.findAll().then((res: Community[]) => {
-  //     this.communities.push(...res);
-  //   });
-  // }
+  @Inject('communities')
+  private service!: FirebaseCollectionService<Community>;
+  private communities: Community[] = [];
+
+  private created() {
+    this.service.findAll().then((res: Community[]) => {
+      console.log(res);
+      this.communities.push(...res);
+    });
+  }
 }
 </script>
 
