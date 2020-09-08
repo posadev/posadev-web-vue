@@ -86,14 +86,12 @@ export default class CommunityDetail extends Vue {
       width: 67px;
       height: 67px;
     }
-    margin: {
-      top: 25px;
-    }
   }
 }
 
 .community-title {
   text-align: left;
+  width: 50%;
 
   h1 {
     margin: {
@@ -126,11 +124,6 @@ export default class CommunityDetail extends Vue {
 }
 
 .community-detail {
-  margin: {
-    top: -100px;
-    left: 10px;
-  }
-
   p {
     text-align: left;
     min-height: 75px;
@@ -142,9 +135,6 @@ export default class CommunityDetail extends Vue {
   }
 
   @include media-screen-max-width(411px) {
-    margin: {
-      top: -200px;
-    }
     p {
       text-align: left;
     }
