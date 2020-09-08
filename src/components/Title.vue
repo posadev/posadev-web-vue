@@ -19,6 +19,7 @@ export default class Title extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 
 .title {
   font: {
@@ -26,7 +27,12 @@ export default class Title extends Vue {
     weight: bold;
     size: 55px;
   }
-  line-height: 30px;
+  line-height: 60px;
+  @include media-screen-max-width(411px) {
+    font: {
+      size: 40px;
+    }
+  }
 }
 
 .subtitle {
@@ -36,5 +42,10 @@ export default class Title extends Vue {
     size: 24px;
   }
   line-height: 45px;
+  @include media-screen-max-width(411px) {
+    font: {
+      size: 20px;
+    }
+  }
 }
 </style>
