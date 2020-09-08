@@ -13,11 +13,12 @@ import Footer from '@/components/Footer.vue';
 import localeHandler from '@/localeHandler';
 import { Language, Locales } from './locale';
 import CommunityContainer from '@/di/CommunityContainer';
+import SpeakerContainer from '@/di/SpeakerContainer';
 
 @Component({
   components: { NavigationBar, Footer }
 })
-export default class App extends Mixins(CommunityContainer) {
+export default class App extends Mixins(CommunityContainer, SpeakerContainer) {
   get languages(): Language[] {
     return [
       { id: 'en', title: 'English', locale: Locales.EN },
