@@ -4,10 +4,6 @@ import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import Workshops from '@/components/Workshops.vue';
 
 describe('SectionWorkshops component', () => {
-  beforeEach(() => {
-    console.log = jest.fn();
-  });
-
   it('should contain all subcomponents', () => {
     const wrapper = shallowMount(SectionWorkshops, {
       mocks: {
@@ -36,7 +32,5 @@ describe('SectionWorkshops component', () => {
     });
 
     wrapper.findComponent(AccentActionButton).trigger('click');
-
-    //expect(console.log).toHaveBeenCalled();
   });
 });
