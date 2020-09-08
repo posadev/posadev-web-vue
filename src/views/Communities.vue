@@ -41,7 +41,6 @@ export default class Communities extends Vue {
 
   private created() {
     this.service.findAll().then((res: Community[]) => {
-      console.log(res);
       this.communities.push(...res);
     });
   }
