@@ -1,5 +1,5 @@
 <template>
-  <div class="col-xl-12 content">
+  <div class="banner-content">
     <div class="content-banner-image">
       <img
         :src="image"
@@ -14,8 +14,8 @@
       />
     </div>
     <section class="text-content text-format">
-      <h1 class="title">JConf GDL 2020</h1>
-      <p class="subtitle">{{ $t('home.banner.subtitle') }}</p>
+      <h1 class="banner-title">JConf GDL 2020</h1>
+      <p class="banner-subtitle">{{ $t('home.banner.subtitle') }}</p>
     </section>
   </div>
 </template>
@@ -38,15 +38,9 @@ export default class Banner extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media';
-
-@mixin margins($top, $left, $right, $bottom) {
-  margin-top: $top;
-  margin-left: $left;
-  margin-right: $right;
-  margin-bottom: $bottom;
-}
 
 @mixin ipad-height {
   @media only screen and (max-height: 1024px) and (min-height: 824px) {
@@ -70,7 +64,7 @@ export default class Banner extends Vue {
   position: relative;
 }
 
-.content {
+.banner-content {
   display: block;
   position: relative;
   background: $primary-dark-color;
@@ -84,7 +78,7 @@ export default class Banner extends Vue {
   top: 0%;
 }
 
-img.img-banner {
+.img-banner {
   width: 100%;
   //Ipads and phones
   @media only screen and (max-width: 928px) {
@@ -92,7 +86,7 @@ img.img-banner {
   }
 }
 
-img.banner-logo {
+.banner-logo {
   position: absolute;
   right: 3%;
   bottom: 10%;
@@ -111,7 +105,7 @@ img.banner-logo {
   }
 }
 
-.title {
+.banner-title {
   font-size: 78px;
   line-height: 80px;
 
@@ -127,7 +121,7 @@ img.banner-logo {
   }
 }
 
-.subtitle {
+.banner-subtitle {
   font-size: 24px;
   line-height: 43px;
 
@@ -161,11 +155,11 @@ img.banner-logo {
     background: $primary-dark-color;
 
     h1 {
-      @include margins(10%, 4.44%, 2%, 2%);
+      margin: 10% 2% 2% 4.44%;
     }
 
     p {
-      @include margins(0, 4.44%, 20%, 0);
+      margin: 0 20% 0 4.44%;
     }
   }
 }
