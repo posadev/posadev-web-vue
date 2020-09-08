@@ -1,5 +1,5 @@
 <template>
-  <div class="col-xl-12 content">
+  <div class="banner-content">
     <div class="content-banner-image">
       <img :src="image" class="img-responsive img-banner" alt="JConf 2020" />
       <img
@@ -59,13 +59,13 @@ export default class Banner extends Vue {
   position: relative;
 }
 
-.content {
+.banner-content {
   display: block;
   position: relative;
   background: $primary-dark-color;
 }
 
-img.img-banner {
+.img-banner {
   width: 100%;
   //Ipads and phones
   @media only screen and (max-width: 928px) {
@@ -73,7 +73,7 @@ img.img-banner {
   }
 }
 
-img.banner-logo {
+.banner-logo {
   position: absolute;
   right: 3%;
   bottom: 10%;
