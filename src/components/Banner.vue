@@ -9,8 +9,8 @@
       />
     </div>
     <section class="text-content text-format">
-      <h1 class="title">JConf GDL 2020</h1>
-      <p class="subtitle">{{ $t('home.banner.subtitle') }}</p>
+      <h1 class="banner-title">JConf GDL 2020</h1>
+      <p class="banner-subtitle">{{ $t('home.banner.subtitle') }}</p>
     </section>
   </div>
 </template>
@@ -92,7 +92,7 @@ img.banner-logo {
   }
 }
 
-.title {
+.banner-title {
   font-size: 78px;
   line-height: 80px;
 
@@ -108,7 +108,7 @@ img.banner-logo {
   }
 }
 
-.subtitle {
+.banner-subtitle {
   font-size: 24px;
   line-height: 43px;
 
