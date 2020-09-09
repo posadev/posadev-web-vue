@@ -1,11 +1,7 @@
 <template>
   <div class="banner-content">
     <div class="content-banner-image">
-      <img
-        :src="image"
-        class="img-fit-cover img-banner"
-        alt="JConf 2020"
-      />
+      <img :src="image" class="img-fit-cover img-banner" alt="JConf 2020" />
       <div class="background-banner" />
       <img
         class="img-responsive banner-logo"
