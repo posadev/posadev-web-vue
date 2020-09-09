@@ -2,9 +2,10 @@
   <div>
     <Banner />
     <AboutEvent id="about-event" class="section-light section-home" />
-    <img :src="imageDivider" alt="JConf 2020" />
+    <SmallBanner />
     <SectionSpeakers id="speakers" class="section-home section-dark" />
     <SectionTickets id="tickets" class="section-home section-white" />
+    <SectionSponsors id="sponsors" class="section-home section-light" />
     <SectionContact id="contact" class="section-home section-light" />
   </div>
 </template>
@@ -14,8 +15,10 @@ import { Component, Mixins } from 'vue-property-decorator';
 import SectionContact from '@/components/SectionContact.vue';
 import SectionSpeakers from '@/components/SectionSpeakers.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
+import SectionSponsors from '@/components/SectionSponsors.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
+import SmallBanner from '@/components/SmallBanner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
 import { fetchImageURL } from '@/service/fetchImageURL';
 import SpeakerContainer from '@/di/SpeakerContainer';
@@ -25,9 +28,11 @@ import TicketContainer from '@/di/TicketContainer';
   components: {
     AboutEvent,
     Banner,
+    SmallBanner,
     SectionSpeakers,
     SectionWorkshops,
     SectionTickets,
+    SectionSponsors,
     SectionContact
   }
 })
