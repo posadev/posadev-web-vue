@@ -3,7 +3,7 @@
     <div class="content-banner-image">
       <img
         :src="image"
-        class="img-responsive img-fit-cover img-banner"
+        class="img-fit-cover img-banner"
         alt="JConf 2020"
       />
       <div class="background-banner" />
@@ -93,7 +93,8 @@ export default class Banner extends Vue {
   max-width: 20%;
 
   @media only screen and (max-width: 440px) {
-    max-width: 50%;
+    width: 153px;
+    height: 66px;
   }
 
   @media only screen and (max-width: 780px) and (min-width: 441px) {
