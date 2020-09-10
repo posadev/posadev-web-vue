@@ -15,7 +15,8 @@ export default class TicketService extends FirebaseCollectionService<Ticket> {
       data['price'],
       data['start'].toDate(),
       data['end'].toDate(),
-      new URL(data['url'])
+      new URL(data['url']),
+      data['enabled']
     );
   };
 }

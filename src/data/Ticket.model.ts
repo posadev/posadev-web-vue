@@ -4,6 +4,7 @@ export default class Ticket {
     readonly price: number,
     readonly start: Date,
     readonly end: Date,
-    readonly url: URL
+    readonly url: URL,
+    readonly enabled: boolean
   ) {}
 }

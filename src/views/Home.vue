@@ -4,8 +4,8 @@
     <AboutEvent id="about-event" class="section-light section-home" />
     <SmallBanner />
     <SectionSpeakers id="speakers" class="section-home section-dark" />
-    <SectionTickets id="tickets" class="section-home section-white" />
-    <SectionSponsors id="sponsors" class="section-home section-light" />
+    <SectionTickets id="tickets" class="section-home section-light" />
+    <SectionSponsors id="sponsors" class="section-home section-white" />
     <SectionContact id="contact" class="section-home section-light" />
   </div>
 </template>
