@@ -1,13 +1,5 @@
 <template>
   <SectionHero :title="speakersTexts">
-    <template v-slot:hero-header>
-      <AccentActionButton
-        id="btn-cfp"
-        class="section-button"
-        :info="speakerInfo"
-        v-on:button-action="onCFPClick"
-      />
-    </template>
     <template v-slot:hero-body>
       <Speakers />
     </template>
@@ -53,14 +45,18 @@ export default class SectionSpeakers extends Vue {
     return new ButtonInfo(this.$t('home.speakers.bottomButton'));
   }
 
-  private onCFPClick() {
-    window.open('https://convoca.dev/jconf-mexico-2020/cfp');
-  }
-
   private onShowSpeakers() {
     //
   }
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/mixins';
+
+#btn-speakers-all {
+  @include media-screen-max-width(768px) {
+    margin-top: 10%;
+  }
+}
+</style>

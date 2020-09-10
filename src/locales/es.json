@@ -24,7 +24,7 @@
     "aboutevent": {
       "title": "Sobre el evento",
       "subtitle": "El evento de JAVA más importante de México",
-      "description": "Es la conferencia de desarrollo de software más grande alrededor del mundo de Java en Español. En años pasados esfuerzos de JavaUP y de JEspañol han conseguido conferencias importantes y llenas de grandes contenidos a través de grandes expositores. 2017 en UNAM con la JavaCloudDay, en 2018 en UPIICSA con JavaDay JavaUP. "
+      "description": "JConf México es un evento anual organizado por las comunidades en Guadalajara relacionadas a Java y sus variantes de lenguajes JVM. Reunimos el talento de personas en México y alrededor del mundo interesadas en compartir su conocimiento si un fin de lucro. Es un evento organizado por programadores para programadores."
     },
     "tickets": {
       "title": "Tickets",
@@ -37,7 +37,7 @@
     },
     "contact": {
       "title": "¿Tienes alguna pregunta?",
-      "subtitle": "Escribenos o puedes contactarnos por nuestras redes sociales.",
+      "subtitle": "Escríbenos o puedes contactarnos por nuestras redes sociales.",
       "topButton": "Enviar e-mail"
     },
     "banner": {
@@ -45,8 +45,8 @@
     }
   },
   "footer-text": {
-    "title": "Suscribete a nuestro boletín!",
-    "subtitle": "No spam, solo las últimas noticias sobre precios y actividades",
+    "title": "Un evento organizado por programadores para programadores.",
+    "subtitle": "¡Te esperamos!",
     "designed": "Diseñado por:",
     "developed": "Desarrollado por:",
     "social": "Redes sociales"

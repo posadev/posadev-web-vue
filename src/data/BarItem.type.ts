@@ -6,8 +6,5 @@ export type BarItem = {
 export const navigationItems: BarItem[] = [
   { path: '/speakers', textRef: 'header.speakers' },
   { path: '/schedule', textRef: 'header.schedule' },
-  { path: '/venue', textRef: 'header.venue' },
-  { path: '/sponsors', textRef: 'header.sponsors' },
-  { path: '/login', textRef: 'header.login' },
-  { path: '/language', textRef: 'header.language' }
+  { path: '/sponsors', textRef: 'header.sponsors' }
 ];

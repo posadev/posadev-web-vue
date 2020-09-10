@@ -9,7 +9,8 @@ describe('TicketCard component', () => {
     2000,
     new Date(2020, 10, 12),
     new Date(2020, 11, 10),
-    new URL('https://www.google.com')
+    new URL('https://www.google.com'),
+    true
   );
   it('should render the ticket passed', () => {
     const wrapper = shallowMount(TicketCard, {

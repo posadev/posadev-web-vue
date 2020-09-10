@@ -42,8 +42,4 @@ export default class Workshops extends Vue {
 .workshop-item {
   margin: 1%;
 }
-
-.btn-see-all {
-  align-self: center;
-}
 </style>
