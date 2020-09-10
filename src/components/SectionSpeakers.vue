@@ -14,7 +14,7 @@
     <template v-slot:hero-footer>
       <AccentActionButton
         id="btn-speakers-all"
-        class="btn-see-all section-button"
+        class="section-button"
         :info="allSpeakersButton"
         v-on:button-action="onShowSpeakers"
       />
