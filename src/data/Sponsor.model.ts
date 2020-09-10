@@ -9,6 +9,7 @@ export default class Sponsor {
     readonly pic: URL,
     readonly url: URL,
     readonly socialMedia: SocialMedia,
-    readonly landingImageUrl: URL
+    readonly landingImageUrl: URL,
+    readonly id: string
   ) {}
 }
