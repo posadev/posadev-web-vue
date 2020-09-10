@@ -13,6 +13,7 @@ export abstract class FirebaseCollectionService<T> {
   abstract collectionName: string;
 
   abstract mapper: DocumentMapper<T>;
+
   converter: FirestoreDataConverter<T> = {
     toFirestore: (modelObject: T) => modelObject,
     fromFirestore: (snapshot: QueryDocumentSnapshot<T>) => {
@@ -35,8 +36,10 @@ export abstract class FirebaseCollectionService<T> {
   }
 
   private createCollectionPromise(query: Query<T>): Promise<T[]> {
-    return query.get().then((document: QuerySnapshot<T>) => {
-      return document.docs.map((doc: QueryDocumentSnapshot<T>) => doc.data());
-    });
+    return query
+      .get()
+      .then((document: QuerySnapshot<T>) =>
+        document.docs.map((doc: QueryDocumentSnapshot<T>) => doc.data())
+      );
   }
 }
