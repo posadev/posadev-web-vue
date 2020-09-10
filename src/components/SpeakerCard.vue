@@ -2,7 +2,7 @@
   <div>
     <div class="containerImg">
       <img
-        class="photo-speaker"
+        class="photo-speaker img-fit-cover"
         :src="this.speaker.photoURL"
         :alt="this.speaker.company"
       />

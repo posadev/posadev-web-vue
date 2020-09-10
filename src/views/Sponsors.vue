@@ -40,26 +40,7 @@ export default class Sponsors extends Vue {
 
 .sponsor-section {
   margin: {
-    right: 45px;
-    bottom: 60px;
-    left: 45px;
-  }
-  @include media-screen-max-width(411px) {
-    margin: {
-      top: 45px;
-      bottom: 45px;
-    }
-  }
-}
-
-.title-section {
-  font-size: 24px;
-  text-align: center;
-  color: $dark-color;
-  display: block;
-  padding: 36px;
-  @include media-screen-max-width(411px) {
-    display: none;
+    bottom: 45px;
   }
 }
 </style>
