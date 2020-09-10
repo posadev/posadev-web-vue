@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a @click="goToNavigationLink()"><slot></slot></a>
+    <a @click="goToNavigationLink"><slot></slot></a>
   </div>
 </template>
 
