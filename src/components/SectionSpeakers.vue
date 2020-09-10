@@ -14,7 +14,7 @@
     <template v-slot:hero-footer>
       <AccentActionButton
         id="btn-speakers-all"
-        class="section-button"
+        class="btn-see-all section-button"
         :info="allSpeakersButton"
         v-on:button-action="onShowSpeakers"
       />
@@ -63,4 +63,12 @@ export default class SectionSpeakers extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/mixins';
+
+#btn-speakers-all {
+  @include media-screen-max-width(768px) {
+    margin-top: 10%;
+  }
+}
+</style>
