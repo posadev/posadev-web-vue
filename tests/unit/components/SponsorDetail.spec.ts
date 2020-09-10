@@ -12,7 +12,8 @@ describe('SponsorDetail.vue', () => {
     new URL('https://via.placeholder.com/196x84'),
     new URL('https://www.ibm.com'),
     { twitter: new URL('https://twitter.com') },
-    new URL('https://via.placeholder.com/526x526')
+    new URL('https://via.placeholder.com/526x526'),
+    'IBM'
   );
 
   const translationMock = {
