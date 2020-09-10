@@ -1,13 +1,5 @@
 <template>
   <SectionHero :title="speakersTexts">
-    <template v-slot:hero-header>
-      <AccentActionButton
-        id="btn-cfp"
-        class="section-button"
-        :info="speakerInfo"
-        v-on:button-action="onCFPClick"
-      />
-    </template>
     <template v-slot:hero-body>
       <Speakers />
     </template>
