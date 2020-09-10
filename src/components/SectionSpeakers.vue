@@ -51,4 +51,12 @@ export default class SectionSpeakers extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/mixins';
+
+#btn-speakers-all {
+  @include media-screen-max-width(768px) {
+    margin-top: 10%;
+  }
+}
+</style>
