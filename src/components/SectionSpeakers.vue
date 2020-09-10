@@ -45,10 +45,6 @@ export default class SectionSpeakers extends Vue {
     return new ButtonInfo(this.$t('home.speakers.bottomButton'));
   }
 
-  private onCFPClick() {
-    window.open('https://convoca.dev/jconf-mexico-2020/cfp');
-  }
-
   private onShowSpeakers() {
     //
   }
