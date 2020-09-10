@@ -37,7 +37,7 @@
     },
     "contact": {
       "title": "¿Tienes alguna pregunta?",
-      "subtitle": "Escribenos o puedes contactarnos por nuestras redes sociales.",
+      "subtitle": "Escríbenos o puedes contactarnos por nuestras redes sociales.",
       "topButton": "Enviar e-mail"
     },
     "banner": {
@@ -45,8 +45,8 @@
     }
   },
   "footer-text": {
-    "title": "Suscribete a nuestro boletín!",
-    "subtitle": "No spam, solo las últimas noticias sobre precios y actividades",
+    "title": "Un evento organizado por programadores para programadores.",
+    "subtitle": "¡Te esperamos!",
     "designed": "Diseñado por:",
     "developed": "Desarrollado por:",
     "social": "Redes sociales"
