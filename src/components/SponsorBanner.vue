@@ -1,7 +1,9 @@
 <template>
-  <div @click="goToLink">
+  <router-link
+      :to="{ name: 'sponsors', params: { id: bannerLogo.id } }"
+    >
     <img class="logo" :src="this.bannerLogo.banner" :alt="bannerLogo.id" />
-  </div>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -11,10 +13,6 @@ import BannerLogo from '@/data/BannerLogo.model';
 @Component
 export default class SponsorBanner extends Vue {
   @Prop({ required: true }) private bannerLogo!: BannerLogo;
-
-  private goToLink(): void {
-    // window.open(this..url.toString());
-  }
 }
 </script>
 <style lang="scss">
