@@ -2,14 +2,13 @@ import { shallowMount } from '@vue/test-utils';
 import SponsorBanner from '@/components/SponsorBanner.vue';
 
 describe('SponsorBanner.vue', () => {
-  beforeEach(() => {
-    window.open = jest.fn();
-  });
   it('it should check if the img is clickable', () => {
+    const id = 'ibm';
+    const banner = new URL('https://georginaeugeniaericka.com');
     const wrapper = shallowMount(SponsorBanner, {
-      propsData: { sponsor: { url: '', description: '' } }
+      propsData: { bannerLogo: { id, banner, description: '' } }
     });
-    wrapper.trigger('click');
-    expect(window.open).toHaveBeenCalled();
+    const img = wrapper.find('img');
+    expect(img.exists()).toBe(true);
   });
 });

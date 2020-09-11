@@ -15,12 +15,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import TitleTexts from '@/data/TitleTexts.model';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import SectionHero from '@/components/SectionHero.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import SponsorList from '@/components/SponsorList.vue';
+import BannerLogoContainer from '@/di/BannerLogoContainer';
 
 @Component({
   components: {
@@ -29,7 +30,7 @@ import SponsorList from '@/components/SponsorList.vue';
     SponsorList
   }
 })
-export default class SectionSponsors extends Vue {
+export default class SectionSponsors extends Mixins(BannerLogoContainer) {
   private get sponsorsTexts(): TitleTexts {
     return new TitleTexts(
       this.$t('home.sponsors.title'),

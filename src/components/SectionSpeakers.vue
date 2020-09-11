@@ -15,12 +15,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import SectionHero from '@/components/SectionHero.vue';
 import TitleTexts from '@/data/TitleTexts.model';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import Speakers from '@/components/Speakers.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
+import SpeakerContainer from '@/di/SpeakerContainer';
 
 @Component({
   components: {
@@ -29,7 +30,7 @@ import AccentActionButton from '@/components/AccentActionButton.vue';
     AccentActionButton
   }
 })
-export default class SectionSpeakers extends Vue {
+export default class SectionSpeakers extends Mixins(SpeakerContainer) {
   private get speakersTexts(): TitleTexts {
     return new TitleTexts(
       this.$t('home.speakers.title'),
