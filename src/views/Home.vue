@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import SectionContact from '@/components/SectionContact.vue';
 import SectionSpeakers from '@/components/SectionSpeakers.vue';
 import SectionWorkshops from '@/components/SectionWorkshops.vue';
@@ -21,8 +21,6 @@ import Banner from '@/components/Banner.vue';
 import SmallBanner from '@/components/SmallBanner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
 import { fetchImageURL } from '@/service/fetchImageURL';
-import SpeakerContainer from '@/di/SpeakerContainer';
-import TicketContainer from '@/di/TicketContainer';
 
 @Component({
   components: {
@@ -36,7 +34,7 @@ import TicketContainer from '@/di/TicketContainer';
     SectionContact
   }
 })
-export default class Home extends Mixins(SpeakerContainer, TicketContainer) {
+export default class Home extends Vue {
   private imageDivider = '';
 
   private created() {

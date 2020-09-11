@@ -3,6 +3,8 @@ import { mount, shallowMount } from '@vue/test-utils';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import SponsorList from '@/components/SponsorList.vue';
 
+jest.mock('@/firebase');
+
 describe('SectionSponsors component', () => {
   beforeEach(() => {
     window.open = jest.fn();
