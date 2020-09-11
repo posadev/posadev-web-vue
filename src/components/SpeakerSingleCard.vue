@@ -70,10 +70,14 @@ export default class SpeakerSingleCard extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 
 .card-container {
   display: flex;
   flex-direction: row;
+  @include media-screen-max-width(411px) {
+    flex-direction: column;
+  }
 }
 
 .container-img {
@@ -86,24 +90,38 @@ export default class SpeakerSingleCard extends Vue {
     width: 526px;
     height: 526px;
     filter: grayscale(0%);
+    @include media-screen-max-width(411px) {
+      width: 300px;
+      height: 300px;
+    }
   }
+
   .company {
     color: $light-color;
     font-weight: bold;
     position: absolute;
     top: 90%;
     left: 45%;
+    @include media-screen-max-width(411px) {
+      left: 80%;
+    }
   }
 }
 
 .container-info {
   width: 40%;
+  @include media-screen-max-width(411px) {
+    width: 100%;
+  }
 
   .name {
     color: $primary-dark-color;
     font-weight: bold;
     font-size: 55px;
     padding-bottom: 0;
+    @include media-screen-max-width(411px) {
+      font-size: 24px;
+    }
   }
 
   .role {
@@ -111,6 +129,9 @@ export default class SpeakerSingleCard extends Vue {
     line-height: 45px;
     color: $dark-color;
     padding-bottom: 25px;
+    @include media-screen-max-width(411px) {
+      font-size: 16px;
+    }
   }
 
   .bio {
@@ -147,6 +168,6 @@ export default class SpeakerSingleCard extends Vue {
   color: $dark-color;
   line-height: 36px;
   margin-top: 24px;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 </style>
