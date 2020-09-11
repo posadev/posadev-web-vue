@@ -94,6 +94,10 @@ export default class SpeakerSingleCard extends Vue {
       width: 300px;
       height: 300px;
     }
+    @include media-screen-max-width(768px) {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   .company {
