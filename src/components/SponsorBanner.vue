@@ -1,25 +1,26 @@
 <template>
   <div @click="goToLink">
-    <img class="logo" :src="this.sponsor.pic" :alt="this.sponsor.name" />
+    <img class="logo" :src="this.bannerLogo.banner" :alt="bannerLogo.id" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Sponsor from '@/data/Sponsor.model';
+import BannerLogo from '@/data/BannerLogo.model';
 
 @Component
 export default class SponsorBanner extends Vue {
-  @Prop({ required: true }) private sponsor!: Sponsor;
+  @Prop({ required: true }) private bannerLogo!: BannerLogo;
 
   private goToLink(): void {
-    window.open(this.sponsor.url.toString());
+    // window.open(this..url.toString());
   }
 }
 </script>
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
+
 .logo {
   width: 100%;
 }

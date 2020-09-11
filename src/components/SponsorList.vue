@@ -2,32 +2,39 @@
   <div class="columns">
     <SponsorBanner
       class="column col-2 col-md-3 col-xs-5"
-      v-for="sponsor in sponsors"
-      v-bind:key="sponsor.name"
-      :sponsor="sponsor"
+      v-for="banner in sponsorBanners"
+      v-bind:key="banner.id"
+      :banner-logo="banner"
     />
   </div>
 </template>
 
 <script lang="ts">
 import SponsorBanner from '@/components/SponsorBanner.vue';
-import { Component, Vue } from 'vue-property-decorator';
-import Sponsor from '../data/Sponsor.model';
-import sponsors from '@/mocks/Sponsors.mock';
+import { Component, Inject, Vue } from 'vue-property-decorator';
+import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import BannerLogo from '@/data/BannerLogo.model';
 
 @Component({
   components: { SponsorBanner }
 })
 export default class SponsorList extends Vue {
-  get sponsors(): Sponsor[] {
-    //FIXME: this is obtained from firebase
-    return sponsors;
+  @Inject('sponsor_banner')
+  private service!: FirebaseCollectionService<BannerLogo>;
+
+  private sponsorBanners: BannerLogo[] = [];
+
+  private created() {
+    this.service.findAll().then((banners: BannerLogo[]) => {
+      this.sponsorBanners.push(...banners);
+    });
   }
 }
 </script>
 <style lang="scss">
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
+
 .columns {
   padding: 0;
   margin: 0;
