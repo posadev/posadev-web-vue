@@ -1,7 +1,5 @@
 <template>
-  <router-link
-      :to="{ name: 'sponsors', params: { id: bannerLogo.id } }"
-    >
+  <router-link :to="{ name: 'sponsors', params: { id: bannerLogo.id } }">
     <img class="logo" :src="this.bannerLogo.banner" :alt="bannerLogo.id" />
   </router-link>
 </template>
