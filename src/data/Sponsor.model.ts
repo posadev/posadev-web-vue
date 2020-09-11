@@ -3,7 +3,7 @@ import { SocialMedia } from '@/data/SocialMedia.type';
 export default class Sponsor {
   constructor(
     readonly description: string,
-    //Firebase Reference
+      //Firebase Reference
     readonly level: string,
     readonly name: string,
     readonly pic: URL,
