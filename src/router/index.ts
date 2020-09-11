@@ -16,7 +16,7 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/Communities.vue')
   },
   {
-    path: '/sponsors: id',
+    path: '/sponsors/:id',
     name: 'sponsors',
     component: () => import('../views/Sponsors.vue')
   },
