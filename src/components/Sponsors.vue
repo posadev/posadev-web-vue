@@ -1,11 +1,13 @@
 <template>
   <div class="columns">
-    <SponsorItem
-      class="column col-2 col-md-3 col-xs-5"
+    <router-link
+      :to="{ name: 'sponsors', params: { id: sponsor.id } }"
       v-for="sponsor in sponsors"
-      v-bind:key="sponsor.name"
-      :sponsor="sponsor"
-    />
+      v-bind:key="sponsor.id"
+      class="column col-2 col-md-3 col-xs-5"
+    >
+      <SponsorItem :sponsor="sponsor" />
+    </router-link>
   </div>
 </template>
 
