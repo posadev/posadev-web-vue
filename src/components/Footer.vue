@@ -50,9 +50,9 @@ export default class Footer extends Vue {
   private items: FooterItem[] = navigationItems;
 
   private social: SocialMedia = {
-    twitter: new URL('https://twitter.com'),
-    instagram: new URL('https://instagram.com'),
-    facebook: new URL('https://facebook.com')
+    twitter: new URL('https://twitter.com/jconfmexico'),
+    github: new URL('https://github.com/JConfMexico'),
+    facebook: new URL('https://www.facebook.com/JConfMexico')
   };
 }
 </script>
