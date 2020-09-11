@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils';
-import SponsorItem from '@/components/SponsorItem.vue';
+import SponsorBanner from '@/components/SponsorBanner.vue';
 
-describe('SponsorItem.vue', () => {
+describe('SponsorBanner.vue', () => {
   beforeEach(() => {
     window.open = jest.fn();
   });
   it('it should check if the img is clickable', () => {
-    const wrapper = shallowMount(SponsorItem, {
+    const wrapper = shallowMount(SponsorBanner, {
       propsData: { sponsor: { url: '', description: '' } }
     });
     wrapper.trigger('click');

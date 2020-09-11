@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import Home from '@/views/Home.vue';
 
 Vue.use(VueRouter);
 
@@ -13,17 +13,17 @@ const routes: Array<RouteConfig> = [
   {
     path: '/communities',
     name: 'communities',
-    component: () => import('../views/Communities.vue')
+    component: () => import('@/views/Communities.vue')
   },
   {
     path: '/sponsors',
     name: 'sponsors',
-    component: () => import('../views/Sponsors.vue')
+    component: () => import('@/views/SponsorView.vue')
   },
   {
     path: '/speakers',
     name: 'speakers',
-    component: () => import('../views/SpeakersAll.vue')
+    component: () => import('@/views/SpeakersAll.vue')
   }
 ];
 

@@ -19,7 +19,7 @@ import TitleTexts from '@/data/TitleTexts.model';
     SponsorInfo
   }
 })
-export default class Sponsors extends Vue {
+export default class SponsorView extends Vue {
   private get headerText() {
     return new TitleTexts(
       this.$t('sponsor.titleSection'),
