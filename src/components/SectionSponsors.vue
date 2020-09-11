@@ -9,7 +9,7 @@
       />
     </template>
     <template v-slot:hero-body>
-      <Sponsors />
+      <SponsorList />
     </template>
   </SectionHero>
 </template>
@@ -20,13 +20,13 @@ import TitleTexts from '@/data/TitleTexts.model';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import SectionHero from '@/components/SectionHero.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
-import Sponsors from '@/components/Sponsors.vue';
+import SponsorList from '@/components/SponsorList.vue';
 
 @Component({
   components: {
     SectionHero,
     AccentActionButton,
-    Sponsors
+    SponsorList
   }
 })
 export default class SectionSponsors extends Vue {

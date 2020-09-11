@@ -6,21 +6,21 @@
       v-bind:key="sponsor.id"
       class="column col-2 col-md-3 col-xs-5"
     >
-      <SponsorItem :sponsor="sponsor" />
+      <SponsorBanner :sponsor="sponsor" />
     </router-link>
   </div>
 </template>
 
 <script lang="ts">
-import SponsorItem from '@/components/SponsorItem.vue';
+import SponsorBanner from '@/components/SponsorBanner.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import Sponsor from '../data/Sponsor.model';
 import sponsors from '@/mocks/Sponsors.mock';
 
 @Component({
-  components: { SponsorItem }
+  components: { SponsorBanner }
 })
-export default class Sponsors extends Vue {
+export default class SponsorList extends Vue {
   get sponsors(): Sponsor[] {
     //FIXME: this is obtained from firebase
     return sponsors;

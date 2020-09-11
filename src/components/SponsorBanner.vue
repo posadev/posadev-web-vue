@@ -9,7 +9,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import Sponsor from '@/data/Sponsor.model';
 
 @Component
-export default class SponsorItem extends Vue {
+export default class SponsorBanner extends Vue {
   @Prop({ required: true }) private sponsor!: Sponsor;
 }
 </script>
