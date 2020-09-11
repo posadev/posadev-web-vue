@@ -1,7 +1,7 @@
 import SectionSponsors from '@/components/SectionSponsors.vue';
 import { mount, shallowMount } from '@vue/test-utils';
 import AccentActionButton from '@/components/AccentActionButton.vue';
-import Sponsors from '@/components/Sponsors.vue';
+import SponsorList from '@/components/SponsorList.vue';
 
 describe('SectionSponsors component', () => {
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('SectionSponsors component', () => {
     });
 
     expect(wrapper.findAllComponents(AccentActionButton).length).toBe(1);
-    expect(wrapper.findComponent(Sponsors).exists()).toBe(true);
+    expect(wrapper.findComponent(SponsorList).exists()).toBe(true);
   });
 
   it('should call a method when a click happens', () => {

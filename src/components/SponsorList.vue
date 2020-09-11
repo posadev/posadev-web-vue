@@ -18,7 +18,7 @@ import sponsors from '@/mocks/Sponsors.mock';
 @Component({
   components: { SponsorItem }
 })
-export default class Sponsors extends Vue {
+export default class SponsorList extends Vue {
   get sponsors(): Sponsor[] {
     //FIXME: this is obtained from firebase
     return sponsors;
