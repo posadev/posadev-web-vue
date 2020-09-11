@@ -54,7 +54,7 @@ describe('Router render test cases', () => {
       router
     });
 
-    return router.push('sponsors').then(() => {
+    return router.push('sponsors/:id').then(() => {
       expect(wrapper.findComponent(SponsorView).exists()).toBe(true);
     });
   });
@@ -70,7 +70,7 @@ describe('Router render test cases', () => {
       router
     });
 
-    return router.push('speakers').then(() => {
+    return router.push('/speakers').then(() => {
       expect(wrapper.findComponent(SpeakersAll).exists()).toBe(true);
     });
   });
