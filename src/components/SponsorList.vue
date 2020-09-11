@@ -1,6 +1,6 @@
 <template>
   <div class="columns">
-    <SponsorItem
+    <SponsorBanner
       class="column col-2 col-md-3 col-xs-5"
       v-for="sponsor in sponsors"
       v-bind:key="sponsor.name"
@@ -10,13 +10,13 @@
 </template>
 
 <script lang="ts">
-import SponsorItem from '@/components/SponsorItem.vue';
+import SponsorBanner from '@/components/SponsorBanner.vue';
 import { Component, Vue } from 'vue-property-decorator';
 import Sponsor from '../data/Sponsor.model';
 import sponsors from '@/mocks/Sponsors.mock';
 
 @Component({
-  components: { SponsorItem }
+  components: { SponsorBanner }
 })
 export default class SponsorList extends Vue {
   get sponsors(): Sponsor[] {
