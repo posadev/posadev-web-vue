@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class NavigationBarItem extends Vue {
@@ -15,10 +15,20 @@ export default class NavigationBarItem extends Vue {
 
   private goToNavigationLink(): void {
     if (this.path.startsWith('#')) {
-      const section = document.getElementById(this.path.substring(1));
-      console.log('Located!!!!!', section);
-      section?.scrollIntoView();
+      this.onIdPath();
+    } else {
+      this.onPath();
     }
+  }
+
+  @Emit('scroll-to')
+  private onIdPath(): string {
+    return this.path.substring(1);
+  }
+
+  @Emit('go-to')
+  private onPath(): string {
+    return this.path;
   }
 }
 </script>

@@ -11,10 +11,16 @@
         class="navBarItem"
         v-bind:key="barItem.path"
         :path="barItem.path"
+        v-on:scroll-to="scrollTo"
+        v-on:go-to="openSection"
       >
         {{ $t(barItem.textRef) }}
       </NavigationBarItem>
-      <NavigationBarItem class="navBarItem navBarTicket" :path="'#tickets'">
+      <NavigationBarItem
+        class="navBarItem navBarTicket"
+        :path="'#tickets'"
+        v-on:scroll-to="scrollTo"
+      >
         {{ $t('header.tickets') }}
       </NavigationBarItem>
     </div>
@@ -31,6 +37,15 @@ import { BarItem, navigationItems } from '@/data/BarItem.type';
 })
 export default class NavigationBar extends Vue {
   private items: BarItem[] = navigationItems;
+
+  private scrollTo(id: string) {
+    const section = document.getElementById(id);
+    section?.scrollIntoView();
+  }
+
+  private openSection(section: string) {
+    this.$router.push(section);
+  }
 }
 </script>
 
