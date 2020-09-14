@@ -14,7 +14,7 @@
       >
         {{ $t(barItem.textRef) }}
       </NavigationBarItem>
-      <NavigationBarItem class="navBarItem navBarTicket" :path="'/tickets'">
+      <NavigationBarItem class="navBarItem navBarTicket" :path="'#tickets'">
         {{ $t('header.tickets') }}
       </NavigationBarItem>
     </div>

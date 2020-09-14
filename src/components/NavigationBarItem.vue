@@ -1,6 +1,8 @@
 <template>
   <div>
-    <a @click="goToNavigationLink"><slot></slot></a>
+    <a @click="goToNavigationLink">
+      <slot></slot>
+    </a>
   </div>
 </template>
 
@@ -9,10 +11,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class NavigationBarItem extends Vue {
-  @Prop() private path?: string;
+  @Prop({ required: true }) private path!: string;
 
   private goToNavigationLink(): void {
-    //
+    if (this.path.startsWith('#')) {
+      const section = document.getElementById(this.path.substring(1));
+      console.log('Located!!!!!', section);
+      section?.scrollIntoView();
+    }
   }
 }
 </script>
