@@ -67,8 +67,8 @@ export default class CommunityInfo extends Vue {
   flex: 1;
 
   img {
-    width: 420px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
   }
 
   @include media-screen-max-width {

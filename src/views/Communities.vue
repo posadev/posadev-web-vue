@@ -61,6 +61,8 @@ export default class Communities extends Vue {
     margin: {
       top: 45px;
       bottom: 45px;
+      right: 0px;
+      left: 0px;
     }
   }
 }
