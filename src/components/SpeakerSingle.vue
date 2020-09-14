@@ -1,5 +1,5 @@
 <template>
-  <div class="columns">
+  <div>
     <SpeakerSingleCard
       class="column"
       v-for="speaker in speakers"
@@ -25,7 +25,7 @@ export default class SpeakerSingle extends Vue {
   private speakers: Speaker[] = [];
 
   private created() {
-    this.service.findAll().then((response: Speaker[]) => {
+    this.service.find(1).then((response: Speaker[]) => {
       this.speakers.push(...response);
     });
   }

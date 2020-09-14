@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="containerImg">
-      <img
-        class="photo-speaker img-fit-cover"
-        :src="this.speaker.photoURL"
-        :alt="this.speaker.company"
-      />
+      <router-link :to="`/speakers/${this.speaker.firstName}`">
+        <img
+          class="photo-speaker img-fit-cover"
+          :src="this.speaker.photoURL"
+          :alt="this.speaker.company"
+        />
+      </router-link>
       <p class="company">{{ this.speaker.company }}</p>
     </div>
     <div class="texts">

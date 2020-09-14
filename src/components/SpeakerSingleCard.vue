@@ -29,11 +29,7 @@
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
-      <AccentActionButton
-        id="btn-community"
-        :info="buttonInfo"
-        v-on:button-action="onCommunityClick"
-      />
+      <AccentActionButton id="btn-community" :info="buttonInfo" />
     </div>
   </div>
 </template>
