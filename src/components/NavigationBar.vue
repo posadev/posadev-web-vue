@@ -38,12 +38,12 @@ import { BarItem, navigationItems } from '@/data/BarItem.type';
 export default class NavigationBar extends Vue {
   private items: BarItem[] = navigationItems;
 
-  private scrollTo(id: string) {
+  private scrollTo(id: string): void {
     const section = document.getElementById(id);
     section?.scrollIntoView();
   }
 
-  private openSection(section: string) {
+  private openSection(section: string): void {
     this.$router.push(section);
   }
 }

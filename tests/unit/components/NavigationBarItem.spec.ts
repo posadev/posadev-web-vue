@@ -45,6 +45,7 @@ describe('NavigationBarItem.vue', () => {
     wrapper.find('a').trigger('click');
 
     expect(scrollListener).toHaveBeenCalled();
+    expect(scrollListener).toBeCalledWith(expectedId);
     expect(pathId).toBe(expectedId);
   });
 });
