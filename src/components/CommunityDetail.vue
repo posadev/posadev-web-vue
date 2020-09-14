@@ -62,11 +62,6 @@ export default class CommunityDetail extends Vue {
 
 .container {
   color: $dark-color;
-  @include media-screen-max-width(411px) {
-    margin: {
-      left: -15px;
-    }
-  }
 }
 
 .community-logo {
@@ -77,8 +72,8 @@ export default class CommunityDetail extends Vue {
   }
 
   img {
-    width: 160px;
-    height: 160px;
+    width: 100%;
+    height: 100%;
   }
 
   @include media-screen-max-width(411px) {
@@ -126,17 +121,19 @@ export default class CommunityDetail extends Vue {
 .community-detail {
   p {
     text-align: left;
-    min-height: 75px;
-    max-height: 200px;
+    width: 100%;
     margin: {
       top: 25px;
       bottom: 25px;
+      left: 10px;
+      right: 10px;
     }
   }
 
   @include media-screen-max-width(411px) {
     p {
       text-align: left;
+      width: 95%;
     }
   }
 }
