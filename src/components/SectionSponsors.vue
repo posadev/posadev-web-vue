@@ -51,7 +51,6 @@ export default class SectionSponsors extends Mixins(BannerLogoContainer) {
 </script>
 
 <style lang="scss">
-
 .section-button {
   display: none;
 }
