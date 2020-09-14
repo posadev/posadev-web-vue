@@ -4,8 +4,8 @@ import App from '@/App.vue';
 import router from '@/router/index.ts';
 import Home from '@/views/Home.vue';
 import Communities from '@/views/Communities.vue';
-import Sponsors from '@/views/Sponsors.vue';
 import SpeakersAll from '@/views/SpeakersAll.vue';
+import SponsorView from '@/views/SponsorView.vue';
 
 jest.mock('@/firebase');
 
@@ -54,8 +54,8 @@ describe('Router render test cases', () => {
       router
     });
 
-    return router.push('sponsors').then(() => {
-      expect(wrapper.findComponent(Sponsors).exists()).toBe(true);
+    return router.push('sponsors/:id').then(() => {
+      expect(wrapper.findComponent(SponsorView).exists()).toBe(true);
     });
   });
 
@@ -70,7 +70,7 @@ describe('Router render test cases', () => {
       router
     });
 
-    return router.push('speakers').then(() => {
+    return router.push('/speakers').then(() => {
       expect(wrapper.findComponent(SpeakersAll).exists()).toBe(true);
     });
   });
