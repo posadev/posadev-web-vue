@@ -1,6 +1,5 @@
 import SectionSponsors from '@/components/SectionSponsors.vue';
-import { mount, shallowMount } from '@vue/test-utils';
-import AccentActionButton from '@/components/AccentActionButton.vue';
+import { shallowMount } from '@vue/test-utils';
 import SponsorList from '@/components/SponsorList.vue';
 
 jest.mock('@/firebase');
@@ -17,19 +16,6 @@ describe('SectionSponsors component', () => {
       }
     });
 
-    expect(wrapper.findAllComponents(AccentActionButton).length).toBe(1);
     expect(wrapper.findComponent(SponsorList).exists()).toBe(true);
-  });
-
-  it('should call a method when a click happens', () => {
-    const wrapper = mount(SectionSponsors, {
-      mocks: {
-        $t: jest.fn().mockReturnValue({})
-      }
-    });
-
-    wrapper.findComponent(AccentActionButton).trigger('click');
-
-    expect(window.open).toHaveBeenCalled();
   });
 });
