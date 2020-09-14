@@ -3,7 +3,7 @@
     <template v-slot:hero-header>
       <AccentActionButton
         id="btn-cfs"
-        class="section-button"
+        class="section-button-accent"
         :info="sponsorsInfo"
         v-on:button-action="onCFSClick"
       />
@@ -51,7 +51,7 @@ export default class SectionSponsors extends Mixins(BannerLogoContainer) {
 </script>
 
 <style lang="scss">
-.section-button {
+.section-button-accent {
   display: none;
 }
 </style>
