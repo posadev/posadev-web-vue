@@ -45,4 +45,8 @@ export default class SpeakerSingleTalk extends Vue {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.container-talk {
+  display: none;
+}
+</style>
