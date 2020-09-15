@@ -18,7 +18,7 @@ import TitleTexts from '@/data/TitleTexts.model';
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
 import CommunityInfo from '@/components/CommunityInfo.vue';
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 import ViewHeader from '@/components/ViewHeader.vue';
 
 @Component({
@@ -36,7 +36,7 @@ export default class Communities extends Vue {
   }
 
   @Inject('communities')
-  private service!: FirebaseCollectionService<Community>;
+  private service!: FirestoreService<Community>;
   private communities: Community[] = [];
 
   private created() {
@@ -61,6 +61,8 @@ export default class Communities extends Vue {
     margin: {
       top: 45px;
       bottom: 45px;
+      right: 0px;
+      left: 0px;
     }
   }
 }

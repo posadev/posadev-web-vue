@@ -28,11 +28,11 @@
     },
     "tickets": {
       "title": "Tickets",
-      "subtitle": "Consigue tu entrada mientras estan disponibles"
+      "subtitle": "Obtén tu entrada"
     },
     "sponsors": {
       "title": "Sponsors",
-      "subtitle": "Conoce a los profesionales de la industria que nos acompañan",
+      "subtitle": "Da click y conoce más de nuestros patrocinadores, que sin su ayuda este evento no sería el mismo",
       "topButton": "Patrocina este evento"
     },
     "contact": {
