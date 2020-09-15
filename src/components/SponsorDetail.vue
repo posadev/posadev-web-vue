@@ -65,7 +65,7 @@ export default class SponsorDetail extends Vue {
     }
   }
 
-  @include media-screen-max-width(730px){
+  @include media-screen-max-width(730px) {
     width: 90%;
   }
 }
