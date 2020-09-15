@@ -45,6 +45,8 @@ export default class ActionButton extends Vue {
     }
     border: 1px solid transparent;
     border-radius: 6px;
+
+    cursor: pointer;
   }
 
   &.small {
