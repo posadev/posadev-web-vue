@@ -2,7 +2,6 @@
   <div>
     <Banner />
     <AboutEvent id="about-event" class="section-light section-home" />
-    <SmallBanner />
     <SectionSpeakers id="speakers" class="section-home section-dark" />
     <SectionTickets id="tickets" class="section-home section-light" />
     <SectionSponsors id="sponsors" class="section-home section-white" />
@@ -18,7 +17,6 @@ import SectionWorkshops from '@/components/SectionWorkshops.vue';
 import SectionSponsors from '@/components/SectionSponsors.vue';
 import SectionTickets from '@/components/SectionTickets.vue';
 import Banner from '@/components/Banner.vue';
-import SmallBanner from '@/components/SmallBanner.vue';
 import AboutEvent from '@/components/AboutEvent.vue';
 import { fetchImageURL } from '@/service/fetchImageURL';
 
@@ -26,7 +24,6 @@ import { fetchImageURL } from '@/service/fetchImageURL';
   components: {
     AboutEvent,
     Banner,
-    SmallBanner,
     SectionSpeakers,
     SectionWorkshops,
     SectionTickets,
