@@ -2,8 +2,8 @@ import SpeakersService from '@/service/SpeakersService';
 
 jest.mock('@/firebase');
 
-describe('CommunitiesServices', () => {
-  it('should transform the data into a community', () => {
+describe('SpeakerService', () => {
+  it('should transform the data into a Speaker', () => {
     const mock = {
       bio: 'Foo',
       company: 'Bar',
