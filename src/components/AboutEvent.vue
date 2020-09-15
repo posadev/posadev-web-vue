@@ -46,7 +46,7 @@ export default class AboutEvent extends Vue {
   display: block;
   margin-right: 3%;
 
-  @mixin mobile-device {
+  @include mobile-device {
     margin-right: 0;
   }
 }
