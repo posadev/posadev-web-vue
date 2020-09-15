@@ -36,9 +36,19 @@ export default class AboutEvent extends Vue {
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media';
 
+@mixin mobile-device {
+  @media only screen and (max-device-width: 900px) {
+    @content;
+  }
+}
+
 .container-image {
   display: block;
   margin-right: 3%;
+
+  @mixin mobile-device {
+    margin-right: 0;
+  }
 }
 
 .image-about-event {
@@ -54,7 +64,7 @@ export default class AboutEvent extends Vue {
   flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
-  @media only screen and (max-device-width: 900px) {
+  @include mobile-device {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
@@ -64,7 +74,7 @@ export default class AboutEvent extends Vue {
 .text-content-about {
   text-align: left;
 
-  @media only screen and (max-device-width: 900px) {
+  @include mobile-device {
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
