@@ -1,13 +1,5 @@
 <template>
   <SectionHero :title="speakersTexts">
-    <template v-slot:hero-header>
-      <AccentActionButton
-        id="btn-cfp"
-        class="section-button"
-        :info="speakerInfo"
-        v-on:button-action="onCFPClick"
-      />
-    </template>
     <template v-slot:hero-body>
       <Speakers />
     </template>
@@ -23,12 +15,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import SectionHero from '@/components/SectionHero.vue';
 import TitleTexts from '@/data/TitleTexts.model';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import Speakers from '@/components/Speakers.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
+import SpeakerContainer from '@/di/SpeakerContainer';
 
 @Component({
   components: {
@@ -37,7 +30,7 @@ import AccentActionButton from '@/components/AccentActionButton.vue';
     AccentActionButton
   }
 })
-export default class SectionSpeakers extends Vue {
+export default class SectionSpeakers extends Mixins(SpeakerContainer) {
   private get speakersTexts(): TitleTexts {
     return new TitleTexts(
       this.$t('home.speakers.title'),
@@ -53,14 +46,18 @@ export default class SectionSpeakers extends Vue {
     return new ButtonInfo(this.$t('home.speakers.bottomButton'));
   }
 
-  private onCFPClick() {
-    window.open('https://convoca.dev/jconf-mexico-2020/cfp');
-  }
-
   private onShowSpeakers() {
     //
   }
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/mixins';
+
+#btn-speakers-all {
+  @include media-screen-max-width(768px) {
+    margin-top: 10%;
+  }
+}
+</style>

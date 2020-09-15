@@ -1,7 +1,8 @@
 <template>
-  <div class="col-xl-12 content">
+  <div class="banner-content">
     <div class="content-banner-image">
-      <img :src="image" class="img-responsive img-banner" alt="JConf 2020" />
+      <img :src="image" class="img-fit-cover img-banner" alt="JConf 2020" />
+      <div class="background-banner" />
       <img
         class="img-responsive banner-logo"
         src="../assets/logoTransparente.png"
@@ -9,8 +10,8 @@
       />
     </div>
     <section class="text-content text-format">
-      <h1 class="title">JConf GDL 2020</h1>
-      <p class="subtitle">{{ $t('home.banner.subtitle') }}</p>
+      <h1 class="banner-title">JConf México 2020</h1>
+      <p class="banner-subtitle">{{ $t('home.banner.subtitle') }}</p>
     </section>
   </div>
 </template>
@@ -35,7 +36,7 @@ export default class Banner extends Vue {
 @import '../styles/variables';
 @import '../styles/mixins';
 @import '~spectre.css/src/_layout';
-@import '~spectre.css/src/_media.scss';
+@import '~spectre.css/src/_media';
 
 @mixin ipad-height {
   @media only screen and (max-height: 1024px) and (min-height: 824px) {
@@ -59,13 +60,21 @@ export default class Banner extends Vue {
   position: relative;
 }
 
-.content {
+.banner-content {
   display: block;
   position: relative;
   background: $primary-dark-color;
 }
 
-img.img-banner {
+.background-banner {
+  position: absolute;
+  background: $backgorund-banner-color;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+}
+
+.img-banner {
   width: 100%;
   //Ipads and phones
   @media only screen and (max-width: 928px) {
@@ -73,14 +82,15 @@ img.img-banner {
   }
 }
 
-img.banner-logo {
+.banner-logo {
   position: absolute;
   right: 3%;
-  bottom: 10%;
+  bottom: 4%;
   max-width: 20%;
 
   @media only screen and (max-width: 440px) {
-    max-width: 50%;
+    width: 153px;
+    height: 66px;
   }
 
   @media only screen and (max-width: 780px) and (min-width: 441px) {
@@ -92,7 +102,7 @@ img.banner-logo {
   }
 }
 
-.title {
+.banner-title {
   font-size: 78px;
   line-height: 80px;
 
@@ -108,7 +118,7 @@ img.banner-logo {
   }
 }
 
-.subtitle {
+.banner-subtitle {
   font-size: 24px;
   line-height: 43px;
 
@@ -134,27 +144,19 @@ img.banner-logo {
 
   @media only screen and (min-width: 929px) {
     left: 6.67%;
-    right: 56.67%;
-    top: 33.42%;
+    right: 45.67%;
+    top: 20.42%;
   }
   @media only screen and (max-width: 943px) {
     position: initial;
     background: $primary-dark-color;
 
     h1 {
-      margin: {
-        top: 10%;
-        left: 4.44%;
-        right: 2%;
-        bottom: 2%;
-      }
+      margin: 10% 2% 2% 4.44%;
     }
 
     p {
-      margin: {
-        left: 4.44%;
-        right: 20%;
-      }
+      margin: 0 20% 0 4.44%;
     }
   }
 }

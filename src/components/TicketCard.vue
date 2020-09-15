@@ -33,7 +33,7 @@ export default class TicketCard extends Vue {
 }
 
 .card-header {
-  background-color: $light-color;
+  background-color: $white-color;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }

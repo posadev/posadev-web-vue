@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="speaker-container">
     <div class="containerImg">
       <img
-        class="photo-speaker"
+        class="photo-speaker img-fit-cover"
         :src="this.speaker.photoURL"
         :alt="this.speaker.company"
       />
@@ -29,6 +29,10 @@ export default class SpeakerCard extends Vue {
 </script>
 <style lang="scss">
 @import '../styles/variables';
+
+.speaker-container {
+  cursor: pointer;
+}
 
 .containerImg {
   position: relative;
