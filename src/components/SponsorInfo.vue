@@ -7,7 +7,7 @@
         :alt="this.sponsor.name"
       />
     </div>
-    <SponsorDetail class="sponsor-card-detail" :sponsor="this.sponsor" />
+    <SponsorDetail :sponsor="this.sponsor" />
   </div>
 </template>
 
@@ -38,11 +38,16 @@ export default class SponsorInfo extends Vue {
   margin: 0 auto;
   min-width: 70%;
   margin: {
-    top: 40px;
+    top: 5%;
+    bottom: 5%;
   }
 
   @include media-screen-max-width(426px) {
     flex-direction: column;
+    margin: {
+      top: 10%;
+      bottom: 10%;
+    }
   }
 }
 
