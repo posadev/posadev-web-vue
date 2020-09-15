@@ -1,26 +1,27 @@
 <template>
   <div>
     <ViewHeader :header-texts="speakersTexts" />
-    <div>
-      <SpeakerSingle />
-    </div>
+    <SpeakerSingleInfo :speaker="speaker" />
   </div>
 </template>
 
 <script lang="ts">
 import ViewHeader from '@/components/ViewHeader.vue';
 import TitleTexts from '@/data/TitleTexts.model';
-import SpeakerSingle from '@/components/SpeakerSingle.vue';
-import { Component, Mixins } from 'vue-property-decorator';
-import SpeakerContainer from '@/di/SpeakerContainer';
+import SpeakerSingleInfo from '@/components/SpeakerSingleInfo.vue';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import Speaker from '@/data/Speaker.model';
 
 @Component({
   components: {
     ViewHeader,
-    SpeakerSingle
+    SpeakerSingleInfo
   }
 })
-export default class SpeakerSingleInfo extends Mixins(SpeakerContainer) {
+export default class SpeakerSingle extends Vue {
+  @Prop()
+  private speaker!: Speaker;
+
   private get speakersTexts(): TitleTexts {
     return new TitleTexts(
       this.$t('home.speakers.title'),
