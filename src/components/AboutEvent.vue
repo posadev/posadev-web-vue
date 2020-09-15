@@ -45,12 +45,12 @@ export default class AboutEvent extends Vue {
 }
 
 .image-about-event {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
   @include media-screen-max-width(426px) {
-      width: 280px;
-      height: 280px;
+    width: 280px;
+    height: 280px;
   }
 }
 
