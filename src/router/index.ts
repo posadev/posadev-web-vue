@@ -38,9 +38,10 @@ const routes: Array<RouteConfig> = [
           router.params['lastName'],
           router.params['role'],
           new URL(router.params['photoURL']),
-          JSON.parse(router.params['socialMedia'])
+          JSON.parse(router.params['socialMedia']),
+          JSON.parse(router.params['talks'])
         )
-      }
+      };
     },
     component: () => import('../views/SpeakerSingle.vue')
   }

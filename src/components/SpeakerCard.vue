@@ -38,7 +38,8 @@ export default class SpeakerCard extends Vue {
         lastName: this.speaker.lastName,
         role: this.speaker.role,
         photoURL: this.speaker.photoURL.toString(),
-        socialMedia: JSON.stringify(this.speaker.socialMedia)
+        socialMedia: JSON.stringify(this.speaker.socialMedia),
+        talks: JSON.stringify(this.speaker.talks)
       }
     });
   }

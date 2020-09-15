@@ -10,7 +10,8 @@ describe('SpeakerCard component', () => {
     'Welch3',
     'Java Developer2',
     new URL('https://localhost'),
-    {}
+    {},
+    ['']
   );
   it('should render properly', () => {
     const wrapper = shallowMount(SpeakerCard, {
