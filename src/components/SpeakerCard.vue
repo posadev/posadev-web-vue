@@ -1,20 +1,11 @@
 <template>
-  <div class="speaker-container">
+  <div class="speaker-container" @click="goToDetail">
     <div class="containerImg">
-      <router-link
-        :to="{
-          name: 'speakers/detail',
-          params: {
-            name: `${this.speaker.firstName}+${this.speaker.lastName}`
-          }
-        }"
-      >
-        <img
-          class="photo-speaker img-fit-cover"
-          :src="this.speaker.photoURL"
-          :alt="this.speaker.company"
-        />
-      </router-link>
+      <img
+        class="photo-speaker img-fit-cover"
+        :src="this.speaker.photoURL"
+        :alt="this.speaker.company"
+      />
       <p class="company">{{ this.speaker.company }}</p>
     </div>
     <div class="texts">
@@ -34,6 +25,22 @@ export default class SpeakerCard extends Vue {
 
   private get fullName(): string {
     return `${this.speaker.firstName} ${this.speaker.lastName}`;
+  }
+
+  private goToDetail() {
+    this.$router.push({
+      name: 'speakers/detail',
+      params: {
+        fullName: `${this.speaker.firstName}+${this.speaker.lastName}`,
+        bio: this.speaker.bio,
+        company: this.speaker.company,
+        firstName: this.speaker.firstName,
+        lastName: this.speaker.lastName,
+        role: this.speaker.role,
+        photoURL: this.speaker.photoURL.toString(),
+        socialMedia: JSON.stringify(this.speaker.socialMedia)
+      }
+    });
   }
 }
 </script>

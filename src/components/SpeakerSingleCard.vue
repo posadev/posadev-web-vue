@@ -13,7 +13,7 @@
         <p class="name">{{ this.fullName }}</p>
         <p class="role">{{ this.speaker.role }}</p>
         <p class="bio">{{ this.speaker.bio }}</p>
-        <SocialLinks :info="$t('social.textInfo')" :socialMedia="social" />
+        <SocialLinks :info="$t('social.textInfo')" :socialMedia="this.speaker.socialMedia" />
       </div>
     </div>
     <div class="container-talk">
@@ -38,7 +38,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Speaker from '../data/Speaker.model';
 import SocialLinks from '@/components/SocialLinks.vue';
-import { SocialMedia } from '@/data/SocialMedia.type';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 
@@ -51,12 +50,6 @@ export default class SpeakerSingleCard extends Vue {
   private get fullName(): string {
     return `${this.speaker.firstName} ${this.speaker.lastName}`;
   }
-
-  private social: SocialMedia = {
-    twitter: new URL('https://twitter.com'),
-    instagram: new URL('https://instagram.com'),
-    facebook: new URL('https://facebook.com')
-  };
 
   get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('speaker.addCalendar'), true);
@@ -141,6 +134,7 @@ export default class SpeakerSingleCard extends Vue {
     line-height: 36px;
   }
 }
+
 .container-talk {
   margin-top: 180px;
   margin-left: 5%;
