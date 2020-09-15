@@ -10,7 +10,7 @@ import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 
 export type DocumentMapper<R> = (data: DocumentData) => R;
 
-export abstract class FirebaseCollectionService<T> {
+export abstract class FirestoreService<T> {
   abstract collectionName: string;
 
   abstract mapper: DocumentMapper<T>;
