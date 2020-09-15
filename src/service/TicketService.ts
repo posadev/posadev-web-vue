@@ -1,7 +1,4 @@
-import {
-  DocumentMapper,
-  FirestoreService
-} from '@/service/FirestoreService';
+import { DocumentMapper, FirestoreService } from '@/service/FirestoreService';
 import Ticket from '@/data/Ticket.model';
 import firebase from 'firebase';
 import DocumentData = firebase.firestore.DocumentData;
