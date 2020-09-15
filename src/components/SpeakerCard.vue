@@ -1,7 +1,14 @@
 <template>
   <div class="speaker-container">
     <div class="containerImg">
-      <router-link :to="`/speakers/${this.speaker.firstName}`">
+      <router-link
+        :to="{
+          name: 'speakers/detail',
+          params: {
+            name: `${this.speaker.firstName}+${this.speaker.lastName}`
+          }
+        }"
+      >
         <img
           class="photo-speaker img-fit-cover"
           :src="this.speaker.photoURL"
@@ -22,7 +29,8 @@ import Speaker from '../data/Speaker.model';
 
 @Component
 export default class SpeakerCard extends Vue {
-  @Prop({ required: true }) private speaker!: Speaker;
+  @Prop({ required: true })
+  private speaker!: Speaker;
 
   private get fullName(): string {
     return `${this.speaker.firstName} ${this.speaker.lastName}`;

@@ -26,8 +26,8 @@ const routes: Array<RouteConfig> = [
     component: () => import('../views/SpeakersAll.vue')
   },
   {
-    path: '/speakers/:id',
-    name: 'speakers/:id',
+    path: '/speakers/:name',
+    name: 'speakers/detail',
     component: () => import('../views/SpeakerSingle.vue')
   }
 ];
