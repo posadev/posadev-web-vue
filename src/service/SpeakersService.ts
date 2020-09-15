@@ -2,11 +2,11 @@ import Speaker from '@/data/Speaker.model';
 import firebase from 'firebase';
 import {
   DocumentMapper,
-  FirebaseCollectionService
-} from '@/service/FirebaseCollectionService';
+  FirestoreService
+} from '@/service/FirestoreService';
 import DocumentData = firebase.firestore.DocumentData;
 
-export default class SpeakersService extends FirebaseCollectionService<
+export default class SpeakersService extends FirestoreService<
   Speaker
 > {
   readonly collectionName = 'speakers';

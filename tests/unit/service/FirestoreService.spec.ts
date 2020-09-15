@@ -1,5 +1,5 @@
 import flushPromises from 'flush-promises';
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 import firebase from 'firebase';
 import { db } from '@/firebase';
 import FirestoreDataConverter = firebase.firestore.FirestoreDataConverter;
@@ -10,7 +10,7 @@ import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 jest.mock('@/firebase');
 
 describe('Abstract FirebaseService', () => {
-  class MockService extends FirebaseCollectionService<string> {
+  class MockService extends FirestoreService<string> {
     collectionName = 'foo';
 
     mapper = jest.fn().mockReturnValue('Foo Bar Baz');
