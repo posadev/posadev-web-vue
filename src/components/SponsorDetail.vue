@@ -1,7 +1,7 @@
 <template>
   <div class="sponsor-detail">
     <div class="logo-sponsor">
-      <img :src="this.sponsor.pic" :alt="this.sponsor.name" />
+      <img :src="this.sponsor.bannerUrl" :alt="this.sponsor.name" />
     </div>
     <p>{{ this.sponsor.description }}</p>
     <SocialLinks
