@@ -1,6 +1,6 @@
 <template>
   <nav class="navBar">
-    <NavigationBarItem :path="'/'">
+    <NavigationBarItem :path="'/'" v-on:go-to="openSection">
       <img class="navBarLogo" src="../assets/logoTransparente.png" alt="logo" />
     </NavigationBarItem>
     <label for="toggle">&#9776;</label>
@@ -57,7 +57,7 @@ export default class NavigationBar extends Vue {
   transform: scaleX($scale-value);
 }
 
-@mixin query-only-screen-max-width($value-max-width: 768px) {
+@mixin query-only-screen-max-width($value-max-width: 900px) {
   @media only screen and (max-width: $value-max-width) {
     @content;
   }
@@ -66,7 +66,7 @@ export default class NavigationBar extends Vue {
 %visible-scale1-media {
   @include visible-scaleX(1);
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     @include visible-scaleX(1);
   }
 }
@@ -74,14 +74,16 @@ export default class NavigationBar extends Vue {
 .navBar {
   display: flex;
   position: sticky;
+  z-index: 1;
+  top: 0;
   background-color: $primary-dark-color;
+  box-shadow: 0 0.5em 0.5em -0.4em #091c2796;
   flex: {
     direction: row;
     wrap: wrap;
   }
   align-items: center;
   justify-content: space-between;
-  height: 139px;
   width: 100%;
 
   @include query-only-screen-max-width {
@@ -103,6 +105,7 @@ export default class NavigationBar extends Vue {
 
 .navBarMenuContainer {
   width: 60%;
+  height: 100%;
   display: flex;
   flex: {
     direction: row;

@@ -34,6 +34,7 @@ export default class TicketButton extends Vue {
   align-items: center;
   text-align: center;
   border: none;
+  cursor: pointer;
   font: {
     weight: bold;
     size: 21px;

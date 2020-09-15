@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="speaker-container">
     <div class="containerImg">
       <router-link :to="`/speakers/${this.speaker.firstName}`">
         <img
@@ -31,6 +31,10 @@ export default class SpeakerCard extends Vue {
 </script>
 <style lang="scss">
 @import '../styles/variables';
+
+.speaker-container {
+  cursor: pointer;
+}
 
 .containerImg {
   position: relative;
