@@ -58,7 +58,9 @@ export default class NavigationBar extends Vue {
 
 .navBar {
   display: flex;
-  position: sticky;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   background-color: $primary-dark-color;
   flex: {
     direction: row;
@@ -230,5 +232,8 @@ label {
       margin: 0;
     }
   }
+}
+#app {
+  margin-top: 7%;
 }
 </style>
