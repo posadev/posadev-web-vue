@@ -7,11 +7,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Sponsor from '@/data/Sponsor.model';
 import SponsorInfo from '@/components/SponsorInfo.vue';
-import sponsors from '@/mocks/Sponsors.mock';
 import ViewHeader from '@/components/ViewHeader.vue';
 import TitleTexts from '@/data/TitleTexts.model';
+import { db } from '@/firebase';
+import Sponsor from '@/data/Sponsor.model';
 
 @Component({
   components: {
@@ -20,6 +20,17 @@ import TitleTexts from '@/data/TitleTexts.model';
   }
 })
 export default class SponsorView extends Vue {
+  private sponsorId = this.$router.currentRoute.params['id'];
+
+  private sponsor = new Sponsor(
+    '',
+    '',
+    new URL('http://loquesea.com'),
+    new URL('http://loquesea.com'),
+    {},
+    new URL('https://via.placeholder.com/196x84')
+  );
+
   private get headerText() {
     return new TitleTexts(
       this.$t('sponsor.titleSection'),
@@ -27,9 +38,21 @@ export default class SponsorView extends Vue {
     );
   }
 
-  get sponsor(): Sponsor {
-    //FIXME: this is obtained from firebase
-    return sponsors[0];
+  created(): void {
+    db.collection('sponsors')
+      .doc(this.sponsorId)
+      .get()
+      .then((document) => {
+        const data = document.data() || {};
+        this.sponsor = new Sponsor(
+          data['description'],
+          data['name'],
+          new URL(data['banner_url']),
+          new URL(data['url']),
+          data['social-media'],
+          new URL(data['landing_image'])
+        );
+      });
   }
 }
 </script>

@@ -7,7 +7,6 @@ import Sponsor from '@/data/Sponsor.model';
 describe('SponsorDetail.vue', () => {
   const mock = new Sponsor(
     'desc',
-    '',
     'IBM',
     new URL('https://via.placeholder.com/196x84'),
     new URL('https://www.ibm.com'),
@@ -54,7 +53,7 @@ describe('SponsorDetail.vue', () => {
     const button = wrapper.findComponent(AccentActionButton);
 
     expect(logo.exists()).toBe(true);
-    expect(logo.attributes()['src']).toBe(mock.pic.toString());
+    expect(logo.attributes()['src']).toBe(mock.bannerUrl.toString());
     expect(description.exists()).toBe(true);
     expect(description.text()).toBe(mock.description);
     expect(social.exists()).toBe(true);

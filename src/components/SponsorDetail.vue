@@ -1,13 +1,13 @@
 <template>
   <div class="sponsor-detail">
     <div class="logo-sponsor">
-      <img :src="this.sponsor.pic" :alt="this.sponsor.name" />
+      <img :src="this.sponsor.bannerUrl" :alt="this.sponsor.name" />
     </div>
     <p>{{ this.sponsor.description }}</p>
     <SocialLinks
       class="sponsor-social"
       :info="'More Information'"
-      :socialMedia="social"
+      :socialMedia="this.sponsor.socialMedia"
     />
     <AccentActionButton
       id="btn-sponsor"
@@ -24,7 +24,6 @@ import Sponsor from '@/data/Sponsor.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import SocialLinks from '@/components/SocialLinks.vue';
 import ButtonInfo from '@/data/ButtonInfo.model';
-import { SocialMedia } from '@/data/SocialMedia.type';
 
 @Component({
   components: {
@@ -35,12 +34,6 @@ import { SocialMedia } from '@/data/SocialMedia.type';
 export default class SponsorDetail extends Vue {
   @Prop({ required: true })
   private readonly sponsor!: Sponsor;
-
-  private social: SocialMedia = {
-    twitter: new URL('https://twitter.com'),
-    instagram: new URL('https://instagram.com'),
-    facebook: new URL('https://facebook.com')
-  };
 
   get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('sponsor.buttonText'), true);
