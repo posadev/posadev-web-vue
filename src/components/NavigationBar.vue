@@ -1,6 +1,6 @@
 <template>
   <nav class="navBar">
-    <NavigationBarItem :path="'/'">
+    <NavigationBarItem :path="'/'" v-on:go-to="openSection">
       <img class="navBarLogo" src="../assets/logoTransparente.png" alt="logo" />
     </NavigationBarItem>
     <label for="toggle">&#9776;</label>
