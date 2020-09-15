@@ -6,12 +6,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Inject, Vue } from 'vue-property-decorator';
 import SponsorInfo from '@/components/SponsorInfo.vue';
 import ViewHeader from '@/components/ViewHeader.vue';
 import TitleTexts from '@/data/TitleTexts.model';
-import { db } from '@/firebase';
 import Sponsor from '@/data/Sponsor.model';
+import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
 
 @Component({
   components: {
@@ -20,16 +20,12 @@ import Sponsor from '@/data/Sponsor.model';
   }
 })
 export default class SponsorView extends Vue {
+  @Inject('sponsors')
+  private service!: FirebaseCollectionService<Sponsor>;
+
   private sponsorId = this.$router.currentRoute.params['id'];
 
-  private sponsor = new Sponsor(
-    '',
-    '',
-    new URL('http://loquesea.com'),
-    new URL('http://loquesea.com'),
-    {},
-    new URL('https://via.placeholder.com/196x84')
-  );
+  private sponsor: Sponsor | null = null;
 
   private get headerText() {
     return new TitleTexts(
@@ -39,19 +35,12 @@ export default class SponsorView extends Vue {
   }
 
   created(): void {
-    db.collection('sponsors')
-      .doc(this.sponsorId)
-      .get()
-      .then((document) => {
-        const data = document.data() || {};
-        this.sponsor = new Sponsor(
-          data['description'],
-          data['name'],
-          new URL(data['banner_url']),
-          new URL(data['url']),
-          data['social-media'],
-          new URL(data['landing_image'])
-        );
+    this.service
+      .findById(this.sponsorId)
+      .then((sponsor: Sponsor | undefined) => {
+        if (sponsor !== undefined) {
+          this.sponsor = sponsor;
+        }
       });
   }
 }
