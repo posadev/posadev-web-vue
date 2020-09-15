@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Inject, Vue } from 'vue-property-decorator';
+import { Component, Inject, Prop, Vue } from 'vue-property-decorator';
 import SpeakerCard from '@/components/SpeakerCard.vue';
 import Speaker from '@/data/Speaker.model';
 import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
@@ -22,12 +22,25 @@ export default class Speakers extends Vue {
   @Inject('speakers')
   private service!: FirebaseCollectionService<Speaker>;
 
+  @Prop()
+  private amount!: number;
+
   private speakers: Speaker[] = [];
 
   private created() {
-    this.service.findAll().then((response: Speaker[]) => {
+    const callback = (response: Speaker[]) => {
       this.speakers.push(...response);
-    });
+    };
+
+    let promise: Promise<Speaker[]>;
+
+    if (this.amount > 0) {
+      promise = this.service.find(this.amount);
+    } else {
+      promise = this.service.findAll();
+    }
+
+    promise.then(callback);
   }
 }
 </script>

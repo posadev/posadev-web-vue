@@ -1,6 +1,7 @@
-import { shallowMount } from '@vue/test-utils';
+import { createLocalVue, shallowMount } from '@vue/test-utils';
 import SpeakerCard from '@/components/SpeakerCard.vue';
 import Speaker from '@/data/Speaker.model';
+import VueRouter from 'vue-router';
 
 describe('SpeakerCard component', () => {
   const fake = new Speaker(
@@ -13,7 +14,13 @@ describe('SpeakerCard component', () => {
     {}
   );
   it('should render properly', () => {
+    const localVue = createLocalVue();
+    localVue.use(VueRouter);
+    const router = new VueRouter();
+
     const wrapper = shallowMount(SpeakerCard, {
+      localVue,
+      router,
       propsData: {
         speaker: fake
       }
