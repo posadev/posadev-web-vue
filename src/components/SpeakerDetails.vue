@@ -32,7 +32,7 @@ import SpeakerSingleTalk from '@/components/SpeakerSingleTalk.vue';
 @Component({
   components: { SpeakerSingleTalk, SocialLinks }
 })
-export default class SpeakerSingleCard extends Vue {
+export default class SpeakerDetails extends Vue {
   @Prop({ required: true }) private speaker!: Speaker;
 
   private get fullName(): string {

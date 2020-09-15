@@ -1,18 +1,18 @@
 <template>
   <div>
-    <SpeakerSingleCard class="column" :speaker="speaker" />
+    <SpeakerDetails class="column" :speaker="speaker" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import SpeakerSingleCard from '@/components/SpeakerSingleCard.vue';
+import SpeakerDetails from '@/components/SpeakerDetails.vue';
 import Speaker from '@/data/Speaker.model';
 
 @Component({
-  components: { SpeakerSingleCard }
+  components: { SpeakerDetails }
 })
-export default class SpeakerSingleInfo extends Vue {
+export default class SpeakerInfo extends Vue {
   @Prop({ required: true })
   private speaker!: Speaker;
 }
