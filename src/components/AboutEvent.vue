@@ -44,14 +44,9 @@ export default class AboutEvent extends Vue {
 .image-about-event {
   height: 416px;
   width: 416px;
-  @media only screen and (max-device-width: 425px) {
-    height: 290px;
-    width: 290px;
-  }
-  @media only screen and (max-device-width: 768px) {
-    height: 350px;
-    width: 350px;
-    margin-top: 30px;
+  @media only screen and (max-device-width: 460px) {
+    width: calc(416px - 100px);
+    height: calc(416px - 100px);
   }
 }
 
@@ -59,14 +54,21 @@ export default class AboutEvent extends Vue {
   flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
-  @media only screen and (max-device-width: 425px) {
+  @media only screen and (max-device-width: 900px) {
     flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 .text-content-about {
   text-align: left;
 
+  @media only screen and (max-device-width: 900px) {
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   .title,
   .subtitle {
     line-height: initial;
