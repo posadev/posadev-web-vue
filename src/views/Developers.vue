@@ -1,7 +1,15 @@
 <template>
-  <div class="sponsor-section">
+  <div class="dev-section">
     <ViewHeader :header-texts="headerText" />
-    <h4  @click="goDevGeo()">Jojina</h4>
+    <div class="image-logo">
+        <img src="../assets/devimage.png" alt="logo" />
+        <h4  @click="goDevEug()">Fernando Sanchez</h4>
+        <h4  @click="goDevEug()">Sinuhe </h4>
+        <h4  @click="goDevGeo()">Georgina Perez</h4>
+        <h4  @click="goDevEri()">Erika Sanchez</h4>
+        <h4  @click="goDevYai()">Yaidi Garcia</h4>
+        <h4  @click="goDevEug()">Eugenia Najar</h4>
+    </div>
   </div>
 </template>
 
@@ -25,12 +33,21 @@ export default class SponsorView extends Vue {
    private goDevGeo(): void {
     window.open('https://www.linkedin.com/in/georginapq/');
   }
+  
 }
 </script>
 
 <style lang="scss">
 @import '../styles/variables';
-@import '../styles/mixins';
+
+/* .image-logo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../assets/devimage.png');
+  width: 100%;
+  height: 273px;
+} */
 
 .sponsor-section {
   margin: {

@@ -24,6 +24,11 @@ const routes: Array<RouteConfig> = [
     path: '/speakers',
     name: 'speakers',
     component: () => import('@/views/SpeakersAll.vue')
+  },
+  {
+    path: '/developers',
+    name: 'developers',
+    component: () => import('@/views/Developers.vue')
   }
 ];
 
