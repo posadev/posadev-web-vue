@@ -13,14 +13,14 @@
 import TicketCard from '@/components/TicketCard.vue';
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import Ticket from '@/data/Ticket.model';
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 
 @Component({
   components: { TicketCard }
 })
 export default class Tickets extends Vue {
   @Inject('tickets')
-  private service!: FirebaseCollectionService<Ticket>;
+  private service!: FirestoreService<Ticket>;
 
   private tickets: Ticket[] = [];
 
