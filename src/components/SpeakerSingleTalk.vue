@@ -8,9 +8,9 @@
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-      mollit anim id est laborum.
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
     </p>
     <AccentActionButton id="btn-community" :info="buttonInfo" />
   </div>
@@ -33,12 +33,13 @@ export default class SpeakerSingleTalk extends Vue {
     return new ButtonInfo(this.$t('speaker.addCalendar'), true);
   }
 
-  created() {
-    console.log(`${this.talk} asd`);
+  created(): void {
+    // console.log(`${this.talk} asd`);
     db.doc(this.talk)
       .get()
       .then((document) => {
-        console.log(document.data());
+        document.data();
+        // console.log(document.data());
       });
   }
 }
