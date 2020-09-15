@@ -29,8 +29,14 @@
         </NavigationBarItem>
       </div>
       <div class="designed">
-        <p>{{ $t('footer-text.designed') }}</p>
-        <p>{{ $t('footer-text.developed') }}</p>
+        <div>
+          <p>{{ $t('footer-text.designed') }}</p>
+          <p @click="goDevInfo()">Staff JConf</p>
+        </div>
+        <div>
+          <p>{{ $t('footer-text.developed') }}</p>
+          <p @click="goDesInfo()">Rockzy</p>
+        </div>
       </div>
     </div>
   </footer>
@@ -57,6 +63,13 @@ export default class Footer extends Vue {
 
   private goToHome(): void {
     this.$router.push('/');
+  }
+
+  private goDevInfo(): void {
+    window.open('https://www.facebook.com/JConfMexico');
+  }
+  private goDesInfo(): void {
+    window.open('https://twitter.com/rossycontreras');
   }
 }
 </script>
