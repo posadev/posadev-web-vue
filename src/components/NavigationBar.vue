@@ -42,7 +42,7 @@ export default class NavigationBar extends Vue {
   transform: scaleX($scale-value);
 }
 
-@mixin query-only-screen-max-width($value-max-width: 768px) {
+@mixin query-only-screen-max-width($value-max-width: 900px) {
   @media only screen and (max-width: $value-max-width) {
     @content;
   }
@@ -51,24 +51,24 @@ export default class NavigationBar extends Vue {
 %visible-scale1-media {
   @include visible-scaleX(1);
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     @include visible-scaleX(1);
   }
 }
 
 .navBar {
   display: flex;
-  position: fixed;
+  position: sticky;
   z-index: 1;
   top: 0;
   background-color: $primary-dark-color;
+  box-shadow: 0 0.5em 0.5em -0.4em #091c2796;
   flex: {
     direction: row;
     wrap: wrap;
   }
   align-items: center;
   justify-content: space-between;
-  height: 139px;
   width: 100%;
 
   @include query-only-screen-max-width {
@@ -90,6 +90,7 @@ export default class NavigationBar extends Vue {
 
 .navBarMenuContainer {
   width: 60%;
+  height: 100%;
   display: flex;
   flex: {
     direction: row;
@@ -232,8 +233,5 @@ label {
       margin: 0;
     }
   }
-}
-#app {
-  margin-top: 7%;
 }
 </style>
