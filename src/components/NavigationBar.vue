@@ -1,6 +1,6 @@
 <template>
   <nav class="navBar">
-    <NavigationBarItem :path="'/'">
+    <NavigationBarItem :path="'/'" v-on:go-to="openSection">
       <img class="navBarLogo" src="../assets/logoTransparente.png" alt="logo" />
     </NavigationBarItem>
     <label for="toggle">&#9776;</label>
@@ -11,10 +11,16 @@
         class="navBarItem"
         v-bind:key="barItem.path"
         :path="barItem.path"
+        v-on:scroll-to="scrollTo"
+        v-on:go-to="openSection"
       >
         {{ $t(barItem.textRef) }}
       </NavigationBarItem>
-      <NavigationBarItem class="navBarItem navBarTicket" :path="'/tickets'">
+      <NavigationBarItem
+        class="navBarItem navBarTicket"
+        :path="'#tickets'"
+        v-on:scroll-to="scrollTo"
+      >
         {{ $t('header.tickets') }}
       </NavigationBarItem>
     </div>
@@ -31,6 +37,15 @@ import { BarItem, navigationItems } from '@/data/BarItem.type';
 })
 export default class NavigationBar extends Vue {
   private items: BarItem[] = navigationItems;
+
+  private scrollTo(id: string): void {
+    const section = document.getElementById(id);
+    section?.scrollIntoView();
+  }
+
+  private openSection(section: string): void {
+    this.$router.push(section);
+  }
 }
 </script>
 

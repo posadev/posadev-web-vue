@@ -10,7 +10,7 @@
       />
     </div>
     <section class="text-content text-format">
-      <h1 class="banner-title">JConf GDL 2020</h1>
+      <h1 class="banner-title">JConf México 2020</h1>
       <p class="banner-subtitle">{{ $t('home.banner.subtitle') }}</p>
     </section>
   </div>
@@ -85,7 +85,7 @@ export default class Banner extends Vue {
 .banner-logo {
   position: absolute;
   right: 3%;
-  bottom: 10%;
+  bottom: 4%;
   max-width: 20%;
 
   @media only screen and (max-width: 440px) {
@@ -144,8 +144,8 @@ export default class Banner extends Vue {
 
   @media only screen and (min-width: 929px) {
     left: 6.67%;
-    right: 56.67%;
-    top: 33.42%;
+    right: 45.67%;
+    top: 20.42%;
   }
   @media only screen and (max-width: 943px) {
     position: initial;

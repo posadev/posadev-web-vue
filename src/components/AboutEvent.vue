@@ -39,21 +39,29 @@ export default class AboutEvent extends Vue {
 .container-image {
   display: block;
   margin-right: 3%;
-
-  @media only screen and (max-device-width: 1200px) {
-    display: none;
-  }
 }
 
 .image-about-event {
   height: 416px;
   width: 416px;
+  @media only screen and (max-device-width: 425px) {
+    height: 290px;
+    width: 290px;
+  }
+  @media only screen and (max-device-width: 768px) {
+    height: 350px;
+    width: 350px;
+    margin-top: 30px;
+  }
 }
 
 .content-about {
   flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
+  @media only screen and (max-device-width: 425px) {
+    flex-direction: column;
+  }
 }
 
 .text-content-about {
@@ -70,8 +78,5 @@ export default class AboutEvent extends Vue {
 
 .text {
   line-height: 2rem;
-  @media only screen and (max-device-width: 1200px) {
-    line-height: 160%;
-  }
 }
 </style>

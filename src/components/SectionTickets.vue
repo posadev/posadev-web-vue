@@ -7,10 +7,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import TitleTexts from '@/data/TitleTexts.model';
 import Tickets from '@/components/Tickets.vue';
 import SectionHero from '@/components/SectionHero.vue';
+import TicketContainer from '@/di/TicketContainer';
 
 @Component({
   components: {
@@ -18,7 +19,7 @@ import SectionHero from '@/components/SectionHero.vue';
     Tickets
   }
 })
-export default class SectionTickets extends Vue {
+export default class SectionTickets extends Mixins(TicketContainer) {
   private get ticketsTexts(): TitleTexts {
     return new TitleTexts(
       this.$t('home.tickets.title'),

@@ -37,7 +37,7 @@ export default class SectionContact extends Vue {
   }
 
   private onContactClick() {
-    window.open('mailto:contacto@jconf.com.mx');
+    window.open('mailto:contacto@jconfmex.org');
   }
 }
 </script>
