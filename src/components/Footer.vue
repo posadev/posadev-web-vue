@@ -12,7 +12,7 @@
     <hr class="line" />
     <div class="footer-down">
       <div class="menu-footer">
-        <NavigationBarItem :path="'/'">
+        <NavigationBarItem :path="'/'" v-on:go-to="goToHome">
           <img
             class="menu-logo"
             src="../assets/logoTransparente.png"
@@ -50,10 +50,14 @@ export default class Footer extends Vue {
   private items: FooterItem[] = navigationItems;
 
   private social: SocialMedia = {
-    twitter: new URL('https://twitter.com'),
-    instagram: new URL('https://instagram.com'),
-    facebook: new URL('https://facebook.com')
+    twitter: new URL('https://twitter.com/jconfmexico'),
+    github: new URL('https://github.com/JConfMexico'),
+    facebook: new URL('https://www.facebook.com/JConfMexico')
   };
+
+  private goToHome(): void {
+    this.$router.push('/');
+  }
 }
 </script>
 

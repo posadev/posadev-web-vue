@@ -24,7 +24,7 @@
     "aboutevent": {
       "title": "About the event",
       "subtitle": "The most important JAVA event in Mexico",
-      "description": "It is the conference for software development around the Java world in Spanish. In past years, JavaUP and JEspañol efforts have resulted in important and content-rich conferences from major exhibitors. 2017 at UNAM with JavaCloudDay, in 2018 at UPIICSA with JavaDay JavaUP. "
+      "description": "JConf Mexico is an annual event organized by the communities in Guadalajara related to Java and its JVM language variants. We bring together the talent of people in Mexico and around the world interested in sharing their knowledge for non-profit. It is an event organized by programmers for programmers."
     },
     "tickets": {
       "title": "Tickets",
@@ -32,7 +32,7 @@
     },
     "sponsors": {
       "title": "Sponsors",
-      "subtitle": "Meet the industry professionals who are accompanying us",
+      "subtitle": "Click and learn more about our sponsors, without their help this event would not be the same",
       "topButton": "Support this event"
     },
     "contact": {
@@ -67,7 +67,8 @@
     "buttonText": "I Want to know more"
     },
   "sponsor" : {
-    "titleSection": "Meet our professionals",
+    "titleSection": "Sponsors",
+    "subtitleSection": "Meet our professionals",
     "buttonText": "Website"
   }
 }

@@ -13,7 +13,7 @@ module.exports = {
     '@vue/prettier/@typescript-eslint'
   ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-console': 'error',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'comma-dangle': [
       'error',

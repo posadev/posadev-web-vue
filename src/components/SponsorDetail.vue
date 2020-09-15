@@ -1,8 +1,14 @@
 <template>
   <div class="sponsor-detail">
-    <img :src="this.sponsor.pic" />
-    <p class="sponsor-detail">{{ this.sponsor.description }}</p>
-    <SocialLinks :info="'More Information'" :socialMedia="social" />
+    <div class="logo-sponsor">
+      <img :src="this.sponsor.pic" :alt="this.sponsor.name" />
+    </div>
+    <p>{{ this.sponsor.description }}</p>
+    <SocialLinks
+      class="sponsor-social"
+      :info="'More Information'"
+      :socialMedia="social"
+    />
     <AccentActionButton
       id="btn-sponsor"
       class="section-button"
@@ -45,4 +51,53 @@ export default class SponsorDetail extends Vue {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+@import '../styles/variables';
+@import '../styles/mixins';
+@import '~spectre.css/src/_layout';
+
+.sponsor-detail {
+  color: $dark-color;
+  height: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: left;
+    min-height: 75px;
+    max-height: 200px;
+    margin: {
+      top: 25px;
+      bottom: 25px;
+    }
+  }
+}
+
+.logo-sponsor {
+  flex: 1;
+  text-align: left;
+
+  img {
+    width: 196px;
+    height: 84px;
+  }
+
+  @include media-screen-max-width(426px) {
+    text-align: center;
+    img {
+      width: 153px;
+      height: 66px;
+    }
+  }
+}
+
+.sponsor-social {
+  padding-bottom: 3rem;
+  text-align: left;
+
+  @include media-screen-max-width(411px) {
+    font-size: 9px;
+  }
+}
+</style>
