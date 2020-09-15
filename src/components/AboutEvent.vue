@@ -37,7 +37,7 @@ export default class AboutEvent extends Vue {
 @import '~spectre.css/src/_media';
 
 @mixin mobile-device {
-  @media only screen and (max-device-width: 900px) {
+  @media only screen and (max-device-width: 700px) {
     @content;
   }
 }
@@ -54,6 +54,13 @@ export default class AboutEvent extends Vue {
 .image-about-event {
   height: 416px;
   width: 416px;
+
+  @media only screen and (max-device-width: 768px) {
+    height: 350px;
+    width: 350px;
+    margin-top: 20%;
+  }
+
   @media only screen and (max-device-width: 460px) {
     width: calc(416px - 100px);
     height: calc(416px - 100px);
