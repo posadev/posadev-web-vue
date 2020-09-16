@@ -31,7 +31,9 @@
       <div class="designed">
         <div>
           <p>{{ $t('footer-text.designed') }}</p>
-          <p @click="goDevInfo()">Staff JConf</p>
+          <router-link :to="{ name: 'developers'}">
+          <p>Staff JConf</p>
+          </router-link>
         </div>
         <div>
           <p>{{ $t('footer-text.developed') }}</p>
@@ -65,9 +67,6 @@ export default class Footer extends Vue {
     this.$router.push('/');
   }
 
-  private goDevInfo(): void {
-    window.open('https://www.facebook.com/JConfMexico');
-  }
   private goDesInfo(): void {
     window.open('https://twitter.com/rossycontreras');
   }

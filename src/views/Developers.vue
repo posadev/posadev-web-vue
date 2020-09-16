@@ -1,14 +1,17 @@
 <template>
-  <div class="dev-section">
+  <div class="developers">
     <ViewHeader :header-texts="headerText" />
-    <div class="image-logo">
-        <img src="../assets/devimage.png" alt="logo" />
-        <h4  @click="goDevEug()">Fernando Sanchez</h4>
-        <h4  @click="goDevEug()">Sinuhe </h4>
-        <h4  @click="goDevGeo()">Georgina Perez</h4>
-        <h4  @click="goDevEri()">Erika Sanchez</h4>
-        <h4  @click="goDevYai()">Yaidi Garcia</h4>
-        <h4  @click="goDevEug()">Eugenia Najar</h4>
+    <div class="dev-section">
+        <div class="image-logo">
+            <div class="dev-info">
+                <h4  @click="goDevEug()">FERNANDO SANCHEZ</h4>
+                <h4  @click="goDevEug()">SINUHE </h4>
+                <h4  @click="goDevGeo()">GEORGINA PEREZ</h4>
+                <h4  @click="goDevEri()">ERIKA SANCHEZ</h4>
+                <h4  @click="goDevYai()">YAIDI GARCIA</h4>
+                <h4  @click="goDevEug()">EUGENIA NAJAR</h4>
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -40,18 +43,32 @@ export default class SponsorView extends Vue {
 <style lang="scss">
 @import '../styles/variables';
 
-/* .image-logo {
+/* .developers {
+
+} */
+
+  /* .dev-section {
+   width: 100%;
+   position: relative;
+} */
+
+.image-logo {
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 45%;
   background-position: center;
   background-image: url('../assets/devimage.png');
   width: 100%;
-  height: 273px;
-} */
-
-.sponsor-section {
-  margin: {
-    bottom: 45px;
-  }
+  min-height: 100vh;
+  background-color: black;
+  position: relative;
 }
+
+.dev-info {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:black;
+}
+
 </style>
