@@ -43,7 +43,7 @@ const routes: Array<RouteConfig> = [
         )
       };
     },
-    component: () => import('../views/SpeakerSingle.vue')
+    component: () => import('../views/SpeakerSingleView.vue')
   }
 ];
 

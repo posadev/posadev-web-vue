@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <SpeakerDetails class="column" :speaker="speaker" />
-  </div>
+  <SpeakerDetails class="column" :speaker="speaker" />
 </template>
 
 <script lang="ts">

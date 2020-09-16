@@ -19,7 +19,7 @@ import Speaker from '@/data/Speaker.model';
   }
 })
 export default class SpeakerSingle extends Vue {
-  @Prop()
+  @Prop({ required: true })
   private speaker!: Speaker;
 
   private get speakersTexts(): TitleTexts {
