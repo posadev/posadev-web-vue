@@ -1,11 +1,7 @@
 <template>
   <div class="about-content">
     <div class="about-image">
-      <img
-        class="img-fit-cover"
-        :src="image"
-        alt="about event"
-      />
+      <img class="img-fit-cover" :src="image" alt="about event" />
     </div>
     <section class="text-content-about">
       <h1 class="title">{{ $t('home.aboutevent.title') }}</h1>
@@ -59,12 +55,11 @@ export default class AboutEvent extends Vue {
 
 .about-image {
   padding-right: 2rem;
-  img { 
+  img {
     width: 416px;
     height: 416px;
   }
-
-  @include media-screen-max-width(768px){
+  @include media-screen-max-width(768px) {
     img {
       width: 324px;
       height: 416px;
@@ -82,21 +77,21 @@ export default class AboutEvent extends Vue {
 .text-content-about {
   width: 50%;
   text-align: left;
-    @include media-screen-max-width(730px) {
-      width: 90%;
-    }
-    .title{
-      margin-top: 0;
-    }
-    .subtitle {
-      line-height: initial;
-      padding-bottom: 0;
-      margin-top: 1%;
-      margin-bottom: 3%;
-    }
-
-    .text {
-      line-height: 2rem;
-    }
+  @include media-screen-max-width(730px) {
+    width: 90%;
   }
+  .title {
+    margin-top: 0;
+  }
+  .subtitle {
+    line-height: initial;
+    padding-bottom: 0;
+    margin-top: 1%;
+    margin-bottom: 3%;
+  }
+
+  .text {
+    line-height: 2rem;
+  }
+}
 </style>
