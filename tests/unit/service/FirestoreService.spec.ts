@@ -6,6 +6,7 @@ import FirestoreDataConverter = firebase.firestore.FirestoreDataConverter;
 import CollectionReference = firebase.firestore.CollectionReference;
 import QueryDocumentSnapshot = firebase.firestore.QueryDocumentSnapshot;
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
+import DocumentReference = firebase.firestore.DocumentReference;
 
 jest.mock('@/firebase');
 
@@ -135,6 +136,45 @@ describe('Abstract FirebaseService', () => {
     expect(service.mapper).toHaveBeenCalled();
     expect(doc).toHaveBeenCalled();
     expect(doc).toHaveBeenCalledWith('foo');
+    expect(result).toBe('Foo Bar Baz');
+  });
+
+  it('should return a single document for path provided', async () => {
+    const docSnapshot = ({
+      data: jest.fn()
+    } as unknown) as DocumentSnapshot;
+    const withConverter = jest
+      .fn()
+      .mockImplementation((converter: FirestoreDataConverter<string>) => {
+        return {
+          get: jest.fn().mockResolvedValue({
+            data: jest
+              .fn()
+              .mockReturnValue(
+                converter.fromFirestore(
+                  docSnapshot as QueryDocumentSnapshot,
+                  {}
+                )
+              )
+          })
+        };
+      });
+    const spy = jest
+      .spyOn(db, 'doc')
+      .mockReturnValue(({ withConverter } as unknown) as DocumentReference);
+
+    const service = new MockService();
+    const result = await service.getFromPath('bar/foo');
+
+    await flushPromises();
+
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith('bar/foo');
+
+    expect(withConverter).toHaveBeenCalled();
+    expect(docSnapshot.data).toHaveBeenCalled();
+
+    expect(service.mapper).toHaveBeenCalled();
     expect(result).toBe('Foo Bar Baz');
   });
 });
