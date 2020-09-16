@@ -1,5 +1,5 @@
 <template>
-  <div class="sponsor-card-box">
+  <div v-if="sponsor != null" class="sponsor-card-box">
     <div class="sponsor-card-image">
       <img
         class="img-fit-cover"
@@ -7,14 +7,15 @@
         :alt="this.sponsor.name"
       />
     </div>
-    <SponsorDetail class="sponsor-card-detail" :sponsor="this.sponsor" />
+    <SponsorDetail :sponsor="this.sponsor" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Inject, Prop, Vue } from 'vue-property-decorator';
 import SponsorDetail from '@/components/SponsorDetail.vue';
 import Sponsor from '@/data/Sponsor.model';
+import { FirestoreService } from '@/service/FirestoreService';
 
 @Component({
   components: {
@@ -23,7 +24,22 @@ import Sponsor from '@/data/Sponsor.model';
 })
 export default class SponsorInfo extends Vue {
   @Prop({ required: true })
-  private sponsor!: Sponsor;
+  private sponsorId!: string;
+
+  private sponsor: Sponsor | null = null;
+
+  @Inject('sponsors')
+  private service!: FirestoreService<Sponsor>;
+
+  private created(): void {
+    this.service
+      .findById(this.sponsorId)
+      .then((sponsor: Sponsor | undefined) => {
+        if (sponsor !== undefined) {
+          this.sponsor = sponsor;
+        }
+      });
+  }
 }
 </script>
 <style lang="scss">
@@ -38,16 +54,22 @@ export default class SponsorInfo extends Vue {
   margin: 0 auto;
   min-width: 70%;
   margin: {
-    top: 40px;
+    top: 5%;
+    bottom: 5%;
   }
 
   @include media-screen-max-width(426px) {
     flex-direction: column;
+    margin: {
+      top: 10%;
+      bottom: 10%;
+    }
   }
 }
 
 .sponsor-card-image {
   padding-right: 2rem;
+
   img {
     width: 420px;
     height: 400px;

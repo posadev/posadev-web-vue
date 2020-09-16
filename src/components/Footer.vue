@@ -12,7 +12,7 @@
     <hr class="line" />
     <div class="footer-down">
       <div class="menu-footer">
-        <NavigationBarItem :path="'/'" v-on:go-to="goToHome">
+        <NavigationBarItem :path="'/'" v-on:go-to="openSection">
           <img
             class="menu-logo"
             src="../assets/logoTransparente.png"
@@ -23,6 +23,7 @@
           v-for="footerItem in items"
           class="footer-item"
           v-bind:key="footerItem.path"
+          v-on:go-to="openSection"
           :path="footerItem.path"
         >
           {{ $t(footerItem.textRef) }}
@@ -49,13 +50,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import SocialLinks from '@/components/SocialLinks.vue';
 import { SocialMedia } from '@/data/SocialMedia.type';
 import NavigationBarItem from './NavigationBarItem.vue';
-import { FooterItem, navigationItems } from '@/data/FooterItem.type';
+import { FooterItem, footerItems } from '@/data/FooterItem.type';
+import { fetchImageURL } from '@/service/fetchImageURL';
 
 @Component({
   components: { SocialLinks, NavigationBarItem }
 })
 export default class Footer extends Vue {
-  private items: FooterItem[] = navigationItems;
+  private items: FooterItem[] = footerItems;
 
   private social: SocialMedia = {
     twitter: new URL('https://twitter.com/jconfmexico'),
@@ -63,8 +65,14 @@ export default class Footer extends Vue {
     facebook: new URL('https://www.facebook.com/JConfMexico')
   };
 
-  private goToHome(): void {
-    this.$router.push('/');
+  private openSection(section: string): void {
+    if (section.startsWith('/')) {
+      this.$router.push(section);
+    } else {
+      fetchImageURL(section).then((url: string) => {
+        window.open(url);
+      });
+    }
   }
 
   private goDesInfo(): void {

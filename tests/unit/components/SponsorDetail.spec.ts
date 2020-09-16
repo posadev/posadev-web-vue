@@ -2,18 +2,10 @@ import { mount, shallowMount } from '@vue/test-utils';
 import SponsorDetail from '@/components/SponsorDetail.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import SocialLinks from '@/components/SocialLinks.vue';
-import Sponsor from '@/data/Sponsor.model';
+import sponsors from '@/mocks/Sponsors.mock';
 
 describe('SponsorDetail.vue', () => {
-  const mock = new Sponsor(
-    'desc',
-    '',
-    'IBM',
-    new URL('https://via.placeholder.com/196x84'),
-    new URL('https://www.ibm.com'),
-    { twitter: new URL('https://twitter.com') },
-    new URL('https://via.placeholder.com/526x526')
-  );
+  const mock = sponsors[0];
 
   const translationMock = {
     $t: () => {
@@ -54,7 +46,7 @@ describe('SponsorDetail.vue', () => {
     const button = wrapper.findComponent(AccentActionButton);
 
     expect(logo.exists()).toBe(true);
-    expect(logo.attributes()['src']).toBe(mock.pic.toString());
+    expect(logo.attributes()['src']).toBe(mock.bannerUrl.toString());
     expect(description.exists()).toBe(true);
     expect(description.text()).toBe(mock.description);
     expect(social.exists()).toBe(true);

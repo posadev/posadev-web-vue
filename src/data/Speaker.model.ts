@@ -8,6 +8,7 @@ export default class Speaker {
     readonly lastName: string,
     readonly role: string,
     readonly photoURL: URL,
-    readonly socialMedia: SocialMedia
+    readonly socialMedia: SocialMedia,
+    readonly talks: string[]
   ) {}
 }

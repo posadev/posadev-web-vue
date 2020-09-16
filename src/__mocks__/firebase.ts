@@ -16,6 +16,9 @@ let withConverter = jest.fn().mockImplementation((converter: FirestoreDataConver
 const db = {
   collection() {
     return { withConverter }
+  },
+  doc() {
+    return { withConverter }
   }
 };
 

@@ -1,24 +1,20 @@
 <template>
-  <div>
-    <ViewHeader :header-texts="organizersTexts" />
-    <div class="community-section">
-      <p class="title-section">{{ $t('community.titleSection') }}</p>
-      <CommunityInfo
-        v-for="(community, index) in this.communities"
-        v-bind:community="community"
-        v-bind:key="community.titleName"
-        :alignLeft="index % 2 !== 0"
-      />
-    </div>
+  <div class="community-section">
+    <p class="title-section">{{ $t('community.titleSection') }}</p>
+    <CommunityInfo
+      v-for="(community, index) in this.communities"
+      v-bind:community="community"
+      v-bind:key="community.titleName"
+      :alignLeft="index % 2 !== 0"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import TitleTexts from '@/data/TitleTexts.model';
 import { Component, Inject, Vue } from 'vue-property-decorator';
 import Community from '@/data/Community.model';
 import CommunityInfo from '@/components/CommunityInfo.vue';
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 import ViewHeader from '@/components/ViewHeader.vue';
 
 @Component({
@@ -28,15 +24,9 @@ import ViewHeader from '@/components/ViewHeader.vue';
   }
 })
 export default class Communities extends Vue {
-  private get organizersTexts(): TitleTexts {
-    return new TitleTexts(
-      this.$t('community.title'),
-      this.$t('community.subtitle')
-    );
-  }
-
   @Inject('communities')
-  private service!: FirebaseCollectionService<Community>;
+  private service!: FirestoreService<Community>;
+
   private communities: Community[] = [];
 
   private created() {
@@ -48,8 +38,8 @@ export default class Communities extends Vue {
 </script>
 
 <style lang="scss">
-@import '../styles/variables';
-@import '../styles/mixins';
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
 
 .community-section {
   margin: {
