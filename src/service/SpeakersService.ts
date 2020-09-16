@@ -14,7 +14,8 @@ export default class SpeakersService extends FirestoreService<Speaker> {
       data['last_name'],
       data['role'],
       new URL(data['photo_url']),
-      data['social-media']
+      data['social-media'],
+      []
     );
   };
 }
