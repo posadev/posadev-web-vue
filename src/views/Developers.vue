@@ -2,16 +2,16 @@
   <div class="developers">
     <ViewHeader :header-texts="headerText" />
     <div class="dev-section">
-        <div class="image-logo">
-            <div class="dev-info">
-                <h4  @click="goDevFer()">FERNANDO GONZALEZ</h4>
-                <h4  @click="goDevSinu()">SINUHE JAIME</h4>
-                <h4  @click="goDevGeo()">GEORGINA PEREZ</h4>
-                <h4  @click="goDevEri()">ERIKA SANCHEZ</h4>
-                <h4  @click="goDevYai()">YAIDI GARCIA</h4>
-                <h4  @click="goDevEug()">EUGENIA NAJAR</h4>
-            </div>
+      <div class="image-logo">
+        <div class="dev-info">
+          <h4 @click="goDevFer()">FERNANDO GONZALEZ</h4>
+          <h4 @click="goDevSinu()">SINUHE JAIME</h4>
+          <h4 @click="goDevGeo()">GEORGINA PEREZ</h4>
+          <h4 @click="goDevEri()">ERIKA SANCHEZ</h4>
+          <h4 @click="goDevYai()">YAIDI GARCIA</h4>
+          <h4 @click="goDevEug()">EUGENIA NAJAR</h4>
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -28,44 +28,33 @@ import TitleTexts from '@/data/TitleTexts.model';
 })
 export default class SponsorView extends Vue {
   private get headerText() {
-    return new TitleTexts(
-      this.$t('developer.title')
-    );
+    return new TitleTexts(this.$t('developer.title'));
   }
-   private goDevGeo(): void {
+  private goDevGeo(): void {
     window.open('https://www.linkedin.com/in/georginapq/');
   }
-   private goDevEri(): void {
+  private goDevEri(): void {
     window.open('https://www.linkedin.com/in/erika-sanchez-murguia/');
   }
   private goDevYai(): void {
     window.open('https://www.linkedin.com/in/yaidi-garcia/');
   }
   private goDevFer(): void {
-    window.open('https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/');
+    window.open(
+      'https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/'
+    );
   }
-   private goDevSinu(): void {
+  private goDevSinu(): void {
     window.open('https://www.linkedin.com/in/sierisimo/');
   }
-  
   private goDevEug(): void {
     window.open('https://www.linkedin.com/in/eugenianajar/');
   }
-  
 }
 </script>
 
 <style lang="scss">
 @import '../styles/variables';
-
-/* .developers {
-
-} */
-
-  /* .dev-section {
-   width: 100%;
-   position: relative;
-} */
 
 .image-logo {
   background-repeat: no-repeat;
@@ -79,11 +68,10 @@ export default class SponsorView extends Vue {
 }
 
 .dev-info {
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color:black;
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
 }
-
 </style>

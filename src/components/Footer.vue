@@ -31,8 +31,8 @@
       <div class="designed">
         <div>
           <p>{{ $t('footer-text.designed') }}</p>
-          <router-link :to="{ name: 'developers'}">
-          <p>Staff JConf</p>
+          <router-link :to="{ name: 'developers' }">
+            <p>Staff JConf</p>
           </router-link>
         </div>
         <div>
