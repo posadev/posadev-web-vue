@@ -85,9 +85,9 @@ export default class NavigationBar extends Vue {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
+  height: 139px;
   @include query-only-screen-max-width {
-    position: sticky;
+    position: static;
     display: flex;
     background-color: $primary-dark-color;
     align-items: center;
@@ -191,13 +191,21 @@ label {
 
 .navBarTicket {
   background-color: $accent-color;
-  padding: calc(120px / 2) 25px calc(120px / 2) 25px;
+  padding: 0 calc((119px - 53.9px) /2) 0 calc((119px - 53.9px) /2);
+  height: 100%;
+  display: flex;
+  align-items: center;
   color: $primary-dark-color;
   cursor: pointer;
   font: {
     family: $project-font;
     size: 1rem;
     weight: 800;
+  }
+
+  @include query-only-screen-max-width {
+    display: block;
+    padding: calc((139px - 19.2px)/2) 0 calc((139px - 19.2px)/2) 0;
   }
 
   %nav-ticket-hide {
