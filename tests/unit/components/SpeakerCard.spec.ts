@@ -1,18 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
 import SpeakerCard from '@/components/SpeakerCard.vue';
-import Speaker from '@/data/Speaker.model';
+import speakers from '@/mocks/Speakers.mock';
 
 describe('SpeakerCard component', () => {
-  const fake = new Speaker(
-    'Bbio....',
-    'IBM',
-    'Mark',
-    'Welch3',
-    'Java Developer2',
-    new URL('https://localhost'),
-    {},
-    ['']
-  );
+  const fake = speakers[0];
   it('should render properly', () => {
     const wrapper = shallowMount(SpeakerCard, {
       propsData: {
