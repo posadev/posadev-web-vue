@@ -70,5 +70,12 @@
     "titleSection": "Patrocinadores",
     "subtitleSection": "Conoce a nuestros profesionales",
     "buttonText": "Website"
+  },
+  "social": {
+    "textInfo": "Más información"
+  },
+  "speaker": {
+    "conference": "Conferencia",
+    "addCalendar": "Añadir a mi calendario"
   }
 }

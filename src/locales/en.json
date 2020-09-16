@@ -70,5 +70,12 @@
     "titleSection": "Sponsors",
     "subtitleSection": "Meet our professionals",
     "buttonText": "Website"
+  },
+  "social": {
+    "textInfo": "More information"
+  },
+  "speaker": {
+    "conference": "Conference",
+    "addCalendar": "Add to my calendar"
   }
 }
