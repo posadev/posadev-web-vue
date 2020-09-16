@@ -35,6 +35,11 @@ const routes: Array<RouteConfig> = [
       };
     },
     component: () => import('@/views/SpeakerSingleView.vue')
+  },
+  {
+    path: '/schedule',
+    name: 'schedule',
+    component: () => import('@/views/ScheduleView.vue')
   }
 ];
 
