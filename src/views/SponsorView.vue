@@ -1,7 +1,7 @@
 <template>
   <div class="sponsor-section">
     <ViewHeader :header-texts="headerText" />
-    <SponsorInfo :sponsor="sponsor" />
+    <SponsorInfo v-if="sponsor != null" :sponsor="sponsor" />
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import SponsorInfo from '@/components/SponsorInfo.vue';
 import ViewHeader from '@/components/ViewHeader.vue';
 import TitleTexts from '@/data/TitleTexts.model';
 import Sponsor from '@/data/Sponsor.model';
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 
 @Component({
   components: {
@@ -21,7 +21,7 @@ import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
 })
 export default class SponsorView extends Vue {
   @Inject('sponsors')
-  private service!: FirebaseCollectionService<Sponsor>;
+  private service!: FirestoreService<Sponsor>;
 
   private sponsorId = this.$router.currentRoute.params['id'];
 
@@ -34,7 +34,7 @@ export default class SponsorView extends Vue {
     );
   }
 
-  created(): void {
+  private created(): void {
     this.service
       .findById(this.sponsorId)
       .then((sponsor: Sponsor | undefined) => {
