@@ -20,7 +20,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import ButtonInfo from '@/data/ButtonInfo.model';
-import { db } from '@/firebase';
 
 @Component({
   components: { AccentActionButton }
@@ -29,16 +28,8 @@ export default class SpeakerSingleTalk extends Vue {
   @Prop({ required: true })
   private talk!: string;
 
-  get buttonInfo(): ButtonInfo {
+  private get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('speaker.addCalendar'), true);
-  }
-
-  created(): void {
-    db.doc(this.talk)
-      .get()
-      .then((document) => {
-        document.data();
-      });
   }
 }
 </script>
