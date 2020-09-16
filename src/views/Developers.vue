@@ -4,8 +4,8 @@
     <div class="dev-section">
         <div class="image-logo">
             <div class="dev-info">
-                <h4  @click="goDevEug()">FERNANDO SANCHEZ</h4>
-                <h4  @click="goDevEug()">SINUHE </h4>
+                <h4  @click="goDevFer()">FERNANDO GONZALEZ</h4>
+                <h4  @click="goDevSinu()">SINUHE JAIME</h4>
                 <h4  @click="goDevGeo()">GEORGINA PEREZ</h4>
                 <h4  @click="goDevEri()">ERIKA SANCHEZ</h4>
                 <h4  @click="goDevYai()">YAIDI GARCIA</h4>
@@ -29,12 +29,27 @@ import TitleTexts from '@/data/TitleTexts.model';
 export default class SponsorView extends Vue {
   private get headerText() {
     return new TitleTexts(
-      this.$t('sponsor.titleSection'),
-      this.$t('sponsor.subtitleSection')
+      this.$t('developer.title')
     );
   }
    private goDevGeo(): void {
     window.open('https://www.linkedin.com/in/georginapq/');
+  }
+   private goDevEri(): void {
+    window.open('https://www.linkedin.com/in/erika-sanchez-murguia/');
+  }
+  private goDevYai(): void {
+    window.open('https://www.linkedin.com/in/yaidi-garcia/');
+  }
+  private goDevFer(): void {
+    window.open('https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/');
+  }
+   private goDevSinu(): void {
+    window.open('https://www.linkedin.com/in/sierisimo/');
+  }
+  
+  private goDevEug(): void {
+    window.open('https://www.linkedin.com/in/eugenianajar/');
   }
   
 }

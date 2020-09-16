@@ -70,5 +70,8 @@
     "titleSection": "Sponsors",
     "subtitleSection": "Meet our professionals",
     "buttonText": "Website"
+  },
+  "developer" : {
+    "title": "Developers"
   }
 }
