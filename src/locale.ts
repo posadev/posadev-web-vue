@@ -3,11 +3,6 @@ export enum Locales {
   ES = 'es'
 }
 
-export type Locale = {
-  value: Locales;
-  caption: string;
-};
-
 export type Language = {
   id: string;
   title: string;

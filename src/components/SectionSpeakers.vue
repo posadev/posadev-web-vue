@@ -40,10 +40,6 @@ export default class SectionSpeakers extends Mixins(SpeakerContainer) {
     );
   }
 
-  private get speakerInfo(): ButtonInfo {
-    return new ButtonInfo(this.$t('home.speakers.topButton'));
-  }
-
   private get allSpeakersButton(): ButtonInfo {
     return new ButtonInfo(this.$t('home.speakers.bottomButton'));
   }

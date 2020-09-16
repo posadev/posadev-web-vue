@@ -11,10 +11,10 @@ const speakers = [
   new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer7', photoUrl, {}, []),
   new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer8', photoUrl, {}, []),
   new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer9', photoUrl, {}, []),
-  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer10', photoUrl, {},[]),
-  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer11', photoUrl, {},[]),
-  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer12', photoUrl, {},[]),
-  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer13', photoUrl, {},[])
+  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer10', photoUrl, {}, []),
+  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer11', photoUrl, {}, []),
+  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer12', photoUrl, {}, []),
+  new Speaker('Bbio....', 'IBM', 'Mark', 'Welch3', 'Java Developer13', photoUrl, {}, [])
 ];
 
 export default speakers;
