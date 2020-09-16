@@ -4,12 +4,14 @@
       <Speakers />
     </template>
     <template v-slot:hero-footer>
-      <AccentActionButton
-        id="btn-speakers-all"
-        class="section-button"
-        :info="allSpeakersButton"
-        v-on:button-action="onShowSpeakers"
-      />
+      <router-link :to="`/speakers`" style="text-decoration: none">
+        <AccentActionButton
+          id="btn-speakers-all"
+          class="section-button"
+          :info="allSpeakersButton"
+          v-on:button-action="onShowSpeakers"
+        />
+      </router-link>
     </template>
   </SectionHero>
 </template>
