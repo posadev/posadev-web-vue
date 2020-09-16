@@ -63,4 +63,25 @@ describe('NavigationBar', () => {
     expect($router.push).toHaveBeenCalled();
     expect($router.push).toHaveBeenCalledWith('/foo');
   });
+
+  it('should navigate back or to section', () => {
+    const $router = {
+      push: jest.fn()
+    };
+    const wrapper = shallowMount(NavigationBar, {
+      mocks: {
+        $t: () => {
+          return {};
+        },
+        $router
+      }
+    });
+    document.getElementById = jest.fn().mockReturnValue(null);
+
+    const navItem = wrapper.findAllComponents(NavigationBarItem).at(1);
+    navItem.vm.$emit('scroll-to', 'foo');
+
+    expect($router.push).toHaveBeenCalled();
+    expect($router.push).toHaveBeenCalledWith('/#foo');
+  });
 });
