@@ -17,6 +17,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Speaker from '../data/Speaker.model';
+import { speakerToDictionary } from '@/router/utils';
 
 @Component
 export default class SpeakerCard extends Vue {
@@ -30,17 +31,7 @@ export default class SpeakerCard extends Vue {
   private goToDetail() {
     this.$router.push({
       name: 'speakers/detail',
-      params: {
-        fullName: `${this.speaker.firstName}+${this.speaker.lastName}`,
-        bio: this.speaker.bio,
-        company: this.speaker.company,
-        firstName: this.speaker.firstName,
-        lastName: this.speaker.lastName,
-        role: this.speaker.role,
-        photoURL: this.speaker.photoURL.toString(),
-        socialMedia: JSON.stringify(this.speaker.socialMedia),
-        talks: JSON.stringify(this.speaker.talks)
-      }
+      params: speakerToDictionary(this.speaker)
     });
   }
 }

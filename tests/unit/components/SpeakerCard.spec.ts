@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils';
 import SpeakerCard from '@/components/SpeakerCard.vue';
 import speakers from '@/mocks/Speakers.mock';
+import { speakerToDictionary } from '@/router/utils';
 
 describe('SpeakerCard component', () => {
   const fake = speakers[0];
@@ -38,17 +39,7 @@ describe('SpeakerCard component', () => {
     expect($router.push).toHaveBeenCalled();
     expect($router.push).toHaveBeenCalledWith({
       name: 'speakers/detail',
-      params: {
-        fullName: `${fake.firstName}+${fake.lastName}`,
-        bio: fake.bio,
-        company: fake.company,
-        firstName: fake.firstName,
-        lastName: fake.lastName,
-        role: fake.role,
-        photoURL: fake.photoURL.toString(),
-        socialMedia: JSON.stringify(fake.socialMedia),
-        talks: JSON.stringify(fake.talks)
-      }
+      params: speakerToDictionary(fake)
     });
   });
 });
