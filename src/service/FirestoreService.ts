@@ -22,6 +22,14 @@ export abstract class FirestoreService<T> {
     }
   };
 
+  async getFromPath(path: string): Promise<T | undefined> {
+    return db
+      .doc(path)
+      .withConverter(this.converter)
+      .get()
+      .then((doc: DocumentSnapshot<T>) => doc.data());
+  }
+
   async findAll(): Promise<T[]> {
     return this.createCollectionPromise(this.createCollectionRef());
   }
