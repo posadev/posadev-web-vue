@@ -85,7 +85,7 @@ export default class NavigationBar extends Vue {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 139px;
+  height: 100px;
   @include query-only-screen-max-width {
     position: static;
     display: flex;
@@ -205,7 +205,7 @@ label {
 
   @include query-only-screen-max-width {
     display: block;
-    padding: calc((139px - 19.2px)/2) 0 calc((139px - 19.2px)/2) 0;
+    padding: calc((100px - 19.2px)/2) 0 calc((100px - 19.2px)/2) 0;
   }
 
   %nav-ticket-hide {
