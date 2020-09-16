@@ -43,8 +43,6 @@ describe('Footer component', () => {
     );
   });
 
-
-
   it('should move the right sections', () => {
     const localVue = createLocalVue();
     localVue.use(VueRouter);

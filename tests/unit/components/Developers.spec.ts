@@ -1,11 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
 import Developers from '@/views/Developers.vue';
 
-
 describe('Developers component', () => {
-    beforeEach(() => {
-        window.open = jest.fn();
-      });
+  beforeEach(() => {
+    window.open = jest.fn();
+  });
 
   it('should render properly', () => {
     const link = new URL('https://www.google.com');
@@ -15,12 +14,12 @@ describe('Developers component', () => {
     const link4 = new URL('https://www.google.com');
     const link5 = new URL('https://www.google.com');
     const wrapper = shallowMount(Developers, {
-        propsData: { link, link1, link2, link3, link4, link5 },
-        mocks: {
-            $t: (msg: string) => {
-              return msg;
-            }
-          }
+      propsData: { link, link1, link2, link3, link4, link5 },
+      mocks: {
+        $t: (msg: string) => {
+          return msg;
+        }
+      }
     });
     const name = wrapper.find('h4');
     expect(name.exists()).toBe(true);
@@ -32,4 +31,4 @@ describe('Developers component', () => {
     wrapper.find('h4.eug').trigger('click');
     expect(window.open).toHaveBeenCalledTimes(6);
   });
-})
+});
