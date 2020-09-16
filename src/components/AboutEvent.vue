@@ -1,8 +1,8 @@
 <template>
-  <div class="hero hero-lg content-about">
-    <div class="container-image">
+  <div class="about-content">
+    <div class="about-image">
       <img
-        class="img-fit-cover image-about-event"
+        class="img-fit-cover"
         :src="image"
         alt="about event"
       />
@@ -37,45 +37,66 @@ export default class AboutEvent extends Vue {
 @import '~spectre.css/src/_media';
 @import '../styles/mixins';
 
-.container-image {
-  display: block;
-  @media only screen and (min-device-width: 768px) {
-    margin-right: 3%;
+.about-content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin: {
+    top: 5%;
+    bottom: 5%;
   }
-}
-
-.image-about-event {
-  width: 100%;
-  height: 100%;
 
   @include media-screen-max-width(426px) {
-    width: 280px;
-    height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: {
+      top: 10%;
+      bottom: 10%;
+    }
   }
 }
 
-.content-about {
-  flex-direction: row;
-  padding-left: 5%;
-  padding-right: 5%;
-  @include media-screen-max-width(425px) {
-    flex-direction: column;
+.about-image {
+  padding-right: 2rem;
+  img { 
+    width: 416px;
+    height: 416px;
+  }
+
+  @include media-screen-max-width(768px){
+    img {
+      width: 324px;
+      height: 416px;
+    }
+  }
+  @include media-screen-max-width(426px) {
+    padding-right: 0;
+    img {
+      width: 280px;
+      height: 280px;
+    }
   }
 }
 
 .text-content-about {
+  width: 50%;
   text-align: left;
+    @include media-screen-max-width(730px) {
+      width: 90%;
+    }
+    .title{
+      margin-top: 0;
+    }
+    .subtitle {
+      line-height: initial;
+      padding-bottom: 0;
+      margin-top: 1%;
+      margin-bottom: 3%;
+    }
 
-  .title,
-  .subtitle {
-    line-height: initial;
-    padding-bottom: 0;
-    margin-top: 1%;
-    margin-bottom: 3%;
+    .text {
+      line-height: 2rem;
+    }
   }
-}
-
-.text {
-  line-height: 2rem;
-}
 </style>
