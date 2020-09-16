@@ -32,6 +32,9 @@ export default class SpeakerCard extends Vue {
 
 .speaker-container {
   cursor: pointer;
+  margin: {
+    bottom: 10px;
+  }
 }
 
 .containerImg {
@@ -62,7 +65,7 @@ export default class SpeakerCard extends Vue {
 }
 
 .texts {
-  background-color: $light-color;
+  background-color: $white-color;
   height: 80px;
   width: 306px;
   margin: 0 auto;
