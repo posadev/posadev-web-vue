@@ -38,7 +38,7 @@
         </div>
         <div>
           <p>{{ $t('footer-text.developed') }}</p>
-          <p @click="goDesInfo()">Rockzy</p>
+          <p class="rockzy" @click="goDesInfo()">Rockzy</p>
         </div>
       </div>
     </div>

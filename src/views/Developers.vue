@@ -4,12 +4,12 @@
     <div class="dev-section">
       <div class="image-logo">
         <div class="dev-info">
-          <h4 @click="goDevFer()">FERNANDO GONZALEZ</h4>
-          <h4 @click="goDevSinu()">SINUHE JAIME</h4>
-          <h4 @click="goDevGeo()">GEORGINA PEREZ</h4>
-          <h4 @click="goDevEri()">ERIKA SANCHEZ</h4>
-          <h4 @click="goDevYai()">YAIDI GARCIA</h4>
-          <h4 @click="goDevEug()">EUGENIA NAJAR</h4>
+          <h4 class="fer" @click="goDevFer()">FERNANDO GONZALEZ</h4>
+          <h4 class="si" @click="goDevSinu()">SINUHE JAIME</h4>
+          <h4 class="geo" @click="goDevGeo()">GEORGINA PEREZ</h4>
+          <h4 class="eri" @click="goDevEri()">ERIKA SANCHEZ</h4>
+          <h4 class="yai" @click="goDevYai()">YAIDI GARCIA</h4>
+          <h4 class="eug" @click="goDevEug()">EUGENIA NAJAR</h4>
         </div>
       </div>
     </div>

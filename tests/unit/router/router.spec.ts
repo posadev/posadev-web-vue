@@ -7,6 +7,7 @@ import Communities from '@/components/Communities.vue';
 import SpeakersAll from '@/views/SpeakersAll.vue';
 import SponsorView from '@/views/SponsorView.vue';
 import SpeakerSingleView from '@/views/SpeakerSingleView.vue';
+import Developers from '@/views/Developers.vue';
 import speakers from '@/mocks/Speakers.mock';
 
 jest.mock('@/firebase');
@@ -74,6 +75,22 @@ describe('Router render test cases', () => {
 
     return router.push('/speakers').then(() => {
       expect(wrapper.findComponent(SpeakersAll).exists()).toBe(true);
+    });
+  });
+
+  it('should go developers properly', () => {
+    const wrapper = mount(App, {
+      mocks: {
+        $t: () => {
+          return {};
+        }
+      },
+      localVue,
+      router
+    });
+
+    return router.push('developers').then(() => {
+      expect(wrapper.findComponent(Developers).exists()).toBe(true);
     });
   });
 

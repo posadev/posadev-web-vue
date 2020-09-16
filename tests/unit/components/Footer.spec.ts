@@ -14,6 +14,20 @@ describe('Footer component', () => {
     window.open = jest.fn();
   });
 
+  it('it should check if the P is clickable', () => {
+    const rokzy = new URL('https://www.google.com');
+    const wrapper = shallowMount(Footer, {
+      propsData: { rokzy },
+      mocks: {
+        $t: (msg: string) => {
+          return msg;
+        }
+      }
+    });
+    wrapper.find('p.rockzy').trigger('click');
+    expect(window.open).toHaveBeenCalled();
+  });
+
   it('should render the footer passed', () => {
     const wrapper = shallowMount(Footer, {
       propsData: { info: '', socialMedia: { social: '', url: URL } },
@@ -28,6 +42,8 @@ describe('Footer component', () => {
       0
     );
   });
+
+
 
   it('should move the right sections', () => {
     const localVue = createLocalVue();
