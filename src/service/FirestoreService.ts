@@ -6,10 +6,11 @@ import QueryDocumentSnapshot = firebase.firestore.QueryDocumentSnapshot;
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
 import CollectionReference = firebase.firestore.CollectionReference;
 import Query = firebase.firestore.Query;
+import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 
 export type DocumentMapper<R> = (data: DocumentData) => R;
 
-export abstract class FirebaseCollectionService<T> {
+export abstract class FirestoreService<T> {
   abstract collectionName: string;
 
   abstract mapper: DocumentMapper<T>;
@@ -21,6 +22,14 @@ export abstract class FirebaseCollectionService<T> {
     }
   };
 
+  async getFromPath(path: string): Promise<T | undefined> {
+    return db
+      .doc(path)
+      .withConverter(this.converter)
+      .get()
+      .then((doc: DocumentSnapshot<T>) => doc.data());
+  }
+
   async findAll(): Promise<T[]> {
     return this.createCollectionPromise(this.createCollectionRef());
   }
@@ -29,6 +38,14 @@ export abstract class FirebaseCollectionService<T> {
     const query = this.createCollectionRef().limit(limit);
 
     return this.createCollectionPromise(query);
+  }
+
+  async findById(id: string): Promise<T | undefined> {
+    const documentReference = this.createCollectionRef().doc(id);
+
+    return documentReference
+      .get()
+      .then((document: DocumentSnapshot<T>) => document.data());
   }
 
   private createCollectionRef(): CollectionReference<T> {

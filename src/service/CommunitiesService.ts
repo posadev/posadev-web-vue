@@ -1,13 +1,8 @@
-import {
-  FirebaseCollectionService,
-  DocumentMapper
-} from './FirebaseCollectionService';
+import { DocumentMapper, FirestoreService } from './FirestoreService';
 import Community from '@/data/Community.model';
 import DocumentData = firebase.firestore.DocumentData;
 
-export default class CommunitiesService extends FirebaseCollectionService<
-  Community
-> {
+export default class CommunitiesService extends FirestoreService<Community> {
   collectionName = 'communities';
 
   mapper: DocumentMapper<Community> = (data: DocumentData) => {

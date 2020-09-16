@@ -11,15 +11,15 @@
   },
   "home": {
     "speakers": {
-      "title": "Speakers",
+      "title": "Presentadores",
       "subtitle": "Conoce a los profesionales de la industria que nos acompañan",
-      "topButton": "Participa como speaker aquí",
-      "bottomButton": "Ver todos los speakers"
+      "topButton": "Participa como presentadores aquí",
+      "bottomButton": "Ver todos los presentadores"
     },
     "workshops": {
-      "title": "Workshops",
+      "title": "Talleres",
       "subtitle": "Cada taller tendrá un costo adicional a su entrada a las conferencias",
-      "bottomButton": "Ver todos los workshops"
+      "bottomButton": "Ver todos los talleres"
     },
     "aboutevent": {
       "title": "Sobre el evento",
@@ -28,10 +28,10 @@
     },
     "tickets": {
       "title": "Tickets",
-      "subtitle": "Consigue tu entrada mientras estan disponibles"
+      "subtitle": "Obtén tu entrada"
     },
     "sponsors": {
-      "title": "Sponsors",
+      "title": "Patrocinadores",
       "subtitle": "Da click y conoce más de nuestros patrocinadores, que sin su ayuda este evento no sería el mismo",
       "topButton": "Patrocina este evento"
     },
@@ -57,18 +57,25 @@
     "faq": "FA&Q",
     "code": "Código de coducta",
     "terms": "Términos y condiciones",
-    "privacy": "Privacy and Legacy",
+    "privacy": "Aviso de privacidad",
     "about": "Acerca de nosotros"
   },
   "community" : {
     "title": "Organizadores",
     "subtitle": "Creamos eventos maravillosos",
-    "titleSection": "JConf es un evento organizado por las comunidades J4Guanatos y Java User Group gdl.",
+    "titleSection": "JConf es un evento organizado por las comunidades que hablan de la JVM en Guadalajara",
     "buttonText": "Quiero saber más"
   },
   "sponsor" : {
     "titleSection": "Patrocinadores",
     "subtitleSection": "Conoce a nuestros profesionales",
     "buttonText": "Website"
+  },
+  "social": {
+    "textInfo": "Más información"
+  },
+  "speaker": {
+    "conference": "Conferencia",
+    "addCalendar": "Añadir a mi calendario"
   }
 }

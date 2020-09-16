@@ -4,12 +4,14 @@
       <Speakers />
     </template>
     <template v-slot:hero-footer>
-      <AccentActionButton
-        id="btn-speakers-all"
-        class="section-button"
-        :info="allSpeakersButton"
-        v-on:button-action="onShowSpeakers"
-      />
+      <router-link :to="`/speakers`" style="text-decoration: none">
+        <AccentActionButton
+          id="btn-speakers-all"
+          class="section-button"
+          :info="allSpeakersButton"
+          v-on:button-action="onShowSpeakers"
+        />
+      </router-link>
     </template>
   </SectionHero>
 </template>
@@ -36,10 +38,6 @@ export default class SectionSpeakers extends Mixins(SpeakerContainer) {
       this.$t('home.speakers.title'),
       this.$t('home.speakers.subtitle')
     );
-  }
-
-  private get speakerInfo(): ButtonInfo {
-    return new ButtonInfo(this.$t('home.speakers.topButton'));
   }
 
   private get allSpeakersButton(): ButtonInfo {

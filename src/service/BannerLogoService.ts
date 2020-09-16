@@ -1,12 +1,10 @@
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 import BannerLogo from '@/data/BannerLogo.model';
 import firebase from 'firebase';
 import DocumentData = firebase.firestore.DocumentData;
 import DocumentReference = firebase.firestore.DocumentReference;
 
-export default class BannerLogoService extends FirebaseCollectionService<
-  BannerLogo
-> {
+export default class BannerLogoService extends FirestoreService<BannerLogo> {
   collectionName = 'sponsorBanner';
 
   mapper = (data: DocumentData): BannerLogo => {

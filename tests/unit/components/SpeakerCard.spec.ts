@@ -1,17 +1,10 @@
 import { shallowMount } from '@vue/test-utils';
 import SpeakerCard from '@/components/SpeakerCard.vue';
-import Speaker from '@/data/Speaker.model';
+import speakers from '@/mocks/Speakers.mock';
+import { speakerToDictionary } from '@/router/utils';
 
 describe('SpeakerCard component', () => {
-  const fake = new Speaker(
-    'Bbio....',
-    'IBM',
-    'Mark',
-    'Welch3',
-    'Java Developer2',
-    new URL('https://localhost'),
-    {}
-  );
+  const fake = speakers[0];
   it('should render properly', () => {
     const wrapper = shallowMount(SpeakerCard, {
       propsData: {
@@ -28,5 +21,25 @@ describe('SpeakerCard component', () => {
     expect(company.text()).toBe(fake.company);
     expect(name.text()).toBe(`${fake.firstName} ${fake.lastName}`);
     expect(role.text()).toBe(fake.role);
+  });
+
+  it('should call the router with all the data from the Speaker', () => {
+    const $router = {
+      push: jest.fn()
+    };
+    const wrapper = shallowMount(SpeakerCard, {
+      propsData: {
+        speaker: fake
+      },
+      mocks: { $router }
+    });
+
+    wrapper.trigger('click');
+
+    expect($router.push).toHaveBeenCalled();
+    expect($router.push).toHaveBeenCalledWith({
+      name: 'speakers/detail',
+      params: speakerToDictionary(fake)
+    });
   });
 });

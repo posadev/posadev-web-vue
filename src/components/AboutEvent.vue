@@ -35,35 +35,22 @@ export default class AboutEvent extends Vue {
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media';
-
-@mixin mobile-device {
-  @media only screen and (max-device-width: 700px) {
-    @content;
-  }
-}
+@import '../styles/mixins';
 
 .container-image {
   display: block;
-  margin-right: 3%;
-
-  @include mobile-device {
-    margin-right: 0;
+  @media only screen and (min-device-width: 768px) {
+    margin-right: 3%;
   }
 }
 
 .image-about-event {
-  height: 416px;
-  width: 416px;
+  width: 100%;
+  height: 100%;
 
-  @media only screen and (max-device-width: 768px) {
-    height: 350px;
-    width: 350px;
-    margin-top: 20%;
-  }
-
-  @media only screen and (max-device-width: 460px) {
-    width: calc(416px - 100px);
-    height: calc(416px - 100px);
+  @include media-screen-max-width(426px) {
+    width: 280px;
+    height: 280px;
   }
 }
 
@@ -71,21 +58,14 @@ export default class AboutEvent extends Vue {
   flex-direction: row;
   padding-left: 5%;
   padding-right: 5%;
-  @include mobile-device {
+  @include media-screen-max-width(425px) {
     flex-direction: column;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
 .text-content-about {
   text-align: left;
 
-  @include mobile-device {
-    text-align: center;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
   .title,
   .subtitle {
     line-height: initial;
