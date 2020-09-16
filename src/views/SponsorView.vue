@@ -6,12 +6,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Mixins } from 'vue-property-decorator';
 import Sponsor from '@/data/Sponsor.model';
 import SponsorInfo from '@/components/SponsorInfo.vue';
 import sponsors from '@/mocks/Sponsors.mock';
 import ViewHeader from '@/components/ViewHeader.vue';
 import TitleTexts from '@/data/TitleTexts.model';
+import SponsorContainer from '@/di/SponsorContainer';
 
 @Component({
   components: {
@@ -19,7 +20,7 @@ import TitleTexts from '@/data/TitleTexts.model';
     SponsorInfo
   }
 })
-export default class SponsorView extends Vue {
+export default class SponsorView extends Mixins(SponsorContainer) {
   private get headerText() {
     return new TitleTexts(
       this.$t('sponsor.titleSection'),
