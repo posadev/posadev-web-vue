@@ -13,15 +13,13 @@
         :path="barItem.path"
         v-on:scroll-to="scrollTo"
         v-on:go-to="openSection"
-      >
-        {{ $t(barItem.textRef) }}
+        >{{ $t(barItem.textRef) }}
       </NavigationBarItem>
       <NavigationBarItem
         class="navBarItem navBarTicket"
         :path="'#tickets'"
         v-on:scroll-to="scrollTo"
-      >
-        {{ $t('header.tickets') }}
+        >{{ $t('header.tickets') }}
       </NavigationBarItem>
     </div>
   </nav>
@@ -195,7 +193,7 @@ label {
 
 .navBarTicket {
   background-color: $accent-color;
-  padding: 0 calc((119px - 53.9px) /2) 0 calc((119px - 53.9px) /2);
+  padding: 0 calc((119px - 53.9px) / 2) 0 calc((119px - 53.9px) / 2);
   height: 100%;
   display: flex;
   align-items: center;
@@ -209,7 +207,7 @@ label {
 
   @include query-only-screen-max-width {
     display: block;
-    padding: calc((100px - 19.2px)/2) 0 calc((100px - 19.2px)/2) 0;
+    padding: calc((100px - 19.2px) / 2) 0 calc((100px - 19.2px) / 2) 0;
   }
 
   %nav-ticket-hide {
