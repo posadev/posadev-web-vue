@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '@/views/Home.vue';
+import { dictionaryToSpeaker } from '@/router/utils';
 
 Vue.use(VueRouter);
 
@@ -23,7 +24,17 @@ const routes: Array<RouteConfig> = [
   {
     path: '/speakers',
     name: 'speakers',
-    component: () => import('@/views/SpeakersAll.vue')
+    component: () => import('../views/SpeakersAll.vue')
+  },
+  {
+    path: '/speakers/:fullName',
+    name: 'speakers/detail',
+    props(router) {
+      return {
+        speaker: dictionaryToSpeaker(router.params)
+      };
+    },
+    component: () => import('../views/SpeakerSingleView.vue')
   }
 ];
 

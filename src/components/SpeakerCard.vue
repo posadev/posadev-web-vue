@@ -1,5 +1,5 @@
 <template>
-  <div class="speaker-container">
+  <div class="speaker-container" @click="goToDetail">
     <div class="containerImg">
       <img
         class="photo-speaker img-fit-cover"
@@ -17,13 +17,22 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Speaker from '../data/Speaker.model';
+import { speakerToDictionary } from '@/router/utils';
 
 @Component
 export default class SpeakerCard extends Vue {
-  @Prop({ required: true }) private speaker!: Speaker;
+  @Prop({ required: true })
+  private speaker!: Speaker;
 
   private get fullName(): string {
     return `${this.speaker.firstName} ${this.speaker.lastName}`;
+  }
+
+  private goToDetail() {
+    this.$router.push({
+      name: 'speakers/detail',
+      params: speakerToDictionary(this.speaker)
+    });
   }
 }
 </script>

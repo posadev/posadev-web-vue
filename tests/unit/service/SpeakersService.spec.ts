@@ -15,7 +15,8 @@ describe('SpeakerService', () => {
         facebook: 'https://fb.com/foo',
         github: 'https://github.com/foo',
         twitter: 'https://twitter.com/foo'
-      }
+      },
+      talks: [{ path: 'foo ' }]
     };
 
     const service = new SpeakersService();
@@ -27,6 +28,8 @@ describe('SpeakerService', () => {
     expect(result.lastName).toBe(mock.last_name);
     expect(result.role).toBe(mock.role);
     expect(result.photoURL.toString()).toBe(`${mock.photo_url}/`);
+    expect(result.talks.length).toBe(1);
+    expect(result.talks[0]).toBe('/foo');
     expect(result.socialMedia.facebook?.toString()).toBe(
       mock['social-media'].facebook
     );
