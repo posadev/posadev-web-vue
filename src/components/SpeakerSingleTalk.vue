@@ -34,12 +34,10 @@ export default class SpeakerSingleTalk extends Vue {
   }
 
   created(): void {
-    // console.log(`${this.talk} asd`);
     db.doc(this.talk)
       .get()
       .then((document) => {
         document.data();
-        // console.log(document.data());
       });
   }
 }

@@ -21,4 +21,34 @@ describe('SpeakerCard component', () => {
     expect(name.text()).toBe(`${fake.firstName} ${fake.lastName}`);
     expect(role.text()).toBe(fake.role);
   });
+
+  it('should call the router with all the data from the Speaker', () => {
+    const $router = {
+      push: jest.fn()
+    };
+    const wrapper = shallowMount(SpeakerCard, {
+      propsData: {
+        speaker: fake
+      },
+      mocks: { $router }
+    });
+
+    wrapper.trigger('click');
+
+    expect($router.push).toHaveBeenCalled();
+    expect($router.push).toHaveBeenCalledWith({
+      name: 'speakers/detail',
+      params: {
+        fullName: `${fake.firstName}+${fake.lastName}`,
+        bio: fake.bio,
+        company: fake.company,
+        firstName: fake.firstName,
+        lastName: fake.lastName,
+        role: fake.role,
+        photoURL: fake.photoURL.toString(),
+        socialMedia: JSON.stringify(fake.socialMedia),
+        talks: JSON.stringify(fake.talks)
+      }
+    });
+  });
 });

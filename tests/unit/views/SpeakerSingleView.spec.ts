@@ -18,7 +18,7 @@ describe('SpeakerSingleView.vue', () => {
         }
       }
     });
-    expect(wrapper.find(ViewHeader).exists()).toBe(true);
-    expect(wrapper.find(SpeakerInfo).exists()).toBe(true);
+    expect(wrapper.findComponent(ViewHeader).exists()).toBe(true);
+    expect(wrapper.findComponent(SpeakerInfo).exists()).toBe(true);
   });
 });
