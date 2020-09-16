@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import App from '@/App.vue';
 import router from '@/router/index.ts';
 import Home from '@/views/Home.vue';
-import Communities from '@/views/Communities.vue';
+import Communities from '@/components/Communities.vue';
 import SpeakersAll from '@/views/SpeakersAll.vue';
 import SponsorView from '@/views/SponsorView.vue';
 

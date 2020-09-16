@@ -8,17 +8,15 @@
 
 <script lang="ts">
 import NavigationBar from '@/components/NavigationBar.vue';
-import { Component, Mixins } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import Footer from '@/components/Footer.vue';
 import localeHandler from '@/localeHandler';
 import { Language, Locales } from './locale';
-import CommunityContainer from '@/di/CommunityContainer';
-import SponsorContainer from '@/di/SponsorContainer';
 
 @Component({
   components: { NavigationBar, Footer }
 })
-export default class App extends Mixins(CommunityContainer, SponsorContainer) {
+export default class App extends Vue {
   get languages(): Language[] {
     return [
       { id: 'en', title: 'English', locale: Locales.EN },
