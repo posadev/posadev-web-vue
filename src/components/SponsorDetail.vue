@@ -7,7 +7,7 @@
     <SocialLinks
       class="sponsor-social"
       :info="'More Information'"
-      :socialMedia="social"
+      :socialMedia="this.sponsor.socialMedia"
     />
     <AccentActionButton
       id="btn-sponsor"
@@ -24,7 +24,6 @@ import Sponsor from '@/data/Sponsor.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import SocialLinks from '@/components/SocialLinks.vue';
 import ButtonInfo from '@/data/ButtonInfo.model';
-import { SocialMedia } from '@/data/SocialMedia.type';
 
 @Component({
   components: {
@@ -35,12 +34,6 @@ import { SocialMedia } from '@/data/SocialMedia.type';
 export default class SponsorDetail extends Vue {
   @Prop({ required: true })
   private readonly sponsor!: Sponsor;
-
-  private social: SocialMedia = {
-    twitter: new URL('https://twitter.com'),
-    instagram: new URL('https://instagram.com'),
-    facebook: new URL('https://facebook.com')
-  };
 
   get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('sponsor.buttonText'), true);
@@ -59,18 +52,21 @@ export default class SponsorDetail extends Vue {
 .sponsor-detail {
   color: $dark-color;
   height: 100%;
+  width: 35%;
   justify-content: space-around;
   display: flex;
   flex-direction: column;
 
   p {
     text-align: left;
-    min-height: 75px;
-    max-height: 200px;
     margin: {
       top: 25px;
       bottom: 25px;
     }
+  }
+
+  @include media-screen-max-width(730px) {
+    width: 90%;
   }
 }
 
@@ -80,20 +76,16 @@ export default class SponsorDetail extends Vue {
 
   img {
     width: 196px;
-    height: 84px;
   }
 
   @include media-screen-max-width(426px) {
     text-align: center;
-    img {
-      width: 153px;
-      height: 66px;
-    }
   }
 }
 
 .sponsor-social {
   padding-bottom: 3rem;
+  padding-top: 2rem;
   text-align: left;
 
   @include media-screen-max-width(411px) {
