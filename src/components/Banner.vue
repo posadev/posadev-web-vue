@@ -1,7 +1,9 @@
 <template>
   <div class="banner-content">
     <div class="content-banner-image">
+      <figure v-if="image.length > 0">
       <img :src="image" class="img-fit-cover img-banner" alt="JConf 2020" />
+      </figure>
       <div class="background-banner" />
       <img
         class="img-responsive banner-logo"
