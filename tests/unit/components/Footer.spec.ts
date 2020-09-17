@@ -15,9 +15,7 @@ describe('Footer component', () => {
   });
 
   it('it should check if the P is clickable', () => {
-   
     const wrapper = shallowMount(Footer, {
-     
       mocks: {
         $t: (msg: string) => {
           return msg;

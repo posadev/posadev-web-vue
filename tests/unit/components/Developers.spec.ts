@@ -7,7 +7,7 @@ describe('Developers component', () => {
   });
 
   it('should render properly', () => {
-     const wrapper = shallowMount(Developers, {
+    const wrapper = shallowMount(Developers, {
       mocks: {
         $t: (msg: string) => {
           return msg;

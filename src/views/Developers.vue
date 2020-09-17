@@ -4,12 +4,45 @@
     <div class="dev-section">
       <div class="image-logo">
         <div class="dev-info">
-          <h4 class="fer" @click="goDevProfile('https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/')">FERNANDO GONZALEZ</h4>
-          <h4 class="si" @click="goDevProfile('https://www.sierisimo.com/')">SINUHE JAIME</h4>
-          <h4 class="geo" @click="goDevProfile('https://www.linkedin.com/in/georginapq/')">GEORGINA PEREZ</h4>
-          <h4 class="eri" @click="goDevProfile('https://www.linkedin.com/in/erika-sanchez-murguia/')">ERIKA SANCHEZ</h4>
-          <h4 class="yai" @click="goDevProfile('https://www.linkedin.com/in/yaidi-garcia/')">YAIDI GARCIA</h4>
-          <h4 class="eug" @click="goDevProfile('https://www.linkedin.com/in/eugenianajar/')">EUGENIA NAJAR</h4>
+          <h4
+            class="fer"
+            @click="
+              goDevProfile(
+                'https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/'
+              )
+            "
+          >
+            FERNANDO GONZALEZ
+          </h4>
+          <h4 class="si" @click="goDevProfile('https://www.sierisimo.com/')">
+            SINUHE JAIME
+          </h4>
+          <h4
+            class="geo"
+            @click="goDevProfile('https://www.linkedin.com/in/georginapq/')"
+          >
+            GEORGINA PEREZ
+          </h4>
+          <h4
+            class="eri"
+            @click="
+              goDevProfile('https://www.linkedin.com/in/erika-sanchez-murguia/')
+            "
+          >
+            ERIKA SANCHEZ
+          </h4>
+          <h4
+            class="yai"
+            @click="goDevProfile('https://www.linkedin.com/in/yaidi-garcia/')"
+          >
+            YAIDI GARCIA
+          </h4>
+          <h4
+            class="eug"
+            @click="goDevProfile('https://www.linkedin.com/in/eugenianajar/')"
+          >
+            EUGENIA NAJAR
+          </h4>
         </div>
       </div>
     </div>
