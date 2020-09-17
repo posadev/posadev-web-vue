@@ -4,12 +4,12 @@
     <div class="dev-section">
       <div class="image-logo">
         <div class="dev-info">
-          <h4 class="fer" @click="goDevFer()">FERNANDO GONZALEZ</h4>
-          <h4 class="si" @click="goDevSinu()">SINUHE JAIME</h4>
-          <h4 class="geo" @click="goDevGeo()">GEORGINA PEREZ</h4>
-          <h4 class="eri" @click="goDevEri()">ERIKA SANCHEZ</h4>
-          <h4 class="yai" @click="goDevYai()">YAIDI GARCIA</h4>
-          <h4 class="eug" @click="goDevEug()">EUGENIA NAJAR</h4>
+          <h4 class="fer" @click="goDevProfile('https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/')">FERNANDO GONZALEZ</h4>
+          <h4 class="si" @click="goDevProfile('https://www.sierisimo.com/')">SINUHE JAIME</h4>
+          <h4 class="geo" @click="goDevProfile('https://www.linkedin.com/in/georginapq/')">GEORGINA PEREZ</h4>
+          <h4 class="eri" @click="goDevProfile('https://www.linkedin.com/in/erika-sanchez-murguia/')">ERIKA SANCHEZ</h4>
+          <h4 class="yai" @click="goDevProfile('https://www.linkedin.com/in/yaidi-garcia/')">YAIDI GARCIA</h4>
+          <h4 class="eug" @click="goDevProfile('https://www.linkedin.com/in/eugenianajar/')">EUGENIA NAJAR</h4>
         </div>
       </div>
     </div>
@@ -30,25 +30,8 @@ export default class SponsorView extends Vue {
   private get headerText() {
     return new TitleTexts(this.$t('developer.title'));
   }
-  private goDevGeo(): void {
-    window.open('https://www.linkedin.com/in/georginapq/');
-  }
-  private goDevEri(): void {
-    window.open('https://www.linkedin.com/in/erika-sanchez-murguia/');
-  }
-  private goDevYai(): void {
-    window.open('https://www.linkedin.com/in/yaidi-garcia/');
-  }
-  private goDevFer(): void {
-    window.open(
-      'https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/'
-    );
-  }
-  private goDevSinu(): void {
-    window.open('https://www.linkedin.com/in/sierisimo/');
-  }
-  private goDevEug(): void {
-    window.open('https://www.linkedin.com/in/eugenianajar/');
+  private goDevProfile(url: string) {
+    window.open(url);
   }
 }
 </script>

@@ -4,7 +4,7 @@
       <Speakers />
     </template>
     <template v-slot:hero-footer>
-      <router-link :to="`/speakers`" style="text-decoration: none">
+      <router-link :to="{ name: 'speakers' }" style="text-decoration: none">
         <AccentActionButton
           id="btn-speakers-all"
           class="section-button"
