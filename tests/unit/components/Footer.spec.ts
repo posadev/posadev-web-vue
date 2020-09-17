@@ -15,9 +15,9 @@ describe('Footer component', () => {
   });
 
   it('it should check if the P is clickable', () => {
-    const rokzy = new URL('https://www.google.com');
+   
     const wrapper = shallowMount(Footer, {
-      propsData: { rokzy },
+     
       mocks: {
         $t: (msg: string) => {
           return msg;
