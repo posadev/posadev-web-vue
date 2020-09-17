@@ -58,6 +58,8 @@ export default class Banner extends Vue {
 
 .content-banner-image {
   position: relative;
+  min-width: 100%;
+  min-height: 500px;
 }
 
 .banner-content {
