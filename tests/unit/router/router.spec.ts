@@ -10,10 +10,10 @@ import SpeakerSingleView from '@/views/SpeakerSingleView.vue';
 import speakers from '@/mocks/Speakers.mock';
 
 jest.mock('@/firebase');
-
 describe('Router render test cases', () => {
   const localVue = createLocalVue();
   localVue.use(VueRouter);
+  window.scrollTo = jest.fn();
 
   it('renders a child component via routing', () => {
     const wrapper = mount(App, {
