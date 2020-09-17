@@ -43,7 +43,7 @@ export default class NavigationBar extends Vue {
   private scrollTo(id: string): void {
     const section = document.getElementById(id);
     if (section !== null) {
-      section?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      section?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     } else {
       this.openSection(`/#${id}`);
     }
