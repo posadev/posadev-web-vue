@@ -100,7 +100,7 @@ export default class CommunityDetail extends Vue {
     width: 500px;
   }
 
-  @include media-screen-max-width(411px) {
+  @include media-screen-max-width(730px) {
     h1 {
       font-size: 30px;
       margin: {
