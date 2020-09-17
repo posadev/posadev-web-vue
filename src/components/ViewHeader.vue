@@ -1,5 +1,5 @@
 <template>
-  <div class="section-header hero hero-lg">
+  <div class="section-header hero hero-gl">
     <Title class="hero-body" :texts="headerTexts" />
   </div>
 </template>
