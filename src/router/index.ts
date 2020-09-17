@@ -35,6 +35,11 @@ const routes: Array<RouteConfig> = [
       };
     },
     component: () => import('@/views/SpeakerSingleView.vue')
+  },
+  {
+    path: '/developers',
+    name: 'developers',
+    component: () => import('@/views/Developers.vue')
   }
 ];
 

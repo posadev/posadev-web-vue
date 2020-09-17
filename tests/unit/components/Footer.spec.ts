@@ -14,6 +14,18 @@ describe('Footer component', () => {
     window.open = jest.fn();
   });
 
+  it('it should check if the P is clickable', () => {
+    const wrapper = shallowMount(Footer, {
+      mocks: {
+        $t: (msg: string) => {
+          return msg;
+        }
+      }
+    });
+    wrapper.find('p.rockzy').trigger('click');
+    expect(window.open).toHaveBeenCalled();
+  });
+
   it('should render the footer passed', () => {
     const wrapper = shallowMount(Footer, {
       propsData: { info: '', socialMedia: { social: '', url: URL } },
