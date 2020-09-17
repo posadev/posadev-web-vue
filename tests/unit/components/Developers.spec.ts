@@ -7,14 +7,7 @@ describe('Developers component', () => {
   });
 
   it('should render properly', () => {
-    const link = new URL('https://www.google.com');
-    const link1 = new URL('https://www.google.com');
-    const link2 = new URL('https://www.google.com');
-    const link3 = new URL('https://www.google.com');
-    const link4 = new URL('https://www.google.com');
-    const link5 = new URL('https://www.google.com');
-    const wrapper = shallowMount(Developers, {
-      propsData: { link, link1, link2, link3, link4, link5 },
+     const wrapper = shallowMount(Developers, {
       mocks: {
         $t: (msg: string) => {
           return msg;
