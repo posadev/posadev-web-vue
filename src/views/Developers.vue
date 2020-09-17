@@ -30,25 +30,8 @@ export default class SponsorView extends Vue {
   private get headerText() {
     return new TitleTexts(this.$t('developer.title'));
   }
-  private goDevGeo(): void {
-    window.open('https://www.linkedin.com/in/georginapq/');
-  }
-  private goDevEri(): void {
-    window.open('https://www.linkedin.com/in/erika-sanchez-murguia/');
-  }
-  private goDevYai(): void {
-    window.open('https://www.linkedin.com/in/yaidi-garcia/');
-  }
-  private goDevFer(): void {
-    window.open(
-      'https://www.linkedin.com/in/fernando-gonzalez-camacho-4207aa56/'
-    );
-  }
-  private goDevSinu(): void {
-    window.open('https://www.linkedin.com/in/sierisimo/');
-  }
-  private goDevEug(): void {
-    window.open('https://www.linkedin.com/in/eugenianajar/');
+  private goDevProfile(url: string) {
+    window.open(url);
   }
 }
 </script>
