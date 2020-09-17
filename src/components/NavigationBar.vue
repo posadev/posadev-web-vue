@@ -1,6 +1,10 @@
 <template>
   <nav class="navBar">
-    <NavigationBarItem :path="'/'" v-on:go-to="openSection">
+    <NavigationBarItem
+      :path="'/'"
+      v-on:scroll-to="scrollTo"
+      v-on:go-to="openSection"
+    >
       <img class="navBarLogo" src="../assets/logoTransparente.png" alt="logo" />
     </NavigationBarItem>
     <label for="toggle">&#9776;</label>
@@ -39,14 +43,16 @@ export default class NavigationBar extends Vue {
   private scrollTo(id: string): void {
     const section = document.getElementById(id);
     if (section !== null) {
-      section?.scrollIntoView();
+      section?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     } else {
       this.openSection(`/#${id}`);
     }
   }
 
   private openSection(section: string): void {
-    this.$router.push(section);
+    this.$router.push(section).catch(() => {
+      //
+    });
   }
 }
 </script>

@@ -59,7 +59,9 @@ export default class Footer extends Vue {
 
   private openSection(section: string): void {
     if (section.startsWith('/')) {
-      this.$router.push(section);
+      this.$router.push(section).catch(() => {
+        //
+      });
     } else {
       fetchImageURL(section).then((url: string) => {
         window.open(url);
