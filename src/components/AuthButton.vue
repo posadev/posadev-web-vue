@@ -21,6 +21,9 @@ export default class AuthButton extends Vue {
       .then((userCredential: UserCredential) => {
         this.$emit('value', userCredential?.user?.displayName);
         this.$emit('locale', userCredential?.additionalUserInfo);
+      })
+      .catch((err: string) => {
+        err;
       });
   }
 }
