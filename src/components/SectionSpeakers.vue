@@ -1,7 +1,7 @@
 <template>
   <SectionHero :title="speakersTexts">
     <template v-slot:hero-body>
-      <Speakers />
+      <Speakers :amount="8" />
     </template>
     <template v-slot:hero-footer>
       <router-link :to="{ name: 'speakers' }" style="text-decoration: none">

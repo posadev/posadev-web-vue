@@ -4,11 +4,17 @@ import NavigationBarItem from '@/components/NavigationBarItem.vue';
 
 describe('NavigationBar', () => {
   it('should contain at least 2 items', () => {
+    const $router = {
+      push: jest.fn().mockResolvedValue({
+        catch: jest.fn()
+      })
+    };
     const wrapper = shallowMount(NavigationBar, {
       mocks: {
         $t: () => {
           return {};
-        }
+        },
+        $router
       }
     });
 
@@ -20,11 +26,17 @@ describe('NavigationBar', () => {
   });
 
   it('should react to events accordingly', () => {
+    const $router = {
+      push: jest.fn().mockResolvedValue({
+        catch: jest.fn()
+      })
+    };
     const wrapper = shallowMount(NavigationBar, {
       mocks: {
         $t: () => {
           return {};
-        }
+        },
+        $router
       }
     });
     const scrollIntoView = jest.fn();
@@ -42,7 +54,9 @@ describe('NavigationBar', () => {
 
   it('should react to events accordingly', () => {
     const $router = {
-      push: jest.fn()
+      push: jest.fn().mockResolvedValue({
+        catch: jest.fn()
+      })
     };
     const wrapper = shallowMount(NavigationBar, {
       mocks: {
@@ -66,7 +80,9 @@ describe('NavigationBar', () => {
 
   it('should navigate back or to section', () => {
     const $router = {
-      push: jest.fn()
+      push: jest.fn().mockResolvedValue({
+        catch: jest.fn()
+      })
     };
     const wrapper = shallowMount(NavigationBar, {
       mocks: {

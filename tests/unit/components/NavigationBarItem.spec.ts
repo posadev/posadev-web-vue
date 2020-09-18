@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
-import navigation from '@/components/NavigationBarItem.vue';
+import NavigationBarItem from '@/components/NavigationBarItem.vue';
 
 describe('NavigationBarItem.vue', () => {
   it('it should be exist a nav bar item', () => {
-    const wrapper = shallowMount(navigation, {
+    const wrapper = shallowMount(NavigationBarItem, {
       propsData: {
         path: ''
       }
@@ -17,7 +17,7 @@ describe('NavigationBarItem.vue', () => {
     const path = '#foo';
     const expectedId = 'foo';
     const scrollListener = jest.fn((id: string) => (pathId = id));
-    const wrapper = shallowMount(navigation, {
+    const wrapper = shallowMount(NavigationBarItem, {
       propsData: { path },
       listeners: {
         'scroll-to': scrollListener
@@ -35,7 +35,7 @@ describe('NavigationBarItem.vue', () => {
     const path = '/foo';
     const expectedId = '/foo';
     const scrollListener = jest.fn((id: string) => (pathId = id));
-    const wrapper = shallowMount(navigation, {
+    const wrapper = shallowMount(NavigationBarItem, {
       propsData: { path },
       listeners: {
         'go-to': scrollListener
