@@ -44,7 +44,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/schedule',
     name: 'schedule',
-    component: () => import('@/views/Proximamente.vue')
+    component: () => import('@/views/ComingSoon.vue')
   }
 ];
 
