@@ -20,9 +20,13 @@ export default class AboutEvent extends Vue {
   private image = '';
 
   private created(): void {
-    fetchImageURL('about-event.jpg').then((url: string) => {
-      this.image = url;
-    });
+    fetchImageURL('about-event.jpg')
+      .then((url: string) => {
+        this.image = url;
+      })
+      .catch((err: string) => {
+        err;
+      });
   }
 }
 </script>
