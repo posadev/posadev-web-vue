@@ -6,7 +6,7 @@ import DocumentData = firebase.firestore.DocumentData;
 export default class TalkService extends FirestoreService<Talk> {
   readonly collectionName = 'talks';
 
-  mapper: DocumentMapper<Talk> = (data: DocumentData) => {
+  mapper = (data: DocumentData): Talk => {
     return new Talk(
       data['nameTalk'],
       data['speaker'],
