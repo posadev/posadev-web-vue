@@ -31,13 +31,11 @@ export default class SpeakerSingleTalk extends Vue {
 
   private talks: Talk[] = [];
 
-   private created(): void {
-    this.service
-      .findAll(['include', '==', true])
-      .then((talk: Talk[]) => {
-        alert(this.talk)
-        this.talks.push(...talk);
-      });
+  private created(): void {
+    this.service.findAll(['include', '==', true]).then((talks: Talk[]) => {
+      alert(this.talk);
+      this.talks.push(...talks);
+    });
   }
 }
 </script>
