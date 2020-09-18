@@ -60,6 +60,44 @@ describe('Abstract FirebaseService', () => {
     expect(result[0]).toBe('Foo Bar Baz');
   });
 
+  it('should filter data when findAll takes parameter', async () => {
+    const docSnapshot = ({
+      data: jest.fn()
+    } as unknown) as QueryDocumentSnapshot;
+    const where = jest.fn().mockReturnThis();
+    const withConverter = jest
+      .fn()
+      .mockImplementation((converter: FirestoreDataConverter<string>) => {
+        return {
+          where,
+          get: jest.fn().mockResolvedValue({
+            docs: [
+              {
+                data: jest
+                  .fn()
+                  .mockReturnValue(converter.fromFirestore(docSnapshot, {}))
+              }
+            ]
+          })
+        };
+      });
+
+    const collectionSpy = jest
+      .spyOn(db, 'collection')
+      .mockReturnValue(({ withConverter } as unknown) as CollectionReference);
+
+    const service = new MockService();
+    const result = await service.findAll(['', '==', 'Foo']);
+
+    await flushPromises();
+
+    expect(collectionSpy).toHaveBeenCalled();
+    expect(where).toHaveBeenCalled();
+    expect(where).toHaveBeenCalledWith('', '==', 'Foo');
+    expect(service.mapper).toHaveBeenCalled();
+    expect(result[0]).toBe('Foo Bar Baz');
+  });
+
   it('should return a limited number of registries when find is called', async () => {
     const docSnapshot = ({
       data: jest.fn()
