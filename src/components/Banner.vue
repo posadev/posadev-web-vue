@@ -27,9 +27,13 @@ export default class Banner extends Vue {
   private image = '';
 
   private created(): void {
-    fetchImageURL('banner.png').then((url: string) => {
-      this.image = url;
-    });
+    fetchImageURL('banner.png')
+      .then((url: string) => {
+        this.image = url;
+      })
+      .catch((err: string) => {
+        err;
+      });
   }
 }
 </script>
