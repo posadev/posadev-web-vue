@@ -85,5 +85,6 @@ export default class CommunityInfo extends Vue {
 
 .community-card-detail {
   flex: 3;
+  width: 87%;
 }
 </style>

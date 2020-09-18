@@ -1,7 +1,9 @@
 <template>
   <div class="banner-content">
     <div class="content-banner-image">
-      <img :src="image" class="img-fit-cover img-banner" alt="JConf 2020" />
+      <figure v-if="image.length > 0">
+        <img :src="image" class="img-fit-cover img-banner" alt="JConf 2020" />
+      </figure>
       <div class="background-banner" />
       <img
         class="img-responsive banner-logo"
@@ -58,6 +60,8 @@ export default class Banner extends Vue {
 
 .content-banner-image {
   position: relative;
+  min-width: 100%;
+  min-height: 500px;
 }
 
 .banner-content {

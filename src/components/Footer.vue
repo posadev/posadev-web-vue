@@ -30,8 +30,16 @@
         </NavigationBarItem>
       </div>
       <div class="designed">
-        <p>{{ $t('footer-text.designed') }}</p>
-        <p>{{ $t('footer-text.developed') }}</p>
+        <div>
+          <p>{{ $t('footer-text.designed') }}</p>
+          <router-link :to="{ name: 'developers' }">
+            <p>Staff JConf</p>
+          </router-link>
+        </div>
+        <div>
+          <p>{{ $t('footer-text.developed') }}</p>
+          <p class="rockzy" @click="goDesInfo()">Rockzy</p>
+        </div>
       </div>
     </div>
   </footer>
@@ -59,12 +67,18 @@ export default class Footer extends Vue {
 
   private openSection(section: string): void {
     if (section.startsWith('/')) {
-      this.$router.push(section);
+      this.$router.push(section).catch(() => {
+        //
+      });
     } else {
       fetchImageURL(section).then((url: string) => {
         window.open(url);
       });
     }
+  }
+
+  private goDesInfo(): void {
+    window.open('https://twitter.com/rossycontreras');
   }
 }
 </script>

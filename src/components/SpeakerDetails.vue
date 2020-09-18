@@ -13,10 +13,12 @@
         <p class="name">{{ this.fullName }}</p>
         <p class="role">{{ this.speaker.role }}</p>
         <p class="bio">{{ this.speaker.bio }}</p>
-        <SocialLinks
-          :info="$t('social.textInfo')"
-          :socialMedia="this.speaker.socialMedia"
-        />
+        <div class="social-speaker">
+          <SocialLinks
+            :info="$t('social.textInfo')"
+            :socialMedia="this.speaker.socialMedia"
+          />
+        </div>
       </div>
     </div>
     <SpeakerSingleTalk v-for="talk in speaker.talks" :key="talk" :talk="talk" />
@@ -114,7 +116,7 @@ export default class SpeakerDetails extends Vue {
   .bio {
     color: $dark-color;
     text-align: justify;
-    margin-bottom: 80px;
+    margin-bottom: 49px;
     line-height: 36px;
   }
 }
@@ -147,5 +149,9 @@ export default class SpeakerDetails extends Vue {
   line-height: 36px;
   margin-top: 24px;
   margin-bottom: 5%;
+}
+
+.social-speaker {
+  padding-bottom: 11%;
 }
 </style>

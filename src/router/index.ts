@@ -40,12 +40,20 @@ const routes: Array<RouteConfig> = [
     path: '/schedule',
     name: 'schedule',
     component: () => import('@/views/ScheduleView.vue')
+  },
+  {
+    path: '/developers',
+    name: 'developers',
+    component: () => import('@/views/Developers.vue')
   }
 ];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
   routes
 });
 

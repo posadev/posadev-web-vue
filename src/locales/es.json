@@ -71,6 +71,9 @@
     "subtitleSection": "Conoce a nuestros profesionales",
     "buttonText": "Website"
   },
+  "developer" : {
+    "title": "Desarrolladores"
+  },
   "social": {
     "textInfo": "Más información"
   },
