@@ -26,15 +26,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Prop } from 'vue-property-decorator';
 import Speaker from '../data/Speaker.model';
 import SocialLinks from '@/components/SocialLinks.vue';
 import SpeakerSingleTalk from '@/components/SpeakerSingleTalk.vue';
+import TalkContainer from '@/di/TalkContainer';
 
 @Component({
   components: { SpeakerSingleTalk, SocialLinks }
 })
-export default class SpeakerDetails extends Vue {
+export default class SpeakerDetails extends Mixins(TalkContainer) {
   @Prop({ required: true }) private speaker!: Speaker;
 
   private get fullName(): string {

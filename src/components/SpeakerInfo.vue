@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import SpeakerDetails from '@/components/SpeakerDetails.vue';
 import Speaker from '@/data/Speaker.model';
 
