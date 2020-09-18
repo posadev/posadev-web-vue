@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 import { db } from '@/firebase';
+import { Triple } from '@/data/DataTypes';
 import FirestoreDataConverter = firebase.firestore.FirestoreDataConverter;
 import DocumentData = firebase.firestore.DocumentData;
 import QueryDocumentSnapshot = firebase.firestore.QueryDocumentSnapshot;
@@ -7,8 +8,11 @@ import QuerySnapshot = firebase.firestore.QuerySnapshot;
 import CollectionReference = firebase.firestore.CollectionReference;
 import Query = firebase.firestore.Query;
 import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
+import WhereFilterOp = firebase.firestore.WhereFilterOp;
 
 export type DocumentMapper<R> = (data: DocumentData) => R;
+
+export type FilterBy<V> = Triple<string, WhereFilterOp, V>;
 
 export abstract class FirestoreService<T> {
   abstract collectionName: string;
@@ -30,8 +34,15 @@ export abstract class FirestoreService<T> {
       .then((doc: DocumentSnapshot<T>) => doc.data());
   }
 
-  async findAll(): Promise<T[]> {
-    return this.createCollectionPromise(this.createCollectionRef());
+  async findAll<F>(filterBy?: FilterBy<F>): Promise<T[]> {
+    const ref = this.createCollectionRef();
+
+    if (filterBy) {
+      const query = ref.where(filterBy[0], filterBy[1], filterBy[2]);
+      return this.createCollectionPromise(query);
+    }
+
+    return this.createCollectionPromise(ref);
   }
 
   async find(limit: number): Promise<T[]> {
