@@ -89,5 +89,6 @@ export default class SponsorView extends Vue {
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
+  cursor: pointer;
 }
 </style>
