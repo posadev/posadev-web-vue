@@ -30,9 +30,14 @@ export default class Communities extends Vue {
   private communities: Community[] = [];
 
   private created() {
-    this.service.findAll().then((res: Community[]) => {
-      this.communities.push(...res);
-    });
+    this.service
+      .findAll()
+      .then((res: Community[]) => {
+        this.communities.push(...res);
+      })
+      .catch((err: string) => {
+        err;
+      });
   }
 }
 </script>
