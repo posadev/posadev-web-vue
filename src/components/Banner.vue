@@ -62,6 +62,14 @@ export default class Banner extends Vue {
   position: relative;
   min-width: 100%;
   min-height: 500px;
+
+  @media only screen and (max-width: 1500px) {
+    min-height: 400px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    min-height: 300px;
+  }
 }
 
 .banner-content {
