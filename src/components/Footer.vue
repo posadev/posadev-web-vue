@@ -33,7 +33,7 @@
         <div>
           <p>{{ $t('footer-text.developed') }}</p>
           <router-link class="staff" :to="{ name: 'developers' }">
-            <p>Staff JConf</p>
+            <p class="staff-jconf">Staff JConf</p>
           </router-link>
         </div>
         <div>
@@ -246,8 +246,10 @@ export default class Footer extends Vue {
     }
   }
   .staff {
-    color: #ffffff;
     text-decoration: none;
+  }
+  .staff-jconf {
+    color: $white-color;
   }
 }
 
