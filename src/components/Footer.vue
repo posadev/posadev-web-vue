@@ -31,13 +31,13 @@
       </div>
       <div class="designed">
         <div>
-          <p>{{ $t('footer-text.designed') }}</p>
-          <router-link :to="{ name: 'developers' }">
+          <p>{{ $t('footer-text.developed') }}</p>
+          <router-link class="staff" :to="{ name: 'developers' }">
             <p>Staff JConf</p>
           </router-link>
         </div>
         <div>
-          <p>{{ $t('footer-text.developed') }}</p>
+          <p>{{ $t('footer-text.designed') }}</p>
           <p class="rockzy" @click="goDesInfo()">Rockzy</p>
         </div>
       </div>
@@ -213,6 +213,7 @@ export default class Footer extends Vue {
       justify-content: space-between;
       align-items: center;
       width: 29%;
+      cursor: pointer;
 
       @include media-screen-max-width(768px) {
         display: none;
@@ -243,6 +244,10 @@ export default class Footer extends Vue {
     @include media-screen-max-width(768px) {
       display: none;
     }
+  }
+  .staff {
+    color: #ffffff;
+    text-decoration: none;
   }
 }
 
