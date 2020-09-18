@@ -12,7 +12,7 @@
 <script lang="ts">
 import SponsorBanner from '@/components/SponsorBanner.vue';
 import { Component, Inject, Vue } from 'vue-property-decorator';
-import { FirebaseCollectionService } from '@/service/FirebaseCollectionService';
+import { FirestoreService } from '@/service/FirestoreService';
 import BannerLogo from '@/data/BannerLogo.model';
 
 @Component({
@@ -20,7 +20,7 @@ import BannerLogo from '@/data/BannerLogo.model';
 })
 export default class SponsorList extends Vue {
   @Inject('sponsor_banner')
-  private service!: FirebaseCollectionService<BannerLogo>;
+  private service!: FirestoreService<BannerLogo>;
 
   private sponsorBanners: BannerLogo[] = [];
 

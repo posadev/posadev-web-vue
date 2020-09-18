@@ -1,11 +1,7 @@
 <template>
-  <div class="hero hero-lg content-about">
-    <div class="container-image">
-      <img
-        class="img-fit-cover image-about-event"
-        :src="image"
-        alt="about event"
-      />
+  <div class="about-content">
+    <div class="about-image">
+      <img class="img-fit-cover" :src="image" alt="about event" />
     </div>
     <section class="text-content-about">
       <h1 class="title">{{ $t('home.aboutevent.title') }}</h1>
@@ -35,48 +31,67 @@ export default class AboutEvent extends Vue {
 @import '../styles/variables';
 @import '~spectre.css/src/_layout';
 @import '~spectre.css/src/_media';
+@import '../styles/mixins';
 
-.container-image {
-  display: block;
-  margin-right: 3%;
-}
-
-.image-about-event {
-  height: 416px;
-  width: 416px;
-  @media only screen and (max-device-width: 425px) {
-    height: 290px;
-    width: 290px;
+.about-content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin: {
+    top: 5%;
+    bottom: 5%;
   }
-  @media only screen and (max-device-width: 768px) {
-    height: 350px;
-    width: 350px;
-    margin-top: 30px;
-  }
-}
 
-.content-about {
-  flex-direction: row;
-  padding-left: 5%;
-  padding-right: 5%;
-  @media only screen and (max-device-width: 425px) {
+  @include media-screen-max-width(426px) {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: {
+      top: 10%;
+      bottom: 10%;
+    }
+  }
+}
+
+.about-image {
+  padding-right: 2rem;
+  img {
+    width: 416px;
+    height: 416px;
+  }
+  @include media-screen-max-width(768px) {
+    img {
+      width: 324px;
+      height: 416px;
+    }
+  }
+  @include media-screen-max-width(426px) {
+    padding-right: 0;
+    img {
+      width: 280px;
+      height: 280px;
+    }
   }
 }
 
 .text-content-about {
+  width: 50%;
   text-align: left;
-
-  .title,
+  @include media-screen-max-width(730px) {
+    width: 90%;
+  }
+  .title {
+    margin-top: 0;
+  }
   .subtitle {
     line-height: initial;
     padding-bottom: 0;
     margin-top: 1%;
     margin-bottom: 3%;
   }
-}
 
-.text {
-  line-height: 2rem;
+  .text {
+    line-height: 2rem;
+  }
 }
 </style>

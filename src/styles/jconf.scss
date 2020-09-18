@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 html, body {
   font-family: $project-font;
   background: $light-color;

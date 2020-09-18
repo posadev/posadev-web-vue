@@ -28,7 +28,7 @@
     },
     "tickets": {
       "title": "Tickets",
-      "subtitle": "Get yours while they are still available"
+      "subtitle": "Get your ticket"
     },
     "sponsors": {
       "title": "Sponsors",
@@ -70,6 +70,9 @@
     "titleSection": "Sponsors",
     "subtitleSection": "Meet our professionals",
     "buttonText": "Website"
+  },
+  "developer" : {
+    "title": "Developers"
   },
   "social": {
     "textInfo": "More information"

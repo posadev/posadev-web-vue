@@ -22,6 +22,7 @@ describe('SectionSpeakers component', () => {
       provide: {
         speakers: jest.fn().mockReturnValue({})
       },
+      stubs: ['router-link'],
       mocks: {
         $t: jest.fn().mockReturnValue({})
       }

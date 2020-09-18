@@ -1,17 +1,16 @@
 <template>
   <div class="sponsor-section">
     <ViewHeader :header-texts="headerText" />
-    <SponsorInfo :sponsor="sponsor" />
+    <SponsorInfo :sponsor-id="sponsorId" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import Sponsor from '@/data/Sponsor.model';
+import { Component, Mixins } from 'vue-property-decorator';
 import SponsorInfo from '@/components/SponsorInfo.vue';
-import sponsors from '@/mocks/Sponsors.mock';
 import ViewHeader from '@/components/ViewHeader.vue';
 import TitleTexts from '@/data/TitleTexts.model';
+import SponsorContainer from '@/di/SponsorContainer';
 
 @Component({
   components: {
@@ -19,17 +18,14 @@ import TitleTexts from '@/data/TitleTexts.model';
     SponsorInfo
   }
 })
-export default class SponsorView extends Vue {
+export default class SponsorView extends Mixins(SponsorContainer) {
+  private sponsorId = this.$router.currentRoute.params['id'];
+
   private get headerText() {
     return new TitleTexts(
       this.$t('sponsor.titleSection'),
       this.$t('sponsor.subtitleSection')
     );
-  }
-
-  get sponsor(): Sponsor {
-    //FIXME: this is obtained from firebase
-    return sponsors[0];
   }
 }
 </script>
