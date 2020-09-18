@@ -10,6 +10,10 @@ import Reference = firebase.storage.Reference;
 jest.mock('@/firebase');
 
 describe('Footer component', () => {
+  const localVue = createLocalVue();
+  localVue.use(VueRouter);
+  const router = new VueRouter();
+
   beforeEach(() => {
     window.open = jest.fn();
   });
@@ -20,7 +24,9 @@ describe('Footer component', () => {
         $t: (msg: string) => {
           return msg;
         }
-      }
+      },
+      localVue,
+      router
     });
     wrapper.find('p.rockzy').trigger('click');
     expect(window.open).toHaveBeenCalled();
@@ -33,7 +39,9 @@ describe('Footer component', () => {
         $t: (msg: string) => {
           return msg;
         }
-      }
+      },
+      localVue,
+      router
     });
     expect(wrapper.findAllComponents(SocialLinks).length).toBeGreaterThan(0);
     expect(wrapper.findAllComponents(NavigationBarItem).length).toBeGreaterThan(
@@ -42,10 +50,6 @@ describe('Footer component', () => {
   });
 
   it('should move the right sections', () => {
-    const localVue = createLocalVue();
-    localVue.use(VueRouter);
-    const router = new VueRouter();
-
     const wrapper = shallowMount(Footer, {
       propsData: { info: '', socialMedia: {} },
       localVue,
@@ -78,7 +82,9 @@ describe('Footer component', () => {
         $t: (msg: string) => {
           return msg;
         }
-      }
+      },
+      localVue,
+      router
     });
 
     const footerItems = wrapper.findAllComponents(NavigationBarItem);
