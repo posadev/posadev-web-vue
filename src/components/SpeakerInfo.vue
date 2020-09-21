@@ -3,14 +3,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Prop } from 'vue-property-decorator';
 import SpeakerDetails from '@/components/SpeakerDetails.vue';
 import Speaker from '@/data/Speaker.model';
+import TalkContainer from '@/di/TalkContainer';
 
 @Component({
   components: { SpeakerDetails }
 })
-export default class SpeakerInfo extends Vue {
+export default class SpeakerInfo extends Mixins(TalkContainer) {
   @Prop({ required: true })
   private speaker!: Speaker;
 }

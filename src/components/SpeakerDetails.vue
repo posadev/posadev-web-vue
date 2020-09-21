@@ -21,24 +21,41 @@
         </div>
       </div>
     </div>
-    <SpeakerSingleTalk v-for="talk in speaker.talks" :key="talk" :talk="talk" />
+    <TalkInfo v-for="(talk, index) in talks" :key="index" :talk="talk" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Inject, Prop, Vue } from 'vue-property-decorator';
 import Speaker from '../data/Speaker.model';
 import SocialLinks from '@/components/SocialLinks.vue';
-import SpeakerSingleTalk from '@/components/SpeakerSingleTalk.vue';
+import TalkInfo from '@/components/TalkInfo.vue';
+import Talk from '@/data/Talk.model';
+import { FirestoreService } from '@/service/FirestoreService';
 
 @Component({
-  components: { SpeakerSingleTalk, SocialLinks }
+  components: { TalkInfo, SocialLinks }
 })
 export default class SpeakerDetails extends Vue {
   @Prop({ required: true }) private speaker!: Speaker;
 
+  @Inject('talks')
+  private service!: FirestoreService<Talk>;
+
+  private talks: Talk[] = [];
+
   private get fullName(): string {
     return `${this.speaker.firstName} ${this.speaker.lastName}`;
+  }
+
+  created(): void {
+    this.speaker.talks.forEach((talkRef: string) => {
+      this.service.getFromPath(talkRef).then((talk: Talk | undefined) => {
+        if (talk) {
+          this.talks.push(talk);
+        }
+      });
+    });
   }
 }
 </script>
