@@ -1,9 +1,9 @@
 import { shallowMount } from '@vue/test-utils';
-import SpeakerSingleTalk from '@/components/SpeakerSingleTalk.vue';
+import TalkInfo from '@/components/TalkInfo.vue';
 
-describe('SpeakerSingleTalk', () => {
+describe('TalkInfo', () => {
   it('should exist', () => {
-    const wrapper = shallowMount(SpeakerSingleTalk, {
+    const wrapper = shallowMount(TalkInfo, {
       propsData: {
         talk: ''
       },
