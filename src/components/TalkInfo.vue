@@ -9,33 +9,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Inject, Prop } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import ButtonInfo from '@/data/ButtonInfo.model';
 import Talk from '@/data/Talk.model';
-import { FirestoreService } from '@/service/FirestoreService';
 
 @Component({
   components: { AccentActionButton }
 })
-export default class SpeakerSingleTalk extends Vue {
+export default class TalkInfo extends Vue {
   @Prop({ required: true })
   private talk!: Talk;
 
   private get buttonInfo(): ButtonInfo {
     return new ButtonInfo(this.$t('speaker.addCalendar'), true);
-  }
-
-  @Inject('talks')
-  private service!: FirestoreService<Talk>;
-
-  private talks: Talk[] = [];
-
-  private created(): void {
-    this.service.findAll(['include', '==', true]).then((talks: Talk[]) => {
-      alert(this.talk);
-      this.talks.push(...talks);
-    });
   }
 }
 </script>
