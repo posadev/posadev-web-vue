@@ -9,6 +9,7 @@ import SponsorView from '@/views/SponsorView.vue';
 import SpeakerSingleView from '@/views/SpeakerSingleView.vue';
 import Developers from '@/views/Developers.vue';
 import speakers from '@/mocks/Speakers.mock';
+import Schedule from '@/views/ComingSoon.vue';
 
 jest.mock('@/firebase');
 describe('Router render test cases', () => {
@@ -124,5 +125,21 @@ describe('Router render test cases', () => {
       .then(() => {
         expect(wrapper.findComponent(SpeakerSingleView).exists()).toBe(true);
       });
+  });
+
+  it('should go schedule properly', () => {
+    const wrapper = mount(App, {
+      mocks: {
+        $t: () => {
+          return {};
+        }
+      },
+      localVue,
+      router
+    });
+
+    return router.push('/schedule').then(() => {
+      expect(wrapper.find('.coming-soon').exists()).toBe(true);
+    });
   });
 });
