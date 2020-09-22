@@ -65,7 +65,7 @@ export default class SpeakerCard extends Vue {
   .company {
     color: $light-color;
     font-weight: bold;
-    line-height: 75px;
+    line-height: 17px;
     position: absolute;
     top: 92%;
     left: 50%;
