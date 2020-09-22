@@ -9,7 +9,6 @@ import SponsorView from '@/views/SponsorView.vue';
 import SpeakerSingleView from '@/views/SpeakerSingleView.vue';
 import Developers from '@/views/Developers.vue';
 import speakers from '@/mocks/Speakers.mock';
-import Schedule from '@/views/ComingSoon.vue';
 
 jest.mock('@/firebase');
 describe('Router render test cases', () => {
