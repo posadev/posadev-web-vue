@@ -13,7 +13,8 @@ export default class CommunitiesService extends FirestoreService<Community> {
       new URL(data.landing_image_url),
       new URL(data.logo_url),
       new URL(data.social_page_url),
-      data.description
+      data.description,
+      data['social-media']
     );
   };
 }

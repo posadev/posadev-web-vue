@@ -17,6 +17,7 @@
         v-on:button-action="onCommunityClick"
       />
       <SocialLinks
+        class="community-social"
         :info="$t('social.textInfo')"
         :socialMedia="this.community.socialMedia"
       />
@@ -141,6 +142,16 @@ export default class CommunityDetail extends Vue {
       text-align: left;
       width: 95%;
     }
+  }
+}
+
+.community-social {
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  text-align: left;
+
+  @include media-screen-max-width(411px) {
+    font-size: 9px;
   }
 }
 </style>

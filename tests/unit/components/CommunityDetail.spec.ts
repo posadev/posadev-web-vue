@@ -2,18 +2,11 @@ import { mount, shallowMount } from '@vue/test-utils';
 import CommunityDetail from '@/components/CommunityDetail.vue';
 import Title from '@/components/Title.vue';
 import AccentActionButton from '@/components/AccentActionButton.vue';
-import Community from '@/data/Community.model';
+import SocialLinks from '@/components/SocialLinks.vue';
+import communities from '@/mocks/communities.mock';
 
 describe('CommunityDetail.vue', () => {
-  const mock = new Community(
-    'titulo',
-    'subtitulo',
-    'contacto',
-    new URL('https://www.google.com'),
-    new URL('https://www.facebook.com'),
-    new URL('https://www.cosa.com'),
-    'description'
-  );
+  const mock = communities[0];
 
   const translationMock = {
     $t: () => {
@@ -52,6 +45,7 @@ describe('CommunityDetail.vue', () => {
     const tittle = wrapper.findComponent(Title);
     const description = wrapper.find('.community-detail').find('p');
     const button = wrapper.findComponent(AccentActionButton);
+    const socialMedia = wrapper.findComponent(SocialLinks);
 
     expect(logo.exists()).toBe(true);
     expect(logo.attributes()['src']).toBe(mock.logoUrl.toString());
@@ -59,5 +53,6 @@ describe('CommunityDetail.vue', () => {
     expect(description.exists()).toBe(true);
     expect(description.text()).toBe(mock.description);
     expect(button.exists()).toBe(true);
+    expect(socialMedia.exists()).toBe(true);
   });
 });
