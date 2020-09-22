@@ -1,3 +1,5 @@
+import { SocialMedia } from '@/data/SocialMedia.type';
+
 export default class Community {
   constructor(
     readonly titleName: string,
@@ -6,6 +8,7 @@ export default class Community {
     readonly landingImageUrl: URL,
     readonly logoUrl: URL,
     readonly socialPageUrl: URL,
-    readonly description: string
+    readonly description: string,
+    readonly socialMedia: SocialMedia
   ) {}
 }

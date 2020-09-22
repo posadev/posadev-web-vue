@@ -16,6 +16,10 @@
         :info="buttonInfo"
         v-on:button-action="onCommunityClick"
       />
+      <SocialLinks
+        :info="$t('social.textInfo')"
+        :socialMedia="this.community.socialMedia"
+      />
     </div>
   </div>
 </template>
@@ -27,11 +31,13 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import Title from '@/components/Title.vue';
 import TitleTexts from '@/data/TitleTexts.model';
+import SocialLinks from '@/components/SocialLinks.vue';
 
 @Component({
   components: {
     AccentActionButton,
-    Title
+    Title,
+    SocialLinks
   }
 })
 export default class CommunityDetail extends Vue {
