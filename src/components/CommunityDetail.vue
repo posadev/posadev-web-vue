@@ -117,10 +117,16 @@ export default class CommunityDetail extends Vue {
     p {
       width: 200px;
       font-size: 22px;
-      line-height: 30px;
+      line-height: 35px;
       margin: {
         top: -20px;
       }
+    }
+  }
+
+  @include media-screen-max-width(425px) {
+    h1 {
+      line-height: 35px;
     }
   }
 }
@@ -128,7 +134,7 @@ export default class CommunityDetail extends Vue {
 .community-detail {
   p {
     text-align: left;
-    width: 100%;
+    width: 95%;
     margin: {
       top: 25px;
       bottom: 25px;
@@ -137,10 +143,10 @@ export default class CommunityDetail extends Vue {
     }
   }
 
-  @include media-screen-max-width(411px) {
+  @include media-screen-max-width(426px) {
     p {
       text-align: left;
-      width: 95%;
+      word-break: break-word;
     }
   }
 }
