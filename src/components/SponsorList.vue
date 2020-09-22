@@ -1,7 +1,7 @@
 <template>
   <div class="columns">
     <SponsorBanner
-      class="column col-2 col-md-3 col-xs-5"
+      class="column col-3 col-md-3 col-xs-5"
       v-for="banner in sponsorBanners"
       v-bind:key="banner.id"
       :banner-logo="banner"
