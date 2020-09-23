@@ -25,9 +25,14 @@ export default class Tickets extends Vue {
   private tickets: Ticket[] = [];
 
   created(): void {
-    this.service.findAll().then((response: Ticket[]) => {
-      this.tickets.push(...response);
-    });
+    this.service
+      .findAll()
+      .then((response: Ticket[]) => {
+        this.tickets.push(...response);
+      })
+      .catch((err: string) => {
+        err;
+      });
   }
 }
 </script>
