@@ -50,11 +50,16 @@ export default class SpeakerDetails extends Vue {
 
   created(): void {
     this.speaker.talks.forEach((talkRef: string) => {
-      this.service.getFromPath(talkRef).then((talk: Talk | undefined) => {
-        if (talk) {
-          this.talks.push(talk);
-        }
-      });
+      this.service
+        .getFromPath(talkRef)
+        .then((talk: Talk | undefined) => {
+          if (talk) {
+            this.talks.push(talk);
+          }
+        })
+        .catch((err: string) => {
+          err;
+        });
     });
   }
 }
