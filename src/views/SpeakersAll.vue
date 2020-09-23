@@ -2,7 +2,7 @@
   <div>
     <ViewHeader :header-texts="speakersTexts" />
     <template>
-      <Speakers />
+      <Speakers class="view-speakers" />
     </template>
   </div>
 </template>
@@ -31,5 +31,8 @@ export default class SpeakersAll extends Mixins(SpeakerContainer) {
 </script>
 
 <style lang="scss">
-// Style
+.view-speakers {
+  max-width: 2000px;
+  margin: 0 auto;
+}
 </style>
