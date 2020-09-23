@@ -50,8 +50,8 @@ export default class NavigationBar extends Vue {
   }
 
   private openSection(section: string): void {
-    this.$router.push(section).catch(() => {
-      //
+    this.$router.push(section).catch((err: string) => {
+      err;
     });
   }
 }
