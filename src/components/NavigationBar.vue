@@ -237,6 +237,7 @@ label {
     @include query-only-screen-max-width {
       @extend %nav-ticket-hide;
       width: 100%;
+      left: 0;
     }
   }
 
