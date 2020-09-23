@@ -29,6 +29,9 @@ export default class SponsorList extends Vue {
       .findAll(['include', '==', true])
       .then((banners: BannerLogo[]) => {
         this.sponsorBanners.push(...banners);
+      })
+      .catch((err: string) => {
+        err;
       });
   }
 }
