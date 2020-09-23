@@ -16,6 +16,11 @@
         :info="buttonInfo"
         v-on:button-action="onCommunityClick"
       />
+      <SocialLinks
+        class="community-social"
+        :info="$t('social.textInfo')"
+        :socialMedia="this.community.socialMedia"
+      />
     </div>
   </div>
 </template>
@@ -27,11 +32,13 @@ import ButtonInfo from '@/data/ButtonInfo.model';
 import AccentActionButton from '@/components/AccentActionButton.vue';
 import Title from '@/components/Title.vue';
 import TitleTexts from '@/data/TitleTexts.model';
+import SocialLinks from '@/components/SocialLinks.vue';
 
 @Component({
   components: {
     AccentActionButton,
-    Title
+    Title,
+    SocialLinks
   }
 })
 export default class CommunityDetail extends Vue {
@@ -110,10 +117,16 @@ export default class CommunityDetail extends Vue {
     p {
       width: 200px;
       font-size: 22px;
-      line-height: 30px;
+      line-height: 35px;
       margin: {
         top: -20px;
       }
+    }
+  }
+
+  @include media-screen-max-width(425px) {
+    h1 {
+      line-height: 35px;
     }
   }
 }
@@ -121,7 +134,7 @@ export default class CommunityDetail extends Vue {
 .community-detail {
   p {
     text-align: left;
-    width: 100%;
+    width: 95%;
     margin: {
       top: 25px;
       bottom: 25px;
@@ -130,11 +143,21 @@ export default class CommunityDetail extends Vue {
     }
   }
 
-  @include media-screen-max-width(411px) {
+  @include media-screen-max-width(426px) {
     p {
       text-align: left;
-      width: 95%;
+      word-break: break-word;
     }
+  }
+}
+
+.community-social {
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  text-align: left;
+
+  @include media-screen-max-width(411px) {
+    font-size: 9px;
   }
 }
 </style>

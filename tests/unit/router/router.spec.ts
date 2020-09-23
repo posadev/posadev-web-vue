@@ -125,4 +125,20 @@ describe('Router render test cases', () => {
         expect(wrapper.findComponent(SpeakerSingleView).exists()).toBe(true);
       });
   });
+
+  it('should go schedule properly', () => {
+    const wrapper = mount(App, {
+      mocks: {
+        $t: () => {
+          return {};
+        }
+      },
+      localVue,
+      router
+    });
+
+    return router.push('/schedule').then(() => {
+      expect(wrapper.find('.coming-soon').exists()).toBe(true);
+    });
+  });
 });
