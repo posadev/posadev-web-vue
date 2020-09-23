@@ -2,7 +2,7 @@
   <div class="speaker-container" @click="goToDetail">
     <div class="containerImg">
       <img
-        class="photo-speaker img-fit-cover"
+        class="photo-speaker img-fit-contain"
         :src="this.speaker.photoURL"
         :alt="this.speaker.company"
       />
@@ -47,8 +47,11 @@ export default class SpeakerCard extends Vue {
 }
 
 .containerImg {
+  background-color: $white-color;
   position: relative;
-  height: 235px;
+  width: 306px;
+  height: 236px;
+  margin: 0 auto;
   padding-top: 1rem;
 
   .photo-speaker {
@@ -65,7 +68,7 @@ export default class SpeakerCard extends Vue {
   .company {
     color: $light-color;
     font-weight: bold;
-    line-height: 75px;
+    line-height: 17px;
     position: absolute;
     top: 92%;
     left: 50%;
