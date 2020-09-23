@@ -38,6 +38,9 @@ export default class SponsorInfo extends Vue {
         if (sponsor !== undefined) {
           this.sponsor = sponsor;
         }
+      })
+      .catch((err: string) => {
+        err;
       });
   }
 }
