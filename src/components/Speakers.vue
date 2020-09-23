@@ -40,7 +40,9 @@ export default class Speakers extends Vue {
       promise = this.service.findAll();
     }
 
-    promise.then(callback);
+    promise.then(callback).catch((err: string) => {
+      err;
+    });
   }
 }
 </script>
