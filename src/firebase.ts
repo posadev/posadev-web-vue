@@ -15,6 +15,14 @@ const firebaseApp = firebase.initializeApp({
 });
 
 const db = firebaseApp.firestore();
+db.settings({
+  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+});
+// eslint-disable-next-line
+db.enablePersistence().catch((err) => {
+  //Manage error later if the persistance fails, nothing to do by now.
+});
+
 const storage = firebaseApp.storage();
 const auth = firebase.auth();
 

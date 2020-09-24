@@ -4,11 +4,12 @@ import { Triple } from '@/data/DataTypes';
 import FirestoreDataConverter = firebase.firestore.FirestoreDataConverter;
 import DocumentData = firebase.firestore.DocumentData;
 import QueryDocumentSnapshot = firebase.firestore.QueryDocumentSnapshot;
-import QuerySnapshot = firebase.firestore.QuerySnapshot;
 import CollectionReference = firebase.firestore.CollectionReference;
 import Query = firebase.firestore.Query;
-import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
 import WhereFilterOp = firebase.firestore.WhereFilterOp;
+import QuerySnapshot = firebase.firestore.QuerySnapshot;
+import DocumentSnapshot = firebase.firestore.DocumentSnapshot;
+import DocumentReference = firebase.firestore.DocumentReference;
 
 export type DocumentMapper<R> = (data: DocumentData) => R;
 
@@ -27,11 +28,9 @@ export abstract class FirestoreService<T> {
   };
 
   async getFromPath(path: string): Promise<T | undefined> {
-    return db
-      .doc(path)
-      .withConverter(this.converter)
-      .get()
-      .then((doc: DocumentSnapshot<T>) => doc.data());
+    const docRef = db.doc(path).withConverter(this.converter);
+
+    return this.getData(docRef);
   }
 
   async findAll<F>(filterBy?: FilterBy<F>): Promise<T[]> {
@@ -52,22 +51,57 @@ export abstract class FirestoreService<T> {
   }
 
   async findById(id: string): Promise<T | undefined> {
-    const documentReference = this.createCollectionRef().doc(id);
+    const docRef = this.createCollectionRef().doc(id);
 
-    return documentReference
-      .get()
-      .then((document: DocumentSnapshot<T>) => document.data());
+    return this.getData(docRef);
   }
 
   private createCollectionRef(): CollectionReference<T> {
     return db.collection(this.collectionName).withConverter(this.converter);
   }
 
-  private createCollectionPromise(query: Query<T>): Promise<T[]> {
-    return query
-      .get()
-      .then((document: QuerySnapshot<T>) =>
-        document.docs.map((doc: QueryDocumentSnapshot<T>) => doc.data())
-      );
+  /**
+   * Similar to the getData method with the main differences this always return an
+   * empty collection from Cache. For avoiding problems, we need to check for emptyness of
+   * that collection.
+   *
+   * @param query
+   * @return Promise with the array of data (it can be empty if data is not present).
+   */
+  private async createCollectionPromise(query: Query<T>): Promise<T[]> {
+    let snapshot: QuerySnapshot<T>;
+
+    try {
+      snapshot = await query.get({ source: 'cache' });
+      if (snapshot.empty) {
+        snapshot = await query.get({ source: 'server' });
+      }
+    } catch (e) {
+      snapshot = await query.get({ source: 'server' });
+    }
+
+    return new Promise((resolve) =>
+      resolve(snapshot.docs.map((doc: QueryDocumentSnapshot<T>) => doc.data()))
+    );
+  }
+
+  /**
+   * Safe way for fetching of the firebase cache and in case of no cache, going to the server.
+   *
+   * @param docRef
+   * @return Promise containing the data or undefined if the data doesn't exist
+   */
+  private async getData(docRef: DocumentReference<T>): Promise<T | undefined> {
+    let docSnapshot: DocumentSnapshot<T>;
+    try {
+      docSnapshot = await docRef.get({ source: 'cache' });
+      if (!docSnapshot.exists) {
+        docSnapshot = await docRef.get({ source: 'server' });
+      }
+    } catch (e) {
+      docSnapshot = await docRef.get({ source: 'server' });
+    }
+
+    return new Promise((resolve) => resolve(docSnapshot.data()));
   }
 }

@@ -215,4 +215,164 @@ describe('Abstract FirebaseService', () => {
     expect(service.mapper).toHaveBeenCalled();
     expect(result).toBe('Foo Bar Baz');
   });
+
+  it('should search first from cache and if not present, search from server', async () => {
+    const docSnapshot = ({
+      data: jest.fn()
+    } as unknown) as QueryDocumentSnapshot;
+    const getFun = jest.fn();
+    const withConverter = jest
+      .fn()
+      .mockImplementation((converter: FirestoreDataConverter<string>) => {
+        return {
+          get: getFun.mockResolvedValue({
+            empty: true,
+            docs: [
+              {
+                data: jest
+                  .fn()
+                  .mockReturnValue(converter.fromFirestore(docSnapshot, {}))
+              }
+            ]
+          })
+        };
+      });
+
+    const collectionSpy = jest
+      .spyOn(db, 'collection')
+      .mockReturnValue(({ withConverter } as unknown) as CollectionReference);
+
+    const service = new MockService();
+    const result = await service.findAll();
+
+    await flushPromises();
+
+    expect(collectionSpy).toHaveBeenCalled();
+    expect(getFun).toHaveBeenCalled();
+    expect(getFun).toHaveBeenCalledWith({ source: 'server' });
+    expect(result.length).toBeGreaterThan(0);
+  });
+
+  it('should search from server if error happens at cache', async () => {
+    const getFun = jest
+      .fn()
+      .mockImplementationOnce(() => {
+        throw new Error('Firebase Error');
+      })
+      .mockResolvedValue({
+        docs: [
+          {
+            data: jest.fn().mockReturnValue('Foo')
+          }
+        ]
+      });
+    const withConverter = jest.fn().mockImplementation(() => {
+      return {
+        get: getFun
+      };
+    });
+
+    const collectionSpy = jest
+      .spyOn(db, 'collection')
+      .mockReturnValue(({ withConverter } as unknown) as CollectionReference);
+
+    const service = new MockService();
+    await service.findAll();
+
+    await flushPromises();
+
+    expect(collectionSpy).toHaveBeenCalled();
+    expect(getFun).toHaveBeenCalled();
+    expect(getFun.mock.calls.length).toBe(2);
+    expect(getFun.mock.calls[0][0]).toStrictEqual({ source: 'cache' });
+    expect(getFun.mock.calls[1][0]).toStrictEqual({ source: 'server' });
+  });
+
+  it('should fetch from server if error happens on cache', async () => {
+    const getFun = jest
+      .fn()
+      .mockImplementationOnce(() => {
+        throw new Error('Firebase Error');
+      })
+      .mockResolvedValue({
+        data: jest.fn().mockReturnValue('Foo')
+      });
+    const withConverter = jest.fn().mockImplementation(() => {
+      return {
+        get: getFun
+      };
+    });
+    const spy = jest
+      .spyOn(db, 'doc')
+      .mockReturnValue(({ withConverter } as unknown) as DocumentReference);
+
+    const service = new MockService();
+
+    await service.getFromPath('bar/foo');
+    await flushPromises();
+
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith('bar/foo');
+    expect(getFun).toHaveBeenCalled();
+    expect(getFun.mock.calls.length).toBe(2);
+    expect(getFun.mock.calls[0][0]).toStrictEqual({ source: 'cache' });
+    expect(getFun.mock.calls[1][0]).toStrictEqual({ source: 'server' });
+  });
+
+  it('should fetch from server if cache does not exists', async () => {
+    const getFun = jest
+      .fn()
+      .mockResolvedValue({
+        exists: false
+      })
+      .mockResolvedValue({
+        data: jest.fn().mockReturnValue('Foo')
+      });
+    const withConverter = jest.fn().mockImplementation(() => {
+      return {
+        get: getFun
+      };
+    });
+    const spy = jest
+      .spyOn(db, 'doc')
+      .mockReturnValue(({ withConverter } as unknown) as DocumentReference);
+
+    const service = new MockService();
+
+    await service.getFromPath('bar/foo');
+    await flushPromises();
+
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith('bar/foo');
+    expect(getFun).toHaveBeenCalled();
+    expect(getFun.mock.calls.length).toBe(2);
+    expect(getFun.mock.calls[0][0]).toStrictEqual({ source: 'cache' });
+    expect(getFun.mock.calls[1][0]).toStrictEqual({ source: 'server' });
+  });
+
+  it('should fetch from cache if it exists', async () => {
+    const getFun = jest.fn().mockResolvedValue({
+      exists: true,
+      data: jest.fn().mockReturnValue('Foo')
+    });
+    const withConverter = jest.fn().mockImplementation(() => {
+      return {
+        get: getFun
+      };
+    });
+    const spy = jest
+      .spyOn(db, 'doc')
+      .mockReturnValue(({ withConverter } as unknown) as DocumentReference);
+
+    const service = new MockService();
+
+    await service.getFromPath('bar/foo');
+    await flushPromises();
+
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith('bar/foo');
+    expect(getFun).toHaveBeenCalled();
+    expect(getFun.mock.calls.length).toBe(1);
+    expect(getFun.mock.calls[0][0]).toStrictEqual({ source: 'cache' });
+  });
 });
