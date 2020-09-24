@@ -45,9 +45,11 @@ export abstract class FirestoreService<T> {
   }
 
   async find(limit: number): Promise<T[]> {
-    const query = this.createCollectionRef().limit(limit);
+    const query = this.createCollectionRef();
 
-    return this.createCollectionPromise(query);
+    return this.createCollectionPromise(query).then((collection) =>
+      collection.slice(0, limit)
+    );
   }
 
   async findById(id: string): Promise<T | undefined> {
