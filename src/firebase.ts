@@ -21,8 +21,6 @@ db.settings({
 // eslint-disable-next-line
 db.enablePersistence().catch((err) => {
   //Manage error later if the persistance fails, nothing to do by now.
-  console.log('Error enabling persistence');
-  console.log('Error here:', err);
 });
 
 const storage = firebaseApp.storage();
