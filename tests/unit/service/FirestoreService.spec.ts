@@ -102,13 +102,11 @@ describe('Abstract FirebaseService', () => {
     const docSnapshot = ({
       data: jest.fn()
     } as unknown) as QueryDocumentSnapshot;
-    const limit = jest.fn((n: number) => (limited = n)).mockReturnThis();
-    let limited = 5;
+    const limited = 5;
     const withConverter = jest
       .fn()
       .mockImplementation((converter: FirestoreDataConverter<string>) => {
         return {
-          limit,
           get: jest.fn().mockResolvedValue({
             docs: Array.from(Array(limited)).map(() => {
               return {
@@ -132,7 +130,6 @@ describe('Abstract FirebaseService', () => {
 
     expect(collectionSpy).toHaveBeenCalled();
     expect(collectionSpy).toHaveBeenCalledWith('foo');
-    expect(limit).toHaveBeenCalled();
     expect(service.mapper).toHaveBeenCalled();
     expect(result.length).toBe(limited);
   });
