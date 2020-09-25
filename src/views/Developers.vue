@@ -86,9 +86,6 @@ export default class SponsorView extends Vue {
     background-size: 55%;
   }
   @include media-screen-max-width(425px) {
-    background-size: 100%;
-  }
-  @include media-screen-max-width(425px) {
     background-size: 128%;
   }
 }
