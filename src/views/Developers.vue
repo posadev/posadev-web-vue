@@ -71,6 +71,7 @@ export default class SponsorView extends Vue {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 
 .image-logo {
   background-repeat: no-repeat;
@@ -81,14 +82,30 @@ export default class SponsorView extends Vue {
   min-height: 100vh;
   background-color: black;
   position: relative;
+  @include media-screen-max-width(768px) {
+    background-size: 55%;
+  }
+  @include media-screen-max-width(425px) {
+    background-size: 128%;
+  }
 }
 
 .dev-info {
   position: absolute;
-  top: 54%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
   cursor: pointer;
+  @include media-screen-max-width(1024px) {
+    font-size: 12px;
+    top: 55%;
+  }
+  @include media-screen-max-width(768px) {
+    top: 55%;
+  }
+  @include media-screen-max-width(768px) {
+    font-size: 12px;
+  }
 }
 </style>
