@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box-details">
     <div class="card-container">
       <div class="container-img">
         <img
@@ -64,31 +64,47 @@ export default class SpeakerDetails extends Vue {
 @import '../styles/variables';
 @import '../styles/mixins';
 
+.box-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 2rem;
+  @include media-screen-max-width(1440px) {
+    width: 90%;
+  }
+}
 .card-container {
   display: flex;
   flex-direction: row;
-  @include media-screen-max-width(411px) {
+  width: 100%;
+  @include media-screen-max-width(768px) {
     flex-direction: column;
+    align-items: center;
   }
 }
 
 .container-img {
   position: relative;
-  height: 100%;
-  width: 50%;
-  padding-top: 1rem;
+  padding: {
+    top: 1rem;
+    right: 2rem;
+  }
+  @include media-screen-max-width(768px) {
+    padding-right: 0;
+  }
 
   .photo-speaker {
+    clip-path: inset(0% 0% 11% 0%);
     width: 526px;
-    height: 526px;
+    height: 595px;
     filter: grayscale(0%);
-    @include media-screen-max-width(411px) {
+    @include media-screen-max-width(1024px) {
       width: 300px;
-      height: 300px;
-    }
-    @include media-screen-max-width(768px) {
-      width: 300px;
-      height: 300px;
+      height: 331px;
     }
   }
 
@@ -98,22 +114,16 @@ export default class SpeakerDetails extends Vue {
     position: absolute;
     top: 90%;
     left: 45%;
-    @include media-screen-max-width(411px) {
-      left: 80%;
-    }
   }
 }
 
 .container-info {
-  width: 40%;
-  @include media-screen-max-width(411px) {
-    width: 100%;
-  }
-
   .name {
     color: $primary-dark-color;
-    font-weight: bold;
-    font-size: 55px;
+    font: {
+      weight: bold;
+      size: 55px;
+    }
     padding-bottom: 0;
     @include media-screen-max-width(411px) {
       font-size: 24px;
@@ -132,43 +142,7 @@ export default class SpeakerDetails extends Vue {
 
   .bio {
     color: $dark-color;
-    text-align: justify;
     margin-bottom: 49px;
-    line-height: 36px;
   }
-}
-
-.container-talk {
-  margin-top: 180px;
-  margin-left: 5%;
-  margin-bottom: 100px;
-  text-align: left;
-}
-
-.conference {
-  color: $dark-color;
-  font-size: 24px;
-}
-
-.talk-name {
-  color: $primary-dark-color;
-  font-size: 24px;
-  line-height: 45px;
-}
-
-.talk-date {
-  color: $dark-color;
-  line-height: 36px;
-}
-
-.talk-description {
-  color: $dark-color;
-  line-height: 36px;
-  margin-top: 24px;
-  margin-bottom: 5%;
-}
-
-.social-speaker {
-  padding-bottom: 11%;
 }
 </style>
