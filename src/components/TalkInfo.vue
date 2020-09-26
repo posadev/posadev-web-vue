@@ -28,7 +28,42 @@ export default class TalkInfo extends Vue {
 </script>
 
 <style lang="scss">
+@import '../styles/variables';
+@import '../styles/mixins';
+
 .container-talk {
   display: block;
+  margin-top: 25px;
+  margin-bottom: 100px;
+  text-align: left;
+  width: 100%;
+}
+
+.conference {
+  color: $dark-color;
+  font-size: 24px;
+}
+
+.talk-name {
+  color: $primary-dark-color;
+  font-size: 24px;
+  line-height: 45px;
+}
+
+.talk-date {
+  color: $dark-color;
+  line-height: 36px;
+}
+
+.talk-description {
+  color: $dark-color;
+  margin: {
+    top: 24px;
+    bottom: 5%;
+  }
+}
+
+.social-speaker {
+  padding-bottom: 11%;
 }
 </style>
