@@ -11,6 +11,7 @@
           <div class="dev-aside">
             <h2>FERNANDO GONZALEZ</h2>
             <img
+              class="social"
               src="../assets/linkedin.png"
               alt="linkedin"
               @click="
@@ -29,6 +30,7 @@
           <div class="dev-aside">
             <h2>SINUHE JAIME</h2>
             <img
+              class="social"
               src="../assets/linkedin.png"
               alt="linkedin"
               @click="goDevProfile('https://www.linkedin.com/in/sierisimo/')"
@@ -43,6 +45,7 @@
           <div class="dev-aside">
             <h2>GEORGINA PEREZ</h2>
             <img
+              class="social"
               src="../assets/linkedin.png"
               alt="linkedin"
               @click="goDevProfile('https://www.linkedin.com/in/georginapq/')"
@@ -57,6 +60,7 @@
           <div class="dev-aside">
             <h2>ERIKA SANCHEZ</h2>
             <img
+              class="social"
               src="../assets/linkedin.png"
               alt="linkedin"
               @click="
@@ -75,6 +79,7 @@
           <div class="dev-aside">
             <h2>YAIDI GARCIA</h2>
             <img
+              class="social"
               src="../assets/linkedin.png"
               alt="linkedin"
               @click="goDevProfile('https://www.linkedin.com/in/yaidi-garcia/')"
@@ -89,6 +94,7 @@
           <div class="dev-aside">
             <h2>EUGENIA NAJAR</h2>
             <img
+              class="social"
               src="../assets/linkedin.png"
               alt="linkedin"
               @click="goDevProfile('https://www.linkedin.com/in/eugenianajar/')"

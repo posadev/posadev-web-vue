@@ -14,14 +14,9 @@ describe('Developers component', () => {
         }
       }
     });
-    const name = wrapper.find('h4');
-    expect(name.exists()).toBe(true);
-    wrapper.find('h4.fer').trigger('click');
-    wrapper.find('h4.si').trigger('click');
-    wrapper.find('h4.geo').trigger('click');
-    wrapper.find('h4.eri').trigger('click');
-    wrapper.find('h4.yai').trigger('click');
-    wrapper.find('h4.eug').trigger('click');
-    expect(window.open).toHaveBeenCalledTimes(6);
+
+    wrapper.find('dev-container').exists();
+    wrapper.find('.social').trigger('click');
+    expect(window.open).toHaveBeenCalledTimes(1);
   });
 });
