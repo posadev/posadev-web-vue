@@ -87,8 +87,7 @@ export default class SponsorDetail extends Vue {
   padding-bottom: 3rem;
   padding-top: 2rem;
   text-align: left;
-
-  @include media-screen-max-width(411px) {
+  @include media-screen-max-width(768px) {
     font-size: 9px;
   }
 }
