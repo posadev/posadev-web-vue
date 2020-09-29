@@ -1,5 +1,9 @@
 <template>
-  <a class="coming-soon" href="https://convoca.dev/jconf-mexico-2020/schedule/"  target="_blank"></a>
+  <a
+    class="coming-soon"
+    href="https://convoca.dev/jconf-mexico-2020/schedule/"
+    target="_blank"
+  ></a>
 </template>
 <style lang="scss">
 @import '../styles/variables';

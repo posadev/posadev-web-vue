@@ -4,7 +4,7 @@
     <p class="talk-name">{{ this.talk.name }}</p>
     <p class="talk-date">{{ this.talk.schedule }}</p>
     <p class="talk-description"><span v-html="this.talk.description"></span></p>
-<!--    <AccentActionButton id="btn-community" :info="buttonInfo" />-->
+    <!--    <AccentActionButton id="btn-community" :info="buttonInfo" />-->
   </div>
 </template>
 
