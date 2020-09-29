@@ -1,5 +1,9 @@
 <template>
-  <div class="coming-soon"></div>
+  <a
+    class="coming-soon"
+    href="https://convoca.dev/jconf-mexico-2020/schedule/"
+    target="_blank"
+  ></a>
 </template>
 <style lang="scss">
 @import '../styles/variables';
@@ -8,8 +12,9 @@
     repeat: no-repeat;
     size: contain;
     position: center;
-    image: url('../assets/comingSoon.png');
+    image: url('../assets/agenda.png');
   }
   height: 80vh;
+  display: block;
 }
 </style>
