@@ -3,7 +3,7 @@
     <p class="conference">{{ $t('speaker.conference') }}</p>
     <p class="talk-name">{{ this.talk.name }}</p>
     <p class="talk-date">{{ this.talk.schedule }}</p>
-    <p class="talk-description">{{ this.talk.description }}</p>
+    <p class="talk-description"><span v-html="this.talk.description"></span></p>
     <AccentActionButton id="btn-community" :info="buttonInfo" />
   </div>
 </template>
